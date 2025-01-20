@@ -13,12 +13,13 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 Add a group photo here!
 
-- Group member 1, name, email, role
-- Group member 2, name, email, role
-- Group member 3, name, email, role
-- Group member 4, name, email, role
-- Group member 5, name, email, role
-- Group member 5, name, email, role
+| Name                        | Email                  | Role            |
+|-----------------------------|------------------------|-----------------|
+| Vera Babasa                 | ho24168@bristol.ac.uk  | VeraB08         |
+| Satvika Mallela             | jg24071@bristol.ac.uk  | satvikamal      |
+| Abdul-Hakeem Lamptey        | qw19275@bristol.ac.uk  | ahl-hx          |
+| Maram Abdulaziz Alhussain   | ho24644@bristol.ac.uk  | MaramAbdulaziz1 |
+| Hadeel Ibrahim              | po24432@bristol.ac.uk  | hadeelibrahimn  |
 
 ## Project Report
 
