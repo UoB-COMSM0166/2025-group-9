@@ -34,3 +34,11 @@ Here’re some additional Ideas to make the game more exciting:
 - Add weapons like missiles that destroy an entire row or ship, bombs that cover a square area or storms cause massive damage across a big zone.
 - For rewards, give players things like a radar to reveal part of an opponent’s ship, extra shots in one turn, or even the ability to repair their own ship.
 - Add weather effects like fog or high waves that temporarily block shots.
+
+## Foosball
+- Weather effects (rain, snow, wind etc).
+- Expanded contact physics (ball spins, ball curve, lobs).
+- Players get to pick their own team formations.
+- Position-specific special abilities can be gained by players (Speed Boost, Shot Power Boost, Increased Finesse).
+- 3 Different AI difficulties for single player mode.
+- 2 Player mode, where one player uses directional keys and the other uses WASD keys.
