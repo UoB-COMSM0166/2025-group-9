@@ -5,7 +5,7 @@
 
 Link to your game [PLAY HERE](https://peteinfo.github.io/COMSM0166-project-template/)
 
-Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
+Your game lives in the [/docs](https://uob-comsm0166.github.io/2025-group-9/) folder, and is published using Github pages to the link above.
 
 Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
 
