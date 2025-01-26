@@ -13,8 +13,6 @@ A twist to the classic arcade game. It requires players to defend their barriers
 Players face a mix of enemy types, including standard invaders, explosive invaders that drop bombs to destroy barriers, and ground-based enemies that move directly toward them, increasing the challenge. The game includes a time limit and a limited number of bullets (e.g., 30 per game). At the end of each level, players encounter a powerful boss invader that demands special strategies or weapons to defeat. As players progress, the challenge increases and the invaders move faster.
 
 ### Game Mechanics:
-
-Building upon the original concept of the game, our team has suggested the below ideas to make the game more engaging:
 - Hitting a specific colour invader stops the barriers from being broken down by bullets. When this happens invaders' bullets can be deflected back at random angles for a limited time, potentially damaging other invaders.
 - ⁠Hitting a different colour mothership stops the invaders from moving. Whilst they can’t move, their bullets still fire. Once they start moving again, they can speed up briefly to make the game more intense.
 - ⁠Can introduce new types of invaders e.g explosive invaders that can drop bombs and can destroy barriers entirely if not stopped in time.
@@ -23,7 +21,6 @@ Building upon the original concept of the game, our team has suggested the below
 - The player can get a particular powerful weapon to take down boss invaders after completing each level or might need special strategies to beat them.
 
 ### Developmental Challenges:
-
 - Developing accurate collision detection for regenerating barriers when deflecting bullets or dealing with explosive invader bombs.
 - Ensuring smooth performance while managing numerous moving objects, such as bullets, invaders, and barriers, especially on lower-end systems.
 - Handling multiple collision detections to prevent any impact on overall game performance.
