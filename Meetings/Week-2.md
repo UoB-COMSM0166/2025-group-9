@@ -11,19 +11,10 @@ This week we were tasked to deploy our paint app using GitHub and to write up tw
 The game is a twist on the classic arcade game. Players control a cannon at the bottom of the screen, shooting waves of descending alien invaders while using barriers for protection. The goal is to destroy all invaders before they reach the bottom. As the game progresses, invaders move faster and fire more bullets, therefore making it more challenging for the player.
 
 ### Game Mechanics:
-- Hitting a specific colour invader stops the barriers from being broken down by bullets. When this happens invaders' bullets can be deflected back at random angles for a limited time, potentially damaging other invaders.
-- ⁠Hitting a different colour mothership stops the invaders from moving. Whilst they can’t move, their bullets still fire. Once they start moving again, they can speed up briefly to make the game more intense.
-- ⁠Can introduce new types of invaders e.g explosive invaders that can drop bombs and can destroy barriers entirely if not stopped in time.
-- Add time limit challenge and limit the bullets number (e.g. 30 bullets per game).
-- Introduce ground based enemies that move toward the player as it will add more pressure and excitement to the game.
-- The player can get a particular powerful weapon to take down boss invaders after completing each level or might need special strategies to beat them.
+Players can target specific colour-coded invaders to trigger unique effects. For instance, hitting one colour stops barriers from being damaged and allows invader bullets to be deflected at random angles, potentially harming other invaders. Hitting a differently coloured mothership temporarily freezes all invaders, though their bullets continue firing. Once they resume movement, the invaders briefly speed up, making the game more intense.
+
+New enemy types are also introduced, such as explosive invaders that drop bombs capable of destroying barriers entirely if not intercepted in time and ground-based enemies that move directly toward the player add further pressure and create a sense of urgency. A time limit and restricted bullet count (e.g., 30 bullets per game) is added to make it more challenging for the player. Players can earn powerful weapons after completing each level to help take down boss invaders or use special strategies to defeat them.
 
 ### Developmental Challenges:
-- Developing accurate collision detection for regenerating barriers when deflecting bullets or dealing with explosive invader bombs.
-- Ensuring smooth performance while managing numerous moving objects, such as bullets, invaders, and barriers, especially on lower-end systems.
-- Handling multiple collision detections to prevent any impact on overall game performance.
-- Implementing bullet deflection at random angles and ensuring they interact correctly with both invaders and the environment.
-- Creating smooth animations to visually communicate invader behaviour changes (frozen states, speed boosts after the freeze effect ends, explosive invader bomb drops).
-- Designing AI for ground-based invaders that can navigate the play area, track the player’s position, and provide a challenging yet fair threat.
-- Creating a UI that clearly displays time remaining, bullet count, and player progress.
+The game comes with several developmental challenges that need to be addressed for a smooth and enjoyable experience. Collision detection must be accurate for regenerating barriers, deflecting bullets, and handling explosive invader bombs. Performance optimisation is key to managing multiple moving objects like bullets, invaders, and barriers, while ensuring collision checks don’t slow the game down. Bullet deflection at random angles needs to work seamlessly with invaders and the environment. Smooth animations are essential to show invader behaviour changes, such as freezing, speeding up, or dropping bombs. Ground-based invaders require AI that can navigate the play area, track the player, and provide a balanced challenge. Lastly, a clear and simple UI is needed to display time remaining, bullet count, and player progress effectively.
 
