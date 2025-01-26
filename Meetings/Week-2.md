@@ -8,9 +8,11 @@ This week we were tasked to deploy our paint app using GitHub and to write up tw
 
 ## Space Invaders
 Game Description:
+
 Classic arcade game that features a player-controlled cannon at the bottom of the screen. The goal is to destroy waves of descending alien invaders before they reach the bottom. Players can shoot projectiles upwards while using stationary barriers for cover. The challenge increases as the invaders move faster and fire projectiles of their own. Bonus points are awarded for shooting the mothership that moves across the top of the screen.
 
 Game Mechanics:
+
 Building upon the original concept of the game, our team has suggested the below ideas to make the game more engaging:
 - Hitting a specific colour invader stops the barriers from being broken down by bullets. When this happens invaders' bullets can be deflected back at random angles for a limited time, potentially damaging other invaders.
 - ⁠Hitting a different colour mothership stops the invaders from moving. Whilst they can’t move, their bullets still fire. Once they start moving again, they can speed up briefly to make the game more intense.
@@ -20,6 +22,7 @@ Building upon the original concept of the game, our team has suggested the below
 - The player can get a particular powerful weapon to take down boss invaders after completing each level or might need special strategies to beat them.
 
 Developmental Challenges:
+
 - Developing accurate collision detection for regenerating barriers when deflecting bullets or dealing with explosive invader bombs.
 - Ensuring smooth performance while managing numerous moving objects, such as bullets, invaders, and barriers, especially on lower-end systems.
 - Handling multiple collision detections to prevent any impact on overall game performance.
