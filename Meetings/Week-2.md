@@ -7,7 +7,7 @@ This week we were tasked to deploy our paint app using GitHub and to write up tw
 
 
 ## Space Invaders
-### Game Description Summary:
+### Game Description:
 The game is a twist on the classic arcade game. Players control a cannon at the bottom of the screen, shooting waves of descending alien invaders while using barriers for protection. The goal is to destroy all invaders before they reach the bottom. As the game progresses, invaders move faster and fire more bullets, therefore making it more challenging for the player.
 
 ### Game Mechanics:
