@@ -8,9 +8,7 @@ This week we were tasked to deploy our paint app using GitHub and to write up tw
 
 ## Space Invaders
 ### Game Description Summary:
-A twist to the classic arcade game. It requires players to defend their barriers and eliminate invading enemies. Players control a cannon at the bottom of the screen, shooting upwards to destroy invaders while dodging their bullets. Barriers provide temporary protection but can break down if hit, unless players target specific colour-coded invaders that trigger unique effects. For example, hitting one colour stops barrier damage and reflects invader bullets at random angles, potentially harming other invaders. Hitting a differently coloured mothership freezes all invaders temporarily, though their bullets continue firing. Once they resume movement, the invaders briefly speed up, adding intensity.
-
-Players face a mix of enemy types, including standard invaders, explosive invaders that drop bombs to destroy barriers, and ground-based enemies that move directly toward them, increasing the challenge. The game includes a time limit and a limited number of bullets (e.g., 30 per game). At the end of each level, players encounter a powerful boss invader that demands special strategies or weapons to defeat. As players progress, the challenge increases and the invaders move faster.
+The game is a twist on the classic arcade game. Players control a cannon at the bottom of the screen, shooting waves of descending alien invaders while using barriers for protection. The goal is to destroy all invaders before they reach the bottom. As the game progresses, invaders move faster and fire more bullets, therefore making it more challenging for the player.
 
 ### Game Mechanics:
 - Hitting a specific colour invader stops the barriers from being broken down by bullets. When this happens invaders' bullets can be deflected back at random angles for a limited time, potentially damaging other invaders.
