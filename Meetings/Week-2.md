@@ -10,17 +10,17 @@ The game is a cooperative puzzle combines elements of puzzle-solving and platfor
 ### Game Mechanics:
 Based on the original concept of "Fire Boy Water Girl," we suggest several enhancement ideas to the gameplay:
 - Dynamic environmental changes, such as moving platforms, rising water waves that trigger new puzzles, and spreading fire that forces     the Fire Girl to find faster paths to avoid getting burned.
--  Multiple levels with increasing difficulty, introducing twists like moving platforms, timed challenges, or character-specific            elements, such as sections requiring quick control of both characters.
+- Multiple levels with increasing difficulty, introducing twists like moving platforms, timed challenges, or character-specific            elements, such as sections requiring quick control of both characters.
 - Considering changing the game characters to be CS-related, though it might be challenging. Here’s a list of potential characters:
-  . Virus: Disrupts other characters by destroying software or altering system data.
-  . Robot: Repairs malfunctions, bypasses software traps, and fixes damaged devices.
-  . Programmer: Writes code to modify the game environment, adding new features or removing obstacles temporarily.
+   - Virus: Disrupts other characters by destroying software or altering system data.
+   - Robot: Repairs malfunctions, bypasses software traps, and fixes damaged devices.
+   - Programmer: Writes code to modify the game environment, adding new features or removing obstacles temporarily.
 
   ### Developmental challenges:
   - Managing Dynamic Environments involves creating smooth transitions for moving platforms, rising water levels, and spreading fire to      ensure the game feels fluid while maintaining performance.
   - Simultaneous Character Control involves fine-tuning the control for seamless movement of both characters without lag, while ensuring     intuitive character switching.
   - The user Interface for dynamic changes involves designing an interface that clearly communictaes changes like water levels, fire         spread and new characters.
-  - Gradually increasing the game's difficulty with complex puzzles and timing-based tasks
+  - Gradually increasing the game's difficulty with complex puzzles and timing-based tasks.
 
 ## Space Invaders
 ### Game Description:
