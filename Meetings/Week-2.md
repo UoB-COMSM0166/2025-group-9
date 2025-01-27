@@ -17,7 +17,7 @@ Based on the original concept of "Fireboy and Watergirl" we suggest several enha
    - Robot: Repairs malfunctions, bypasses software traps, and fixes damaged devices.
    - Programmer: Writes code to modify the game environment, adding new features or removing obstacles temporarily.
 
-  ### Developmental challenges:
+### Developmental challenges:
   - Managing Dynamic Environments involves creating smooth transitions for moving platforms, rising water levels, and spreading fire to      ensure the game feels fluid while maintaining performance.
   - Simultaneous Character Control involves fine-tuning the control for seamless movement of both characters without lag, while ensuring     intuitive character switching.
   - The user Interface for dynamic changes involves designing an interface that clearly communictaes changes like water levels, fire         spread and new characters.
