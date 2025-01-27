@@ -8,7 +8,7 @@ This week we were tasked to deploy our paint app using GitHub and to write up tw
 The game is a cooperative puzzle combines elements of puzzle-solving and platforming where two characters with contrasting talents work together to complete increasingly challenging levels. The Fire Girl interacts with fire-related elements, while the Water Boy manipulates water-based ones. The challenge lies in controlling both characters at the same time in order to avoid obstacles and solve puzzles to advance through each stage.
 
 ### Game Mechanics:
-Based on the original concept of "Fire Boy Water Girl," we suggest several enhancement ideas to the gameplay:
+Based on the original concept of "Fire Boy Water Girl" we suggest several enhancement ideas to the gameplay:
 - Dynamic environmental changes, such as moving platforms, rising water waves that trigger new puzzles, and spreading fire that forces     the Fire Girl to find faster paths to avoid getting burned.
 - Multiple levels with increasing difficulty, introducing twists like moving platforms, timed challenges, or character-specific            elements, such as sections requiring quick control of both characters.
 - Considering changing the game characters to be CS-related, though it might be challenging. Here’s a list of potential characters:
