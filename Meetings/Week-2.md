@@ -5,7 +5,7 @@ This week we were tasked to deploy our paint app using GitHub and to write up tw
 
 ## Fireboy and Watergirl
 ### Game Description:
-The game is a cooperative puzzle that combines elements of puzzle-solving and platforming where two characters with contrasting talents work together to complete increasingly challenging levels. The Firegirl interacts with fire-related elements, while the Waterboy manipulates water-based ones. The challenge lies in controlling both characters simultaneously in order to avoid obstacles and solve puzzles to advance through each stage.
+The game is a cooperative puzzle that combines elements of puzzle-solving and platforming where two characters with contrasting talents work together to complete increasingly challenging levels. The Fireboy interacts with fire-related elements, while the Watergirl manipulates water-based ones. The challenge lies in controlling both characters simultaneously in order to avoid obstacles and solve puzzles to advance through each stage.
 
 ### Game Mechanics:
 Based on the original concept of "Fireboy and Watergirl" we suggest several enhancement ideas to the gameplay:
