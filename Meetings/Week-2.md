@@ -9,8 +9,9 @@ The game is a cooperative puzzle that combines elements of puzzle-solving and pl
 
 ### Game Mechanics:
 Based on the original concept of "Fireboy and Watergirl" we suggest several enhancement ideas to the gameplay:
-- Dynamic environmental changes, such as moving platforms, rising water waves that trigger new puzzles, and spreading fire that forces     the Fire Girl to find faster paths to avoid getting burned.
+- Dynamic environmental changes, such as moving platforms, rising water waves that trigger new puzzles, and spreading fire that forces     the Fireboy to find faster paths to avoid getting burned.
 - Multiple levels with increasing difficulty, introducing twists like moving platforms, timed challenges, or character-specific            elements, such as sections requiring quick control of both characters.
+- Switching abilities, falling into a specific colour of liquid would switch their abilites for a set period of time or until a player is once again submerged in the same colour liquid or the game is restarted. E.g. Fireboy becomes Waterboy and Watergirl becomes Firegirl.  
 - Considering changing the game characters to be CS-related, though it might be challenging. Here’s a list of potential characters:
    - Virus: Disrupts other characters by destroying software or altering system data.
    - Robot: Repairs malfunctions, bypasses software traps, and fixes damaged devices.
