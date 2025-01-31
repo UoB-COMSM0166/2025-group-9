@@ -11,7 +11,6 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Your Group
 
-![Photo](https://github.com/user-attachments/assets/4cf6f7da-02b0-4962-aacf-ba7aadc8a28a)
 
 
 | Name                        | Email                  | Role            |
