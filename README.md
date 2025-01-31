@@ -11,7 +11,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Your Group
 
-
+![Group-Photo](./Photo.PNG)
 
 | Name                        | Email                  | Role            |
 |-----------------------------|------------------------|-----------------|
