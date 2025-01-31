@@ -13,7 +13,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ![Group-Photo](./IMG_6966.HEIC) 
 
-| Name                        | Email                  | Role            |
+| Name                        | Email                  | GitHub Username |
 |-----------------------------|------------------------|-----------------|
 | Vera Babasa                 | ho24168@bristol.ac.uk  | VeraB08         |
 | Satvika Mallela             | jg24071@bristol.ac.uk  | satvikamal      |
