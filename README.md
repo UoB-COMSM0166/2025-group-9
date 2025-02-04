@@ -11,7 +11,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Your Group
 
-![Group-Photo](./IMG_6966.HEIC) 
+![Group-Photo](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Other/Group-Photo.png) 
 
 | Name                        | Email                  |        Username |
 |-----------------------------|------------------------|-----------------|
