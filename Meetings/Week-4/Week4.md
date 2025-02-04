@@ -1,6 +1,15 @@
 # Week 4 Meeting
 
+## Goals
+1. Create a final game idea - after talking to other people during the lab we came to the conclusion that our game idea is not creative/unique enough
+2. Requirements section 
+-   A list of stakeholders
+-   Create epics, user stories and acceptance criterias (add this to kanban board)
+-   Write 300 word reflection on what our team learned on epics, user stories acceptance criterias and app's context (add to requirements section on repo)
+
 ## Lab
+The below is what we worked on during the lab session. This is for our original game idea (see Week 3 folder), but after talking to other people we have decided to come up with a different game idea so the below may not be as relevant. 
+
 ### Stakeholders
 - Players - 8 and up
 - Developers
@@ -19,7 +28,7 @@ Tasks:
 4. Keep the background running at different speeds to show illusion of forward moving planes.
 5. Slightly pixelated for the arcade feel.  
   
-- As a player I want to have clear intructions so that I know how to play the game.
+- As a player I want to have clear instructions so that I know how to play the game.
 -   Given I am new to the game when I have an untimed test run then I can learn how to play the game.
 
 Developers:
@@ -27,9 +36,6 @@ Developers:
 -   As a developer I want to add ground obstacles so that it's more challenging for the player.
 - As a developer I want the game to not take up too much space so that it is efficient to run.
 - As a developer I want the game to be intuitive so that the players would want to play again and again.
-- 
-
-Tester:
 
 Advertiser:
 - As an advertiser I don't want to the game to be too graphic so that more people from different age groups can play.
