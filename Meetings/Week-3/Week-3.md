@@ -7,12 +7,36 @@ This week we were tasked to:
 - Create a paper prototype for each game and include videos
 - Decide on a final game
 
-## Space Invaders Potential additions/changes
-- Switch from a space battle to a bird's-eye-view 2D jet fighter game.
-- Implement a camera-based scrolling system to move a larger background map through the player's frame of reference to create the illusion of movement.
-- Introduce ground targets that the player must drop bombs on to destroy. 
-- Introduce a few fighter jets that the player must engage in aerial dogfights. During air combat, the player will have free movement in the 2D reference frame to evade and destroy enemy jets. 
-- Introduce weather conditions such as icing (affects handling), turbulence (affects stability and control), wind (affects speed and control) and cloud cover (hides enemies or objectives, reduces target accuracy).
-- Introduce altitude mechanics allowing players to ascend or descend to avoid mountain collisions, not crash into ocean, escape bad weather. Alitude may also tie into bombing mechanics, with bombs taking longer to hit targets at high altitude thus requiring players to consider timing. 
-- Players are under a time constraint to complete mission to add urgency and strategic decision making. 
-- Players are space constrained, going beyond the map counts as an abandoned mission and game over. 
+## Fireboy & Watergirl Potential additions/changes
+Switch from a space battle game to a co-op puzzle-platformer, where elemental siblings (Fire & Water) work together to solve temple challenges by combining their unique abilities. Here are some game ideas:
+1. Deep Storyline & Character Development
+- Add a background story explaining why Fireboy and Watergirl are in the temple.
+- Introduce new characters and a main goal beyond simply progressing to the next level.
+- Players uncover secrets of the temple as they progress.
+
+2. Story-Driven Levels
+- Levels evolve with the storyline, such as rescuing a character or revealing hidden temple lore.
+
+3. Swappable & Merging Abilities
+- Players can temporarily swap abilities, e.g., Fireboy gaining water abilities and vice versa.
+- Parallel Worlds Mechanic: Players navigate two realms (Fire World & Water World) and must merge into a single character to solve         specific puzzles.
+
+4. Time-Based Challenges
+ - Introduce levels with time limits, requiring players to complete objectives before the countdown ends.
+ - Include a race mode where players compete against each other to complete levels faster.
+
+5. Math-Based Puzzles
+ - Simple math challenges like arranging numbers or solving equations to unlock doors.
+
+6. Dark Levels & Light Mechanics
+ - Dark-themed levels where players must rely on limited light sources (e.g., fire or glowing objects) to navigate.
+
+7. Ability Upgrades & Power-Ups
+  - Players can upgrade abilities over time, such as faster movement and improved jumping height.
+  - Introduce power-ups like speed boosts or temporary invincibility.
+
+8. Gameplay Twists & New Mechanics
+  - Board Rotation: Flip the entire level 180°, forcing players to adapt to a new perspective.
+  - Timed Power Switches: Abilities swap automatically after a certain period, adding strategic complexity.
+
+
