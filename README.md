@@ -47,6 +47,8 @@ Players take on the roles of two university students, a chemistry student and a 
 
 The science building is split into different levels, each with character-specific obstacles and puzzles that must be solved to access an ingredient. Players navigate the maze together, using the lift system to move between floors, while battling the effects of the virus, which slows their movement over time. Once all four ingredients are collected, the timer speeds up, forcing players to race to the lab before the time runs out.
 
+Inorder to win, both players must survive, collect all four ingredients and get to the lab before the time runs out. If one player dies, the game will restart.
+
 
 ## Requirements 
 
