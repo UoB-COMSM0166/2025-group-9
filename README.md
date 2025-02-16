@@ -59,7 +59,7 @@ Inorder to win, both players must survive, collect all four ingredients and get 
 <div align="center">
 
 ### Figure 1  
-*class diagram illustrating the game structure.*  
+*Class diagram illustrating the game structure.*  
 
 <img src="class_diagram.jpg" alt="Class Diagram" width="600"/>
 
