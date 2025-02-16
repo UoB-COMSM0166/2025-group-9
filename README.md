@@ -56,7 +56,8 @@ Inorder to win, both players must survive, collect all four ingredients and get 
 - Use case diagrams, user stories. Early stages design. Ideation process. How did you decide as a team what to develop? 
 
 ## Design
-Class diagram illustrating the game structure:
+**Figure 1**  
+_Class diagram illustrating the game structure._
 ![Class Diagram](class_diagram.jpg)
 
 - 15% ~750 words 
