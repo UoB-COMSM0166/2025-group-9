@@ -58,8 +58,8 @@ Inorder to win, both players must survive, collect all four ingredients and get 
 ## Design
 <div align="center">
 
-### Figure 12  
-*Class Diagram Generated Workshop Five.*  
+### Figure 1  
+*class diagram illustrating the game structure.*  
 
 <img src="class_diagram.jpg" alt="Class Diagram" width="600"/>
 
