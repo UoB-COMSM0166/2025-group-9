@@ -56,14 +56,15 @@ Inorder to win, both players must survive, collect all four ingredients and get 
 - Use case diagrams, user stories. Early stages design. Ideation process. How did you decide as a team what to develop? 
 
 ## Design
-<div align="center">
 
 Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. It was a point of reference that allowed us to visualize how elements in the game were interconnected, identify their properties and actions, and have an orderly development process.
+<div align="center">
 
 ### Figure 1  
 *Class diagram illustrating the game structure.*  
 
 <img src="class_diagram.jpg" alt="Class Diagram" width="600"/>
+</div>
 
 The GameManager class is the game's main controller, monitoring overall progress, managing state transitions among the game states, and making sure players reach win or fail conditions. It controls the GameController directly, which manages individual game logic like monitoring the cure components that have been collected, monitoring the players' status, and managing the countdown timer.
 
@@ -75,7 +76,7 @@ The CureComponents class is the main ingredients that must be collected in order
 
 Together, these courses define the shape and mechanics of the game, offering a cooperative puzzle-solving experience with challenges, environmental risks, and strategic team-based elements.
 
-</div>
+
 - 15% ~750 words 
 - System architecture. Class diagrams, behavioural diagrams. 
 
