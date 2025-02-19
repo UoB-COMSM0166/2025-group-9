@@ -1,0 +1,1 @@
+// Manages all game mechanics and connects other managers (TimeManager, HealthManager, CureManager, PuzzelManager)
