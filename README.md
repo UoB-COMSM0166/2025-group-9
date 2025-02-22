@@ -52,13 +52,13 @@ Inorder to win, both players must survive, collect all four ingredients and get 
 
 ## Requirements 
 
-Requirements Engineering
+### Requirements Engineering
 
 
 Requirements Engineering is a thorough process to create and develop the requirements of a software system while managing the needs and expectations of the stakeholders. The requirements fall into two categories - functional and non-functional. Requirements engineering is vital as it tells every team member what to do. This leads to an optimised development process. (Irum Inayat et al., 2014)
 
 
-Ideation Process
+### Ideation Process
 
 
 Our team pitched two games each to serve as inspiration for our final idea in our group chat. Each game pitch comprised of our proposed idea for a ’twist’, ways to adapt the game, and a pros and cons list. Along with this, we expressed any challenges our team may face during the implementation of each game. The top two ideas to base our game on were Space Invaders and Fireboy and Watergirl. 
@@ -71,16 +71,20 @@ During the same testing sessions, our team presented a game based on Fireboy and
 
 We had our final idea, after a brainstorming session during Week 5. 
 
-Stakeholders
-1 Product:
+### Stakeholders
+
+**1 Product:**
+
 Race to the Cure
 
 
-2 The System:
+**2 The System:**
+
 Group 9 – Developing Team, Normal and Maintenance Operators
 
 
-3 The Containing System:
+**3 The Containing System:**
+
 Casual Gamers
 Competitive Gamers
 Gamers with Disabilities
@@ -90,13 +94,14 @@ Platform Hosting the Game
 Assessors
 
 
-4 The Wider Environment:
+**4 The Wider Environment:**
+
 University of Bristol
 
 
-Epics and User Stories
+### Epics and User Stories
 
-1 Gameplay & Mechanics
+**1 Gameplay & Mechanics**
 
 Ensuring smooth, enjoyable, and challenging gameplay
 As a new player, I want a tutorial mode that explains the game mechanics and rules, so I can learn how to play efficiently.
@@ -109,7 +114,7 @@ As a competitive player, I want level completion times to be recorded and displa
 As a competitive player who frequently replays the game, I want an option to skip non-gameplay animations and introductions, so I can focus on gameplay.
 
 
-2 Accessibility & Inclusivity
+**2 Accessibility & Inclusivity**
 
 Ensuring the game is playable for all users, including those with disabilities or specific needs
 As an elderly player with limited vision, I want an option to adjust text size, so I can read in-game text comfortably.
@@ -118,14 +123,14 @@ As an impressionable young player, I want the game to avoid excessive violence, 
 As the University of Bristol, I want the game to avoid insensitive or discriminatory depictions, so it remains inclusive and respectful to all players.
 
 
-3 Narrative & Aesthetics
+**3 Narrative & Aesthetics**
 
 Ensuring the game has an engaging story and a visually cohesive design
 As a player, I want an engaging introductory sequence that explains the game's lore, so I can be immersed in the story.
 As a player, I want a consistent art style, so the game remains visually appealing and cohesive.
 
 
-4 Technical & Development Considerations
+**4 Technical & Development Considerations**
 
 Ensuring efficient, scalable, and maintainable development
 As a developer, I want the game to follow a modular design, so features can be added or removed easily.
@@ -138,7 +143,7 @@ As an assessor, I want the game to feature a unique twist on a classic concept o
 Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. It was a point of reference that allowed us to visualize how elements in the game were interconnected, identify their properties and actions, and have an orderly development process.
 <div align="center">
 
-### Figure 1  
+**Figure 1**  
 *Class diagram illustrating the game structure.*  
 
 <img src="class_diagram.jpg" alt="Class Diagram" width="600"/>
