@@ -5,14 +5,18 @@ class Player {
         this.positionX = positionX; // player's starting position 'horizontally'
         this.positionY = positionY; // player's starting position 'vertically'
         this.isAlive = true; // track if the player is still alive
-        this.cureCollected = []; // list for collected cure items
+        this.collectedComponents = []; // list for collected cure components
         this.isJumping = false; // track if the player is jumping
     }
 
-    // method to collect cure components
-    collectCureComp(component) {
-        this.cureCollected.push(component);
-        console.log(`${this.characterType} collected ${component}`);
+    // method to collect cure components and notify cureManager
+    collectComponent(cureComponent) {
+        // check if the cure has already been collected
+        if (!this.collectedComponents.includes(cureComponent)) {
+        this.collectedComponents.push(cureComponent); // add component into array
+        console.log(`${this.characterType} collected ${cureComponent}`);
+        this.cureManager.trackCureCollection(); // / notify the CureManager that a new cure has been collected
+        }
     }
 
     // method to move the player left

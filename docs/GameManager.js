@@ -1,21 +1,19 @@
-// Manages the overall game state, win/loss conditions, game flow and resets the game when needed
+// Manages the overall game state resets the game when needed
+// edit GameManager and remove checkWinCondition() and just Use GameController (isGameOver and isGameWon)
 
 class GameManager {
     constructor(gameController, uiManager, labX, labY) {
         this.state = "home"; // Possible states: "home", "playing", "gameOver", "won"
         this.gameController = gameController;
         this.uiManager = uiManager; 
-        this.labX = labX; // X position of lab - player class will need to implement a method that detects when the player is at the lab
-        this.labY = labY; // Y position of lab
     }
 
+    // monitor game status while game is running and checks for win/lost
     updateGameStatus() {
         if (this.state === "playing") {
             if (this.gameController.isGameOver()) {
-                this.state = "gameOver";
                 this.triggerGameOver();
-            } else if (this.checkWinCondition()) {
-                this.state = "won";
+            } else if (this.gameController.isGameWin()) {
                 this.triggerWin();
             }
         }
@@ -28,13 +26,7 @@ class GameManager {
         console.log("Game Started!");
         this.state = "playing";
         this.uiManager.showStartScreen = false; // Hide start screen - need to ensure the home screen is displayed first before the game starts.
-    }
-
-    checkWinCondition() {
-        return (
-            this.gameController.allIngredientsCollected() &&
-            this.gameController.players.every(player => player.isAtLab(this.labX, this.labY))
-        );
+        this.gameController.timeManager.resetTime(); // Reset timer to 5 mins
     }
 
     triggerGameOver() {
@@ -45,7 +37,7 @@ class GameManager {
     }
 
     triggerWin() {
-        console.log("All ingredients collected & players reached the lab! YOU WIN!");
+        console.log("All components collected & players reached the lab! YOU WIN!");
         this.state = "won";
         this.uiManager.showWinBanner = true; // Tell UIManager to show the win screen
     }
@@ -63,6 +55,6 @@ class GameManager {
 
         this.uiManager.showStartScreen = true; // Show start screen again
 
-        this.gameController.resetGame();
+        this.gameController.resetGame(); // resetting all game components
     }
 }
