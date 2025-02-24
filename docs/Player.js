@@ -7,6 +7,13 @@ class Player {
         this.isAlive = true; // track if the player is still alive
         this.collectedComponents = []; // list for collected cure components
         this.isJumping = false; // track if the player is jumping
+        this.velocityY = 0; // vertical velocity
+        this.gravityCoefficient = 0.05; // gravity effect
+        this.jumpPower = -50; // initial jumping force
+        this.jumpTime = 0; // time in the air
+        this.playerHealth = 100; // player's life bar
+        this.isOnFire = false; // track if the player is standing in 
+        this.isHit = false;
     }
 
     // method to collect cure components and notify cureManager
@@ -31,26 +38,48 @@ class Player {
         console.log(`${this.characterType} moved right to position: ${this.positionX}`);
     }
 
-    // jump
-    jump() {
-        if (!this.isJumping) { // check if the player is already jumping to prevent double jumping
-            this.isJumping = true;
-            this.positionY -= 50; // moving up
-            console.log(`${this.characterType} jumped to ${this.positionY}`);
-
-            // falling back after 0.5 seconds
-            setTimeout(() => {
-                this.positionY += 50; // moving back down
-                this.isJumping = false; // allowing to jump again
-                console.log(`${this.characterType} landed at: ${this.positionY}`);
-            }, 500);
-        }      
+   // jump
+   jump() {
+    if (this.isOnPlatform && !this.isJumping) { // check if the player is already jumping to prevent double jumping
+        this.isJumping = true;
+        this.isOnPlatform = false;
+        this.velocityY = this.jumpPower;
+        this.jumpTime = 0; // reset jump counter
+        this.applyJumpPhysics(); //jumping animation 
     }
-
-    // useLift()?
-    // takeDamage()?
-    // isFailed()?
 }
+
+// non-linear jump physics
+applyJumpPhysics() {
+    if (this.isJumping) {
+        this.jumpTime += 1; // Track time in air
+        this.velocityY += 0.5 * this.gravityCoefficient * this.jumpTime ** 2; //  gravity effect
+        this.positionY += this.velocityY; // Apply velocity
+
+        console.log(`${this.characterType} is at Y: ${this.positionY}, velocity: ${this.velocityY}`);
+
+        if (this.positionY >= 200 || this.isOnPlatform) { // check if landed
+            this.isJumping = false;
+            console.log(`${this.characterType} landed.`);
+        } else {
+            requestAnimationFrame(() => this.applyJumpPhysics()); // Continue animation
+        }
+    }
+}
+
+
+// useLift()?
+takeDamage() {
+    if (this.velocityY >= 50 || this.isOnPlatform){ //if player hits the ground too hard
+        this.playerHealth -= 30;
+        this.PlayerSpeed *= 0.92; //reduced mobility
+        this.jumpPower *= 0.92; //reduced jumping power
+    }
+    //work in the hits and burning conditions similarly
+}
+// isFailed() puzzle
+}
+
 
 // creating two different players with initial positions
 const player1 = new Player ("chemist", 5, 100, 200); // chemist speed, x, y
