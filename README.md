@@ -85,13 +85,13 @@ Group 9 – Developing Team, Normal and Maintenance Operators
 
 **3 The Containing System:**
 
-Casual Gamers
-Competitive Gamers
-Gamers with Disabilities
-Young Gamers
-Elderly Gamers
-Platform Hosting the Game
-Assessors
+- Casual Gamers
+- Competitive Gamers
+- Gamers with Disabilities
+- Young Gamers
+- Elderly Gamers
+- Platform Hosting the Game
+- Assessors
 
 
 **4 The Wider Environment:**
