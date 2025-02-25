@@ -2,6 +2,8 @@
 // Resets ingredients on game restart
 // Player class stores collected cures in cureCollected[] array and handles cure collection per player - notify CureManager
 
+
+// TODO: cure is collected only when the puzzle is solved 
 class CureManager {
     constructor(puzzleCureMap, gameController, players) {
         this.puzzleCureMap = puzzleCureMap; // Maps puzzles to their corresponding cures - need to add this onto sketch.js 
