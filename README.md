@@ -3,7 +3,7 @@
 
 ## Your Game
 
-Link to your game [PLAY HERE](file:///Users/hadeel/Desktop/MyProject/minesweeper%20copy/loading.html)
+Link to your game [PLAY HERE](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/loading-banner/loading.html)
 
 Your game lives in the [/docs](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/docs) folder, and is published using Github pages to the link above.
 
