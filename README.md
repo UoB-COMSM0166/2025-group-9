@@ -22,7 +22,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## The Group
 
-![Group-Photo](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Other/Group-Photo.png) 
+![Group-Photo](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Group-Photo.png) 
 
 <div align="center">
 
@@ -146,7 +146,7 @@ Before undertaking the coding stage, our team first drafted a class diagram to a
 **Figure 1**  
 *Class diagram illustrating the game structure.*  
 
-<img src="class_diagram.jpg" alt="Class Diagram" width="600"/>
+<img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Class Diagram" width="600"/>
 </div>
 
 The GameManager class is the game's main controller, monitoring overall progress, managing state transitions among the game states, and making sure players reach win or fail conditions. It controls the GameController directly, which manages individual game logic like monitoring the cure components that have been collected, monitoring the players' status, and managing the countdown timer.
