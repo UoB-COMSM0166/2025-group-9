@@ -1,38 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const leaf = document.getElementById("leaf");
-    const switchButton = document.getElementById("switch");
-    const lift = document.getElementById("lift");
-    const powerCord = document.getElementById("power-cord");
-    const toxic = document.getElementById("toxic");
+document.addEventListener("DOMContentLoaded", () => { 
+    const leaf = document.getElementById("leaf"); 
+    const switchButton = document.getElementById("switch"); 
+    const lift = document.getElementById("lift"); 
+    const powerCord = document.getElementById("power-cord"); 
+    const toxic = document.getElementById("toxic"); 
     const player1 = document.getElementById("player1");
-    const player2 = document.getElementById("player2");
+    const player2 = document.getElementById("player2"); 
 
-    // Added for the interactive book
-    const book = document.getElementById("book");
-    const paperContainer = document.getElementById("paper-container");
-    const closePaper = document.getElementById("close-paper");
+    // Added for the interactive book 
+    const book = document.getElementById("book"); 
+    const paperContainer = document.getElementById("paper-container"); 
+    const closePaper = document.getElementById("close-paper"); 
 
-    // Instead of a one‑time flag, use a flag that resets when no player is colliding.
-    let bookAvailable = true;
-
-    // Game state
-    let isPowerOn = false;
-    let isLeafCollected = false;
+    // Instead of a one-time flag, use a flag that resets when no player is colliding. 
+    let bookAvailable = true; 
+    
+    // Game state 
+    let isPowerOn = false; 
+    let isLeafCollected = false; 
     let puzzleSolved = false;
+    const players = { 
+        player1: {element: player1, x: 200, y: 350, velocityY: 0, isJumping: false, onPlatform: false}, 
+        player2: {element: player2, x: 250, y: 350, velocityY: 0, isJumping: false, onPlatform: false} 
+    }; 
+    const gravity = 1; 
+    const groundY = 710; 
+    const jumpStrength = -9.50; 
+    const moveSpeed = 1.50; 
+    const maxFallSpeed = 3; 
 
-    const players = {
-        player1: { element: player1, x: 200, y: 350, velocityY: 0, isJumping: false, onPlatform: false },
-        player2: { element: player2, x: 250, y: 350, velocityY: 0, isJumping: false, onPlatform: false }
-    };
-
-    const gravity = 1;
-    const groundY = 710;
-    const jumpStrength = -9.50;
-    const moveSpeed = 1.50;
-    const maxFallSpeed = 3;
-
-    // Platforms
-    const platforms = [
+    // Platforms 
+    const platforms = [ 
         { x: 600, y: 705, width: 170, height: 4 },
         { x: 500, y: 660, width: 100, height: 4 },
         { x: 475, y: 660, width: 45, height: 4 },
