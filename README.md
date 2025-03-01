@@ -64,8 +64,17 @@ Requirements Engineering is a thorough process to create and develop the require
 Our team pitched two games each to serve as inspiration for our final idea in our group chat. Each game pitch comprised of our proposed idea for a ’twist’, ways to adapt the game, and a pros and cons list. Along with this, we expressed any challenges our team may face during the implementation of each game. The top two ideas to base our game on were Space Invaders and Fireboy and Watergirl. 
 
 
-Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships while adapting to weather conditions, returning fire, changes in altitude, and birds. To make the game more challenging, we introduced a time limit and bullet restrictions. When presented to players, our team applied the twists to the existing games. The feedback from test sessions informed us that the game was easy to understand and play. However, Dr Bennett suggested that it was too similar to Space Invaders, so we changed course. 
 
+Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships while adapting to weather conditions, returning fire, changes in altitude, and birds. To make the game more challenging, we introduced a time limit and bullet restrictions. When presented to players, our team applied the twists to the existing games. The feedback from test sessions informed us that the game was easy to understand and play. However, Dr Bennett suggested that it was too similar to Space Invaders, so we changed course. 
+<div align="center">
+
+<img src="https://github.com/user-attachments/assets/07dcfd8e-d6cf-4d12-b346-493b361063ff" alt="Game Pitches" width="200"/>
+  
+<img src="https://github.com/user-attachments/assets/3cfed99c-59c8-4427-ae1d-45ef542402d2" alt="Pros and Cons" width="210"/>
+
+<img src="https://github.com/user-attachments/assets/05e4f805-5336-4fe8-8e33-406774037d08" alt="Vote" height="125" width="125"/>
+
+</div>
 
 During the same testing sessions, our team presented a game based on Fireboy and Watergirl. Players were more enthusiastic and willing to play the game multiple times. Hadeel, a team member, created a digital prototype to help us visualise the new idea. 
 
