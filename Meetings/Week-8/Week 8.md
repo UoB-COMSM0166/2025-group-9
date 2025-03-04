@@ -4,4 +4,4 @@ During our lab this week, we conducted a quantitative evaluation of the two leve
 
 
 
-After the lab session, our team discussed the results of the questionnaires ....
+After the lab session, our team discussed the results of the questionnaires. Based on our responses we redesigned the layout of game and made the puzzles easier to spot. 
