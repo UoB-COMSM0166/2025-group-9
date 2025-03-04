@@ -1,7 +1,7 @@
 # 2025-group-9
 2025 COMSM0166 group 9
 
-## Your Game
+## Race For The Cure
 
 Link to your game [PLAY HERE]
 
