@@ -79,12 +79,10 @@ Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships whil
 During the same testing sessions, our team presented a game based on Fireboy and Watergirl. Players were more enthusiastic and willing to play the game multiple times. Hadeel, a team member, created a digital prototype to help us visualise the new idea. 
 
 Our initial idea was to develop moving platforms for the game and allow players to start and stop them. Additionally, a magic door feature, enabling players to swap their positions in the game. To represent the idea, we created a prototype video:
-
 ### [Watch the prototype video]:
 https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-3/Fireboy%20and%20Watergirl.mp4
 
 Building on the previous idea, we developed several concepts to make the gameplay more challenging by introducing cooperative puzzles and expanding the storyline. One key concept involved a scenario where one character must rescue the other before they can reach their doors together. To demonstrate this, we created another prototype video:
-
 ### [Watch the prototype video]: 
 https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-4/F%26W_compressed.mp4
 
