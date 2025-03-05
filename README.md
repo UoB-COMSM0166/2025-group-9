@@ -54,15 +54,11 @@ Inorder to win, both players must survive, collect all four ingredients and get 
 
 ### Requirements Engineering
 
-
 Requirements Engineering is a thorough process to create and develop the requirements of a software system while managing the needs and expectations of the stakeholders. The requirements fall into two categories - functional and non-functional. Requirements engineering is vital as it tells every team member what to do. This leads to an optimised development process. (Irum Inayat et al., 2014)
-
 
 ### Ideation Process
 
-
 Our team pitched two games each to serve as inspiration for our final idea in our group chat. Each game pitch comprised of our proposed idea for a ’twist’, ways to adapt the game, and a pros and cons list. Along with this, we expressed any challenges our team may face during the implementation of each game. The top two ideas to base our game on were Space Invaders and Fireboy and Watergirl. 
-
 
 
 Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships while adapting to weather conditions, returning fire, changes in altitude, and birds. To make the game more challenging, we introduced a time limit and bullet restrictions. When presented to players, our team applied the twists to the existing games. The feedback from test sessions informed us that the game was easy to understand and play. However, Dr Bennett suggested that it was too similar to Space Invaders, so we changed course. 
@@ -78,6 +74,7 @@ Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships whil
 
 During the same testing sessions, our team presented a game based on Fireboy and Watergirl. Players were more enthusiastic and willing to play the game multiple times. Hadeel, a team member, created a digital prototype to help us visualise the new idea. 
 
+
 Our initial idea was to develop moving platforms for the game and allow players to start and stop them. Additionally, a magic door feature, enabling players to swap their positions in the game. To represent the idea, we created a prototype video:
 ### [Watch the prototype video]:
 https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-3/Fireboy%20and%20Watergirl.mp4
@@ -90,18 +87,13 @@ We had our final idea, after a brainstorming session during Week 5.
 
 ### Stakeholders
 
-**1 Product:**
-
+**1. Product:**
 Race to the Cure
 
-
-**2 The System:**
-
+**2. The System:**
 Group 9 – Developing Team. Normal and Maintenance Operators
 
-
-**3 The Containing System:**
-
+**3. The Containing System:**
 - Casual Gamers
 - Competitive Gamers
 - Gamers with Disabilities
@@ -110,11 +102,8 @@ Group 9 – Developing Team. Normal and Maintenance Operators
 - Platform Hosting the Game
 - Assessors
 
-
-**4 The Wider Environment:**
-
+**4. The Wider Environment:**
 University of Bristol
-
 
 ### Epics and User Stories
 
