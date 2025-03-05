@@ -80,7 +80,7 @@ During the same testing sessions, our team presented a game based on Fireboy and
 
 We had our final idea, after a brainstorming session during Week 5. 
 
-([Watch the prototype video]:https://github.com/hadeelibrahimn/2025-group-9/raw/main/2025-group-9/Meetings/Week-4/F%26W_compressed.mp4
+([Watch the prototype video]: https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-4/F%26W_compressed.mp4
 
 
 ### Stakeholders
