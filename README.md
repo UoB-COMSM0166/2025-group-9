@@ -78,10 +78,13 @@ Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships whil
 
 During the same testing sessions, our team presented a game based on Fireboy and Watergirl. Players were more enthusiastic and willing to play the game multiple times. Hadeel, a team member, created a digital prototype to help us visualise the new idea. 
 
-We had our final idea, after a brainstorming session during Week 5. 
+Our initial idea was to develop moving platforms for the game and allow players to start and stop them. Additionally, a magic door feature, enabling players to swap their positions in the game. Therefore, we created a prototype video to represent the idea.
+[Watch the prototype video]: https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-3/Fireboy%20and%20Watergirl.mp4
 
-([Watch the prototype video]: https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-4/F%26W_compressed.mp4
+Building on the previous idea, we developed several concepts to make the gameplay more challenging by introducing cooperative puzzles and new storylines, such as one character rescuing the other before they can reach their doors together. We also created a prototype video to represent this idea.
+[Watch the prototype video]: https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-4/F%26W_compressed.mp4
 
+We had our final idea, after a brainstorming session during Week 5.
 
 ### Stakeholders
 
@@ -92,7 +95,7 @@ Race to the Cure
 
 **2 The System:**
 
-Group 9 – Developing Team, Normal and Maintenance Operators
+Group 9 – Developing Team. Normal and Maintenance Operators
 
 
 **3 The Containing System:**
@@ -113,7 +116,7 @@ University of Bristol
 
 ### Epics and User Stories
 
-**1 Gameplay & Mechanics**
+**1. Gameplay & Mechanics**
 
 Ensuring smooth, enjoyable, and challenging gameplay
 As a new player, I want a tutorial mode that explains the game mechanics and rules, so I can learn how to play efficiently.
@@ -126,7 +129,7 @@ As a competitive player, I want level completion times to be recorded and displa
 As a competitive player who frequently replays the game, I want an option to skip non-gameplay animations and introductions, so I can focus on gameplay.
 
 
-**2 Accessibility & Inclusivity**
+**2. Accessibility & Inclusivity**
 
 Ensuring the game is playable for all users, including those with disabilities or specific needs
 As an elderly player with limited vision, I want an option to adjust text size, so I can read in-game text comfortably.
@@ -135,14 +138,14 @@ As an impressionable young player, I want the game to avoid excessive violence, 
 As the University of Bristol, I want the game to avoid insensitive or discriminatory depictions, so it remains inclusive and respectful to all players.
 
 
-**3 Narrative & Aesthetics**
+**3. Narrative & Aesthetics**
 
 Ensuring the game has an engaging story and a visually cohesive design
 As a player, I want an engaging introductory sequence that explains the game's lore, so I can be immersed in the story.
 As a player, I want a consistent art style, so the game remains visually appealing and cohesive.
 
 
-**4 Technical & Development Considerations**
+**4. Technical & Development Considerations**
 
 Ensuring efficient, scalable, and maintainable development
 As a developer, I want the game to follow a modular design, so features can be added or removed easily.
