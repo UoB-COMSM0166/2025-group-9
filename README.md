@@ -76,12 +76,13 @@ During the same testing sessions, our team presented a game based on Fireboy and
 
 
 Our initial idea was to develop moving platforms for the game and allow players to start and stop them. Additionally, a magic door feature, enabling players to swap their positions in the game. To represent the idea, we created a prototype video:
-### [Watch the prototype video]:
+
 https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-3/Fireboy%20and%20Watergirl.mp4
 
-Building on the previous idea, we developed several concepts to make the gameplay more challenging by introducing cooperative puzzles and expanding the storyline. One key concept involved a scenario where one character must rescue the other before they can reach their doors together. To demonstrate this, we created another prototype video:
-### [Watch the prototype video]: 
-https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Week-4/F%26W_compressed.mp4
+Building on the previous idea, we developed several concepts to make the gameplay more challenging by introducing cooperative puzzles and expanding the storyline. One key concept involved a scenario where one character must rescue the other before they can reach their doors together. To demonstrate this, we created a digital prototype video:
+
+
+https://github.com/user-attachments/assets/e32009a0-83f9-4a89-95c0-034ad25d9906
 
 We had our final idea, after a brainstorming session during Week 5.
 
