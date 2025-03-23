@@ -1,72 +1,73 @@
 let gameManager;
 let gameController;
 let timeManager;
-let UIManager;
+let uiManager;
 
-// images
-let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage
+// Images
+let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage;
 
-// load the assets
-function preload(){
+// Load assets
+function preload() {
   homeImage = loadImage("assets/homepage.png");
   gameDifficultyImage = loadImage("assets/gamedifficulty.png");
   gameOverImage = loadImage("assets/gameover.png");
-  mazeFloorHardImage = loadImage("assets/mazefloowhard.png");
-  missionCompleteImage = loadImager("assets/missioncomplete.png");
+  mazeFloorHardImage = loadImage("assets/mazefloorhard.png");
+  missionCompleteImage = loadImage("assets/missioncomplete.png");
 }
 
 function setup() {
   createCanvas(1040, 800);
-  gameManager = new GameManager(
-    homeImage,
-    gameDifficultyImage,
-    gameOverImage,
-    mazeFloorHardImage,
-    missionCompleteImage,
-  );
+
+  timeManager = new TimeManager(300);
+  gameController = new GameController(3, timeManager); 
+  uiManager = new UIManager(gameController, timeManager);
+  gameManager = new GameManager(gameController, uiManager); 
 }
 
 function draw() {
   background(0);
 
-  gameManager.render();
+  // Show correct screen based on game state
+  switch (gameManager.getState()) {
+    case "home":
+      image(homeImage, 0, 0, width, height);
+      break;
 
-  if (gameManager.isPlaying()) {
-    if (uiManager) uiManager.display();
+    case "difficulty":
+      image(gameDifficultyImage, 0, 0, width, height);
+      break;
 
-    // Check for loss
-    if (timeManager && timeManager.isTimeUp()) {
-      gameManager.setState("lose");
-    }
+    case "playing":
+      image(mazeFloorHardImage, 0, 0, width, height);
+      uiManager.display(); 
+      gameManager.updateGameStatus();
+      break;
 
-    // Check for win
-    if (gameController && gameController.hasWon()) {
-      gameManager.setState("win");
-    }
+    case "won":
+      image(missionCompleteImage, 0, 0, width, height);
+      break;
+
+    case "gameOver":
+      image(gameOverImage, 0, 0, width, height);
+      break;
   }
+
+  uiManager.drawAllOverlays(); 
 }
 
 function mousePressed() {
-  switch (gameManager.state) {
+  switch (gameManager.getState()) {
     case "home":
-      gameManager.setState("difficulty");
+      gameManager.goToDifficultyScreen();
       break;
 
-      // only added hard mode for now, can add easy mode later using if-else statements
     case "difficulty":
-      gameManager.setState("playing");
-
-      timeManager = new TimeManager(300); // 5 min
-      timeManager.start();
-
-      gameController = new GameController(4); // 4 ingredients needed
-      uiManager = new UIManager(gameController, timeManager);
+      gameManager.startGame();
       break;
 
-    case "win":
-    case "lose":
-      gameManager.setState("home");
+    case "won":
+    case "gameOver":
+      gameManager.resetGame();
       break;
   }
-
 }

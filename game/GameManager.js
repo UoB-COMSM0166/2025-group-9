@@ -1,11 +1,14 @@
 // Manages the overall game state resets the game when needed
-// edit GameManager and remove checkWinCondition() and just Use GameController (isGameOver and isGameWon)
-
 class GameManager {
     constructor(gameController, uiManager, labX, labY) {
         this.state = "home"; // Possible states: "home", "playing", "gameOver", "won"
         this.gameController = gameController;
         this.uiManager = uiManager; 
+
+        this.uiManager.showHomeScreen = true;
+        this.uiManager.showDifficultyScreen = false;
+        this.uiManager.showGameOverBanner = false;
+        this.uiManager.showWinBanner = false;
     }
 
     // monitor game status while game is running and checks for win/lost
@@ -19,42 +22,62 @@ class GameManager {
         }
     }
 
-    // mousePressed() function within sketch.js detects the click on the Start button and will call the GameManager to run the startGame ()
-    // game only starts when the player clicks the start button
-    // when game starts the timer will start
+    goToDifficultyScreen() {
+        console.log("pick difficulty");
+        this.state = "difficulty";
+    
+        this.uiManager.showHomeScreen = false;
+        this.uiManager.showDifficultyScreen = true;
+      }
+
+    
     startGame() {
         console.log("Game Started!");
         this.state = "playing";
-        this.uiManager.showStartScreen = false; // Hide start screen - need to ensure the home screen is displayed first before the game starts.
-        this.gameController.timeManager.resetTime(); // Reset timer to 5 mins
+
+        this.uiManager.showHomeScreen = false;
+        this.uiManager.showStartScreen = false;
+        this.uiManager.showDifficultyScreen = false;
+        this.uiManager.showGameOverBanner = false;
+        this.uiManager.showWinBanner = false;
+
+        this.gameController.timeManager.resetTime();
     }
 
     triggerGameOver() {
         console.log("Game Over!");
         this.state = "gameOver";
-        this.uiManager.showGameOverBanner = true; // Tell UIManager to show the GameOverBanner
-        this.uiManager.showRestartButton = true; // Tell UIManager to show the restart button
+        this.uiManager.showGameOverBanner = true;
     }
 
     triggerWin() {
         console.log("All components collected & players reached the lab! YOU WIN!");
         this.state = "won";
-        this.uiManager.showWinBanner = true; // Tell UIManager to show the win screen
+        this.uiManager.showWinBanner = true;
     }
 
-    // mousePressed() function within sketch.js detects the click and will call the GameManager to class the resetGame function
-    // game only restarts when the player clicks the restart button
+    
     resetGame() {
         console.log("Resetting game...");
-        this.state = "playing";
+        this.state = "home";
 
-        // Hide all UI banners/buttons on reset
-        this.uiManager.showRestartButton = false;
+        this.uiManager.showHomeScreen = true;
+        this.uiManager.showDifficultyScreen = false;
         this.uiManager.showWinBanner = false;
         this.uiManager.showGameOverBanner = false; 
 
-        this.uiManager.showStartScreen = true; // Show start screen again
-
         this.gameController.resetGame(); // resetting all game components
     }
+
+    isPlaying() {
+        return this.state === "playing";
+      }
+    
+      getState() {
+        return this.state;
+      }
+    
+      setState(newState) {
+        this.state = newState;
+      }
 }
