@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1040, 800);
+  createCanvas(1400, 800);
 
   timeManager = new TimeManager();
   gameController = new GameController(3, timeManager); // 3 ingredients needed

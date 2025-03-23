@@ -5,7 +5,6 @@ class GameManager {
         this.gameController = gameController;
     }
 
-    // monitor game status while game is running and checks for win/lost
     updateGameStatus() {
         if (this.state === "playing") {
             if (this.gameController.isGameOver()) {
