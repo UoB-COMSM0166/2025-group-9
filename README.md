@@ -3,7 +3,8 @@
 
 ## Race For The Cure
 
-Link to your game [PLAY HERE]
+Link to your game [PLAY HERE (https://uob-comsm0166.github.io/2025-group-9/game/
+)]
 
 Your game lives in the [/docs](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/docs) folder, and is published using Github pages to the link above.
 
