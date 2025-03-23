@@ -52,7 +52,7 @@ function draw() {
   }
 }
 
-// fix mouse press for play again button and easy button (mouse X and mouse Y)
+// fix mouse press for play again button, easy button, mission complete home button (mouse X and mouse Y)
 function mousePressed() {
   console.log("Mouse clicked at:", mouseX, mouseY);
   const state = gameManager.getState();
