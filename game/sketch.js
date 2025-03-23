@@ -54,7 +54,8 @@ function draw() {
 
 // fix mouse press for play again button, easy button, mission complete home button (mouse X and mouse Y)
 function mousePressed() {
-  console.log("Mouse clicked at:", mouseX, mouseY);
+  console.log("Mouse clicked at:", mouseX, mouseY); // used to find the coordinates of the buttons
+
   const state = gameManager.getState();
 
   if (state === "home") {
