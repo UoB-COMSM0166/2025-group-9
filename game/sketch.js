@@ -2,10 +2,9 @@ let gameManager;
 let gameController;
 let timeManager;
 
-// Images
+
 let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage;
 
-// Load assets
 function preload() {
   homeImage = loadImage("assets/homepage.png");
   gameDifficultyImage = loadImage("assets/gamedifficulty.png");
@@ -17,52 +16,53 @@ function preload() {
 function setup() {
   createCanvas(1040, 800);
 
-  timeManager = new TimeManager(300);
-  gameController = new GameController(3, timeManager); 
-  gameManager = new GameManager(gameController, uiManager); 
+  timeManager = new TimeManager();
+  gameController = new GameController(3, timeManager); // 3 ingredients needed
+  gameManager = new GameManager(gameController);
 }
 
 function draw() {
   background(0);
 
-  // Show correct screen based on game state
-  switch (gameManager.getState()) {
-    case "home":
-      image(homeImage, 0, 0, width, height);
-      break;
+  const state = gameManager.getState();
 
-    case "difficulty":
-      image(gameDifficultyImage, 0, 0, width, height);
-      break;
+  if (state === "home") {
+    image(homeImage, 0, 0, width, height);
 
-    case "playing":
-      image(mazeFloorHardImage, 0, 0, width, height);
-      gameManager.updateGameStatus();
-      break;
+  } else if (state === "difficulty") {
+    image(gameDifficultyImage, 0, 0, width, height);
 
-    case "won":
-      image(missionCompleteImage, 0, 0, width, height);
-      break;
+  } else if (state === "playing") {
+    image(mazeFloorHardImage, 0, 0, width, height);
 
-    case "gameOver":
-      image(gameOverImage, 0, 0, width, height);
-      break;
+    timeManager.updateTime();
+
+    fill(255);
+    textSize(20);
+    text(`Time Left: ${timeManager.getFormattedTime()}`, 20, 30);
+    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 20, 60);
+
+    gameManager.updateGameStatus();
+
+  } else if (state === "won") {
+    image(missionCompleteImage, 0, 0, width, height);
+
+  } else if (state === "gameOver") {
+    image(gameOverImage, 0, 0, width, height);
   }
 }
 
 function mousePressed() {
-  switch (gameManager.getState()) {
-    case "home":
-      gameManager.goToDifficultyScreen();
-      break;
+  const state = gameManager.getState();
 
-    case "difficulty":
-      gameManager.startGame();
-      break;
+  if (state === "home") {
+    gameManager.goToDifficultyScreen();
 
-    case "won":
-    case "gameOver":
-      gameManager.resetGame();
-      break;
+  } else if (state === "difficulty") {
+    gameManager.startGame();
+
+  } else if (state === "won" || state === "gameOver") {
+    gameManager.resetGame();
   }
 }
+
