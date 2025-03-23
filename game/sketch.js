@@ -1,7 +1,6 @@
 let gameManager;
 let gameController;
 let timeManager;
-let uiManager;
 
 // Images
 let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage;
@@ -20,7 +19,6 @@ function setup() {
 
   timeManager = new TimeManager(300);
   gameController = new GameController(3, timeManager); 
-  uiManager = new UIManager(gameController, timeManager);
   gameManager = new GameManager(gameController, uiManager); 
 }
 
@@ -39,7 +37,6 @@ function draw() {
 
     case "playing":
       image(mazeFloorHardImage, 0, 0, width, height);
-      uiManager.display(); 
       gameManager.updateGameStatus();
       break;
 
@@ -51,8 +48,6 @@ function draw() {
       image(gameOverImage, 0, 0, width, height);
       break;
   }
-
-  uiManager.drawAllOverlays(); 
 }
 
 function mousePressed() {
