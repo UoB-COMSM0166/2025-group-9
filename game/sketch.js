@@ -52,14 +52,20 @@ function draw() {
   }
 }
 
+// fix mouse press for play again button and easy button (mouse X and mouse Y)
 function mousePressed() {
+  console.log("Mouse clicked at:", mouseX, mouseY);
   const state = gameManager.getState();
 
   if (state === "home") {
-    gameManager.goToDifficultyScreen();
+    if (mouseX > 635 && mouseX < 732 && mouseY > 276 && mouseY < 348) {
+      gameManager.goToDifficultyScreen();
+    }
 
   } else if (state === "difficulty") {
-    gameManager.startGame();
+    if (mouseX > 736 && mouseX < 833 &&mouseY > 294 && mouseY < 427) {
+      gameManager.startGame("hard");
+    }
 
   } else if (state === "won" || state === "gameOver") {
     gameManager.resetGame();
