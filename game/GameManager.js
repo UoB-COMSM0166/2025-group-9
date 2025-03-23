@@ -16,7 +16,7 @@ class GameManager {
     }
 
     goToDifficultyScreen() {
-        console.log("pick difficulty");
+        console.log("Pick difficulty");
         this.state = "difficulty";
       }
 
