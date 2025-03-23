@@ -22,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(204, 221, 233);
 
   const state = gameManager.getState();
 
@@ -37,7 +37,7 @@ function draw() {
 
     timeManager.updateTime();
 
-    fill(255);
+    fill(0);
     textSize(20);
     text(`Time Left: ${timeManager.getFormattedTime()}`, 20, 30);
     text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 20, 60);
