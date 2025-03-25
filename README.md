@@ -81,7 +81,7 @@ Our initial idea was to develop moving platforms for the game and allow players 
 
 Building on this foundational idea, we developed several concepts to make the gameplay more engaging and challenging. This included the introduction of cooperative puzzles and an expanded narrative structure. We created a digital prototype video, which later served as a key inspiration for our final game concept, "Race for the Cure".
 
-[Watch the Final Prototype Video] : https://youtube.com/shorts/O2Wved8YsHU?si=evTJdVszApQ8bumC
+[ Watch the Inspiration Prototype Video ] : https://youtube.com/shorts/O2Wved8YsHU?si=evTJdVszApQ8bumC
 
 The team developed a final interactive prototype to showcase the core concept of the game. The prototype reflects the finalized vision: a CooPuzzleGame that emphasizes cooperation, exploration, and problem-solving between two distinct characters. This video demonstration serves as a visual summary of the gameplay mechanics, level design, and user interface elements we have worked collaboratively to build.
 
