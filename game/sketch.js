@@ -21,7 +21,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1400, 800);
+  //createCanvas(1400, 800);
+  createCanvas(windowWidth, windowHeight);
 
   timeManager = new TimeManager();
   gameController = new GameController(3, timeManager); // 3 ingredients needed
@@ -87,8 +88,8 @@ function mousePressed() {
     // EXIT button
     if (
       currentSlide === 2 &&
-      mouseX > 1060 && mouseX < 1110 &&
-      mouseY > 130 && mouseY < 160
+      mouseX > 1100 && mouseX < 1150 &&
+      mouseY > 140 && mouseY < 170
     ) {
       showInfo = false;
       return;
