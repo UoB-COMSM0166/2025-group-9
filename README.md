@@ -84,7 +84,9 @@ Building on the previous idea, we developed several concepts to make the gamepla
 
 https://github.com/user-attachments/assets/e32009a0-83f9-4a89-95c0-034ad25d9906
 
-We had our final idea, after a brainstorming session during Week 5.
+The team developed a final interactive prototype to showcase the core concept of the game. The prototype reflects the finalized vision: a CooPuzzleGame that emphasizes cooperation, exploration, and problem-solving between two distinct characters. This video demonstration serves as a visual summary of the gameplay mechanics, level design, and user interface elements we have worked collaboratively to build.
+
+[Watch the Final Prototype Video] : https://youtube.com/shorts/r6emoXvEDbI
 
 ### Stakeholders
 
