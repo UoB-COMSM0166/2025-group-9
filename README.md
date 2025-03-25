@@ -77,7 +77,7 @@ During the same testing sessions, our team presented a game based on Fireboy and
 
 Our initial idea was to develop moving platforms for the game and allow players to start and stop them. Additionally, a magic door feature, enabling players to swap their positions in the game. To represent the idea, we created a paper prototype video:
 
-[ Watch the initial Pototype video ]: https://youtu.be/2q2cDIboFrI?si=yGbFsBmup3uEhzl5
+[ Watch the Initial Prototype Video ] https://youtu.be/2q2cDIboFrI?si=yGbFsBmup3uEhzl5
 
 Building on this foundational idea, we developed several concepts to make the gameplay more engaging and challenging. This included the introduction of cooperative puzzles and an expanded narrative structure. We created a digital prototype video, which later served as a key inspiration for our final game concept, "Race for the Cure".
 
