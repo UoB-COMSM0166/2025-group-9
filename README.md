@@ -80,7 +80,6 @@ Our initial idea was to develop moving platforms for the game and allow players 
 [ Watch the initial Pototype video ]: https://youtu.be/2q2cDIboFrI?si=yGbFsBmup3uEhzl5
 
 Building on this foundational idea, we developed several concepts to make the gameplay more engaging and challenging. This included the introduction of cooperative puzzles and an expanded narrative structure. We created a digital prototype video, which later served as a key inspiration for our final game concept, "Race for the Cure".
-https://youtube.com/shorts/O2Wved8YsHU 
 
 [Watch the Final Prototype Video] : https://youtube.com/shorts/O2Wved8YsHU?si=evTJdVszApQ8bumC
 
