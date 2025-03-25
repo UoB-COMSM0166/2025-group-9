@@ -77,15 +77,15 @@ During the same testing sessions, our team presented a game based on Fireboy and
 
 Our initial idea was to develop moving platforms for the game and allow players to start and stop them. Additionally, a magic door feature, enabling players to swap their positions in the game. To represent the idea, we created a paper prototype video:
 
-[ Watch the Initial Prototype Video ] https://youtu.be/2q2cDIboFrI?si=yGbFsBmup3uEhzl5
+**Initial Prototype Video:** https://youtu.be/2q2cDIboFrI?si=yGbFsBmup3uEhzl5
 
 Building on this foundational idea, we developed several concepts to make the gameplay more engaging and challenging. This included the introduction of cooperative puzzles and an expanded narrative structure. We created a digital prototype video, which later served as a key inspiration for our final game concept, "Race for the Cure".
 
-[ Watch the Inspiration Prototype Video ] : https://youtube.com/shorts/O2Wved8YsHU?si=evTJdVszApQ8bumC
+**Inspiration Prototype Video:** https://youtube.com/shorts/O2Wved8YsHU?si=evTJdVszApQ8bumC
 
 The team developed a final interactive prototype to showcase the core concept of the game. The prototype reflects the finalized vision: a CooPuzzleGame that emphasizes cooperation, exploration, and problem-solving between two distinct characters. This video demonstration serves as a visual summary of the gameplay mechanics, level design, and user interface elements we have worked collaboratively to build.
 
-[Watch the Final Prototype Video] : https://youtube.com/shorts/r6emoXvEDbI
+**Final Prototype Video:** https://youtube.com/shorts/r6emoXvEDbI
 
 ### Stakeholders
 
