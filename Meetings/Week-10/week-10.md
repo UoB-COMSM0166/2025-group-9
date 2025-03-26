@@ -2,7 +2,7 @@
 
 During this week, we came up with two final level layout ideas for the game. 
 
-<img src="image1.png" width="600"/>
+<img src="image1.png" width="700"/>
 
 ### First Design Idea:
 The initial concept placed the **key** and **main lab** on the **ground floor**.  
@@ -41,7 +41,7 @@ We also created **instructional panels** to help players understand:
 
 These instructions guide the player through each puzzle and step clearly.
 
-![Instruction Screens](image2.jpg)
+<img src="image2.png" width="700"/>
 
 ---
 
