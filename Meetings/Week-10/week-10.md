@@ -41,7 +41,7 @@ We also created **instructional panels** to help players understand:
 
 These instructions guide the player through each puzzle and step clearly.
 
-<img src="image2.png" width="700"/>
+<img src="image2.jpg" width="700"/>
 
 ---
 
@@ -55,7 +55,7 @@ We completed the visual design for key game pages, including:
 - **Game Over screen**
 - **Victory screen (Mission Complete)**
 
-![Final Pages Overview](image3.jpg)
+<img src="image3.jpg" width="700"/>
 
 These elements represent the final version of our visual and interaction design!
 
