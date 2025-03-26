@@ -2,7 +2,7 @@
 
 During this week, we came up with two final level layout ideas for the game. 
 
-![First Design Idea](./Week-10/image1.png)
+![First Design Idea](image1.png)
 
 ### 🔑 First Design Idea:
 The initial concept placed the **key** and **main lab** on the **ground floor**.  
