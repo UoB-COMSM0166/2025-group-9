@@ -42,7 +42,7 @@ We also created **instructional panels** to help players understand:
 
 These instructions guide the player through each puzzle and step clearly.
 
-![Instruction Screens](./Week-10/image2.jpg)
+![Instruction Screens](image2.jpg)
 
 ---
 
