@@ -2,9 +2,9 @@
 
 During this week, we came up with two final level layout ideas for the game. 
 
-![First Design Idea](image1.png)
+<img src="image1.png" width="600"/>
 
-### 🔑 First Design Idea:
+### First Design Idea:
 The initial concept placed the **key** and **main lab** on the **ground floor**.  
 The intended flow was:
 1. Collect the key.
@@ -34,11 +34,10 @@ This progression felt smoother and more rewarding for players.
 
 ---
 
-### 🧠 Clear Instructions & Info Screens
+### Clear Instructions & Info Screens
 We also created **instructional panels** to help players understand:
 - The game objective before starting
 - What to do during gameplay
-- How to combine ingredients in the right order for the cure
 
 These instructions guide the player through each puzzle and step clearly.
 
@@ -46,7 +45,7 @@ These instructions guide the player through each puzzle and step clearly.
 
 ---
 
-### 🎮 Final Game Screens
+### Final Game Screens
 
 We completed the visual design for key game pages, including:
 
@@ -56,7 +55,7 @@ We completed the visual design for key game pages, including:
 - **Game Over screen**
 - **Victory screen (Mission Complete)**
 
-![Final Pages Overview](./Week-10/final-image3.jpg)
+![Final Pages Overview](image3.jpg)
 
 These elements represent the final version of our visual and interaction design!
 
