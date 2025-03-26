@@ -18,8 +18,6 @@ While this approach made sense initially, we later found it:
 - Less engaging for players  
 - Repetitive in terms of movement
 
----
-
 ### ✅ Final Design Choice:
 We decided to **reverse** the puzzle flow for better logic and engagement.  
 
@@ -51,7 +49,7 @@ We completed the visual design for key game pages, including:
 
 - **Homepage (Title Screen)**
 - **Menu (Level Selection: Easy/Hard)**
-- **In-game UI & levels**
+- **In-game UI**
 - **Game Over screen**
 - **Victory screen (Mission Complete)**
 
