@@ -2,7 +2,7 @@
 
 During our lab this week, we conducted a quantitative evaluation of the two levels of our game; using the NASA Task Load Index (TLX) and System Usability Survey (SUS).
 
-###TLX Test Results
+### TLX Test Results
 
 |  Tester No. |  Level One  |  Level Two  |
 | :---: | :---: | :---: |
@@ -23,7 +23,7 @@ Wilcoxon Signed-Rank Test
 W test statistic = 12
 Number of non-tied pairs (n) = 9
 
-###SUS Test Results
+### SUS Test Results
 
 |  Tester No. |  Level One  |  Level Two  |
 | :---: | :---: | :---: |
