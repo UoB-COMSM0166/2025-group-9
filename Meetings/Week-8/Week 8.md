@@ -21,6 +21,7 @@ During our lab this week, we conducted a quantitative evaluation of the two leve
 Wilcoxon Signed-Rank Test 
 
 W test statistic = 12
+
 Number of non-tied pairs (n) = 9
 
 ### SUS Test Results
@@ -39,6 +40,7 @@ Number of non-tied pairs (n) = 9
 | 10 | 70 | 70 |
 
 W test statistic = 0 
+
 Number of non-tied pairs (n) = 2
 
 After the lab session, our team discussed the results of the questionnaires. Based on our responses we redesigned the layout of game and made the puzzles easier to spot. 
