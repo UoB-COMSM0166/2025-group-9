@@ -11,6 +11,10 @@
 |                  | How does OS/runtime diversity affect it?                | Cross-platform testing is essential to ensure consistent gameplay between players using different devices. |
 | **Economic**     | How does it affect costs and customer relationships?     | Uses free/open-source tools, accessible on low-spec machines, increasing reach and reducing cost. |
 | **Environmental**| What is the impact on resource and energy use?           | Fully digital = no physical waste. But requires devices and energy to run—especially for online sessions. |
+| **Social**        | How does it affect group belonging?                       | Strengthens a sense of community and shared purpose through cooperative gameplay.             |
+|                   | How does it affect perception of others?                 | Encourages observation and empathy, helping players understand and respond to teammates' needs. |
+|                   | How does it affect treatment of others?                  | Promotes knowledge-sharing and mutual support — experienced players guide newer ones.         |
+|                   | How does it affect social behaviors?                     | Reinforces communication, teamwork, and collaborative problem-solving in real-time scenarios. |
 ---
 
 ### 2. Chains of Effects – Sustainability Dimensions
