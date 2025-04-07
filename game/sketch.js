@@ -43,7 +43,7 @@ function setup() {
       velocityX: 0,
       velocityY: 0,
       speed: 2,
-      jumpPower: -10,
+      jumpPower: -12,
       onPlatform: false
     };
     
@@ -84,7 +84,7 @@ function setup() {
     platforms.push({ x: 1048, y: 175, width: 39, height: 21 });
     platforms.push({ x: 999, y: 143, width: 39, height: 21 });
     platforms.push({ x: 340, y: 167, width: 30, height: 21 });
-    platforms.push({ x: 432, y: 177, width: 30, height: 21 });
+    platforms.push({ x: 432, y: 122, width: 30, height: 21 });
     platforms.push({ x: 561, y: 180, width: 30, height: 21 });
     platforms.push({ x: 659, y: 162, width: 98, height: 19 });
 
