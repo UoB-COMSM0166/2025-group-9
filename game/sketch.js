@@ -1,6 +1,7 @@
 let gameManager;
 let gameController;
 let timeManager;
+let lift;
 
 
 let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage;
@@ -49,51 +50,52 @@ function setup() {
     // platform definitions
 
     //ground floor 
-    platforms.push({ x: 100 + 118, y: 400 + 350, width: 1054, height: 60 });
-    platforms.push({ x: 100 + 118, y: 400 + 350 - 60 + 30, width: 200 + 142, height: 30 });
-    platforms.push({ x: 100 + 118, y: 400 + 350 - 60 + 25 - 25, width: 200 + 102, height: 30 });
+    platforms.push({ x: 218, y: 750, width: 1054, height: 60 });
+    platforms.push({ x: 218, y: 720, width: 342, height: 30 });
+    platforms.push({ x: 218, y: 690, width: 302, height: 30 });
 
     //table
-    platforms.push({ x: 100 + 118 + 935, y: 400 + 350 - 60 + 22, width: 42, height: 5 });
+    platforms.push({ x: 1153, y: 712, width: 42, height: 5 });
 
 
     //first floor
-    platforms.push({ x: 100 + 118, y: 400 + 350 - 252 + 2, width: 650, height: 60 });
-    platforms.push({ x: 100 + 118 + 651 + 90, y: 400 + 350 - 252 + 3, width: 1054 - 650 - 90, height: 60 });
+    platforms.push({ x: 218, y: 500, width: 650, height: 60 });
+    platforms.push({ x: 959, y: 501, width: 314, height: 60 });
 
     //additional first floor platforms
-    platforms.push({ x: 100 + 118 + 334, y: 400 + 350 - 252 + 2 - 30, width: 193, height: 30 });
-    platforms.push({ x: 100 + 118 + 334 + 20, y: 400 + 350 - 252 + 2 - 30 - 20, width: 153, height: 20 });
-    platforms.push({ x: 100 + 118 + 334 + 20 + 211, y: 400 + 350 - 252 + 2 - 30 - 20 - 39, width: 55, height: 17 });
-    platforms.push({ x: 100 + 118 + 334 + 20 + 211 + 156 + 54, y: 400 + 350 - 252 + 2 - 30 - 20 - 47, width: 30, height: 21 });
-    platforms.push({ x: 100 + 118 + 334 + 20 + 211 + 156 + 132, y: 400 + 350 - 252 + 2 - 30 - 20 - 37, width: 30, height: 21 });
-    platforms.push({ x: 100 + 118 + 50, y: 400 + 350 - 252 + 2 - 60, width: 40, height: 60 });
-    platforms.push({ x: 100 + 118 + 1054 - 75, y: 400 + 350 - 252 + 2 - 55, width: 40, height: 57 });
+    platforms.push({ x: 552, y: 470, width: 193, height: 30 });
+    platforms.push({ x: 572, y: 450, width: 153, height: 20 });
+    platforms.push({ x: 783, y: 411, width: 55, height: 17 });
+    platforms.push({ x: 993, y: 403, width: 30, height: 21 });
+    platforms.push({ x: 1071, y: 413, width: 30, height: 21 });
+    platforms.push({ x: 268, y: 440, width: 40, height: 60 });
+    platforms.push({ x: 1197, y: 445, width: 40, height: 57 });
 
 
     //second floor
-    platforms.push({ x: 100 + 120, y: 400 + 350 - 254 - 244, width: 652, height: 60 });
-    platforms.push({ x: 100 + 118 + 650 + 92, y: 400 + 350 - 254 - 244, width: 1054 - 650 - 92, height: 60 });
+    platforms.push({ x: 220, y: 252, width: 652, height: 60 });
+    platforms.push({ x: 960, y: 252, width: 312, height: 60 });
 
     //additional second floor platforms
-    platforms.push({ x: 100 + 120 + 182, y: 400 + 350 - 254 - 244 - 30, width: 128, height: 30 });
-    platforms.push({ x: 100 + 120, y: 400 + 350 - 254 - 244 - 60, width: 90, height: 60 });
-    platforms.push({ x: 100 + 120 + 1054 - 90, y: 400 + 350 - 254 - 244 - 60, width: 88, height: 60 });
-    platforms.push({ x: 100 + 120 + 1054 - 90 - 87, y: 400 + 350 - 254 - 244 - 60 + 10, width: 39, height: 21 });
-    platforms.push({ x: 100 + 120 + 1054 - 90 - 87 - 49, y: 400 + 350 - 254 - 244 - 60 + 11 - 28, width: 39, height: 21 });
-    platforms.push({ x: 100 + 120 + 1054 - 90 - 87 - 98, y: 400 + 350 - 254 - 244 - 60 + 11 - 60, width: 39, height: 21 });
-    platforms.push({ x: 100 + 120 + 120, y: 400 + 350 - 254 - 244 - 60 - 25, width: 30, height: 21 });
-    platforms.push({ x: 100 + 120 + 120 + 92, y: 400 + 350 - 254 - 244 - 60 - 23 - 47, width: 30, height: 21 });
-    platforms.push({ x: 100 + 120 + 120 + 221, y: 400 + 350 - 254 - 244 - 60 - 23 + 11, width: 30, height: 21 });
-    platforms.push({ x: 100 + 120 + 120 + 221 + 98, y: 400 + 350 - 254 - 244 - 60 - 23 + 11 - 18, width: 98, height: 19 });
+    platforms.push({ x: 402, y: 222, width: 128, height: 30 });
+    platforms.push({ x: 220, y: 192, width: 90, height: 60 });
+    platforms.push({ x: 1184, y: 192, width: 88, height: 60 });
+    platforms.push({ x: 1097, y: 202, width: 39, height: 21 });
+    platforms.push({ x: 1048, y: 175, width: 39, height: 21 });
+    platforms.push({ x: 999, y: 143, width: 39, height: 21 });
+    platforms.push({ x: 340, y: 167, width: 30, height: 21 });
+    platforms.push({ x: 432, y: 177, width: 30, height: 21 });
+    platforms.push({ x: 561, y: 180, width: 30, height: 21 });
+    platforms.push({ x: 659, y: 162, width: 98, height: 19 });
 
 
     //building boundaries
-    platforms.push({ x: 100 + 118, y: 0, width: 1054, height: 60 });
-    platforms.push({ x: 100 + 113, y: 0, width: 5, height: 800 });
-    platforms.push({ x: 100 + 118 + 1054, y: 0, width: 5, height: 800 });
+    platforms.push({ x: 218, y: 0, width: 1054, height: 60 });
+    platforms.push({ x: 213, y: 0, width: 5, height: 800 });
+    platforms.push({ x: 1272, y: 0, width: 5, height: 800 });
 
   
+    lift = new Lift(869, 700, 89, 5, 2, 227, 750);
 }
 
 function draw() {
@@ -125,7 +127,17 @@ function draw() {
         gameManager.updateGameStatus();
 
 
+      // update and display the lift
+      lift.update();
+      lift.create();
       
+      if (lift.isPlayerOnLift(player)) {
+        player.y = lift.y - player.height
+        player.velocityY = 0;
+        player.y += lift.displacement();
+        isOnPlatform = true;
+      }
+
       // directional movement
       if (keyIsDown(LEFT_ARROW)) {
         player.velocityX = -player.speed;
@@ -163,6 +175,9 @@ function draw() {
       }
     */
 
+
+
+
       }
   } else if (state === "won") {
     image(missionCompleteImage, 0, 0, width, height);
@@ -172,15 +187,6 @@ function draw() {
   }
 }
 
-/*
-function checkCollision(player, platform) {
-  let horizontalOverlap = player.x < platform.x + platform.width &&
-                          player.x + player.width > platform.x;
-  let verticalCollision = player.y + player.height > platform.y &&
-                          player.y + player.height < platform.y + platform.height;
-  return horizontalOverlap && verticalCollision;
-}
-*/
 
 function collision(player, platform) {
   // check if the player and platform intersect.
@@ -222,7 +228,7 @@ function collision(player, platform) {
         player.velocityY = -player.velocityY * 0.08;
       }
     }
-  }
+  } 
 }
 
 
