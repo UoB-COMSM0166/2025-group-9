@@ -18,7 +18,7 @@ class GameController {
       return this.timeManager.hasTimeRunOut() && !this.isGameWin();
     }
   
-    // call  when player collects an ingredient
+    // call when player collects an ingredient
     collectIngredient() {
       if (this.collectedIngredients < this.requiredIngredients) {
         this.collectedIngredients++;

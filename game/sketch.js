@@ -2,10 +2,12 @@ let gameManager;
 let gameController;
 let timeManager;
 let lift;
-
+let botanyPuzzle;
+let chemistryPuzzle;
 
 let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage;
-
+let chemInfoPopupImg, vialQuestionImg, vialCongratsImg, vialTryAgainImg;
+let plantInfoImg, plantQuestionImg, plantCongratsImg, plantTryAgainImg;
 let infoSlides = [];
 let currentSlides = 0;
 let showInfo = false;
@@ -23,6 +25,14 @@ function preload() {
   infoSlides[0] = loadImage("assets/infopage1.png");
   infoSlides[1] = loadImage("assets/infopage2.png");
   infoSlides[2] = loadImage("assets/infopage3.png");
+  chemInfoPopupImg = loadImage("assets/chem-info-popup.png");
+  vialQuestionImg = loadImage("assets/chem-question.png");
+  vialCongratsImg = loadImage("assets/vial-congrats.png");
+  vialTryAgainImg = loadImage("assets/try-again.png");
+  botanyNoteImg = loadImage("assets/plant-info-popup.png");
+  botanyQuestionImg = loadImage("assets/plant-question-popup.png");
+  botanyCongratsImg = loadImage("assets/plant-congrats.png");
+  botanyTryAgainImg = loadImage("assets/plant-try-again.png");
 }
 
 
@@ -33,8 +43,10 @@ function setup() {
   timeManager = new TimeManager();
   gameController = new GameController(3, timeManager); // 3 ingredients needed
   gameManager = new GameManager(gameController);
+  chemistryPuzzle = new ChemistryPuzzle();
+  botanyPuzzle = new BotanyPuzzle();
 
-
+  // temp player
     player = {
       x: 750,
       y: 550,
@@ -100,7 +112,6 @@ function setup() {
 
 function draw() {
   background(204, 221, 233);
-
   const state = gameManager.getState();
 
   if (state === "home") {
@@ -111,74 +122,18 @@ function draw() {
 
   } else if (state === "playing") {
     image(mazeFloorHardImage, 0, 0, width, height);
+    updateGame(); // all logic on game update (whilst the game is playing is here
+    chemistryPuzzle.update();
+    botanyPuzzle.update();
 
+    // show info pop up
     if (showInfo) {
       const popupW = 900;
       const popupH = 600;
       const popupX = (width - popupW) / 2;
       const popupY = (height - popupH) / 2;
       image(infoSlides[currentSlide], popupX, popupY, popupW, popupH);
-    } else {
-        timeManager.updateTime();
-        fill(0);
-        textSize(20);
-        text(`Time Left: ${timeManager.getFormattedTime()}`, 20, 30);
-        text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 20, 60);
-        gameManager.updateGameStatus();
-
-
-      // update and display the lift
-      lift.update();
-      lift.create();
-      
-      if (lift.isPlayerOnLift(player)) {
-        player.y = lift.y - player.height
-        player.velocityY = 0;
-        player.y += lift.displacement();
-        isOnPlatform = true;
-      }
-
-      // directional movement
-      if (keyIsDown(LEFT_ARROW)) {
-        player.velocityX = -player.speed;
-      } else if (keyIsDown(RIGHT_ARROW)) {
-        player.velocityX = player.speed;
-      } else {
-        player.velocityX = 0;
-      }
-      
-      // apply gravity
-      let gravity = 0.5;
-      player.velocityY += gravity;
-      
-      // update player's position
-      player.x += player.velocityX;
-      player.y += player.velocityY;
-      
-      // reset onPlatform bool before checking collisions
-      player.onPlatform = false;
-      
-      // resolve collisions with all platforms.
-      for (let i = 0; i < platforms.length; i++) {
-        collision(player, platforms[i]);
-      }
-
-      // Draw the temporary player.
-      fill(255, 0, 0);
-      rect(player.x, player.y, player.width, player.height);
-      
-    /*
-      // Draw the platforms.
-      fill(0, 255, 0);
-      for (let i = 0; i < platforms.length; i++) {
-        rect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
-      }
-    */
-
-
-
-
-      }
+    }
   } else if (state === "won") {
     image(missionCompleteImage, 0, 0, width, height);
 
@@ -187,6 +142,90 @@ function draw() {
   }
 }
 
+
+function updateGame() {
+  // chemistry puzzle
+  if (!chemistryPuzzle.vialCollected && !chemistryPuzzle.showQuestion && !chemistryPuzzle.showSuccess) {
+    if (dist(player.x, player.y, 1244, 420) < 50) {
+      chemistryPuzzle.interactWithBook();
+    }
+    if (dist(player.x, player.y, 293, 424) < 50) {
+      chemistryPuzzle.interactWithVial();
+      chemistryPuzzle.showTryAgain = false; 
+    }
+  }
+
+  // botany puzzle
+  if (!botanyPuzzle.plantCollected) {
+    const nearNote =  dist(player.x, player.y, 267, 137) < 60;
+    const nearPlant = dist(player.x, player.y, 1141, 174) < 60;
+    if (nearNote) {
+      botanyPuzzle.interactWithNote();
+    }
+    if (nearPlant) {
+      botanyPuzzle.interactWithFlower();
+    }
+  }
+
+    // countdown
+    timeManager.updateTime();
+    fill(0);
+    textSize(20);
+    text(`Time Left: ${timeManager.getFormattedTime()}`, 20, 30);
+    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 20, 60);
+  
+    gameManager.updateGameStatus();
+
+
+    // update and display the lift
+    lift.update();
+    lift.create();
+      
+    if (lift.isPlayerOnLift(player)) {
+      player.y = lift.y - player.height
+      player.velocityY = 0;
+      player.y += lift.displacement();
+      isOnPlatform = true;
+    }
+
+    // directional movement
+    if (keyIsDown(LEFT_ARROW)) {
+      player.velocityX = -player.speed;
+    } else if (keyIsDown(RIGHT_ARROW)) {
+      player.velocityX = player.speed;
+    } else {
+      player.velocityX = 0;
+    }
+      
+    // apply gravity
+    let gravity = 0.5;
+    player.velocityY += gravity;
+      
+    // update player's position
+    player.x += player.velocityX;
+    player.y += player.velocityY;
+      
+    // reset onPlatform bool before checking collisions
+    player.onPlatform = false;
+      
+    // resolve collisions with all platforms.
+    for (let i = 0; i < platforms.length; i++) {
+      collision(player, platforms[i]);
+    }
+
+    // Draw the temporary player.
+    fill(255, 0, 0);
+    rect(player.x, player.y, player.width, player.height);
+      
+    /*
+      // Draw the platforms.
+      fill(0, 255, 0);
+      for (let i = 0; i < platforms.length; i++) {
+        rect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
+      }
+    */
+    
+}
 
 function collision(player, platform) {
   // check if the player and platform intersect.
@@ -240,6 +279,7 @@ function keyPressed() {
     }
   }
 }
+
 // fix mouse press for play again button, easy button, mission complete home button (mouse X and mouse Y)
 function mousePressed() {
   console.log("Mouse clicked at:", mouseX, mouseY); // used to find the coordinates of the buttons
@@ -271,7 +311,6 @@ function mousePressed() {
     }
   }
 
-
   if (state === "home") {
     if (mouseX > 635 && mouseX < 732 && mouseY > 276 && mouseY < 348) {
       gameManager.goToDifficultyScreen();
@@ -293,5 +332,10 @@ function mousePressed() {
       currentSlide = 0;
     }
   }
+
+  // puzzle mouse clicks
+  chemistryPuzzle.mousePressed(mouseX, mouseY);
+  botanyPuzzle.mousePressed(mouseX, mouseY);
+
 }
 
