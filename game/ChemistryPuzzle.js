@@ -69,10 +69,10 @@ class ChemistryPuzzle {
   
     // draw the question popup that asks which vial color is missing
     drawQuestionPopup() {
-      const imgWidth = 800;
-      const imgHeight = 600;
-      const x = 293;
-      const y = 260;
+      const imgWidth = 600;
+      const imgHeight = 350;
+      const x = 200;
+      const y = 360;
       imageMode(CORNER);
       image(vialQuestionImg, x, y, imgWidth, imgHeight);
     }
@@ -102,12 +102,12 @@ class ChemistryPuzzle {
       if (!this.showQuestion || this.vialCollected) return;
   
       const buttons = [
-        { color: "green", x: 356, y: 586, w: 60, h: 40 },
-        { color: "red", x: 444, y: 585, w: 60, h: 40 },
-        { color: "yellow", x: 517, y: 586, w: 60, h: 40 },
-        { color: "purple", x: 595, y: 589, w: 60, h: 40 },
+        { color: "green",  x: 346, y: 572, w: 50, h: 20 },
+        { color: "red",    x: 434, y: 568, w: 50, h: 20 },
+        { color: "yellow", x: 520, y: 566, w: 50, h: 20 },
+        { color: "purple", x: 600, y: 571, w: 50, h: 20 },
       ];
-  
+      
       for (let btn of buttons) {
         if (
           mx > btn.x && mx < btn.x + btn.w &&
