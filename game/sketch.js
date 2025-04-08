@@ -8,6 +8,7 @@ let chemistryPuzzle;
 let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage;
 let chemInfoPopupImg, vialQuestionImg, vialCongratsImg, vialTryAgainImg;
 let plantInfoImg, plantQuestionImg, plantCongratsImg, plantTryAgainImg;
+let keyReminderPopupImg;
 let infoSlides = [];
 let currentSlides = 0;
 let showInfo = false;
@@ -33,6 +34,7 @@ function preload() {
   botanyQuestionImg = loadImage("assets/plant-question-popup.png");
   botanyCongratsImg = loadImage("assets/plant-congrats.png");
   botanyTryAgainImg = loadImage("assets/plant-try-again.png");
+  keyReminderPopupImg = loadImage("assets/key-reminder.png");
 }
 
 
@@ -41,7 +43,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   timeManager = new TimeManager();
-  gameController = new GameController(3, timeManager); // 3 ingredients needed
+  gameController = new GameController(2, timeManager); // 2 ingredients needed
   gameManager = new GameManager(gameController);
   chemistryPuzzle = new ChemistryPuzzle();
   botanyPuzzle = new BotanyPuzzle();
@@ -125,6 +127,7 @@ function draw() {
     updateGame(); // all logic on game update (whilst the game is playing is here
     chemistryPuzzle.update();
     botanyPuzzle.update();
+    gameController.update();
 
     // show info pop up
     if (showInfo) {
