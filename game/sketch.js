@@ -53,49 +53,49 @@ function loadHardPlatforms() {
   platforms = [];
 
   //ground floor 
-  platforms.push({ x: 218, y: 750, width: 1054, height: 60 });
-  platforms.push({ x: 218, y: 720, width: 342, height: 30 });
-  platforms.push({ x: 218, y: 690, width: 302, height: 30 });
+  platforms.push({ x: 218 - 147, y: 750 - 32, width: 1298, height: 50 });
+  platforms.push({ x: 218 - 147, y: 750 - 32 - 28, width: 421, height: 28 });
+  platforms.push({ x: 218 - 147, y: 750 - 32 - 28 - 28, width: 373, height: 28 });
 
   //table
-  platforms.push({ x: 1153, y: 712, width: 42, height: 5 });
+  platforms.push({ x: 1153 + 30 + 41, y: 712 - 27, width: 50, height: 5 });
 
 
   //first floor
-  platforms.push({ x: 218, y: 500, width: 650, height: 60 });
-  platforms.push({ x: 959, y: 501, width: 314, height: 60 });
+  platforms.push({ x: 218 - 147, y: 500 - 7, width: 801, height: 54 });
+  platforms.push({ x: 959 + 24, y: 501 - 7, width: 386, height: 54 });
 
   //additional first floor platforms
-  platforms.push({ x: 552, y: 470, width: 193, height: 30 });
-  platforms.push({ x: 572, y: 450, width: 153, height: 20 });
-  platforms.push({ x: 783, y: 411, width: 55, height: 17 });
-  platforms.push({ x: 993, y: 403, width: 30, height: 21 });
-  platforms.push({ x: 1071, y: 413, width: 30, height: 21 });
-  platforms.push({ x: 268, y: 440, width: 40, height: 60 });
-  platforms.push({ x: 1197, y: 445, width: 40, height: 57 });
+  platforms.push({ x: 552 - 72, y: 500 - 7 - 27, width: 240, height: 27 });
+  platforms.push({ x: 572 - 70, y: 500 - 7 - 27 - 19, width: 193, height: 19 });
+  //platforms.push({ x: 783, y: 411, width: 55, height: 17 });
+  platforms.push({ x: 993 + 14, y: 403 + 37, width: 48, height: 19 });
+  platforms.push({ x: 1070 + 12, y: 413 + 1, width: 48, height: 19 });
+  platforms.push({ x: 218 - 147 + 58, y: 500 - 7 - 52, width: 54, height: 52 });
+  platforms.push({ x: 1197 + 81, y: 501 - 7 - 49, width: 49, height: 49 });
 
 
   //second floor
-  platforms.push({ x: 220, y: 252, width: 652, height: 60 });
-  platforms.push({ x: 960, y: 252, width: 312, height: 60 });
+  platforms.push({ x: 218 - 147, y: 252 + 18, width: 806, height: 54 });
+  platforms.push({ x: 960 + 26, y: 252 + 19, width: 384, height: 54 });
 
   //additional second floor platforms
-  platforms.push({ x: 402, y: 222, width: 128, height: 30 });
-  platforms.push({ x: 220, y: 192, width: 90, height: 60 });
-  platforms.push({ x: 1184, y: 192, width: 88, height: 60 });
-  platforms.push({ x: 1097, y: 202, width: 39, height: 21 });
-  platforms.push({ x: 1048, y: 175, width: 39, height: 21 });
-  platforms.push({ x: 999, y: 143, width: 39, height: 21 });
-  platforms.push({ x: 340, y: 167, width: 30, height: 21 });
-  platforms.push({ x: 432, y: 122, width: 30, height: 21 });
-  platforms.push({ x: 561, y: 180, width: 30, height: 21 });
-  platforms.push({ x: 659, y: 162, width: 98, height: 19 });
+  platforms.push({ x: 402 - 107, y: 222 + 22, width: 158, height: 27 });
+  platforms.push({ x: 218 - 147, y: 192 - 26 + 52, width: 110, height: 52 });
+  platforms.push({ x: 1298 + 218 - 107 - 147, y: 192 - 26 + 52, width: 107, height: 53 });
+  platforms.push({ x: 1097 + 60, y: 202 + 24, width: 39 + 7, height: 18 });
+  platforms.push({ x: 1048 + 49, y: 175 + 26, width: 39 + 8, height: 18 });
+  platforms.push({ x: 999 + 38, y: 143 + 87, width: 39 + 8, height: 18 });
+  platforms.push({ x: 340 - 117, y: 167 + 58, width: 30 + 9, height: 19 });
+  platforms.push({ x: 432 + 54, y: 122 + 103, width: 30 + 9, height: 19 });
+  platforms.push({ x: 218 - 147 + 262, y: 153, width: 30 + 7, height: 19 });
+  platforms.push({ x: 659 - 47, y: 162 + 27, width: 122, height: 18 });
 
 
   //building boundaries
-  platforms.push({ x: 218, y: 0, width: 1054, height: 60 });
-  platforms.push({ x: 213, y: 0, width: 5, height: 800 });
-  platforms.push({ x: 1272, y: 0, width: 5, height: 800 });
+  platforms.push({ x: 218 - 147, y: 44, width: 1298, height: 54 });
+  platforms.push({ x: 213 - 147, y: 0, width: 5, height: 820 });
+  platforms.push({ x: 1272 + 147 - 51, y: 0, width: 5, height: 820 });
 
 
 
