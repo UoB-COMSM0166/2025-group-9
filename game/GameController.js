@@ -1,13 +1,15 @@
 class GameController {
     constructor(requiredIngredients, timeManager) {
-      this.requiredIngredients = requiredIngredients; 
+      this.requiredIngredients = requiredIngredients;
       this.collectedIngredients = 0;
       this.labReached = false;
+      this.hasKey = false;
       this.timeManager = timeManager;
+      this.difficulty = "hard"; // default
+    }
 
-      // Popup reminder to collect the key
-      this.showKeyReminderPopup = false;
-      this.keyReminderTimer = 0;
+    setDifficulty(difficulty) {
+      this.difficulty = difficulty;
     }
 
     // Called every frame to show key popup if active
@@ -21,14 +23,16 @@ class GameController {
     }
   
     isGameWin() {
-      return (
-        this.collectedIngredients >= this.requiredIngredients &&
-        this.labReached &&
-        this.hasKey &&
-        !this.timeManager.hasTimeRunOut()
-      );
+      if (this.difficulty === "easy") {
+          return this.collectedIngredients >= this.requiredIngredients && this.labReached;
+      } else {
+          return this.collectedIngredients >= this.requiredIngredients &&
+                 this.labReached &&
+                 this.hasKey &&
+                 !this.timeManager.hasTimeRunOut();
+      }
     }
-  
+
     isGameOver() {
       return this.timeManager.hasTimeRunOut() && !this.isGameWin();
     }

@@ -39,7 +39,6 @@ function preload() {
   keyReminderPopupImg = loadImage("assets/key-reminder.png");
 }
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -61,60 +60,67 @@ function setup() {
       jumpPower: -12,
       onPlatform: false
     };
-    
-    // platform definitions
-
-    //ground floor 
-    platforms.push({ x: 218, y: 750, width: 1054, height: 60 });
-    platforms.push({ x: 218, y: 720, width: 342, height: 30 });
-    platforms.push({ x: 218, y: 690, width: 302, height: 30 });
-
-    //table
-    platforms.push({ x: 1153, y: 712, width: 42, height: 5 });
-
-
-    //first floor
-    platforms.push({ x: 218, y: 500, width: 650, height: 60 });
-    platforms.push({ x: 959, y: 501, width: 314, height: 60 });
-
-    //additional first floor platforms
-    platforms.push({ x: 552, y: 470, width: 193, height: 30 });
-    platforms.push({ x: 572, y: 450, width: 153, height: 20 });
-    platforms.push({ x: 783, y: 411, width: 55, height: 17 });
-    platforms.push({ x: 993, y: 403, width: 30, height: 21 });
-    platforms.push({ x: 1071, y: 413, width: 30, height: 21 });
-    platforms.push({ x: 268, y: 440, width: 40, height: 60 });
-    platforms.push({ x: 1197, y: 445, width: 40, height: 57 });
-
-
-    //second floor
-    platforms.push({ x: 220, y: 252, width: 652, height: 60 });
-    platforms.push({ x: 960, y: 252, width: 312, height: 60 });
-
-    //additional second floor platforms
-    platforms.push({ x: 402, y: 222, width: 128, height: 30 });
-    platforms.push({ x: 220, y: 192, width: 90, height: 60 });
-    platforms.push({ x: 1184, y: 192, width: 88, height: 60 });
-    platforms.push({ x: 1097, y: 202, width: 39, height: 21 });
-    platforms.push({ x: 1048, y: 175, width: 39, height: 21 });
-    platforms.push({ x: 999, y: 143, width: 39, height: 21 });
-    platforms.push({ x: 340, y: 167, width: 30, height: 21 });
-    platforms.push({ x: 432, y: 122, width: 30, height: 21 });
-    platforms.push({ x: 561, y: 180, width: 30, height: 21 });
-    platforms.push({ x: 659, y: 162, width: 98, height: 19 });
-
-
-    //building boundaries
-    platforms.push({ x: 218, y: 0, width: 1054, height: 60 });
-    platforms.push({ x: 213, y: 0, width: 5, height: 800 });
-    platforms.push({ x: 1272, y: 0, width: 5, height: 800 });
-
-  
-    lift = new Lift(869, 700, 89, 5, 2, 227, 750);
 }
 
+function loadHardPlatforms() {
+  platforms = [];
+
+  //ground floor 
+  platforms.push({ x: 218, y: 750, width: 1054, height: 60 });
+  platforms.push({ x: 218, y: 720, width: 342, height: 30 });
+  platforms.push({ x: 218, y: 690, width: 302, height: 30 });
+
+  //table
+  platforms.push({ x: 1153, y: 712, width: 42, height: 5 });
+
+
+  //first floor
+  platforms.push({ x: 218, y: 500, width: 650, height: 60 });
+  platforms.push({ x: 959, y: 501, width: 314, height: 60 });
+
+  //additional first floor platforms
+  platforms.push({ x: 552, y: 470, width: 193, height: 30 });
+  platforms.push({ x: 572, y: 450, width: 153, height: 20 });
+  platforms.push({ x: 783, y: 411, width: 55, height: 17 });
+  platforms.push({ x: 993, y: 403, width: 30, height: 21 });
+  platforms.push({ x: 1071, y: 413, width: 30, height: 21 });
+  platforms.push({ x: 268, y: 440, width: 40, height: 60 });
+  platforms.push({ x: 1197, y: 445, width: 40, height: 57 });
+
+
+  //second floor
+  platforms.push({ x: 220, y: 252, width: 652, height: 60 });
+  platforms.push({ x: 960, y: 252, width: 312, height: 60 });
+
+  //additional second floor platforms
+  platforms.push({ x: 402, y: 222, width: 128, height: 30 });
+  platforms.push({ x: 220, y: 192, width: 90, height: 60 });
+  platforms.push({ x: 1184, y: 192, width: 88, height: 60 });
+  platforms.push({ x: 1097, y: 202, width: 39, height: 21 });
+  platforms.push({ x: 1048, y: 175, width: 39, height: 21 });
+  platforms.push({ x: 999, y: 143, width: 39, height: 21 });
+  platforms.push({ x: 340, y: 167, width: 30, height: 21 });
+  platforms.push({ x: 432, y: 122, width: 30, height: 21 });
+  platforms.push({ x: 561, y: 180, width: 30, height: 21 });
+  platforms.push({ x: 659, y: 162, width: 98, height: 19 });
+
+
+  //building boundaries
+  platforms.push({ x: 218, y: 0, width: 1054, height: 60 });
+  platforms.push({ x: 213, y: 0, width: 5, height: 800 });
+  platforms.push({ x: 1272, y: 0, width: 5, height: 800 });
+
+
+
+}
+
+
+function loadEasyPlatforms() {
+  platforms = [];
+}
+
+
 function draw() {
-  
   //background(204, 221, 233); 
   background(255, 255, 255);
   const state = gameManager.getState();
@@ -139,24 +145,24 @@ function draw() {
     image(gameDifficultyImage, x, y);
   }
 
-  // need to edit this when integrating the easy level
   else if (state === "playing") {
+    let mazeImage;
     if (gameManager.getDifficulty() === "easy") {
       mazeImage = mazeFloorEasyImage;
     } else {
       mazeImage = mazeFloorHardImage;
     }
   
-    let x = (width - mazeImage.width) / 2;
-    let y = (height - mazeImage.height) / 2;
     image(mazeImage, x, y);
   
-    updateGame();
-    chemistryPuzzle.update();
-    botanyPuzzle.update();
-    gameController.update();
-  }
+    if (gameManager.getDifficulty() === "hard") {
+      chemistryPuzzle.update();
+      botanyPuzzle.update();
+    }
   
+    gameController.update();
+    updateGame();
+  }
 
   else if (state === "won") {
     let x = (width - missionCompleteImage.width) / 2;
@@ -171,32 +177,42 @@ function draw() {
   }
 }
 
-
-
 function updateGame() {
-  // chemistry puzzle
-  if (!chemistryPuzzle.vialCollected && !chemistryPuzzle.showQuestion && !chemistryPuzzle.showSuccess) {
-    if (dist(player.x, player.y, 1316, 419) < 50) {
-      chemistryPuzzle.interactWithBook();
+  const difficulty = gameManager.getDifficulty();
+
+  // HARD LEVEL PUZZLE LOGIC
+  if (difficulty === "hard") {
+    // chemistry puzzle
+    if (
+      !chemistryPuzzle.vialCollected &&
+      !chemistryPuzzle.showQuestion &&
+      !chemistryPuzzle.showSuccess
+    ) {
+      if (dist(player.x, player.y, 1316, 419) < 50) {
+        chemistryPuzzle.interactWithBook();
+      }
+
+      if (dist(player.x, player.y, 167, 422) < 50) {
+        chemistryPuzzle.interactWithVial();
+        chemistryPuzzle.showTryAgain = false;
+      }
     }
-  
-    if (dist(player.x, player.y, 167, 422) < 50) {
-      chemistryPuzzle.interactWithVial();
-      chemistryPuzzle.showTryAgain = false; 
+
+    // botany puzzle
+    if (!botanyPuzzle.plantCollected) {
+      const nearNote = dist(player.x, player.y, 140, 169) < 60;
+      const nearPlant = dist(player.x, player.y, 1188, 203) < 60;
+
+      if (nearNote) {
+        botanyPuzzle.interactWithNote();
+      }
+      if (nearPlant) {
+        botanyPuzzle.interactWithFlower();
+      }
     }
   }
 
-  // botany puzzle
-  if (!botanyPuzzle.plantCollected) {
-    const nearNote =  dist(player.x, player.y, 140, 169) < 60;
-    const nearPlant = dist(player.x, player.y, 1188, 203) < 60;
-    if (nearNote) {
-      botanyPuzzle.interactWithNote();
-    }
-    if (nearPlant) {
-      botanyPuzzle.interactWithFlower();
-    }
-  }
+  // GAME LOGIC FOR BOTH EASY AND HARD LEVEL
 
     // countdown and ingredients
     fill(0);

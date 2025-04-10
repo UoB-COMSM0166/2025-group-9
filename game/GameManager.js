@@ -1,8 +1,29 @@
 // Manages the overall game state resets the game when needed
 class GameManager {
     constructor(gameController, uiManager, labX, labY) {
-        this.state = "home"; // Possible states: "home", "playing", "gameOver", "won"
+        this.state = "home"; 
         this.gameController = gameController;
+        this.difficulty = "hard"; // deafault 
+    }
+
+    startGame(difficulty) {
+      console.log("Game Started!", difficulty);
+      this.difficulty = difficulty;
+      this.state = "playing";
+      this.gameController.setDifficulty(difficulty); 
+      this.gameController.timeManager.resetTime();
+
+      if (difficulty === "hard") {
+        loadHardPlatforms();
+        lift = new Lift(869, 700, 89, 5, 2, 227, 750); // hard level lift
+      } else {
+        loadEasyPlatforms();
+        lift = new Lift(500, 600, 80, 5, 1.5, 300, 600); // easy lift (example)
+      }
+    }
+
+    getDifficulty() {
+      return this.difficulty;
     }
 
     updateGameStatus() {
@@ -24,7 +45,7 @@ class GameManager {
     startGame(difficulty) {
         console.log(`Game Started! Difficulty: ${difficulty}`);
         this.state = "playing";
-        this.selectedDifficulty = difficulty;  // Store it
+        this.selectedDifficulty = difficulty;  
         this.gameController.timeManager.resetTime();
       }
 
