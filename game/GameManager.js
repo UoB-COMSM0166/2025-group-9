@@ -21,11 +21,16 @@ class GameManager {
       }
 
     
-    startGame() {
-        console.log("Game Started!");
+    startGame(difficulty) {
+        console.log(`Game Started! Difficulty: ${difficulty}`);
         this.state = "playing";
+        this.selectedDifficulty = difficulty;  // Store it
         this.gameController.timeManager.resetTime();
-    }
+      }
+
+      getDifficulty() {
+        return this.selectedDifficulty;
+      }
 
     triggerGameOver() {
         console.log("Game Over!");

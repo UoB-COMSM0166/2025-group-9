@@ -47,14 +47,15 @@ class ChemistryPuzzle {
         }
       }
   
-    //hide popups if player walks away from both book and vial (unless success is showing or vial collected)
-      const nearBook = dist(player.x, player.y, 1244, 420) < 100;
-      const nearVial = dist(player.x, player.y, 293, 424) < 100;
-  
+    // Hide popups if player walks away from both book and vial (unless success is showing or vial collected)
+      const nearBook = dist(player.x, player.y, 167, 422) < 100;
+      const nearVial = dist(player.x, player.y, 1316, 419) < 100;
+
       if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
         this.showInfoPopup = false;
         this.showQuestion = false;
       }
+
     }
   
     // draw the popup image shown when interacting with the book

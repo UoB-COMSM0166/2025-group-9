@@ -27,13 +27,13 @@ class BotanyPuzzle {
   
     // cals each fram to manage visuals and logic
     update() {
-        const nearNote = dist(player.x, player.y, 267, 137) < 100;
-        const nearPlant = dist(player.x, player.y, 1141, 174) < 100;
-    
+        const nearNote = dist(player.x, player.y, 140, 169) < 100;
+        const nearPlant = dist(player.x, player.y, 1188, 203) < 100;
+      
         if (!nearNote && !this.showSuccess && !this.plantCollected) {
           this.showNotePopup = false;
         }
-    
+      
         if (!nearPlant && !this.showSuccess && !this.plantCollected) {
           this.showQuestion = false;
         }

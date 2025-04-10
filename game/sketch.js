@@ -4,11 +4,12 @@ let timeManager;
 let lift;
 let botanyPuzzle;
 let chemistryPuzzle;
-
-let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, missionCompleteImage;
+let mazeImage;
+let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, maze,FloorEasyImage, missionCompleteImage;
 let chemInfoPopupImg, vialQuestionImg, vialCongratsImg, vialTryAgainImg;
 let plantInfoImg, plantQuestionImg, plantCongratsImg, plantTryAgainImg;
 let keyReminderPopupImg;
+let selectedDifficulty;
 let infoSlides = [];
 let currentSlides = 0;
 let showInfo = false;
@@ -22,6 +23,7 @@ function preload() {
   gameDifficultyImage = loadImage("assets/gamedifficulty.png");
   gameOverImage = loadImage("assets/gameover.png");
   mazeFloorHardImage = loadImage("assets/mazefloorhard.png");
+  mazeFloorEasyImage = loadImage("assets/mazeflooreasy.png");
   missionCompleteImage = loadImage("assets/missioncomplete.png");
   infoSlides[0] = loadImage("assets/infopage1.png");
   infoSlides[1] = loadImage("assets/infopage2.png");
@@ -39,7 +41,6 @@ function preload() {
 
 
 function setup() {
-  //createCanvas(1400, 800);
   createCanvas(windowWidth, windowHeight);
 
   timeManager = new TimeManager();
@@ -113,23 +114,16 @@ function setup() {
 }
 
 function draw() {
-  background(204, 221, 233);
+  
+  //background(204, 221, 233); 
+  background(255, 255, 255);
   const state = gameManager.getState();
 
   if (state === "home") {
-    image(homeImage, 0, 0, width, height);
+    let x = (width - homeImage.width) / 2;
+    let y = (height - homeImage.height) / 2;
+    image(homeImage, x, y);
 
-  } else if (state === "difficulty") {
-    image(gameDifficultyImage, 0, 0, width, height);
-
-  } else if (state === "playing") {
-    image(mazeFloorHardImage, 0, 0, width, height);
-    updateGame(); // all logic on game update (whilst the game is playing is here
-    chemistryPuzzle.update();
-    botanyPuzzle.update();
-    gameController.update();
-
-    // show info pop up
     if (showInfo) {
       const popupW = 900;
       const popupH = 600;
@@ -137,22 +131,56 @@ function draw() {
       const popupY = (height - popupH) / 2;
       image(infoSlides[currentSlide], popupX, popupY, popupW, popupH);
     }
-  } else if (state === "won") {
-    image(missionCompleteImage, 0, 0, width, height);
+  }
 
-  } else if (state === "gameOver") {
-    image(gameOverImage, 0, 0, width, height);
+  else if (state === "difficulty") {
+    let x = (width - gameDifficultyImage.width) / 2;
+    let y = (height - gameDifficultyImage.height) / 2;
+    image(gameDifficultyImage, x, y);
+  }
+
+  // need to edit this when integrating the easy level
+  else if (state === "playing") {
+    if (gameManager.getDifficulty() === "easy") {
+      mazeImage = mazeFloorEasyImage;
+    } else {
+      mazeImage = mazeFloorHardImage;
+    }
+  
+    let x = (width - mazeImage.width) / 2;
+    let y = (height - mazeImage.height) / 2;
+    image(mazeImage, x, y);
+  
+    updateGame();
+    chemistryPuzzle.update();
+    botanyPuzzle.update();
+    gameController.update();
+  }
+  
+
+  else if (state === "won") {
+    let x = (width - missionCompleteImage.width) / 2;
+    let y = (height - missionCompleteImage.height) / 2;
+    image(missionCompleteImage, x, y);
+  }
+
+  else if (state === "gameOver") {
+    let x = (width - gameOverImage.width) / 2;
+    let y = (height - gameOverImage.height) / 2;
+    image(gameOverImage, x, y);
   }
 }
+
 
 
 function updateGame() {
   // chemistry puzzle
   if (!chemistryPuzzle.vialCollected && !chemistryPuzzle.showQuestion && !chemistryPuzzle.showSuccess) {
-    if (dist(player.x, player.y, 1244, 420) < 50) {
+    if (dist(player.x, player.y, 1316, 419) < 50) {
       chemistryPuzzle.interactWithBook();
     }
-    if (dist(player.x, player.y, 293, 424) < 50) {
+  
+    if (dist(player.x, player.y, 167, 422) < 50) {
       chemistryPuzzle.interactWithVial();
       chemistryPuzzle.showTryAgain = false; 
     }
@@ -160,8 +188,8 @@ function updateGame() {
 
   // botany puzzle
   if (!botanyPuzzle.plantCollected) {
-    const nearNote =  dist(player.x, player.y, 267, 137) < 60;
-    const nearPlant = dist(player.x, player.y, 1141, 174) < 60;
+    const nearNote =  dist(player.x, player.y, 140, 169) < 60;
+    const nearPlant = dist(player.x, player.y, 1188, 203) < 60;
     if (nearNote) {
       botanyPuzzle.interactWithNote();
     }
@@ -170,15 +198,14 @@ function updateGame() {
     }
   }
 
-    // countdown
-    timeManager.updateTime();
+    // countdown and ingredients
     fill(0);
-    textSize(20);
-    text(`Time Left: ${timeManager.getFormattedTime()}`, 20, 30);
-    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 20, 60);
-  
+    textSize(20); 
+    textFont('monospace'); 
+    text(`Time Left: ${timeManager.getFormattedTime()}`, 1150, 78);
+    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 1150, 98);
+    timeManager.updateTime();
     gameManager.updateGameStatus();
-
 
     // update and display the lift
     lift.update();
@@ -273,7 +300,6 @@ function collision(player, platform) {
   } 
 }
 
-
 function keyPressed() {
   // only allow jumping during gameplay
   if (gameManager.getState() === "playing") {
@@ -289,25 +315,24 @@ function mousePressed() {
 
   const state = gameManager.getState();
 
-  // if playing state and info pages are showing, go to next info page if 'next' button is clicked, go exit info pages if 'exit' button is clicked
-  if (state === "playing" && showInfo) {
-    console.log("Checking info popup clicks...");
-  
-    // NEXT button 
+  // Handle info popup (NEXT / EXIT) — only from home screen now
+  if (state === "home" && showInfo) {
+
+    // NEXT button
     if (
       currentSlide < 2 &&
-      mouseX > 1024 && mouseX < 1074 &&
-      mouseY > 576 && mouseY < 626
+      mouseX > 1051 && mouseX < 1107 &&
+      mouseY > 597 && mouseY < 631
     ) {
       currentSlide++;
       return;
     }
-  
+
     // EXIT button
     if (
       currentSlide === 2 &&
-      mouseX > 1100 && mouseX < 1150 &&
-      mouseY > 140 && mouseY < 170
+      mouseX > 1095 && mouseX < 1155 &&
+      mouseY > 124 && mouseY < 182
     ) {
       showInfo = false;
       return;
@@ -315,30 +340,68 @@ function mousePressed() {
   }
 
   if (state === "home") {
-    if (mouseX > 635 && mouseX < 732 && mouseY > 276 && mouseY < 348) {
+    // Start button
+    if (
+      mouseX > 798 && mouseX < 1003 &&
+      mouseY > 283 && mouseY < 379
+    ) {
       gameManager.goToDifficultyScreen();
     }
-
-  } else if (state === "difficulty") {
-    if (mouseX > 736 && mouseX < 833 &&mouseY > 294 && mouseY < 427) {
-      gameManager.startGame("hard");
-    }
-
-  } else if (state === "won" || state === "gameOver") {
-    gameManager.resetGame();
-  }
-
-  // if playing state and not showing info pop up, if mouse is on '?' button show info pages
-  if (state === "playing" && !showInfo) {
-    if (mouseX > width - 60 && mouseX < width - 20 && mouseY > 20 && mouseY < 60) {
+  
+    // How to play button 
+    if (
+      mouseX > 450 && mouseX < 666 &&
+      mouseY > 285 && mouseY < 373
+    ) {
       showInfo = true;
       currentSlide = 0;
     }
   }
 
-  // puzzle mouse clicks
-  chemistryPuzzle.mousePressed(mouseX, mouseY);
-  botanyPuzzle.mousePressed(mouseX, mouseY);
+  else if (state === "difficulty") {
+    // Hard button
+    if (
+      mouseX > 776 && mouseX < 927 &&
+      mouseY > 249 && mouseY < 442
+    ) {
+      gameManager.startGame("hard");
+    }
+  
+    // Easy button
+    if (
+      mouseX > 530 && mouseX < 681 &&
+      mouseY > 240 && mouseY < 428
+    ) {
+      gameManager.startGame("easy");
+    }
+
+  }  else if (state === "gameOver") {
+    // Game Over - "Play Again" button
+    if (
+      mouseX > 567 && mouseX < 823 &&
+      mouseY > 557 && mouseY < 660
+    ) {
+      gameManager.resetGame();
+      gameManager.goToDifficultyScreen();
+    }
+  }
+  
+  else if (state === "won") {
+    // Win - "Home" button
+    if (
+      mouseX > 567 && mouseX < 823 &&
+      mouseY > 557 && mouseY < 660
+    ) {
+      gameManager.resetGame();
+      gameManager.setState("home");
+    }
+  }
+  
+  // puzzle mouse clicks (only apply if you're in the playing state)
+  if (state === "playing") {
+    chemistryPuzzle.mousePressed(mouseX, mouseY);
+    botanyPuzzle.mousePressed(mouseX, mouseY);
+  }
 
 }
 
