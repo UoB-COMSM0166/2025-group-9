@@ -47,19 +47,6 @@ function setup() {
   gameManager = new GameManager(gameController);
   chemistryPuzzle = new ChemistryPuzzle();
   botanyPuzzle = new BotanyPuzzle();
-
-  // temp player
-    player = {
-      x: 750,
-      y: 550,
-      width: 20,
-      height: 50,
-      velocityX: 0,
-      velocityY: 0,
-      speed: 2,
-      jumpPower: -12,
-      onPlatform: false
-    };
 }
 
 function loadHardPlatforms() {
@@ -145,7 +132,10 @@ function draw() {
     image(gameDifficultyImage, x, y);
   }
 
+  
   else if (state === "playing") {
+    if (!player) return;
+
     let mazeImage;
     if (gameManager.getDifficulty() === "easy") {
       mazeImage = mazeFloorEasyImage;
@@ -153,6 +143,8 @@ function draw() {
       mazeImage = mazeFloorHardImage;
     }
   
+    let x = (width - mazeImage.width) / 2;
+    let y = (height - mazeImage.height) / 2;
     image(mazeImage, x, y);
   
     if (gameManager.getDifficulty() === "hard") {
@@ -160,8 +152,10 @@ function draw() {
       botanyPuzzle.update();
     }
   
-    gameController.update();
-    updateGame();
+    if (state === "playing" && gameController) {
+      gameController.update();
+      updateGame();
+    }
   }
 
   else if (state === "won") {
@@ -178,6 +172,7 @@ function draw() {
 }
 
 function updateGame() {
+  if (!player) return;
   const difficulty = gameManager.getDifficulty();
 
   // HARD LEVEL PUZZLE LOGIC

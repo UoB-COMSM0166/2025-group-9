@@ -13,6 +13,19 @@ class GameManager {
       this.gameController.setDifficulty(difficulty); 
       this.gameController.timeManager.resetTime();
 
+      // temp player
+      player = {
+        x: 750,
+        y: 550,
+        width: 20,
+        height: 50,
+        velocityX: 0,
+        velocityY: 0,
+        speed: 2,
+        jumpPower: -12,
+        onPlatform: false
+      };
+
       if (difficulty === "hard") {
         loadHardPlatforms();
         lift = new Lift(869, 700, 89, 5, 2, 227, 750); // hard level lift
@@ -39,14 +52,6 @@ class GameManager {
     goToDifficultyScreen() {
         console.log("Pick difficulty");
         this.state = "difficulty";
-      }
-
-    
-    startGame(difficulty) {
-        console.log(`Game Started! Difficulty: ${difficulty}`);
-        this.state = "playing";
-        this.selectedDifficulty = difficulty;  
-        this.gameController.timeManager.resetTime();
       }
 
       getDifficulty() {
