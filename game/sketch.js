@@ -54,8 +54,8 @@ function loadHardPlatforms() {
 
   //ground floor 
   platforms.push({ x: 218 - 147, y: 750 - 32, width: 1298, height: 50 });
-  platforms.push({ x: 218 - 147, y: 750 - 32 - 28, width: 421, height: 28 });
-  platforms.push({ x: 218 - 147, y: 750 - 32 - 28 - 28, width: 373, height: 28 });
+  platforms.push({ x: 218 - 147, y: 750 - 32 - 27, width: 421, height: 27 });
+  platforms.push({ x: 218 - 147, y: 750 - 32 - 27 - 27, width: 373, height: 27 });
 
   //table
   platforms.push({ x: 1153 + 30 + 41, y: 712 - 27, width: 50, height: 5 });
@@ -66,12 +66,12 @@ function loadHardPlatforms() {
   platforms.push({ x: 959 + 24, y: 501 - 7, width: 386, height: 54 });
 
   //additional first floor platforms
-  platforms.push({ x: 552 - 72, y: 500 - 7 - 27, width: 240, height: 27 });
-  platforms.push({ x: 572 - 70, y: 500 - 7 - 27 - 19, width: 193, height: 19 });
+  platforms.push({ x: 552 - 72, y: 500 - 7 - 26, width: 240, height: 26 });
+  platforms.push({ x: 572 - 70, y: 500 - 7 - 26 - 18, width: 193, height: 18 });
   //platforms.push({ x: 783, y: 411, width: 55, height: 17 });
   platforms.push({ x: 993 + 14, y: 403 + 37, width: 48, height: 19 });
   platforms.push({ x: 1070 + 12, y: 413 + 1, width: 48, height: 19 });
-  platforms.push({ x: 218 - 147 + 58, y: 500 - 7 - 52, width: 54, height: 52 });
+  platforms.push({ x: 218 - 147 + 58, y: 500 - 7 - 52, width: 52, height: 52 });
   platforms.push({ x: 1197 + 81, y: 501 - 7 - 49, width: 49, height: 49 });
 
 
