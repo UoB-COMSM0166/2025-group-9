@@ -50,6 +50,11 @@ The game is set within a multi-floor maze connected by a lift system. Each floor
 
 There are two difficulty levels: easy and hard. Both feature different maze structures, but only the hard mode includes puzzles that must be solved to access ingredients. A countdown timer adds urgency to the gameplay - players must reach the lab with the ingredients and key before time runs out. If either player dies, the game restarts.
 
+| Character         | Description                                                                                   | Ingredient         | Puzzle Description                                                   |
+|------------------|-----------------------------------------------------------------------------------------------|--------------------|----------------------------------------------------------------------|
+| <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/chemistry-student.png?raw=true" width="100"/><br>**Chemistry Student** | A student specialising in chemistry, responsible for collecting chemical compounds. | <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/chem-vial.png?raw=true" width="100"/><br>**Chemical Compound** | Identify the correct order of vials needed to complete the experiment. |
+| <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/botany-student.png?raw=true" width="100"/><br>**Botany Student**       | A student specialising in Botany, responsible for collecting rare plants.            | <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/flower.png?raw=true" width="100"/><br>**Rare Plant**          | Guess the name of the flower.                                          |
+
 
 ## Requirements 
 
