@@ -39,15 +39,16 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Introduction
 
-When designing our game, we set out to create a puzzle-platformer that encourages players to work together under increasing time pressure. Inspired by Fireboy and Watergirl, we wanted to develop a game where each character has distinct roles and obstacles to overcome, meaning coordination is key. The twist we introduced was a multi-floor maze with a lift system, combined with puzzles that only appear when collecting key ingredients and a progressive difficulty system where movement slows as the virus takes hold.
+When designing our game, we set out to create a puzzle-platformer that encourages players to work together under time pressure. Inspired by Fireboy and Watergirl, we aimed to develop a game where each character has distinct roles and unique obstacles to overcome, making coordination essential.
 
 
-Players take on the roles of two university students, a chemistry student and a botany student, who accidentally infected themselves with a virus from an experiment they conducted together. Trapped in an abandoned science building at the University of Bristol, they need to find and collect four key ingredients to create a cure. However, only specific characters can retrieve certain ingredients, so teamwork is essential.
+Players take on the roles of two university students, a chemistry student and a botany student, who have accidentally infected themselves with a virus during a joint experiment. Trapped in an abandoned science building at the University of Bristol, they must work together to gather the necessary components to create a cure and escape.
 
 
-The science building is split into different levels, each with character-specific obstacles and puzzles that must be solved to access an ingredient. Players navigate the maze together, using the lift system to move between floors, while battling the effects of the virus, which slows their movement over time. Once all four ingredients are collected, the timer speeds up, forcing players to race to the lab before the time runs out.
+The game is set within a multi-floor maze connected by a lift system. Each floor contains character-specific challenges and puzzles. To win, players must collect two ingredients (one per character) and a key to unlock the lab. Only certain characters can collect certain ingredients, requiring teamwork and strategic navigation.
 
-Inorder to win, both players must survive, collect all four ingredients and get to the lab before the time runs out. If one player dies, the game will restart.
+
+There are two difficulty levels: easy and hard. Both feature different maze structures, but only the hard mode includes puzzles that must be solved to access ingredients. A countdown timer adds urgency to the gameplay - players must reach the lab with the ingredients and key before time runs out. If either player dies, the game restarts.
 
 
 ## Requirements 
