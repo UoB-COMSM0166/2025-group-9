@@ -2,6 +2,8 @@
 2025 COMSM0166 group 9
 
 ## Race For The Cure
+<img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/banner.png?raw=true" alt="Banner" width="100%"/>
+
 
 Link to your game [PLAY HERE]
 
