@@ -13,6 +13,7 @@ class ChemistryPuzzle {
     // triggered when the player interacts with the book
     interactWithBook() {
       if (!this.vialCollected) {
+        console.log("Interacted with BOOK");
         this.showInfoPopup = true;
         this.showSuccess = false;
       }
@@ -22,7 +23,6 @@ class ChemistryPuzzle {
     interactWithVial() {
       if (!this.vialCollected) {
         this.showQuestion = true;
-        // Don't hide try again here
       }
     }
   
@@ -48,8 +48,9 @@ class ChemistryPuzzle {
       }
   
     // Hide popups if player walks away from both book and vial (unless success is showing or vial collected)
-      const nearBook = dist(player.x, player.y, 167, 422) < 100;
-      const nearVial = dist(player.x, player.y, 1316, 419) < 100;
+      const nearBook = dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 100;
+      const nearVial = dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 100;
+    
 
       if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
         this.showInfoPopup = false;
@@ -60,10 +61,10 @@ class ChemistryPuzzle {
   
     // draw the popup image shown when interacting with the book
     drawInfoPopupImage() {
-      const imgWidth = 650;
-      const imgHeight = 350;
-      const x = 1060;
-      const y = 360;
+      const imgWidth = 600;
+      const imgHeight = 300;
+      const x = 1316 + xOffset - imgWidth / 2 - 170;
+      const y = 419 + yOffset + 40;
       imageMode(CORNER);
       image(chemInfoPopupImg, x, y, imgWidth, imgHeight);
     }
@@ -71,9 +72,9 @@ class ChemistryPuzzle {
     // draw the question popup that asks which vial color is missing
     drawQuestionPopup() {
       const imgWidth = 600;
-      const imgHeight = 350;
-      const x = 200;
-      const y = 360;
+      const imgHeight = 300;
+      const x = 167 + xOffset - imgWidth / 2 + 170;
+      const y = 422 + yOffset + 50; 
       imageMode(CORNER);
       image(vialQuestionImg, x, y, imgWidth, imgHeight);
     }
@@ -82,8 +83,8 @@ class ChemistryPuzzle {
     drawSuccessPopup() {
       const imgWidth = 300;
       const imgHeight = 100;
-      const x = 222;
-      const y = 332;
+      const x = 167 + xOffset - imgWidth / 2 + 60;
+      const y = 422 + yOffset - imgHeight - 10;
       imageMode(CORNER);
       image(vialCongratsImg, x, y, imgWidth, imgHeight);
     }
@@ -92,8 +93,8 @@ class ChemistryPuzzle {
     drawTryAgainPopup() {
       const imgWidth = 300;
       const imgHeight = 100;
-      const x = 222;
-      const y = 332;
+      const x = 167 + xOffset - imgWidth / 2 + 60;
+      const y = 422 + yOffset - imgHeight - 10;
       imageMode(CORNER);
       image(vialTryAgainImg, x, y, imgWidth, imgHeight);
     }
@@ -103,11 +104,13 @@ class ChemistryPuzzle {
       if (!this.showQuestion || this.vialCollected) return;
   
       const buttons = [
-        { color: "green",  x: 346, y: 572, w: 50, h: 20 },
-        { color: "red",    x: 434, y: 568, w: 50, h: 20 },
-        { color: "yellow", x: 520, y: 566, w: 50, h: 20 },
-        { color: "purple", x: 600, y: 571, w: 50, h: 20 },
+        { color: "green",  x: 80 + xOffset, y: 680 + yOffset, w: 100, h: 30 },
+        { color: "red",    x: 225 + xOffset, y: 680 + yOffset, w: 100, h: 30 },
+        { color: "yellow", x: 360 + xOffset, y: 680 + yOffset, w: 100, h: 30 },
+        { color: "purple", x: 485 + xOffset, y: 680 + yOffset, w: 100, h: 30 },
       ];
+      
+
       
       for (let btn of buttons) {
         if (

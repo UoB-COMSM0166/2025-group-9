@@ -188,11 +188,11 @@ function updateGame() {
       !chemistryPuzzle.showQuestion &&
       !chemistryPuzzle.showSuccess
     ) {
-      if (dist(player.x, player.y, 1316, 419) < 50) {
+      if (dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 50){
         chemistryPuzzle.interactWithBook();
       }
 
-      if (dist(player.x, player.y, 167, 422) < 50) {
+      if (dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 50) {
         chemistryPuzzle.interactWithVial();
         chemistryPuzzle.showTryAgain = false;
       }
