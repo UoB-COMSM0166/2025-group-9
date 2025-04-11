@@ -16,7 +16,7 @@ class GameController {
     update() {
       if (this.showKeyReminderPopup) {
         this.drawKeyReminderPopup();
-        if (millis() - this.keyReminderTimer > 5000) {
+        if (millis() - this.keyReminderTimer > 8000) {
           this.showKeyReminderPopup = false;
         }
       }
@@ -65,10 +65,10 @@ class GameController {
 
     // draws a popup image reminding the player to collect the key
     drawKeyReminderPopup() {
-      const imgWidth = 250;
-      const imgHeight = 65;
-      const x = 1103;
-      const y = 174 - 120;
+      const imgWidth = 300;
+      const imgHeight = 100;
+      const x = 1253 + xOffset - imgWidth / 2 - 100; 
+      const y = 668 + yOffset - imgHeight - 30; 
       imageMode(CORNER);
       image(keyReminderPopupImg, x, y, imgWidth, imgHeight);
     }

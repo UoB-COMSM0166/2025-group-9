@@ -27,8 +27,9 @@ class BotanyPuzzle {
   
     // cals each fram to manage visuals and logic
     update() {
-        const nearNote = dist(player.x, player.y, 140, 169) < 100;
-        const nearPlant = dist(player.x, player.y, 1188, 203) < 100;
+      const nearNote = dist(player.x, player.y, 140 + xOffset, 169 + yOffset) < 60; 
+      const nearPlant = dist(player.x, player.y, 1188 + xOffset, 203 + yOffset) < 60; 
+      
       
         if (!nearNote && !this.showSuccess && !this.plantCollected) {
           this.showNotePopup = false;
@@ -62,20 +63,20 @@ class BotanyPuzzle {
   
       // draw notes pop up
       drawNotePopup() {
-        const imgWidth = 500;
-        const imgHeight = 200;
-        const x = 264; // aligned to click
-        const y = 232; // adjusted to match top-left target
+        const imgWidth = 600;
+        const imgHeight = 300;
+        const x = 138 + xOffset - imgWidth / 2 + 240;
+        const y = 177 + yOffset - imgHeight / 2 + 255;
         imageMode(CORNER);
         image(botanyNoteImg, x, y, imgWidth, imgHeight);
       }
     
       // draw question pop up
       drawQuestionPopup() {
-        const imgWidth = 500;
-        const imgHeight = 200;
-        const x = 933; // aligned to click
-        const y = 223; // adjusted to match top-left target
+        const imgWidth = 600;
+        const imgHeight = 300;
+        const x = 1192 + xOffset - imgWidth / 2 - 150;
+        const y = 199 + yOffset - imgHeight / 2 + 255;
         imageMode(CORNER);
         image(botanyQuestionImg, x, y, imgWidth, imgHeight);
       }
@@ -83,20 +84,20 @@ class BotanyPuzzle {
   
       // draw success pop up when player gets the question right
       drawSuccessPopup() {
-        const imgWidth = 250;
-        const imgHeight = 65;
-        const x = 1103;
-        const y = 174 - 120;
+        const imgWidth = 300;
+        const imgHeight = 100;
+        const x = 1192 + xOffset - imgWidth / 2 - 100; 
+        const y = 199 + yOffset - imgHeight - 30; 
         imageMode(CORNER);
         image(botanyCongratsImg, x, y, imgWidth, imgHeight);
       }
   
       // draw try again pop up when player gets the question wrong
       drawTryAgainPopup() {
-        const imgWidth = 250;
-        const imgHeight = 65;
-        const x = 1103;
-        const y = 174 - 120;
+        const imgWidth = 300;
+        const imgHeight = 100;
+        const x = 1192 + xOffset - imgWidth / 2 - 100; 
+        const y = 199 + yOffset - imgHeight - 30; 
         imageMode(CORNER);
         image(botanyTryAgainImg, x, y, imgWidth, imgHeight);
       }
@@ -105,13 +106,12 @@ class BotanyPuzzle {
       if (!this.showQuestion || this.plantCollected) return;
   
       const buttons = [
-        { name: "TULIP", x: 1078 - 60, y: 294 - 20, w: 120, h: 40 },
-        { name: "LILY", x: 1290 - 60, y: 292 - 20, w: 120, h: 40 },
-        { name: "ROSE", x: 1067 - 60, y: 361 - 20, w: 120, h: 40 },
-        { name: "CHERRY BLOSSOM", x: 1297 - 90, y: 357 - 20, w: 180, h: 40 }
+        { name: "TULIP", x: 810 + xOffset, y: 380 + yOffset, w: 180, h: 50 },
+        { name: "LILY", x: 1080 + xOffset, y: 380 + yOffset, w: 180, h: 50 },
+        { name: "ROSE", x: 810 + xOffset, y: 480 + yOffset, w: 180, h: 50 },
+        { name: "CHERRY BLOSSOM", x: 1080 + xOffset, y: 480 + yOffset, w: 180, h: 50 }
       ];
       
-  
       for (let btn of buttons) {
         if (
           mx > btn.x && mx < btn.x + btn.w &&

@@ -200,8 +200,8 @@ function updateGame() {
 
     // botany puzzle
     if (!botanyPuzzle.plantCollected) {
-      const nearNote = dist(player.x, player.y, 140, 169) < 60;
-      const nearPlant = dist(player.x, player.y, 1188, 203) < 60;
+      const nearNote = dist(player.x, player.y, 138 + xOffset, 177 + yOffset) < 100;
+      const nearPlant = dist(player.x, player.y, 1192 + xOffset, 199 + yOffset) < 100;
 
       if (nearNote) {
         botanyPuzzle.interactWithNote();

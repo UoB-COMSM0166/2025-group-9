@@ -48,8 +48,8 @@ class ChemistryPuzzle {
       }
   
     // Hide popups if player walks away from both book and vial (unless success is showing or vial collected)
-      const nearBook = dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 100;
-      const nearVial = dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 100;
+      const nearBook = dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 60;
+      const nearVial = dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 60;
     
 
       if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
