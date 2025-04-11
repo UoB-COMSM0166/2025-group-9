@@ -28,7 +28,7 @@ class GameManager {
 
       if (difficulty === "hard") {
         loadHardPlatforms();
-        lift = new Lift(218 - 147 + 803, 750 - 32 + 5, 111, 5, 2, 260, 750 - 32 + 6); // hard level lift
+        //lift = new Lift(218 - 147 + 803 + xOffset, 750 - 32 + 5 + yOffset, 111, 5, 2, 260 + yOffset, 750 - 32 + 6 + yOffset); // hard level lift
       } else {
         loadEasyPlatforms();
         lift = new Lift(500, 600, 80, 5, 1.5, 300, 600); // easy lift (example)
