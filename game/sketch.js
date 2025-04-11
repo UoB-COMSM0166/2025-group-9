@@ -347,7 +347,7 @@ function mousePressed() {
     // EXIT button
     if (
       currentSlide === 2 &&
-      mouseX > 1095  + yOffset&& mouseX < 1155 + xOffset &&
+      mouseX > 1095  + xOffset&& mouseX < 1155 + xOffset &&
       mouseY > 124 + yOffset&& mouseY < 182 + yOffset
     ) {
       showInfo = false;
@@ -358,7 +358,7 @@ function mousePressed() {
   if (state === "home") {
     // Start button
     if (
-      mouseX > 798 + xOffset&& mouseX < 1003  + yOffset&&
+      mouseX > 798 + xOffset&& mouseX < 1003  + xOffset&&
       mouseY > 283  + yOffset && mouseY < 379 + yOffset
     ) {
       gameManager.goToDifficultyScreen();
