@@ -10,6 +10,7 @@ let chemInfoPopupImg, vialQuestionImg, vialCongratsImg, vialTryAgainImg;
 let plantInfoImg, plantQuestionImg, plantCongratsImg, plantTryAgainImg;
 let keyReminderPopupImg;
 let selectedDifficulty;
+let hurryToLabImg;
 let infoSlides = [];
 let currentSlides = 0;
 let showInfo = false;
@@ -37,6 +38,8 @@ function preload() {
   botanyCongratsImg = loadImage("assets/plant-congrats.png");
   botanyTryAgainImg = loadImage("assets/plant-try-again.png");
   keyReminderPopupImg = loadImage("assets/key-reminder.png");
+  hurryToLabImg = loadImage("assets/hurry-to-lab.png");
+
 }
 
 const BASE_WIDTH = 1440;
@@ -264,6 +267,51 @@ function updateGame() {
     }
   }
 
+  // Easy Level Logic
+  // collects vial
+  if (difficulty === "easy") {
+    // collects vial
+    if (
+      !chemistryPuzzle.vialCollected &&
+      dist(player.x, player.y, 253 + xOffset, 174 + yOffset) < 30
+    ) {
+      chemistryPuzzle.vialCollected = true;
+      gameController.collectIngredient();
+      chemistryPuzzle.showSuccess = true;
+      chemistryPuzzle.successTimer = millis();
+    }
+  
+    // collects plant 
+    if (
+      !botanyPuzzle.plantCollected &&
+      dist(player.x, player.y, 240 + xOffset, 463 + yOffset) < 30
+    ) {
+      botanyPuzzle.plantCollected = true;
+      gameController.collectIngredient();
+      botanyPuzzle.showSuccess = true;
+      botanyPuzzle.successTimer = millis();
+    }
+  }
+
+  // Player reaches lab based on difficulty - checks when player is at the lab
+  if (difficulty === "easy") {
+    const easyLabX = 1324;
+    const easyLabY = 205;
+    if (!gameController.labReached &&
+        dist(player.x, player.y, easyLabX + xOffset, easyLabY + yOffset) < 50) {
+        console.log("Reached EASY lab!");
+        gameController.reachLab();
+      }
+  } else if (difficulty === "hard") {
+    const hardLabX = 230;
+    const hardLabY = 623;
+    if (!gameController.labReached &&
+        dist(player.x, player.y, hardLabX + xOffset, hardLabY + yOffset) < 50) {
+        console.log("eached HARD lab!");
+        gameController.reachLab();
+      }
+  }
+
   // GAME LOGIC FOR BOTH EASY AND HARD LEVEL
 
     // countdown and ingredients
@@ -327,7 +375,6 @@ function updateGame() {
 
       chemistryPuzzle.update();
       botanyPuzzle.update();
-
 
       chemistryPuzzle.drawPopups();
       botanyPuzzle.drawPopups();

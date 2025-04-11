@@ -88,8 +88,20 @@ class ChemistryPuzzle {
     drawSuccessPopup() {
       const imgWidth = 300;
       const imgHeight = 100;
-      const x = 167 + xOffset - imgWidth / 2 + 60;
-      const y = 422 + yOffset - imgHeight - 10;
+
+      let x = 0;
+      let y = 0;
+
+      if (gameManager.getDifficulty() === "easy") {
+        // Easy mode vial position
+        x = 280 + xOffset - imgWidth / 2 + 30;
+        y = 160 + yOffset - imgHeight - 10;
+      } else {
+        // Hard mode vial position
+        x = 167 + xOffset - imgWidth / 2 + 60;
+        y = 422 + yOffset - imgHeight - 10;
+      }
+
       imageMode(CORNER);
       image(vialCongratsImg, x, y, imgWidth, imgHeight);
     }

@@ -6,6 +6,8 @@ class GameController {
       this.hasKey = false;
       this.timeManager = timeManager;
       this.difficulty = "hard"; // default
+      this.showHurryPopup = false;
+      this.hurryPopupTimer = 0;
     }
 
     setDifficulty(difficulty) {
@@ -14,10 +16,16 @@ class GameController {
 
     // Called every frame to show key popup if active
     update() {
-      if (this.showKeyReminderPopup) {
+      if (this.showKeyReminderPopup && this.showKeyReminderPopup) {
         this.drawKeyReminderPopup();
         if (millis() - this.keyReminderTimer > 8000) {
           this.showKeyReminderPopup = false;
+        }
+      }
+      if (this.showHurryPopup) {
+        this.drawHurryPopup();
+        if (millis() - this.hurryPopupTimer > 5000) {
+          this.showHurryPopup = false;
         }
       }
     }
@@ -41,9 +49,19 @@ class GameController {
     collectIngredient() {
       if (this.collectedIngredients < this.requiredIngredients) {
         this.collectedIngredients++;
-  
-        // Show popup if 2 ingredients are collected but key hasn't been found
+
         if (
+          this.difficulty === "easy" &&
+          this.collectedIngredients === this.requiredIngredients
+        ) {
+          this.showHurryPopup = true;
+          this.hurryPopupTimer = millis();
+        }
+    
+  
+        // ONLY show key popup if difficulty is hard and key not collected
+        if (
+          this.difficulty === "hard" &&
           this.collectedIngredients === this.requiredIngredients &&
           !this.hasKey
         ) {
@@ -51,6 +69,16 @@ class GameController {
           this.keyReminderTimer = millis();
         }
       }
+    }
+
+    // easy level only to remind player to run to the lab
+    drawHurryPopup() {
+      const imgWidth = 300;
+      const imgHeight = 100;
+      const x = 1100 + xOffset;
+      const y = 85 + yOffset;
+      imageMode(CORNER);
+      image(hurryToLabImg, x, y, imgWidth, imgHeight);
     }
   
     //call when player reaches the lab
@@ -65,6 +93,7 @@ class GameController {
 
     // draws a popup image reminding the player to collect the key
     drawKeyReminderPopup() {
+      if (this.difficulty === "easy") return;
       const imgWidth = 300;
       const imgHeight = 100;
       const x = 1253 + xOffset - imgWidth / 2 - 100; 

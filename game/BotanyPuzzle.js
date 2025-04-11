@@ -89,8 +89,19 @@ class BotanyPuzzle {
       drawSuccessPopup() {
         const imgWidth = 300;
         const imgHeight = 100;
-        const x = 1192 + xOffset - imgWidth / 2 - 100; 
-        const y = 199 + yOffset - imgHeight - 30; 
+
+        let x = 0;
+        let y = 0;
+
+        if (gameManager.getDifficulty() === "easy") {
+          // Easy mode plant position
+          x = 150 + xOffset - imgWidth / 2 + 30;
+          y = 445 + yOffset - imgHeight - 10;
+        } else {
+          // Hard mode plant position
+          x = 1192 + xOffset - imgWidth / 2 - 100;
+          y = 199 + yOffset - imgHeight - 30;
+        }
         imageMode(CORNER);
         image(botanyCongratsImg, x, y, imgWidth, imgHeight);
       }
