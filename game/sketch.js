@@ -109,6 +109,63 @@ function loadHardPlatforms() {
 
 function loadEasyPlatforms() {
   platforms = [];
+
+  //ground floor 
+  platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 + 3 + yOffset, width: 1298, height: 50 });
+  //platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 - 27 + yOffset, width: 421, height: 27 });
+  //platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 - 27 - 27 + yOffset, width: 373, height: 27 });
+
+  //additional ground floor
+  platforms.push({ x: 1097 + 60 - 23 - 596 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 505 + yOffset, width: 66, height: 16 });
+  platforms.push({ x: 1097 + 60 - 23 - 596 - 66 + 2 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 506 - 44 + yOffset, width: 66, height: 16 });
+  platforms.push({ x: 1097 + 60 - 23 - 596 - 66 - 196 + 1 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 506 - 44 + yOffset, width: 66, height: 16 });
+  platforms.push({ x: 1097 + 60 - 23 - 596 - 333 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 503 - 1 + yOffset, width: 66, height: 16 });
+  platforms.push({ x: 1298 + 218 - 107 - 147 + 2 - 219 - 734 + 306 - 247 + xOffset, y:  500 - 7 + 15  - 53 - 44 + 267 + yOffset, width: 75, height: 43 });
+
+
+  //table
+  //platforms.push({ x: 1153 + 30 + 41 + xOffset, y: 712 - 27 + yOffset, width: 50, height: 5 });
+
+
+  //first floor
+  platforms.push({ x: 218 - 147 + xOffset, y: 500 - 7 + 15 + yOffset, width: 801, height: 54 });
+  platforms.push({ x: 959 + 24 + 7 + xOffset, y: 500 - 7 + 15 + yOffset, width: 386 - 7, height: 54 });
+
+  //additional first floor platforms
+  platforms.push({ x: 1298 + 218 - 107 - 147 + 1 + xOffset, y:  500 - 7 + 15  - 53 + yOffset, width: 106, height: 53 });
+  platforms.push({ x: 1298 + 218 - 107 - 147 + 2 - 219 + xOffset, y:  500 - 7 + 15  - 53 + yOffset, width: 109, height: 53 });
+  platforms.push({ x: 1298 + 218 - 107 - 147 + 2 - 219 - 734 + xOffset, y:  500 - 7 + 15  - 53 + yOffset, width: 109, height: 53 });
+  platforms.push({ x: 1298 + 218 - 107 - 147 + 2 - 219 - 734 + 306 + xOffset, y:  500 - 7 + 15  - 53 - 44+ yOffset, width: 75, height: 50 });
+  platforms.push({ x: 218 - 147 - 3 + xOffset, y: 500 - 7 + 15 - 52 + yOffset, width: 113, height: 52 });
+
+  platforms.push({ x: 1097 + 60 - 23 - 344 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 264 - 1 + yOffset, width: 68, height: 16 });
+  platforms.push({ x: 1097 + 60 - 23 - 344 - 70 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 264 - 46 + yOffset, width: 68, height: 16 });
+  platforms.push({ x: 1097 + 60 - 23 - 344 - 70 - 204 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 264 - 46 + 5 + yOffset, width: 68, height: 16 });
+  platforms.push({ x: 1097 + 60 - 23 - 344 - 345 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 264 + yOffset, width: 68, height: 16 });
+  
+  
+  //second floor
+  platforms.push({ x: 218 - 147 + xOffset, y: 252 + 18 + 5 + yOffset, width: 797, height: 54 });
+  platforms.push({ x: 960 + 26 + xOffset, y: 252 + 19 + 10 + yOffset, width: 384, height: 54 });
+
+  //additional second floor platforms
+  platforms.push({ x: 402 - 107 + 10 + xOffset, y: 252 + 18 + 5 - 52 + yOffset, width: 202, height: 52 });
+  platforms.push({ x: 218 - 147 - 3 + xOffset, y: 252 + 18 + 5 - 52 + yOffset, width: 110, height: 52 });
+  platforms.push({ x: 402 - 107 + 10 + 391 + xOffset, y: 252 + 18 + 5 - 52 + yOffset, width: 172, height: 52 });
+  platforms.push({ x: 1298 + 218 - 107 - 147 + 2 + xOffset, y: 252 + 19 + 10 - 53 + yOffset, width: 105, height: 53 });
+  platforms.push({ x: 1298 + 218 - 107 - 147 + 2 - 278 + xOffset, y: 252 + 19 + 10 - 53 + yOffset, width: 158, height: 53 });
+  platforms.push({ x: 1097 + 60 - 23 + xOffset, y: 202 + 24 - 50 + 2 + 1 + yOffset, width: 68, height: 16 });
+  platforms.push({ x: 340 - 113 - 5 - 4 + xOffset, y: 167 + 58 - 30 + 3 + 2 + yOffset, width: 46, height: 47 });
+
+
+
+  //building boundaries
+  platforms.push({ x: 218 - 147 + xOffset, y: 44 + yOffset, width: 1298, height: 54 });
+  platforms.push({ x: 213 - 147 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
+  platforms.push({ x: 1272 + 147 - 51 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
+
+  lift = new Lift(218 - 147 + 803 + xOffset, 750 - 32 + 5 + yOffset, 111, 5, 2, 260 - 90 + yOffset, 750 - 32 + 6 + yOffset); // easy level lift
+
 }
 
 
