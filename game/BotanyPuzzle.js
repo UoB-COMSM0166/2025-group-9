@@ -28,38 +28,41 @@ class BotanyPuzzle {
     // cals each fram to manage visuals and logic
     update() {
       const nearNote = dist(player.x, player.y, 140 + xOffset, 169 + yOffset) < 60; 
-      const nearPlant = dist(player.x, player.y, 1188 + xOffset, 203 + yOffset) < 60; 
-      
-      
-        if (!nearNote && !this.showSuccess && !this.plantCollected) {
-          this.showNotePopup = false;
-        }
-      
-        if (!nearPlant && !this.showSuccess && !this.plantCollected) {
-          this.showQuestion = false;
-        }
+      const nearPlant = dist(player.x, player.y, 1188 + xOffset, 203 + yOffset) < 60;
     
-        if (this.showNotePopup) {
-          this.drawNotePopup();
-        }
-        if (this.showQuestion) {
-          this.drawQuestionPopup();
-        }
-        if (this.showSuccess) {
-            this.drawSuccessPopup();
-          
-            // Hide after 1.5 seconds
-            if (millis() - this.successTimer > 1500) {
-              this.showSuccess = false;
-            }
-          }          
-        if (this.showTryAgain) {
-          this.drawTryAgainPopup();
-          if (millis() - this.tryAgainTimer > 1500) {
-            this.showTryAgain = false;
-          }
-        }
+      if (!nearNote && !this.showSuccess && !this.plantCollected) {
+        this.showNotePopup = false;
       }
+    
+      if (!nearPlant && !this.showSuccess && !this.plantCollected) {
+        this.showQuestion = false;
+      }
+    
+      if (this.showSuccess && millis() - this.successTimer > 1500) {
+        this.showSuccess = false;
+      }
+    
+      if (this.showTryAgain && millis() - this.tryAgainTimer > 1500) {
+        this.showTryAgain = false;
+      }
+    }
+
+    drawPopups() {
+      if (this.showNotePopup) {
+        this.drawNotePopup();
+      }
+      if (this.showQuestion) {
+        this.drawQuestionPopup();
+      }
+      if (this.showSuccess) {
+        this.drawSuccessPopup();
+      }
+      if (this.showTryAgain) {
+        this.drawTryAgainPopup();
+      }
+    }
+    
+    
   
       // draw notes pop up
       drawNotePopup() {

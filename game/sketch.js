@@ -280,15 +280,17 @@ function updateGame() {
     timeManager.updateTime();
     gameManager.updateGameStatus();
 
-    // update and display the lift
-    lift.update();
-    lift.create();
-      
-    if (lift.isPlayerOnLift(player)) {
-      player.y = lift.y - player.height
-      player.velocityY = 0;
-      player.y += lift.displacement();
-      isOnPlatform = true;
+    // update and display the lift if lift exists
+    if (lift) {
+      lift.update();
+      lift.create();
+    
+      if (lift.isPlayerOnLift(player)) {
+        player.y = lift.y - player.height;
+        player.velocityY = 0;
+        player.y += lift.displacement();
+        isOnPlatform = true;
+      }
     }
 
     // directional movement
@@ -327,6 +329,14 @@ function updateGame() {
         rect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
       }
     */
+
+      chemistryPuzzle.update();
+      botanyPuzzle.update();
+
+
+      chemistryPuzzle.drawPopups();
+      botanyPuzzle.drawPopups();
+
     
 }
 

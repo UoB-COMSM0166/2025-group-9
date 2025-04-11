@@ -28,6 +28,26 @@ class ChemistryPuzzle {
   
     // called every frame to draw current state and handle timeouts
     update() {
+      // Timers for hiding success / try again
+      if (this.showSuccess && millis() - this.successTimer > 1500) {
+        this.showSuccess = false;
+      }
+    
+      if (this.showTryAgain && millis() - this.tryAgainTimer > 1500) {
+        this.showTryAgain = false;
+      }
+    
+      // Hide popups if player walks away from book and vial
+      const nearBook = dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 60;
+      const nearVial = dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 60;
+    
+      if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
+        this.showInfoPopup = false;
+        this.showQuestion = false;
+      }
+    }
+
+    drawPopups() {
       if (this.showInfoPopup) {
         this.drawInfoPopupImage();
       }
@@ -36,28 +56,13 @@ class ChemistryPuzzle {
       }
       if (this.showSuccess) {
         this.drawSuccessPopup();
-        if (millis() - this.successTimer > 1500) {
-          this.showSuccess = false;
-        }
       }
       if (this.showTryAgain) {
         this.drawTryAgainPopup();
-        if (millis() - this.tryAgainTimer > 1500) {
-          this.showTryAgain = false;
-        }
       }
-  
-    // Hide popups if player walks away from both book and vial (unless success is showing or vial collected)
-      const nearBook = dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 60;
-      const nearVial = dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 60;
-    
-
-      if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
-        this.showInfoPopup = false;
-        this.showQuestion = false;
-      }
-
     }
+    
+    
   
     // draw the popup image shown when interacting with the book
     drawInfoPopupImage() {
