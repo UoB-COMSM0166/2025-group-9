@@ -211,10 +211,10 @@ function updateGame() {
 
     // countdown and ingredients
     fill(0);
-    textSize(20); 
+    textSize(15); 
     textFont('monospace'); 
-    text(`Time Left: ${timeManager.getFormattedTime()}`, 1150, 78);
-    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 1150, 98);
+    text(`Time Left: ${timeManager.getFormattedTime()}`, 30, 26);
+    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 30, 40);
     timeManager.updateTime();
     gameManager.updateGameStatus();
 
