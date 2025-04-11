@@ -298,7 +298,7 @@ function updateGame() {
     const easyLabX = 1324;
     const easyLabY = 205;
     if (!gameController.labReached &&
-        dist(player.x, player.y, easyLabX + xOffset, easyLabY + yOffset) < 50) {
+        dist(player.x, player.y, easyLabX + xOffset, easyLabY + yOffset) < 60) {
         console.log("Reached EASY lab!");
         gameController.reachLab();
       }
@@ -306,7 +306,7 @@ function updateGame() {
     const hardLabX = 230;
     const hardLabY = 623;
     if (!gameController.labReached &&
-        dist(player.x, player.y, hardLabX + xOffset, hardLabY + yOffset) < 50) {
+        dist(player.x, player.y, hardLabX + xOffset, hardLabY + yOffset) < 60) {
         console.log("eached HARD lab!");
         gameController.reachLab();
       }
@@ -375,7 +375,6 @@ function updateGame() {
 
       chemistryPuzzle.update();
       botanyPuzzle.update();
-
       chemistryPuzzle.drawPopups();
       botanyPuzzle.drawPopups();
 

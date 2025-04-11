@@ -107,8 +107,11 @@ class GameController {
       this.labReached = false;
       this.hasKey = false;
       this.showKeyReminderPopup = false;
+      this.showHurryToLabPopup = false;
       this.keyReminderTimer = 0;
       this.timeManager.resetTime();
+      chemistryPuzzle = new ChemistryPuzzle();
+      botanyPuzzle = new BotanyPuzzle();
     }
   }
   
