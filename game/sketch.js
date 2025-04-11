@@ -112,8 +112,7 @@ function loadEasyPlatforms() {
 
   //ground floor 
   platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 + 3 + yOffset, width: 1298, height: 50 });
-  //platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 - 27 + yOffset, width: 421, height: 27 });
-  //platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 - 27 - 27 + yOffset, width: 373, height: 27 });
+
 
   //additional ground floor
   platforms.push({ x: 1097 + 60 - 23 - 596 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 505 + yOffset, width: 66, height: 16 });
@@ -121,10 +120,6 @@ function loadEasyPlatforms() {
   platforms.push({ x: 1097 + 60 - 23 - 596 - 66 - 196 + 1 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 506 - 44 + yOffset, width: 66, height: 16 });
   platforms.push({ x: 1097 + 60 - 23 - 596 - 333 + xOffset, y: 202 + 24 - 50 + 2 + 1 + 503 - 1 + yOffset, width: 66, height: 16 });
   platforms.push({ x: 1298 + 218 - 107 - 147 + 2 - 219 - 734 + 306 - 247 + xOffset, y:  500 - 7 + 15  - 53 - 44 + 267 + yOffset, width: 75, height: 43 });
-
-
-  //table
-  //platforms.push({ x: 1153 + 30 + 41 + xOffset, y: 712 - 27 + yOffset, width: 50, height: 5 });
 
 
   //first floor
@@ -164,7 +159,7 @@ function loadEasyPlatforms() {
   platforms.push({ x: 213 - 147 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
   platforms.push({ x: 1272 + 147 - 51 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
 
-  lift = new Lift(218 - 147 + 803 + xOffset, 750 - 32 + 5 + yOffset, 111, 5, 2, 260 - 90 + yOffset, 750 - 32 + 6 + yOffset); // easy level lift
+  lift = new Lift(218 - 147 + 803 + xOffset, 750 - 32 + 5 + yOffset, 111, 5, 2, 260 - 85 + yOffset, 750 - 32 + 6 + yOffset); // easy level lift
 
 }
 
