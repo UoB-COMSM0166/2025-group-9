@@ -5,6 +5,7 @@ class TimeManager {
     }
   
     updateTime() {
+      console.log("Updating time...");
       if (this.timeLeft > 0) {
         this.timeLeft -= 1 / 60; 
         if (this.timeLeft < 0) {
