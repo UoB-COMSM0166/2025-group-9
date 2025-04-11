@@ -39,9 +39,14 @@ function preload() {
   keyReminderPopupImg = loadImage("assets/key-reminder.png");
 }
 
+const BASE_WIDTH = 1440;
+const BASE_HEIGHT = 813;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
+  xOffset = (windowWidth - BASE_WIDTH)/2;
+  yOffset = (windowHeight - BASE_HEIGHT)/2;
   timeManager = new TimeManager();
   gameController = new GameController(2, timeManager); // 2 ingredients needed
   gameManager = new GameManager(gameController);
@@ -53,51 +58,51 @@ function loadHardPlatforms() {
   platforms = [];
 
   //ground floor 
-  platforms.push({ x: 218 - 147, y: 750 - 32, width: 1298, height: 50 });
-  platforms.push({ x: 218 - 147, y: 750 - 32 - 27, width: 421, height: 27 });
-  platforms.push({ x: 218 - 147, y: 750 - 32 - 27 - 27, width: 373, height: 27 });
+  platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 + yOffset, width: 1298, height: 50 });
+  platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 - 27 + yOffset, width: 421, height: 27 });
+  platforms.push({ x: 218 - 147 + xOffset, y: 750 - 32 - 27 - 27 + yOffset, width: 373, height: 27 });
 
   //table
-  platforms.push({ x: 1153 + 30 + 41, y: 712 - 27, width: 50, height: 5 });
+  platforms.push({ x: 1153 + 30 + 41 + xOffset, y: 712 - 27 + yOffset, width: 50, height: 5 });
 
 
   //first floor
-  platforms.push({ x: 218 - 147, y: 500 - 7, width: 801, height: 54 });
-  platforms.push({ x: 959 + 24, y: 501 - 7, width: 386, height: 54 });
+  platforms.push({ x: 218 - 147 + xOffset, y: 500 - 7 + yOffset, width: 801, height: 54 });
+  platforms.push({ x: 959 + 24 + xOffset, y: 501 - 7 + yOffset, width: 386, height: 54 });
 
   //additional first floor platforms
-  platforms.push({ x: 552 - 72, y: 500 - 7 - 26, width: 240, height: 26 });
-  platforms.push({ x: 572 - 70, y: 500 - 7 - 26 - 18, width: 193, height: 18 });
+  platforms.push({ x: 552 - 72 + xOffset, y: 500 - 7 - 26 + yOffset, width: 240, height: 26 });
+  platforms.push({ x: 572 - 70 + xOffset, y: 500 - 7 - 26 - 18 + yOffset, width: 193, height: 18 });
   //platforms.push({ x: 783, y: 411, width: 55, height: 17 });
-  platforms.push({ x: 993 + 14, y: 403 + 37, width: 48, height: 19 });
-  platforms.push({ x: 1070 + 12, y: 413 + 1, width: 48, height: 19 });
-  platforms.push({ x: 218 - 147 + 58, y: 500 - 7 - 52, width: 52, height: 52 });
-  platforms.push({ x: 1197 + 81, y: 501 - 7 - 49, width: 49, height: 49 });
+  platforms.push({ x: 993 + 14  + xOffset, y: 403 + 37 + yOffset, width: 48, height: 19 });
+  platforms.push({ x: 1070 + 12 + xOffset, y: 413 + 1 + yOffset, width: 48, height: 19 });
+  platforms.push({ x: 218 - 147 + 58 + xOffset, y: 500 - 7 - 52 + yOffset, width: 52, height: 52 });
+  platforms.push({ x: 1197 + 81 + xOffset, y: 501 - 7 - 49 + yOffset, width: 49, height: 49 });
 
 
   //second floor
-  platforms.push({ x: 218 - 147, y: 252 + 18, width: 806, height: 54 });
-  platforms.push({ x: 960 + 26, y: 252 + 19, width: 384, height: 54 });
+  platforms.push({ x: 218 - 147 + xOffset, y: 252 + 18 + yOffset, width: 806, height: 54 });
+  platforms.push({ x: 960 + 26 + xOffset, y: 252 + 19 + yOffset, width: 384, height: 54 });
 
   //additional second floor platforms
-  platforms.push({ x: 402 - 107, y: 222 + 22, width: 158, height: 27 });
-  platforms.push({ x: 218 - 147, y: 192 - 26 + 52, width: 110, height: 52 });
-  platforms.push({ x: 1298 + 218 - 107 - 147, y: 192 - 26 + 52, width: 107, height: 53 });
-  platforms.push({ x: 1097 + 60, y: 202 + 24, width: 39 + 7, height: 18 });
-  platforms.push({ x: 1048 + 49, y: 175 + 26, width: 39 + 8, height: 18 });
-  platforms.push({ x: 999 + 38, y: 143 + 87, width: 39 + 8, height: 18 });
-  platforms.push({ x: 340 - 117, y: 167 + 58, width: 30 + 9, height: 19 });
-  platforms.push({ x: 432 + 54, y: 122 + 103, width: 30 + 9, height: 19 });
-  platforms.push({ x: 218 - 147 + 262, y: 153, width: 30 + 7, height: 19 });
-  platforms.push({ x: 659 - 47, y: 162 + 27, width: 122, height: 18 });
+  platforms.push({ x: 402 - 107 + xOffset, y: 222 + 22 + yOffset, width: 158, height: 27 });
+  platforms.push({ x: 218 - 147 + xOffset, y: 192 - 26 + 52 + yOffset, width: 110, height: 52 });
+  platforms.push({ x: 1298 + 218 - 107 - 147 + xOffset, y: 192 - 26 + 52 + yOffset, width: 107, height: 53 });
+  platforms.push({ x: 1097 + 60 + xOffset, y: 202 + 24 + yOffset, width: 39 + 7, height: 18 });
+  platforms.push({ x: 1048 + 49 + xOffset, y: 175 + 26 + yOffset, width: 39 + 8, height: 18 });
+  platforms.push({ x: 999 + 38 + xOffset, y: 143 + 87 + yOffset, width: 39 + 8, height: 18 });
+  platforms.push({ x: 340 - 117 + xOffset, y: 167 + 58 + yOffset, width: 30 + 9, height: 19 });
+  platforms.push({ x: 432 + 54 + xOffset, y: 122 + 103 + yOffset, width: 30 + 9, height: 19 });
+  platforms.push({ x: 218 - 147 + 262 + xOffset, y: 153 + yOffset, width: 30 + 7, height: 19 });
+  platforms.push({ x: 659 - 47 + xOffset, y: 162 + 27 + yOffset, width: 122, height: 18 });
 
 
   //building boundaries
-  platforms.push({ x: 218 - 147, y: 44, width: 1298, height: 54 });
-  platforms.push({ x: 213 - 147, y: 0, width: 5, height: 820 });
-  platforms.push({ x: 1272 + 147 - 51, y: 0, width: 5, height: 820 });
+  platforms.push({ x: 218 - 147 + xOffset, y: 44 + yOffset, width: 1298, height: 54 });
+  platforms.push({ x: 213 - 147 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
+  platforms.push({ x: 1272 + 147 - 51 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
 
-
+  lift = new Lift(218 - 147 + 803 + xOffset, 750 - 32 + 5 + yOffset, 111, 5, 2, 260 + yOffset, 750 - 32 + 6 + yOffset); // hard level lift
 
 }
 
@@ -332,8 +337,8 @@ function mousePressed() {
     // NEXT button
     if (
       currentSlide < 2 &&
-      mouseX > 1051 && mouseX < 1107 &&
-      mouseY > 597 && mouseY < 631
+      mouseX > 1051 + xOffset && mouseX < 1107  + xOffset&&
+      mouseY > 597  + yOffset&& mouseY < 631 + yOffset
     ) {
       currentSlide++;
       return;
@@ -342,8 +347,8 @@ function mousePressed() {
     // EXIT button
     if (
       currentSlide === 2 &&
-      mouseX > 1095 && mouseX < 1155 &&
-      mouseY > 124 && mouseY < 182
+      mouseX > 1095  + xOffset&& mouseX < 1155 + xOffset &&
+      mouseY > 124 + yOffset&& mouseY < 182 + yOffset
     ) {
       showInfo = false;
       return;
@@ -353,16 +358,16 @@ function mousePressed() {
   if (state === "home") {
     // Start button
     if (
-      mouseX > 798 && mouseX < 1003 &&
-      mouseY > 283 && mouseY < 379
+      mouseX > 798 + xOffset&& mouseX < 1003  + xOffset&&
+      mouseY > 283  + yOffset && mouseY < 379 + yOffset
     ) {
       gameManager.goToDifficultyScreen();
     }
   
     // How to play button 
     if (
-      mouseX > 450 && mouseX < 666 &&
-      mouseY > 285 && mouseY < 373
+      mouseX > 450 + xOffset&& mouseX < 666 + xOffset&&
+      mouseY > 285  + yOffset&& mouseY < 373 + yOffset
     ) {
       showInfo = true;
       currentSlide = 0;
@@ -372,16 +377,16 @@ function mousePressed() {
   else if (state === "difficulty") {
     // Hard button
     if (
-      mouseX > 776 && mouseX < 927 &&
-      mouseY > 249 && mouseY < 442
+      mouseX > 776 + xOffset&& mouseX < 927 + xOffset&&
+      mouseY > 249  + yOffset&& mouseY < 442 + yOffset
     ) {
       gameManager.startGame("hard");
     }
   
     // Easy button
     if (
-      mouseX > 530 && mouseX < 681 &&
-      mouseY > 240 && mouseY < 428
+      mouseX > 530 + xOffset&& mouseX < 681 + xOffset&&
+      mouseY > 240  + yOffset&& mouseY < 428 + yOffset
     ) {
       gameManager.startGame("easy");
     }
@@ -389,8 +394,8 @@ function mousePressed() {
   }  else if (state === "gameOver") {
     // Game Over - "Play Again" button
     if (
-      mouseX > 567 && mouseX < 823 &&
-      mouseY > 557 && mouseY < 660
+      mouseX > 567 + xOffset&& mouseX < 823 + xOffset&&
+      mouseY > 557  + yOffset&& mouseY < 660 + yOffset
     ) {
       gameManager.resetGame();
       gameManager.goToDifficultyScreen();
@@ -400,8 +405,8 @@ function mousePressed() {
   else if (state === "won") {
     // Win - "Home" button
     if (
-      mouseX > 567 && mouseX < 823 &&
-      mouseY > 557 && mouseY < 660
+      mouseX > 567  + xOffset&& mouseX < 823  + xOffset&&
+      mouseY > 557  + yOffset&& mouseY < 660 + yOffset
     ) {
       gameManager.resetGame();
       gameManager.setState("home");
