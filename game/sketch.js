@@ -524,8 +524,8 @@ function mousePressed() {
   else if (state === "won") {
     // Win - "Home" button
     if (
-      mouseX > 567  + xOffset&& mouseX < 823  + xOffset&&
-      mouseY > 557  + yOffset&& mouseY < 660 + yOffset
+      mouseX > 560 + xOffset && mouseX < 800 + xOffset &&
+      mouseY > 510 + yOffset && mouseY < 600 + yOffset
     ) {
       gameManager.resetGame();
       gameManager.setState("home");
