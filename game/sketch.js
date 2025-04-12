@@ -164,15 +164,18 @@ function loadEasyPlatforms() {
 }
 
 function draw() {
-  //background(204, 221, 233); 
+  //background(204, 221, 233); (original blue background)
   background(255, 255, 255);
-  const state = gameManager.getState();
+  const state = gameManager.getState(); // get current state
 
+  // HOME SCREEN
   if (state === "home") {
+    // center and display the home screen image
     let x = (width - homeImage.width) / 2;
     let y = (height - homeImage.height) / 2;
     image(homeImage, x, y);
 
+    // show how to play slides
     if (showInfo) {
       const popupW = 900;
       const popupH = 600;
@@ -182,15 +185,19 @@ function draw() {
     }
   }
 
+  // SELECT DIFFICULTY SCREEN
   else if (state === "difficulty") {
+    // center and display the screen image
     let x = (width - gameDifficultyImage.width) / 2;
     let y = (height - gameDifficultyImage.height) / 2;
     image(gameDifficultyImage, x, y);
   }
 
+  // MAIN GAMEPLAY
   else if (state === "playing") {
-    if (!player) return;
+    if (!player) return; // prevent drawing if player hasn't loaded/been initialised
 
+    // choose correct maze based on difficulty
     let mazeImage;
     if (gameManager.getDifficulty() === "easy") {
       mazeImage = mazeFloorEasyImage;
@@ -198,21 +205,24 @@ function draw() {
       mazeImage = mazeFloorHardImage;
     }
   
+    // center and draw the maze image
     let x = (width - mazeImage.width) / 2;
     let y = (height - mazeImage.height) / 2;
     image(mazeImage, x, y);
   
+    // run puzzle logic for hard mode
     if (gameManager.getDifficulty() === "hard") {
       chemistryPuzzle.update();
       botanyPuzzle.update();
     }
   
+    // update the game controller
     if (state === "playing" && gameController) {
       gameController.update();
-      updateGame();
+      updateGame(); // main game loop
     }
 
-    // Back Button
+    // Back Button UI
     fill(255);
     stroke(0);
     rect(xOffset + 15, yOffset, 80, 40, 10);
@@ -224,12 +234,14 @@ function draw() {
     text("Back", xOffset + 15 + 40, yOffset + 20);
   }
 
+  // WIN SCREEN
   else if (state === "won") {
     let x = (width - missionCompleteImage.width) / 2;
     let y = (height - missionCompleteImage.height) / 2;
     image(missionCompleteImage, x, y);
   }
 
+  // GAME OVER SCREEN
   else if (state === "gameOver") {
     let x = (width - gameOverImage.width) / 2;
     let y = (height - gameOverImage.height) / 2;
@@ -238,7 +250,7 @@ function draw() {
 }
 
 function updateGame() {
-  if (!player) return;
+  if (!player) return; // if player hasn't loaded yet, return
   const difficulty = gameManager.getDifficulty();
 
   // HARD LEVEL PUZZLE LOGIC - uses temp player - delete later
@@ -429,6 +441,8 @@ function updateGame() {
     textFont('monospace'); 
     text(`Time Left: ${timeManager.getFormattedTime()}`, width - 120, yOffset + 10);
     text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, width - 120, yOffset + 25);
+    
+    // update game time and status
     timeManager.updateTime();
     gameManager.updateGameStatus();
 
@@ -482,6 +496,7 @@ function updateGame() {
       }
     */
 
+      // update puzzles and pop ups for the puzzles
       chemistryPuzzle.update();
       botanyPuzzle.update();
       chemistryPuzzle.drawPopups();
@@ -544,11 +559,12 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  console.log("Mouse clicked at:", mouseX, mouseY); // used to find the coordinates of the buttons
+  console.log("Mouse clicked at:", mouseX, mouseY); // used to find the coordinates of the buttons - for debugging purposes only
+  const state = gameManager.getState(); // gets the current state of the game
 
-  const state = gameManager.getState();
+  // HOME SCREEN
 
-  // Handle info popup (NEXT / EXIT)
+  // Handle info/how to play popup
   if (state === "home" && showInfo) {
 
     // NEXT button
@@ -572,8 +588,9 @@ function mousePressed() {
     }
   }
 
+  // handles main home buttons
   if (state === "home") {
-    // Start button
+    // Start button - goes to select difficulty page
     if (
       mouseX > 798 + xOffset&& mouseX < 1003  + xOffset&&
       mouseY > 283  + yOffset && mouseY < 379 + yOffset
@@ -581,7 +598,7 @@ function mousePressed() {
       gameManager.goToDifficultyScreen();
     }
   
-    // How to play button 
+    // How to play button  - goes to info pop ups
     if (
       mouseX > 450 + xOffset&& mouseX < 666 + xOffset&&
       mouseY > 285  + yOffset&& mouseY < 373 + yOffset
@@ -591,6 +608,7 @@ function mousePressed() {
     }
   }
 
+  // SELECT DIFFICULTY SCREEN
   else if (state === "difficulty") {
     // Hard button
     if (
@@ -608,8 +626,9 @@ function mousePressed() {
       gameManager.startGame("easy");
     }
 
+  // GAME OVER SCREEN
   }  else if (state === "gameOver") {
-    // Game Over - "Play Again" button
+    // "Play Again" button - resets the game and goes back to difficulty select screen
     if (
       mouseX > 567 + xOffset&& mouseX < 823 + xOffset&&
       mouseY > 557  + yOffset&& mouseY < 660 + yOffset
@@ -619,8 +638,9 @@ function mousePressed() {
     }
   }
   
+  // WON SCREEN
   else if (state === "won") {
-    // Win - "Home" button
+    // "Home" button - resets the game and goes back to home screen
     if (
       mouseX > 560 + xOffset && mouseX < 800 + xOffset &&
       mouseY > 510 + yOffset && mouseY < 600 + yOffset
@@ -629,9 +649,10 @@ function mousePressed() {
       gameManager.setState("home");
     }
   }
-  
+
+  // IN-GAME STATE
   if (state === "playing") {
-    // Back Button
+    // Back Button - resets the game and goes to home screen
     if (
       mouseX > xOffset + 15 && mouseX < xOffset + 95 && 
       mouseY > yOffset && mouseY < yOffset + 40 
@@ -639,6 +660,7 @@ function mousePressed() {
       gameManager.resetGame();
       gameManager.setState("home");
     }
+      // puzzle interactions
       chemistryPuzzle.mousePressed(mouseX, mouseY);
       botanyPuzzle.mousePressed(mouseX, mouseY);
     }

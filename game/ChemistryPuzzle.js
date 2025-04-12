@@ -10,7 +10,7 @@ class ChemistryPuzzle {
       this.successTimer = 0;
     }
   
-    // triggered when the player interacts with the book
+    // triggered when the player interacts with the book - info pop up gets shown
     interactWithBook() {
       if (!this.vialCollected) {
         this.showInfoPopup = true;
@@ -18,7 +18,7 @@ class ChemistryPuzzle {
       }
     }
   
-    // triggered when the player interacts with the vial
+    // triggered when the player interacts with the vial - question pops up
     interactWithVial() {
       if (!this.vialCollected) {
         this.showQuestion = true;

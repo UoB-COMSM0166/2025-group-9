@@ -11,14 +11,14 @@ class BotanyPuzzle {
 
     }
   
-    // player interacts with note
+    // note will pop up if the player interacts with it
     interactWithNote() {
         if (!this.plantCollected) {
             this.showNotePopup = true;
         }
     }
   
-    // player interacts with flower
+    // question will pop up if the player interacts with the plant
     interactWithFlower() {
         if (!this.plantCollected) {
             this.showQuestion = true;
@@ -31,7 +31,7 @@ class BotanyPuzzle {
       const nearNote = dist(player.x, player.y, 140 + xOffset, 169 + yOffset) < 60; 
       const nearPlant = dist(player.x, player.y, 1188 + xOffset, 203 + yOffset) < 60;
 
-      /* UPDATED PLAYER 
+      /* UPDATED PLAYER  - notes/question will disappear when player moves away from it
       const nearNote = 
       dist(botany.position.x, botany.position.y, 140 + xOffset, 169 + yOffset) < 60 ||
       dist(chemistry.position.x, chemistry.position.y, 140 + xOffset, 169 + yOffset) < 60;
@@ -49,6 +49,7 @@ class BotanyPuzzle {
         this.showQuestion = false;
       }
     
+      // timers to hide success and try again pop up 
       if (this.showSuccess && millis() - this.successTimer > 1500) {
         this.showSuccess = false;
       }
@@ -123,7 +124,8 @@ class BotanyPuzzle {
         imageMode(CORNER);
         image(botanyTryAgainImg, x, y, imgWidth, imgHeight);
       }
-  
+    
+    // handles player mouse clicks on the  question popup
     mousePressed(mx, my) {
       if (!this.showQuestion || this.plantCollected) return;
   
@@ -139,7 +141,7 @@ class BotanyPuzzle {
           mx > btn.x && mx < btn.x + btn.w &&
           my > btn.y && my < btn.y + btn.h
         ) {
-          if (btn.name === "CHERRY BLOSSOM") {
+          if (btn.name === "CHERRY BLOSSOM") { // correct answer
             this.showSuccess = true;
             this.successTimer = millis();
             this.showTryAgain = false;

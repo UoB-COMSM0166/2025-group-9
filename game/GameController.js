@@ -14,7 +14,7 @@ class GameController {
       this.difficulty = difficulty;
     }
 
-    // Called every frame to show key popup if active
+    // called every frame to show key popup if active
     update() {
       if (this.showKeyReminderPopup && this.showKeyReminderPopup) {
         this.drawKeyReminderPopup();
@@ -59,7 +59,7 @@ class GameController {
         }
     
   
-        // ONLY show key popup if difficulty is hard and key not collected
+        // only show key popup if difficulty is hard and key not collected
         if (
           this.difficulty === "hard" &&
           this.collectedIngredients === this.requiredIngredients &&
@@ -102,6 +102,7 @@ class GameController {
       image(keyReminderPopupImg, x, y, imgWidth, imgHeight);
     }
   
+    // resets the game when you win/lose
     resetGame() {
       this.collectedIngredients = 0;
       this.labReached = false;
