@@ -25,7 +25,7 @@ class BotanyPuzzle {
         }
     }
   
-    // cals each fram to manage visuals and logic
+    // calls each frame to manage visuals and logic
     update() {
       // using temp player - delete later
       const nearNote = dist(player.x, player.y, 140 + xOffset, 169 + yOffset) < 60; 
