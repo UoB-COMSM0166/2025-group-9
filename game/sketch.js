@@ -216,6 +216,17 @@ function draw() {
       gameController.update();
       updateGame();
     }
+
+    // Back Button
+    fill(255);
+    stroke(0);
+    rect(xOffset + 15, yOffset, 80, 40, 10);
+    fill(0);
+    noStroke();
+    textSize(14);
+    textAlign(CENTER, CENTER);
+    textFont('monospace');
+    text("Back", xOffset + 15 + 40, yOffset + 20);
   }
 
   else if (state === "won") {
@@ -318,8 +329,8 @@ function updateGame() {
     fill(0);
     textSize(15); 
     textFont('monospace'); 
-    text(`Time Left: ${timeManager.getFormattedTime()}`, 30, 26);
-    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, 30, 40);
+    text(`Time Left: ${timeManager.getFormattedTime()}`, width - 120, yOffset + 10);
+    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, width - 120, yOffset + 25);
     timeManager.updateTime();
     gameManager.updateGameStatus();
 
@@ -521,11 +532,18 @@ function mousePressed() {
     }
   }
   
-  // puzzle mouse clicks (only apply if you're in the playing state)
+  // puzzle mouse clicks 
   if (state === "playing") {
-    chemistryPuzzle.mousePressed(mouseX, mouseY);
-    botanyPuzzle.mousePressed(mouseX, mouseY);
-  }
-
+    // Back Button
+    if (
+      mouseX > xOffset + 15 && mouseX < xOffset + 95 && 
+      mouseY > yOffset && mouseY < yOffset + 40 
+    ) {
+      gameManager.resetGame();
+      gameManager.setState("home");
+    }
+      chemistryPuzzle.mousePressed(mouseX, mouseY);
+      botanyPuzzle.mousePressed(mouseX, mouseY);
+    }
 }
 
