@@ -13,7 +13,6 @@ class ChemistryPuzzle {
     // triggered when the player interacts with the book
     interactWithBook() {
       if (!this.vialCollected) {
-        console.log("Interacted with BOOK");
         this.showInfoPopup = true;
         this.showSuccess = false;
       }
@@ -38,8 +37,19 @@ class ChemistryPuzzle {
       }
     
       // Hide popups if player walks away from book and vial
+      // uses temp player - delete later
       const nearBook = dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 60;
       const nearVial = dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 60;
+
+      /* UPDATED PLAYER
+      const nearBook = 
+      dist(botany.position.x, botany.position.y, 167 + xOffset, 422 + yOffset) < 60 ||
+      dist(chemistry.position.x, chemistry.position.y, 167 + xOffset, 422 + yOffset) < 60;
+
+      const nearVial = 
+      dist(botany.position.x, botany.position.y, 1316 + xOffset, 419 + yOffset) < 60 ||
+      dist(chemistry.position.x, chemistry.position.y, 1316 + xOffset, 419 + yOffset) < 60;
+      */
     
       if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
         this.showInfoPopup = false;
@@ -62,8 +72,6 @@ class ChemistryPuzzle {
       }
     }
     
-    
-  
     // draw the popup image shown when interacting with the book
     drawInfoPopupImage() {
       const imgWidth = 600;
@@ -126,8 +134,6 @@ class ChemistryPuzzle {
         { color: "yellow", x: 360 + xOffset, y: 680 + yOffset, w: 100, h: 30 },
         { color: "purple", x: 485 + xOffset, y: 680 + yOffset, w: 100, h: 30 },
       ];
-      
-
       
       for (let btn of buttons) {
         if (

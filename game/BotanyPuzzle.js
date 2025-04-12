@@ -27,8 +27,19 @@ class BotanyPuzzle {
   
     // cals each fram to manage visuals and logic
     update() {
+      // using temp player - delete later
       const nearNote = dist(player.x, player.y, 140 + xOffset, 169 + yOffset) < 60; 
       const nearPlant = dist(player.x, player.y, 1188 + xOffset, 203 + yOffset) < 60;
+
+      /* UPDATED PLAYER 
+      const nearNote = 
+      dist(botany.position.x, botany.position.y, 140 + xOffset, 169 + yOffset) < 60 ||
+      dist(chemistry.position.x, chemistry.position.y, 140 + xOffset, 169 + yOffset) < 60;
+
+      const nearPlant = 
+      dist(botany.position.x, botany.position.y, 1188 + xOffset, 203 + yOffset) < 60 ||
+      dist(chemistry.position.x, chemistry.position.y, 1188 + xOffset, 203 + yOffset) < 60;
+      */
     
       if (!nearNote && !this.showSuccess && !this.plantCollected) {
         this.showNotePopup = false;
@@ -62,8 +73,6 @@ class BotanyPuzzle {
       }
     }
     
-    
-  
       // draw notes pop up
       drawNotePopup() {
         const imgWidth = 600;
@@ -73,7 +82,7 @@ class BotanyPuzzle {
         imageMode(CORNER);
         image(botanyNoteImg, x, y, imgWidth, imgHeight);
       }
-    
+      
       // draw question pop up
       drawQuestionPopup() {
         const imgWidth = 600;
@@ -84,7 +93,6 @@ class BotanyPuzzle {
         image(botanyQuestionImg, x, y, imgWidth, imgHeight);
       }
     
-  
       // draw success pop up when player gets the question right
       drawSuccessPopup() {
         const imgWidth = 300;
