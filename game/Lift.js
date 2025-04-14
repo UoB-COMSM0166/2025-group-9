@@ -40,7 +40,12 @@ class Lift {
   create() {
     fill(150);
     rect(this.x, this.y, this.width, this.height);
+
+    if(liftImg) {
+      image(liftImg,this.x, this.y - 125, this.width, 130);
+    }
   }
+  
     
   isPlayerOnLift(player) {
     const tolerance = 5;

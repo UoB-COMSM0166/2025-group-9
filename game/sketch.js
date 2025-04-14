@@ -14,7 +14,7 @@ let hurryToLabImg;
 let infoSlides = [];
 let currentSlides = 0;
 let showInfo = false;
-
+let liftImage;
 // temporary player and platforms for collision testing
 let player;
 let platforms = [];
@@ -39,6 +39,7 @@ function preload() {
   botanyTryAgainImg = loadImage("assets/plant-try-again.png");
   keyReminderPopupImg = loadImage("assets/key-reminder.png");
   hurryToLabImg = loadImage("assets/hurry-to-lab.png");
+  liftImg = loadImage("assets/lift.png");
 }
 
 const BASE_WIDTH = 1440;
