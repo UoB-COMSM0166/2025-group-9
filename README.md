@@ -5,7 +5,7 @@
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/banner.png?raw=true" alt="Banner" width="100%"/>
 
 
-[Click me! You Can Play The Game Here🎮🧪🌸](https://uob-comsm0166.github.io/2025-group-9/game)
+[Click me! You Can Play The Game Here! 🎮🧪🌸](https://uob-comsm0166.github.io/2025-group-9/game)
 
 Your game lives in the [/docs](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/docs) folder, and is published using Github pages to the link above.
 
