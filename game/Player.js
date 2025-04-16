@@ -11,49 +11,12 @@ class Player {
         this.playerImgL = playerImgL;
         this.playerImgR = playerImgR;
         this.currentPlayerImg = this.playerImgL;
-        this.width = this.currentPlayerImg.width || 80;
-        this.height = this.currentPlayerImg.height || 80;
-       // this.image.onload = () => {
-          //  this.width = this.image.width;
-          //  this.height = this.image.height;
-      //  }
+        this.width = this.currentPlayerImg.width || 20;
+        this.height = this.currentPlayerImg.height || 20;
     }
     
      update() {
-        /*
-        this.position.x += this.velocity.x;
-        this.position.y += this.velocity.y;
-
-        if(this.position.y + this.height < height) {
-            this.velocity.y += this.gravity;
-        }
-        else{
-            this.velocity.y = 0;
-            this.position.y = height - this.height;
-        }
-
-        if(this.position.x < 0){
-            this.position.x = 0;
-        }
-        else if(this.position.x + this.width > width){
-            this.position.x = width - this.width;
-        }
-        if (this.position.y < 0){
-            this.position.y = 0;
-            this.velocity.y = 0
-        }
-     }*/
-/*
-    if (keyIsDown(LEFT_ARROW)) {
-        this.currentPlayerImg = this.playerImgL;
-        this.velocityX = -this.speed;
-      } else if (keyIsDown(RIGHT_ARROW)) {
-        this.currentPlayerImg = this.playerImgR;
-        this.velocityX = this.speed;
-      } else {
-        this.velocityX = 0;
-      }
-*/        
+        
       // apply gravity
       this.velocityY += this.gravity;
         
