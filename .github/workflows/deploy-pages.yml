@@ -18,7 +18,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './game'  # Specify the game folder here
+          path: './game'
           
       - name: Deploy to GitHub Pages
         id: deployment
