@@ -64,8 +64,8 @@ function setup() {
   gameManager = new GameManager(gameController);
   chemistryPuzzle = new ChemistryPuzzle();
   botanyPuzzle = new BotanyPuzzle();
-  botanyPlayer = new Botanytrial({ x: 750 + xOffset, y: 650 + yOffset, playerImgL : botanyLeftImg, playerImgR: botanyRightImg})
-  chemistryPlayer = new Chemistrytrial({ x: 650 + xOffset, y: 650 + yOffset, playerImgL : chemistryLeftImg, playerImgR: chemistryRightImg})
+  botanyPlayer = new BotanyTrial({ x: 750 + xOffset, y: 650 + yOffset, playerImgL : botanyLeftImg, playerImgR: botanyRightImg})
+  chemistryPlayer = new ChemistryTrial({ x: 650 + xOffset, y: 650 + yOffset, playerImgL : chemistryLeftImg, playerImgR: chemistryRightImg})
 }
 
 function loadHardPlatforms() {
