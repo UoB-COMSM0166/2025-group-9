@@ -87,9 +87,8 @@ function loadHardPlatforms() {
   //additional first floor platforms
   platforms.push({ x: 480 + xOffset, y: 466 + yOffset, width: 240, height: 26 });
   platforms.push({ x: 502 + xOffset, y: 448 + yOffset, width: 193, height: 18 });
-  //platforms.push({ x: 783, y: 411, width: 55, height: 17 });
-  platforms.push({ x: 1010  + xOffset, y: 460 + yOffset, width: 39, height: 7 });
-  platforms.push({ x: 1073 + xOffset, y: 451 + yOffset, width: 39, height:7 });
+  platforms.push({ x: 1007  + xOffset, y: 440 + yOffset, width: 48, height: 19 });
+  platforms.push({ x: 1068 + xOffset, y: 418 + yOffset, width: 48, height:19 });
   platforms.push({ x: 129 + xOffset, y: 440 + yOffset, width: 52, height: 52 });
   platforms.push({ x: 1278 + xOffset, y: 445 + yOffset, width: 49, height: 49 });
 
