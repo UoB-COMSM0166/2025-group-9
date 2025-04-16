@@ -28,8 +28,8 @@ class BotanyPuzzle {
     // calls each frame to manage visuals and logic
     update() {
       // using temp player - delete later
-      const nearNote = dist(player.x, player.y, 140 + xOffset, 169 + yOffset) < 60; 
-      const nearPlant = dist(player.x, player.y, 1188 + xOffset, 203 + yOffset) < 60;
+      const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 140 + xOffset, 169 + yOffset) < 60; 
+      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1188 + xOffset, 203 + yOffset) < 60;
 
       /* UPDATED PLAYER  - notes/question will disappear when player moves away from it
       const nearNote = 
