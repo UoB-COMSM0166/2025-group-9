@@ -14,9 +14,15 @@ let hurryToLabImg;
 let infoSlides = [];
 let currentSlides = 0;
 let showInfo = false;
-let liftImage;
+let liftImg;
+let botanyPlayer;
+let botanyLeftImg;
+let botanyRightImg;
+let chemistryPlayer;
+let chemistryLeftImg;
+let chemistryRightImg;
 // temporary player and platforms for collision testing
-let player;
+//let player;
 let platforms = [];
 
 function preload() {
@@ -40,6 +46,10 @@ function preload() {
   keyReminderPopupImg = loadImage("assets/key-reminder.png");
   hurryToLabImg = loadImage("assets/hurry-to-lab.png");
   liftImg = loadImage("assets/lift.png");
+  botanyLeftImg = loadImage("assets/botanyLeft80.png");
+  botanyRightImg = loadImage("assets/botanyRight80.png");
+  chemistryLeftImg = loadImage("assets/chemistryLeft80.png");
+  chemistryRightImg = loadImage("assets/chemistryRight80.png");
 }
 
 const BASE_WIDTH = 1440;
@@ -54,6 +64,8 @@ function setup() {
   gameManager = new GameManager(gameController);
   chemistryPuzzle = new ChemistryPuzzle();
   botanyPuzzle = new BotanyPuzzle();
+  botanyPlayer = new Botanytrial({ x: 750 + xOffset, y: 650 + yOffset, playerImgL : botanyLeftImg, playerImgR: botanyRightImg})
+  chemistryPlayer = new Chemistrytrial({ x: 650 + xOffset, y: 650 + yOffset, playerImgL : chemistryLeftImg, playerImgR: chemistryRightImg})
 }
 
 function loadHardPlatforms() {
@@ -196,7 +208,7 @@ function draw() {
 
   // MAIN GAMEPLAY
   else if (state === "playing") {
-    if (!player) return; // prevent drawing if player hasn't loaded/been initialised
+    if (!botanyPlayer || !chemistryPlayer ) return; // prevent drawing if player hasn't loaded/been initialised
 
     // choose correct maze based on difficulty
     let mazeImage;
@@ -251,8 +263,9 @@ function draw() {
 }
 
 function updateGame() {
-  if (!player) return; // if player hasn't loaded yet, return
+  if (!botanyPlayer || !chemistryPlayer) return; // if player hasn't loaded yet, return
   const difficulty = gameManager.getDifficulty();
+
 
   // HARD LEVEL PUZZLE LOGIC - uses temp player - delete later
   if (difficulty === "hard") {
@@ -262,10 +275,10 @@ function updateGame() {
       !chemistryPuzzle.showQuestion &&
       !chemistryPuzzle.showSuccess
     ) {
-      if (dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 50){
+      if (dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 50){
         chemistryPuzzle.interactWithBook();
       }
-      if (dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 50) {
+      if (dist(chemistryPlayer.x, chemistryPlayer.y, 167 + xOffset, 422 + yOffset) < 50) {
         chemistryPuzzle.interactWithVial();
         chemistryPuzzle.showTryAgain = false;
       }
@@ -273,8 +286,8 @@ function updateGame() {
 
     // botany puzzle
     if (!botanyPuzzle.plantCollected) {
-      const nearNote = dist(player.x, player.y, 138 + xOffset, 177 + yOffset) < 100;
-      const nearPlant = dist(player.x, player.y, 1192 + xOffset, 199 + yOffset) < 100;
+      const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 138 + xOffset, 177 + yOffset) < 100;
+      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1192 + xOffset, 199 + yOffset) < 100;
 
       if (nearNote) {
         botanyPuzzle.interactWithNote();
@@ -338,7 +351,7 @@ function updateGame() {
     // collects vial
     if (
       !chemistryPuzzle.vialCollected &&
-      dist(player.x, player.y, 253 + xOffset, 174 + yOffset) < 30
+      dist(chemistryPlayer.x, chemistryPlayer.y, 253 + xOffset, 174 + yOffset) < 30
     ) {
       chemistryPuzzle.vialCollected = true;
       gameController.collectIngredient();
@@ -349,7 +362,7 @@ function updateGame() {
     // collects plant 
     if (
       !botanyPuzzle.plantCollected &&
-      dist(player.x, player.y, 240 + xOffset, 463 + yOffset) < 30
+      dist(botanyPlayer.x, botanyPlayer.y, 240 + xOffset, 463 + yOffset) < 30
     ) {
       botanyPuzzle.plantCollected = true;
       gameController.collectIngredient();
@@ -392,14 +405,18 @@ function updateGame() {
     const easyLabX = 1324;
     const easyLabY = 205;
     if (!gameController.labReached &&
-        dist(player.x, player.y, easyLabX + xOffset, easyLabY + yOffset) < 60) {
+        dist(botanyPlayer.x, botanyPlayer.y, easyLabX + xOffset, easyLabY + yOffset) < 60 ||
+        dist(chemistryPlayer.x, chemistryPlayer.y, easyLabX + xOffset, easyLabY + yOffset) < 60)
+        {
         gameController.reachLab();
       }
   } else if (difficulty === "hard") {
     const hardLabX = 230;
     const hardLabY = 623;
     if (!gameController.labReached &&
-        dist(player.x, player.y, hardLabX + xOffset, hardLabY + yOffset) < 60) {
+        dist(botanyPlayer.x, botanyPlayer.y, hardLabX + xOffset, hardLabY + yOffset) < 60 ||
+        dist(chemistryPlayer.x, chemistryPlayer.y, hardLabX + xOffset, hardLabY + yOffset) < 60) 
+        {
         gameController.reachLab();
       }
   }
@@ -447,19 +464,29 @@ function updateGame() {
     timeManager.updateTime();
     gameManager.updateGameStatus();
 
+    botanyPlayer.update();
+    chemistryPlayer.update();
     // update and display the lift if lift exists
     if (lift) {
       lift.update();
       lift.create();
     
-      if (lift.isPlayerOnLift(player)) {
-        player.y = lift.y - player.height;
-        player.velocityY = 0;
-        player.y += lift.displacement();
-        isOnPlatform = true;
+      if (lift.isPlayerOnLift(botanyPlayer)) {
+        botanyPlayer.y = lift.y - botanyPlayer.height;
+        botanyPlayer.velocityY = 0;
+        botanyPlayer.y += lift.displacement();
+        botanyPlayer.onPlatform = true;
+      }
+
+      if (lift.isPlayerOnLift(chemistryPlayer)) {
+        chemistryPlayer.y = lift.y - chemistryPlayer.height;
+        chemistryPlayer.velocityY = 0;
+        chemistryPlayer.y += lift.displacement();
+        chemistryPlayer.onPlatform = true;
       }
     }
-
+    
+/*
     // directional movement
     if (keyIsDown(LEFT_ARROW)) {
       player.velocityX = -player.speed;
@@ -479,16 +506,22 @@ function updateGame() {
       
     // reset onPlatform bool before checking collisions
     player.onPlatform = false;
-      
+  
+  */
     // resolve collisions with all platforms.
     for (let i = 0; i < platforms.length; i++) {
-      collision(player, platforms[i]);
+      collision(botanyPlayer, platforms[i]);
+      collision(chemistryPlayer, platforms[i]);
     }
 
+    botanyPlayer.create();
+    chemistryPlayer.create();
+
+    /*
     // Draw the temporary player.
     fill(255, 0, 0);
     rect(player.x, player.y, player.width, player.height);
-      
+    */
     /*
       // Draw the platforms.
       fill(0, 255, 0);
@@ -506,45 +539,45 @@ function updateGame() {
     
 }
 
-function collision(player, platform) {
+function collision(playerObj, platform) {
   // check if the player and platform intersect.
   if (
-    player.x < platform.x + platform.width &&
-    player.x + player.width > platform.x &&
-    player.y < platform.y + platform.height &&
-    player.y + player.height > platform.y
+    playerObj.x < platform.x + platform.width &&
+    playerObj.x + playerObj.width > platform.x &&
+    playerObj.y < platform.y + platform.height &&
+    playerObj.y + playerObj.height > platform.y
   ) {
     // find how much the player and platform are intersecting horizontally and vertically
     let overlapX =
-      Math.min(player.x + player.width, platform.x + platform.width) -
-      Math.max(player.x, platform.x);
+      Math.min(playerObj.x + playerObj.width, platform.x + platform.width) -
+      Math.max(playerObj.x, platform.x);
     let overlapY =
-      Math.min(player.y + player.height, platform.y + platform.height) -
-      Math.max(player.y, platform.y);
+      Math.min(playerObj.y + playerObj.height, platform.y + platform.height) -
+      Math.max(playerObj.y, platform.y);
     
     // resolve the collision based on whether the overlap(interaction) is more horizontal or vertical
     if (overlapX < overlapY) {
       // side collision resolution
-      if (player.x + player.width / 2 < platform.x + platform.width / 2) {
+      if (playerObj.x + playerObj.width / 2 < platform.x + platform.width / 2) {
         // if the player is more to the left, move them to the left-side of platform
-        player.x = platform.x - player.width;
+        playerObj.x = platform.x - playerObj.width;
       } else {
         // if the player centre is more to the right, move them to the right of the platform
-        player.x = platform.x + platform.width;
+        playerObj.x = platform.x + platform.width;
       }
-      player.velocityX = 0; //halt horizontal movement
+      playerObj.velocityX = 0; //halt horizontal movement
     } else {
       // vertical collision resolution
-      if (player.y + player.height / 2 < platform.y + platform.height / 2) {
+      if (playerObj.y + playerObj.height / 2 < platform.y + platform.height / 2) {
         // if the player is above the platform, keep them on top of the platform
-        player.y = platform.y - player.height;
-        player.velocityY = 0; // halt vertical movement
-        player.onPlatform = true; //indicate that the player is on a platform
+        playerObj.y = platform.y - playerObj.height;
+        playerObj.velocityY = 0; // halt vertical movement
+        playerObj.onPlatform = true; //indicate that the player is on a platform
       } else {
         // if the player hits the platform from below
-        player.y = platform.y + platform.height;
+        playerObj.y = platform.y + platform.height;
         // reverse and reduce the players vertical speed to simulate a slight bounce off of platform.
-        player.velocityY = -player.velocityY * 0.08;
+        playerObj.velocityY = -playerObj.velocityY * 0.08;
       }
     }
   } 
@@ -553,8 +586,11 @@ function collision(player, platform) {
 function keyPressed() {
   // only allow jumping during gameplay
   if (gameManager.getState() === "playing") {
-    if ((keyCode === UP_ARROW || key === ' ') && player.onPlatform) {
-      player.velocityY = player.jumpPower;
+    if ((keyCode === UP_ARROW || key === ' ') && chemistryPlayer.onPlatform) {
+      chemistryPlayer.jump();
+    }
+    if ((keyCode === 87 || key === 'w') && botanyPlayer.onPlatform) {
+      botanyPlayer.jump();
     }
   }
 }
