@@ -5,11 +5,7 @@
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/banner.png?raw=true" alt="Banner" width="100%"/>
 
 
-Link to your game [PLAY HERE]<a href src = "https://github.com/UoB-COMSM0166/2025-group-9/blob/main/game/index.html" a>
-
-Your game lives in the [/docs](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/docs) folder, and is published using Github pages to the link above.
-
-Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
+[Click me! You Can Play The Game Here! 🎮🧪🌸](https://uob-comsm0166.github.io/2025-group-9/game)
 
 ## Table of Contents
 - [The Group](#the-group)
@@ -174,10 +170,6 @@ The Lift class offers a way for players to move between floors, responding dynam
 The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge—to beat the clock in reaching the lab before the virus can fully mature.
 
 Together, these courses define the shape and mechanics of the game, offering a cooperative puzzle-solving experience with challenges, environmental risks, and strategic team-based elements.
-
-
-- 15% ~750 words 
-- System architecture. Class diagrams, behavioural diagrams. 
 
 ## Implementation
 
