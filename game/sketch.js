@@ -404,7 +404,7 @@ function updateGame() {
     const easyLabX = 1324;
     const easyLabY = 205;
     if (!gameController.labReached &&
-        dist(botanyPlayer.x, botanyPlayer.y, easyLabX + xOffset, easyLabY + yOffset) < 60 ||
+        dist(botanyPlayer.x, botanyPlayer.y, easyLabX + xOffset, easyLabY + yOffset) < 60 &&
         dist(chemistryPlayer.x, chemistryPlayer.y, easyLabX + xOffset, easyLabY + yOffset) < 60)
         {
         gameController.reachLab();
@@ -413,7 +413,7 @@ function updateGame() {
     const hardLabX = 230;
     const hardLabY = 623;
     if (!gameController.labReached &&
-        dist(botanyPlayer.x, botanyPlayer.y, hardLabX + xOffset, hardLabY + yOffset) < 60 ||
+        dist(botanyPlayer.x, botanyPlayer.y, hardLabX + xOffset, hardLabY + yOffset) < 60 &&
         dist(chemistryPlayer.x, chemistryPlayer.y, hardLabX + xOffset, hardLabY + yOffset) < 60) 
         {
         gameController.reachLab();
