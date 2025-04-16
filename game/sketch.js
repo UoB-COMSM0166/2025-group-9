@@ -77,38 +77,38 @@ function loadHardPlatforms() {
   platforms.push({ x: 71 + xOffset, y: 664 + yOffset, width: 373, height: 27 });
 
   //table
-  platforms.push({ x: 1224 + xOffset, y: 685 + yOffset, width: 50, height: 5 });
+  platforms.push({ x: 1224 + xOffset, y: 684 + yOffset, width: 50, height: 5 });
 
 
   //first floor
-  platforms.push({ x: 71 + xOffset, y: 493 + yOffset, width: 801, height: 54 });
-  platforms.push({ x: 983 + xOffset, y: 494 + yOffset, width: 386, height: 54 });
+  platforms.push({ x: 71 + xOffset, y: 492 + yOffset, width: 801, height: 54 });
+  platforms.push({ x: 983 + xOffset, y: 493 + yOffset, width: 386, height: 54 });
 
   //additional first floor platforms
-  platforms.push({ x: 480 + xOffset, y: 467 + yOffset, width: 240, height: 26 });
-  platforms.push({ x: 502 + xOffset, y: 449 + yOffset, width: 193, height: 18 });
+  platforms.push({ x: 480 + xOffset, y: 466 + yOffset, width: 240, height: 26 });
+  platforms.push({ x: 502 + xOffset, y: 448 + yOffset, width: 193, height: 18 });
   //platforms.push({ x: 783, y: 411, width: 55, height: 17 });
-  platforms.push({ x: 1007  + xOffset, y: 440 + yOffset, width: 48, height: 19 });
-  platforms.push({ x: 1082 + xOffset, y: 414 + yOffset, width: 48, height: 19 });
-  platforms.push({ x: 129 + xOffset, y: 441 + yOffset, width: 52, height: 52 });
+  platforms.push({ x: 1010  + xOffset, y: 460 + yOffset, width: 39, height: 7 });
+  platforms.push({ x: 1073 + xOffset, y: 451 + yOffset, width: 39, height:7 });
+  platforms.push({ x: 129 + xOffset, y: 440 + yOffset, width: 52, height: 52 });
   platforms.push({ x: 1278 + xOffset, y: 445 + yOffset, width: 49, height: 49 });
 
 
   //second floor
-  platforms.push({ x: 71 + xOffset, y: 270 + yOffset, width: 806, height: 54 });
-  platforms.push({ x: 986 + xOffset, y: 271 + yOffset, width: 384, height: 54 });
+  platforms.push({ x: 71 + xOffset, y: 269 + yOffset, width: 806, height: 54 });
+  platforms.push({ x: 986 + xOffset, y: 270 + yOffset, width: 384, height: 54 });
 
   //additional second floor platforms
-  platforms.push({ x: 295 + xOffset, y: 244 + yOffset, width: 158, height: 27 });
+  platforms.push({ x: 296 + xOffset, y: 244 + yOffset, width: 158, height: 27 });
   platforms.push({ x: 71 + xOffset, y: 218 + yOffset, width: 110, height: 52 });
-  platforms.push({ x: 1262 + xOffset, y: 218 + yOffset, width: 107, height: 53 });
-  platforms.push({ x: 1157 + xOffset, y: 226 + yOffset, width: 46, height: 18 });
-  platforms.push({ x: 1097 + xOffset, y: 201 + yOffset, width: 47, height: 18 });
-  platforms.push({ x: 1037 + xOffset, y: 230 + yOffset, width: 47, height: 18 });
-  platforms.push({ x: 223 + xOffset, y: 225 + yOffset, width: 39, height: 19 });
-  platforms.push({ x: 486 + xOffset, y: 225 + yOffset, width: 39, height: 19 });
-  platforms.push({ x: 333 + xOffset, y: 153 + yOffset, width: 37, height: 19 });
-  platforms.push({ x: 612 + xOffset, y: 189 + yOffset, width: 122, height: 18 });
+  platforms.push({ x: 1262 + xOffset, y: 216 + yOffset, width: 107, height: 53 });
+  platforms.push({ x: 1159 + xOffset, y: 224 + yOffset, width: 46, height: 18 });
+  platforms.push({ x: 1098 + xOffset, y: 200 + yOffset, width: 47, height: 18 });
+  platforms.push({ x: 1039 + xOffset, y: 228 + yOffset, width: 47, height: 18 });
+  platforms.push({ x: 225 + xOffset, y: 224 + yOffset, width: 39, height: 19 });
+  platforms.push({ x: 487 + xOffset, y: 223 + yOffset, width: 39, height: 19 });
+  platforms.push({ x: 335 + xOffset, y: 152 + yOffset, width: 37, height: 19 });
+  platforms.push({ x: 613 + xOffset, y: 188 + yOffset, width: 122, height: 18 });
 
 
   //building boundaries
