@@ -14,7 +14,7 @@ class Lift {
     this.liftOn = true;
     this.liftMaxY = liftMaxY;
     this.liftMinY = liftMinY;
-    this.prevY = this.prevY;
+    this.prevY = y;
   }
 
   update() {
