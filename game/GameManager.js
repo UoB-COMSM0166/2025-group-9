@@ -12,7 +12,7 @@ class GameManager {
       this.state = "playing";
       this.gameController.setDifficulty(difficulty); 
       this.gameController.timeManager.resetTime();
-
+/*
       // temp player
       player = {
         x: 750,
@@ -25,7 +25,7 @@ class GameManager {
         jumpPower: -12,
         onPlatform: false
       };
-
+*/
       if (difficulty === "hard") {
         loadHardPlatforms();
       } else {
