@@ -38,8 +38,8 @@ class ChemistryPuzzle {
     
       // Hide popups if player walks away from book and vial
       // uses temp player - delete later
-      const nearBook = dist(player.x, player.y, 167 + xOffset, 422 + yOffset) < 60;
-      const nearVial = dist(player.x, player.y, 1316 + xOffset, 419 + yOffset) < 60;
+      const nearBook = dist(chemistryPlayer.x, chemistryPlayer.y, 167 + xOffset, 422 + yOffset) < 60;
+      const nearVial = dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 60;
 
       /* UPDATED PLAYER
       const nearBook = 
