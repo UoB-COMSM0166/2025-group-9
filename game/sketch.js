@@ -589,7 +589,6 @@ function collision(playerObj, platform) {
 function keyPressed() {
   // only allow jumping during gameplay
   if (gameManager.getState() === "playing") {
-    console.log('keyPressed:', key, keyCode, 'inRange?', chemistryPlayer.liftLeverInRange, botanyPlayer.liftLeverInRange, chemistryPlayer.x,chemistryPlayer.y, botanyPlayer.x + xOffset, botanyPlayer.y + yOffset, xOffset, yOffset);
     if ((keyCode === UP_ARROW || key === ' ') && chemistryPlayer.onPlatform) {
       chemistryPlayer.jump();
     }
