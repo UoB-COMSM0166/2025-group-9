@@ -13,6 +13,7 @@ class Player {
         this.currentPlayerImg = this.playerImgL;
         this.width = this.currentPlayerImg.width || 20;
         this.height = this.currentPlayerImg.height || 20;
+        this.liftLeverInRange = false;
     }
     
      update() {
@@ -26,6 +27,18 @@ class Player {
     
       // reset onPlatform bool before checking collisions
       this.onPlatform = false;
+
+      if(
+        this.x >= 368 + xOffset&&
+        this.x <= 442 + xOffset&&
+        this.y >= 600 + yOffset&&
+        this.y <= 650 + yOffset){
+
+        this.liftLeverInRange = true;
+      }
+      else{
+        this.liftLeverInRange = false;
+      }
 
     }
 
