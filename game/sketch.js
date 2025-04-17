@@ -115,7 +115,7 @@ function loadHardPlatforms() {
   platforms.push({ x: 66 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
   platforms.push({ x: 1368 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
 
-  lift = new Lift(874 + xOffset, 723 + yOffset, 111, 5, 2, 260 + yOffset, 724 + yOffset); // hard level lift
+  lift = new Lift({x: 874 + xOffset, y: 723 + yOffset, width :111, height: 5,liftSpeed: 2, floorGround: 724 + yOffset, floorOne: 455 + yOffset, floorTwo: 260 + yOffset, mode: 1}); // hard level lift
 
 }
 
@@ -165,13 +165,17 @@ function loadEasyPlatforms() {
   platforms.push({ x: 218 + xOffset, y: 199 + yOffset, width: 46, height: 48 });
 
 
+  // new test boundary
+ // platforms.push({ x: 370 + xOffset, y: 629 + yOffset, width: 75, height: 50 });
+ // platforms.push({ x: 616 + xOffset, y: 370 + yOffset, width: 75, height: 50 });
+
 
   //building boundaries
   platforms.push({ x: 71 + xOffset, y: 44 + yOffset, width: 1298, height: 54 });
   platforms.push({ x: 66 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
   platforms.push({ x: 1368 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
 
-  lift = new Lift(874 + xOffset, 723 + yOffset, 111, 5, 2, 175 + yOffset, 724 + yOffset); // easy level lift
+  lift = new Lift({x: 874 + xOffset, y: 723 + yOffset, width: 111, height: 5, liftSpeed: 2, floorGround: 724 + yOffset, floorOne: 500 + yOffset , floorTwo: 195 + yOffset, mode: 2}); // easy level lift
 
 }
 
@@ -521,13 +525,13 @@ function updateGame() {
     fill(255, 0, 0);
     rect(player.x, player.y, player.width, player.height);
     */
-    /*
+/*    
       // Draw the platforms.
       fill(0, 255, 0);
       for (let i = 0; i < platforms.length; i++) {
         rect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
       }
-    */
+*/
 
       // update puzzles and pop ups for the puzzles
       chemistryPuzzle.update();
@@ -585,11 +589,15 @@ function collision(playerObj, platform) {
 function keyPressed() {
   // only allow jumping during gameplay
   if (gameManager.getState() === "playing") {
+    console.log('keyPressed:', key, keyCode, 'inRange?', chemistryPlayer.liftLeverInRange, botanyPlayer.liftLeverInRange, chemistryPlayer.x,chemistryPlayer.y, botanyPlayer.x + xOffset, botanyPlayer.y + yOffset, xOffset, yOffset);
     if ((keyCode === UP_ARROW || key === ' ') && chemistryPlayer.onPlatform) {
       chemistryPlayer.jump();
     }
     if ((keyCode === 87 || key === 'w') && botanyPlayer.onPlatform) {
       botanyPlayer.jump();
+    }
+    if ((keyCode === 83 || key === 's') /*&& (chemistryPlayer.liftLeverInRange || botanyPlayer.liftLeverInRange)*/) {
+        lift.levels();
     }
   }
 }
