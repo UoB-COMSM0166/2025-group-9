@@ -4,6 +4,7 @@ class GameManager {
         this.state = "home"; 
         this.gameController = gameController;
         this.difficulty = "hard"; // deafault 
+    
     }
 
     startGame(difficulty) {
@@ -73,6 +74,7 @@ class GameManager {
         this.gameController.resetGame(); // resetting all game components
     }
 
+ 
     isPlaying() {
         return this.state === "playing";
       }

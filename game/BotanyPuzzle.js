@@ -5,6 +5,8 @@ class BotanyPuzzle {
       this.showSuccess = false;
       this.showTryAgain = false;
       this.plantCollected = false;
+      this.flowerCollected = false;
+      this.viewRealoded =false;
       // pop up duration
       this.tryAgainTimer = 0;
       this.successTimer = 0; 
@@ -29,7 +31,11 @@ class BotanyPuzzle {
     update() {
       // using temp player - delete later
       const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 140 + xOffset, 169 + yOffset) < 60; 
-      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1188 + xOffset, 203 + yOffset) < 60;
+      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 370 + xOffset, 203 + yOffset) < 60;
+      const nearFlower = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 200 + yOffset) < 30;
+      // console.log("player x : ",botanyPlayer.x);
+      // console.log("player y : ",botanyPlayer.y)
+      // console.log("distance  : ", dist(botanyPlayer.x, botanyPlayer.y, 1180 + xOffset, 215 + yOffset) )
 
       /* UPDATED PLAYER  - notes/question will disappear when player moves away from it
       const nearNote = 
@@ -57,6 +63,17 @@ class BotanyPuzzle {
       if (this.showTryAgain && millis() - this.tryAgainTimer > 1500) {
         this.showTryAgain = false;
       }
+
+  
+
+      if(!this.flowerCollected && nearFlower){
+        this.flowerCollected = true;
+      }
+     
+     if(!this.flowerCollected){
+       this.drawFlowerImage();
+     }
+           
     }
 
     drawPopups() {
@@ -93,7 +110,20 @@ class BotanyPuzzle {
         imageMode(CORNER);
         image(botanyQuestionImg, x, y, imgWidth, imgHeight);
       }
-    
+
+
+  
+      drawFlowerImage() {
+        const imgWidth = 30;
+        const imgHeight = 30;
+        const x = 1350 + xOffset - imgWidth / 2 - 170;
+        const y = 140 + yOffset + 50;
+        image(flowerImg, x, y, imgWidth, imgHeight);
+      }
+
+  
+  
+  
       // draw success pop up when player gets the question right
       drawSuccessPopup() {
         const imgWidth = 300;
@@ -108,8 +138,8 @@ class BotanyPuzzle {
           y = 445 + yOffset - imgHeight - 10;
         } else {
           // Hard mode plant position
-          x = 1192 + xOffset - imgWidth / 2 - 100;
-          y = 199 + yOffset - imgHeight - 30;
+          x = 500 + xOffset - imgWidth / 2 - 100;
+          y = 250 + yOffset - imgHeight - 30;
         }
         imageMode(CORNER);
         image(botanyCongratsImg, x, y, imgWidth, imgHeight);
@@ -119,8 +149,8 @@ class BotanyPuzzle {
       drawTryAgainPopup() {
         const imgWidth = 300;
         const imgHeight = 100;
-        const x = 1192 + xOffset - imgWidth / 2 - 100; 
-        const y = 199 + yOffset - imgHeight - 30; 
+        const x = 500 + xOffset - imgWidth / 2 - 100; 
+        const y = 250 + yOffset - imgHeight - 30; 
         imageMode(CORNER);
         image(botanyTryAgainImg, x, y, imgWidth, imgHeight);
       }

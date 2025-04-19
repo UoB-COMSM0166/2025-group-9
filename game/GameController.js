@@ -8,11 +8,15 @@ class GameController {
       this.difficulty = "hard"; // default
       this.showHurryPopup = false;
       this.hurryPopupTimer = 0;
+      this.playerDie = false;
+      
     }
 
     setDifficulty(difficulty) {
       this.difficulty = difficulty;
     }
+
+  
 
     // called every frame to show key popup if active
     update() {
@@ -42,7 +46,11 @@ class GameController {
     }
 
     isGameOver() {
-      return this.timeManager.hasTimeRunOut() && !this.isGameWin();
+      if((this.timeManager.hasTimeRunOut () || this.playerDie ) && !this.isGameWin()){
+        return true;
+      }
+    
+      return false;
     }
   
     // call when player collects an ingredient
@@ -110,9 +118,15 @@ class GameController {
       this.showKeyReminderPopup = false;
       this.showHurryToLabPopup = false;
       this.keyReminderTimer = 0;
+      this.playerDie = false;
       this.timeManager.resetTime();
       chemistryPuzzle = new ChemistryPuzzle();
       botanyPuzzle = new BotanyPuzzle();
+    }
+
+     triggerPlayerDied(){
+      this.playerDie = true;
+      console.log("Player died triggered");
     }
   }
   
