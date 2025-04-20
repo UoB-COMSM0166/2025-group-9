@@ -29,8 +29,12 @@ class GameManager {
 */
       if (difficulty === "hard") {
         loadHardPlatforms();
+        chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
+        botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
       } else {
         loadEasyPlatforms();
+        chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
+        botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
       }
     }
 
