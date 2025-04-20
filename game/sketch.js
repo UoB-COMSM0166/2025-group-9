@@ -27,7 +27,10 @@ this.keyCollected = false;
 this.removeLock = false;
 this.viewRealoded =false;
 this.chemPuzzleSolved = false;
-
+let nearLiftLever1Bot;
+let nearLiftLever1Chem;
+let nearLiftLever2Bot;
+let nearLiftLever2Chem;
 // temporary player and platforms for collision testing
 //let player;
 let platforms = [];
@@ -136,7 +139,7 @@ function loadHardPlatforms() {
   platforms.push({ x: 66 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
   platforms.push({ x: 1368 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
 
-  lift = new Lift(874 + xOffset, 723 + yOffset, 111, 5, 2, 260 + yOffset, 724 + yOffset); // hard level lift
+  lift = new Lift({x: 874 + xOffset, y: 723 + yOffset, width :111, height: 5,liftSpeed: 2, floorGround: 724 + yOffset, floorOne: 455 + yOffset, floorTwo: 260 + yOffset, mode: 1}); // hard level lift
 
 }
 
@@ -240,7 +243,7 @@ function loadEasyPlatforms() {
   platforms.push({ x: 66 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
   platforms.push({ x: 1368 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
 
-  lift = new Lift(874 + xOffset, 723 + yOffset, 111, 5, 2, 175 + yOffset, 724 + yOffset); // easy level lift
+  lift = new Lift({x: 874 + xOffset, y: 723 + yOffset, width: 111, height: 5, liftSpeed: 2, floorGround: 724 + yOffset, floorOne: 500 + yOffset , floorTwo: 195 + yOffset, mode: 2}); // easy level lift
 
 }
 
@@ -535,6 +538,7 @@ function updateGame() {
     }
   }
 
+
   /* Easy level puzzle logic using updated player
   if (difficulty === "easy") {
     // collects vial
@@ -748,6 +752,12 @@ function collision(playerObj, platform) {
 }
 
 function keyPressed() {
+
+  const nearLiftLever1Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 405 + xOffset , 654 + yOffset) < 40;
+  const nearLiftLever1Bot = dist(botanyPlayer.x, botanyPlayer.y, 405 + xOffset , 654 + yOffset) < 40;
+  const nearLiftLever2Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 651 + xOffset , 395 + yOffset) < 40; 
+  const nearLiftLever2Bot = dist(botanyPlayer.x, botanyPlayer.y, 651 + xOffset , 395 + yOffset) < 40;
+  
   // only allow jumping during gameplay
   if (gameManager.getState() === "playing") {
     if ((keyCode === UP_ARROW || key === ' ') && chemistryPlayer.onPlatform) {
@@ -755,6 +765,9 @@ function keyPressed() {
     }
     if ((keyCode === 87 || key === 'w') && botanyPlayer.onPlatform) {
       botanyPlayer.jump();
+    }
+    if ((keyCode === 83 || key === 's') && (nearLiftLever1Bot || nearLiftLever1Chem || nearLiftLever2Bot || nearLiftLever2Chem)) {
+      lift.levels();
     }
   }
 }
