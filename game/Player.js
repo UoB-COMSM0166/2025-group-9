@@ -29,6 +29,11 @@ class Player {
 
     }
 
+    resetPlayerPosition(x, y){
+      this.x = x;
+      this.y = y;
+    }
+
      create() {
         image(this.currentPlayerImg, this.x, this.y, this.width, this.height);
      }
