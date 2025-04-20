@@ -115,18 +115,18 @@ function loadHardPlatforms() {
 
 
   //second floor
-  platforms.push({ x: 71 + xOffset, y: 269 + yOffset, width: 806, height: 54 });
-  platforms.push({ x: 986 + xOffset, y: 270 + yOffset, width: 384, height: 54 });
+  platforms.push({ x: 71 + xOffset, y: 271 + yOffset, width: 806, height: 54 });
+  platforms.push({ x: 986 + xOffset, y: 272 + yOffset, width: 384, height: 54 });
 
   //additional second floor platforms
-  platforms.push({ x: 296 + xOffset, y: 244 + yOffset, width: 158, height: 27 });
+  platforms.push({ x: 296 + xOffset, y: 247 + yOffset, width: 158, height: 27 });
   platforms.push({ x: 71 + xOffset, y: 218 + yOffset, width: 110, height: 52 });
   platforms.push({ x: 1262 + xOffset, y: 216 + yOffset, width: 107, height: 53 });
   platforms.push({ x: 1159 + xOffset, y: 224 + yOffset, width: 46, height: 18 });
   platforms.push({ x: 1098 + xOffset, y: 200 + yOffset, width: 47, height: 18 });
   platforms.push({ x: 1039 + xOffset, y: 228 + yOffset, width: 47, height: 18 });
-  platforms.push({ x: 225 + xOffset, y: 224 + yOffset, width: 39, height: 19 });
-  platforms.push({ x: 487 + xOffset, y: 223 + yOffset, width: 39, height: 19 });
+  platforms.push({ x: 225 + xOffset, y: 197 + yOffset, width: 39, height: 19 });
+  platforms.push({ x: 480 + xOffset, y: 225 + yOffset, width: 39, height: 19 });
   platforms.push({ x: 335 + xOffset, y: 152 + yOffset, width: 37, height: 19 });
   platforms.push({ x: 613 + xOffset, y: 188 + yOffset, width: 122, height: 18 });
 
@@ -368,24 +368,28 @@ function updateGame() {
       }
     }
 
-    const hitWaterChem = dist(chemistryPlayer.x, chemistryPlayer.y, 630 , 639) < 25 ;
-    const hitWaterBot = dist(botanyPlayer.x, botanyPlayer.y, 630 , 639) < 25 ;
-    const hitVapourChem = dist(chemistryPlayer.x, chemistryPlayer.y, 315 ,370) <70;
-    const hitVapourBot = dist(botanyPlayer.x, botanyPlayer.y, 320 , 370 )<70;
-    const hitFlowerChem = dist(chemistryPlayer.x, chemistryPlayer.y, 500 , 150) <17;
-    const hitFlowerBot = dist(botanyPlayer.x, botanyPlayer.y, 500 , 150 )<17;
-    const hitBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 1130 , 414) <20;
-    const hitBombBot = dist(botanyPlayer.x, botanyPlayer.y, 1130 , 414 )<20;
-    const hitDoublePlantBot =  dist(botanyPlayer.x, botanyPlayer.y, 1040 , 150 )<50;
-    const hitDoublePlantChem = dist(chemistryPlayer.x, chemistryPlayer.y, 1040 , 150) <50;
-    const hitVapourBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 355 ,400) <25;
-    const hitVapourBombBot = dist(botanyPlayer.x, botanyPlayer.y, 355 , 400 )<25;
+    const hitWaterChem = dist(chemistryPlayer.x, chemistryPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
+    const hitWaterBot = dist(botanyPlayer.x, botanyPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
+    const hitVapourChem = dist(chemistryPlayer.x, chemistryPlayer.y, 270+xOffset ,411+ yOffset) <70;
+    const hitVapourBot = dist(botanyPlayer.x, botanyPlayer.y, 270+xOffset , 411 + yOffset)<70;
+    const hitFlowerChem = dist(chemistryPlayer.x, chemistryPlayer.y, 515+xOffset ,  210 + yOffset) <30;
+    const hitFlowerBot = dist(botanyPlayer.x, botanyPlayer.y,  515+xOffset ,  210 + yOffset )<30;
+    const hitFlower2Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 180+xOffset ,  180 + yOffset) <10;
+    const hitFlower2Bot = dist(botanyPlayer.x, botanyPlayer.y,  180+xOffset ,  180 + yOffset )<10;
+    const hitBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 1082+xOffset , 455+ yOffset) <20;
+    const hitBombBot = dist(botanyPlayer.x, botanyPlayer.y, 1082 +xOffset, 455 + yOffset)<20;
+    const hitDoublePlantBot =  dist(botanyPlayer.x, botanyPlayer.y, 992 +xOffset, 191 + yOffset)<50;
+    const hitDoublePlantChem = dist(chemistryPlayer.x, chemistryPlayer.y, 992+xOffset , 191+ yOffset) <50;
+    const hitVapourBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 307 +xOffset,441+ yOffset) <25;
+    const hitVapourBombBot = dist(botanyPlayer.x, botanyPlayer.y, 307+xOffset , 441 + yOffset)<25;
 
 
       // console.log("player x : ",chemistryPlayer.x);
       //  console.log("player y : ",chemistryPlayer.y)
       //  console.log("distance  : ",dist(chemistryPlayer.x, chemistryPlayer.y, 634 , 639) )
-    if(hitWaterChem || hitWaterBot ||  hitFlowerChem || hitFlowerBot|| hitBombChem || hitBombBot ||hitVapourBombChem || hitVapourBombBot){
+    if(hitWaterChem || hitWaterBot || hitBombChem || hitBombBot 
+      ||hitVapourBombChem || hitVapourBombBot || hitFlowerChem ||hitFlowerBot 
+      || hitFlower2Bot || hitFlower2Chem){
       gameController.triggerPlayerDied();
       chemistryPlayer.x = 750 + xOffset;
       chemistryPlayer.y = 640 + yOffset
@@ -511,7 +515,7 @@ function updateGame() {
     // collects vial
     if (
       !chemistryPuzzle.vialCollected &&
-      dist(chemistryPlayer.x, chemistryPlayer.y, 253 + xOffset, 174 + yOffset) < 30
+      dist(chemistryPlayer.x, chemistryPlayer.y, 240 + xOffset, 150 + yOffset) < 30
     ) {
       chemistryPuzzle.vialCollected = true;
       gameController.collectIngredient();

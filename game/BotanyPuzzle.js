@@ -29,10 +29,16 @@ class BotanyPuzzle {
   
     // calls each frame to manage visuals and logic
     update() {
+      let  nearFlower = false;
       // using temp player - delete later
       const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 140 + xOffset, 169 + yOffset) < 60; 
       const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 370 + xOffset, 203 + yOffset) < 60;
-      const nearFlower = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 200 + yOffset) < 30;
+      if (gameManager.getDifficulty() === "easy") {
+             nearFlower =  dist(botanyPlayer.x, botanyPlayer.y, 240 + xOffset, 463 + yOffset) < 30
+      }
+      else {
+             nearFlower = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 200 + yOffset) < 30;
+      }
       // console.log("player x : ",botanyPlayer.x);
       // console.log("player y : ",botanyPlayer.y)
       // console.log("distance  : ", dist(botanyPlayer.x, botanyPlayer.y, 1180 + xOffset, 215 + yOffset) )
@@ -116,9 +122,18 @@ class BotanyPuzzle {
       drawFlowerImage() {
         const imgWidth = 30;
         const imgHeight = 30;
-        const x = 1350 + xOffset - imgWidth / 2 - 170;
-        const y = 140 + yOffset + 50;
+        let x,y;
+
+        if (gameManager.getDifficulty() === "easy") {
+          // Easy mode plant position
+          x = 240 + xOffset - imgWidth / 2 + 30;
+          y = 483 + yOffset - imgHeight - 10;
+        } else {
+           x = 1350 + xOffset - imgWidth / 2 - 170;
+           y = 140 + yOffset + 50;
+        }
         image(flowerImg, x, y, imgWidth, imgHeight);
+
       }
 
   

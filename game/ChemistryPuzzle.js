@@ -44,48 +44,36 @@ class ChemistryPuzzle {
     
       // Hide popups if player walks away from book and vial
       // uses temp player - delete later
+      let nearFlask = false;
       const nearBook = dist(chemistryPlayer.x, chemistryPlayer.y, 620 + xOffset, 382 + yOffset) < 60;
       const nearVial = dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 60;
-      const nearLock = dist(chemistryPlayer.x, chemistryPlayer.y, 380 + xOffset, 590 + yOffset) < 30;
-      const nearKey = dist(chemistryPlayer.x, chemistryPlayer.y, 1240 + xOffset, 670 + yOffset) < 30;
-      const nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 30;
 
-      // if(!this.keyCollected && nearKey){
-      //   this.keyCollected = true;
-      // }
+      
+      if (gameManager.getDifficulty() === "easy") {
+        nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 240 + xOffset, 150 + yOffset) < 30;
+
+      } else {
+       nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 30;
+      }
+
 
       if(!this.flastCollected && nearFlask){
         this.flastCollected = true;
       }
 
-
-
-
-      //console.log("x : ", 320 + xOffset);
-      //console.log("y : ",  510 + yOffset)
-      /* UPDATED PLAYER
-      const nearBook = 
-      dist(botany.position.x, botany.position.y, 167 + xOffset, 422 + yOffset) < 60 ||
-      dist(chemistry.position.x, chemistry.position.y, 167 + xOffset, 422 + yOffset) < 60;
-
-      const nearVial = 
-      dist(botany.position.x, botany.position.y, 1316 + xOffset, 419 + yOffset) < 60 ||
-      dist(chemistry.position.x, chemistry.position.y, 1316 + xOffset, 419 + yOffset) < 60;
-      */
     
       if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
         this.showInfoPopup = false;
         this.showQuestion = false;
       }
 
-      if(gameManager.getDifficulty() != "easy"){
         
-            this.drawFlowerObsDownImage();
+            //this.drawFlowerObsDownImage();
             if(!this.flastCollected){
               this.drawFlaskImage();
             }
 
-    }
+    
     }
 
     drawPopups() {
@@ -148,10 +136,17 @@ class ChemistryPuzzle {
     }
 
     drawFlaskImage() {
-      const imgWidth = 50;
-      const imgHeight = 50;
-      const x = 325 + xOffset - imgWidth / 2 - 170;
-      const y = 344 + yOffset + 50;
+      const imgWidth = 80;
+      const imgHeight = 80;
+      let x = 0;
+      let y = 0;
+      if (gameManager.getDifficulty() === "easy") {
+        x = 405 + xOffset - imgWidth / 2 - 170;
+        y = 70 + yOffset + 50;
+      }else{
+       x = 325 + xOffset - imgWidth / 2 - 170;
+       y = 315 + yOffset + 50;
+      }
       image(flaskImg, x, y, imgWidth, imgHeight);
     }
 
