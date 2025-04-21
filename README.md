@@ -211,7 +211,10 @@ To document our progress, we kept detailed meeting notes on the repository, outl
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes.png?raw=true" width="55%" />
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes2.png?raw=true" width="35%" />
+  <br>
+  <em>Figure 1: Left - folders for each week used to store files and notes; Right - Week 4 meeting notes example with goals, stakeholders, and user stories</em>
 </p>
+
 
 
 A major strength of our collaboration was our use of pair programming. Working in pairs allowed us to support one another in real time, troubleshoot more effectively, and share different perspectives, which ultimately improved the quality and readability of our code. An example of when we used pair programming was during the development stage, when we were working on the player class. One person would focus on writing the code while the other helped with debugging or suggesting improvements. This made the process faster and helped us catch issues early on.
@@ -227,7 +230,10 @@ We maintained a Kanban board that helped us visualise our workflow. Tasks were c
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/kanbanboard.png?raw=true" width="60%" />
+  <br>
+  <em>Figure 4: Our Kanban board used to track coding, report writing, and task progress across the team</em>
 </p>
+
 
 
 **Google Docs:**
@@ -237,6 +243,8 @@ Our shared Google Doc was used for collaboratively writing the final report. We 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/todolist.png?raw=true" width="35%" />
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/googledoc.png?raw=true" width="55%" />
+  <br>
+  <em>Figure 5: Sections of our shared Google Doc - Left: built-in to-do list for tracking progress; Right: main report document used for collaborative writing</em>
 </p>
 
 
