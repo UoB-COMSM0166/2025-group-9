@@ -189,9 +189,60 @@ Together, these courses define the shape and mechanics of the game, offering a c
 
 ## Process 
 
-- 15% ~750 words
+### Collaboration
 
-- Teamwork. How did you work together, what tools did you use. Did you have team roles? Reflection on how you worked together. 
+Throughout the development of our game, our team maintained consistent and effective collaboration. We met regularly during weekly lab sessions and often stayed behind or arranged extra meetings afterward. As the project progressed, we began scheduling frequent check-ins over WhatsApp and Microsoft Teams, particularly during key stages such as the design and final implementation phases.
+
+From the beginning, we assigned tasks based on individual strengths. For instance, design-related tasks were mainly handled by Maram and Hadeel, while coding responsibilities were led by Vera, Satvika, and Hakeem. This division ensured that each team member could focus on what they felt most confident in, while also learning from others in collaborative settings.
+
+Our meetings typically followed a structure where we’d begin by updating each other on what we had completed that week, and then decide on what we wanted to achieve in the week ahead. We would then split tasks into smaller groups or pairs. We found this structure to be far more efficient, especially after initially trying to do tasks with all five members at once - which often slowed things down and led to duplication of effort.
+In the early stages, we used the WhatsApp poll feature to shortlist and vote on our top two game ideas. We then held an in-person meeting to discuss the pros and cons of each, eventually deciding on a concept we all felt enthusiastic about. This helped everyone have a say, and we were able to quickly agree on a game idea that we all liked.
+
+(add image of whatsapp poll)
+
+To document our progress, we kept detailed meeting notes on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
+
+(add image of meeting notes) (add link to meeting notes)
+
+A major strength of our collaboration was our use of pair programming. Working in pairs allowed us to support one another in real time, troubleshoot more effectively, and share different perspectives, which ultimately improved the quality and readability of our code. An example of when we used pair programming was during the development stage, when we were working on the player class. One person would focus on writing the code while the other helped with debugging or suggesting improvements. This made the process faster and helped us catch issues early on.
+
+
+### Tools and Techniques
+
+We incorporated various tools and techniques throughout the development process, many of which were inspired by lectures and labs on Agile software development (Week 2) and Project Management (Week 5).
+
+**Kanban Board (GitHub Projects):**
+
+We maintained a Kanban board that helped us visualise our workflow. Tasks were categorised into "To Do," "In Progress," and "Done." We would often move cards during meetings and use labels to indicate coding, design, or report-writing tasks. This was particularly useful during busy periods and ensured that everyone could see the project’s overall progress at a glance.
+
+(add image of kanban board)
+
+**Google Docs:**
+
+Our shared Google Doc was used for collaboratively writing the final report. We also created mini to-do lists for each section within the doc so that everyone was reminded of the specific requirements. This made it easier to divide writing tasks and collaborate on edits in real time.
+
+(add image of google doc)
+
+**Planning Poker:**
+
+When estimating the effort required for larger tasks (like implementing animations or writing evaluation sections), we used planning poker during team discussions. This helped us set realistic expectations and distribute the workload fairly.
+
+**Communication Platforms:**
+
+We mainly used our WhatsApp group chat to stay in touch and ask quick questions throughout the week. For longer discussions or updates, we had regular meetings on Microsoft Teams, especially when we needed to talk through bigger decisions or check in on overall progress
+
+
+### Reflection
+
+While our collaboration became strong over time, we did struggle initially. In the early weeks, there were miscommunications around game design and gameplay ideas. Some team members had different understandings of what we had agreed on, especially when it came to how mechanics should work. These bumps helped us realise the importance of clarity after each meeting. We made a group effort to clearly define weekly goals and individual tasks before wrapping up any discussion. If anyone was confused, we’d follow up on the WhatsApp group chat, which became a central hub for clarification.
+
+Having a clearly maintained Kanban board and a detailed to-do list in the Google Doc helped us massively. It meant everyone could double-check responsibilities, even outside of meetings.
+We also realised that large group efforts on small tasks weren’t effective. During the first few weeks, all five of us would try to work on the same small feature or decision, which led to confusion and slow progress. Once we switched to working in smaller groups or pairs, we noticed a significant improvement in efficiency. We were able to tackle multiple things at once and make better use of our individual strengths.
+
+Another learning curve came with our meetings. Initially, we didn’t set clear objectives, and as a result, some of our early meetings felt unfocused. Recognising this, we made it a habit to set a clear agenda for each meeting and identify what outcome we wanted. This small change made our sessions much more productive.
+
+Overall, once we got into a good routine, things went a lot more smoothly. We stayed in touch, used the right tools, and worked well together.
+
 
 ## Conclusion
 
