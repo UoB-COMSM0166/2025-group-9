@@ -171,6 +171,14 @@ The CureComponents class is the main ingredients that must be collected in order
 
 Together, these courses define the shape and mechanics of the game, offering a cooperative puzzle-solving experience with challenges, environmental risks, and strategic team-based elements.
 
+<div align="center">
+
+**Figure 2**  
+*Preliminary use case diagram showing system interactions.*  
+
+<img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prelim_use_case_diagram(2).jpg?raw=true" alt="Preliminary Use Case Diagram" width="600"/>
+</div>
+
 ## Implementation
 
 - 15% ~750 words
