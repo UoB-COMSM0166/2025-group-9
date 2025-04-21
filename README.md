@@ -149,13 +149,21 @@ As a developer, I want the game to follow a modular design, so features can be a
 As a platform hosting the game, I want the game’s file size to be optimized, so it does not consume excessive server space.
 As an assessor, I want the game to feature a unique twist on a classic concept or an advanced implementation challenge, so the game demonstrates originality and technical depth.
 
+<div align="center">
+
+**Figure 1**  
+*Preliminary use case diagram showing system interactions.*  
+
+<img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prelim_use_case_diagram(2).jpg?raw=true" alt="Preliminary Use Case Diagram" width="600"/>
+</div>
+
 
 ## Design
 
 Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. It was a point of reference that allowed us to visualize how elements in the game were interconnected, identify their properties and actions, and have an orderly development process.
 <div align="center">
 
-**Figure 1**  
+**Figure 2**  
 *Class diagram illustrating the game structure.*  
 
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Class Diagram" width="600"/>
@@ -170,14 +178,6 @@ The Lift class offers a way for players to move between floors, responding dynam
 The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge—to beat the clock in reaching the lab before the virus can fully mature.
 
 Together, these courses define the shape and mechanics of the game, offering a cooperative puzzle-solving experience with challenges, environmental risks, and strategic team-based elements.
-
-<div align="center">
-
-**Figure 2**  
-*Preliminary use case diagram showing system interactions.*  
-
-<img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prelim_use_case_diagram(2).jpg?raw=true" alt="Preliminary Use Case Diagram" width="600"/>
-</div>
 
 ## Implementation
 
