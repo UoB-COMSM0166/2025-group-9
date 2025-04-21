@@ -198,11 +198,13 @@ From the beginning, we assigned tasks based on individual strengths. For instanc
 Our meetings typically followed a structure where we’d begin by updating each other on what we had completed that week, and then decide on what we wanted to achieve in the week ahead. We would then split tasks into smaller groups or pairs. We found this structure to be far more efficient, especially after initially trying to do tasks with all five members at once - which often slowed things down and led to duplication of effort.
 In the early stages, we used the WhatsApp poll feature to shortlist and vote on our top two game ideas. We then held an in-person meeting to discuss the pros and cons of each, eventually deciding on a concept we all felt enthusiastic about. This helped everyone have a say, and we were able to quickly agree on a game idea that we all liked.
 
-(add image of whatsapp poll)
-
 To document our progress, we kept detailed meeting notes on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
 
-(add image of meeting notes) (add link to meeting notes)
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes.png?raw=true" width="55%" />
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes2.png?raw=true" width="35%" />
+</p>
+
 
 A major strength of our collaboration was our use of pair programming. Working in pairs allowed us to support one another in real time, troubleshoot more effectively, and share different perspectives, which ultimately improved the quality and readability of our code. An example of when we used pair programming was during the development stage, when we were working on the player class. One person would focus on writing the code while the other helped with debugging or suggesting improvements. This made the process faster and helped us catch issues early on.
 
@@ -215,13 +217,20 @@ We incorporated various tools and techniques throughout the development process,
 
 We maintained a Kanban board that helped us visualise our workflow. Tasks were categorised into "To Do," "In Progress," and "Done." We would often move cards during meetings and use labels to indicate coding, design, or report-writing tasks. This was particularly useful during busy periods and ensured that everyone could see the project’s overall progress at a glance.
 
-(add image of kanban board)
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/kanbanboard.png?raw=true" width="60%" />
+</p>
+
 
 **Google Docs:**
 
 Our shared Google Doc was used for collaboratively writing the final report. We also created mini to-do lists for each section within the doc so that everyone was reminded of the specific requirements. This made it easier to divide writing tasks and collaborate on edits in real time.
 
-(add image of google doc)
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/todolist.png?raw=true" width="35%" />
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/googledoc.png?raw=true" width="55%" />
+</p>
+
 
 **Planning Poker:**
 
