@@ -8,7 +8,7 @@ let mazeImage;
 let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, maze,FloorEasyImage, missionCompleteImage;
 let chemInfoPopupImg, vialQuestionImg, vialCongratsImg, vialTryAgainImg;
 let plantInfoImg, plantQuestionImg, plantCongratsImg, plantTryAgainImg;
-let lockTreeImg, flowerImg, keyImg, flaskImg, vapoursImg,flowerObstacleDown,flowerObstacleUp,doubleFlower;
+let lockTreeImg, flowerImg, keyImg, flaskImg;
 
 let keyReminderPopupImg;
 let selectedDifficulty;
@@ -26,11 +26,12 @@ let chemistryRightImg;
 this.keyCollected = false;
 this.removeLock = false;
 this.viewRealoded =false;
-this.chemPuzzleSolved = false;
 let nearLiftLever1Bot;
 let nearLiftLever1Chem;
 let nearLiftLever2Bot;
 let nearLiftLever2Chem;
+let chemistryPuzzleSolved = false;
+let botanyPuzzleSolved = false;
 // temporary player and platforms for collision testing
 //let player;
 let platforms = [];
@@ -64,11 +65,6 @@ function preload() {
   flowerImg = loadImage("assets/flower.png");
   keyImg = loadImage("assets/key.png");
   flaskImg = loadImage("assets/flask.png");
-  vapoursImg = loadImage("assets/vapours.png");
-  flowerObstacleUp = loadImage("assets/flowerObstacleUpper.png")
-  flowerObstacleDown = loadImage("assets/flowerObstacleLower.png")
-  doubleFlower = loadImage("assets/doubleFlower.png")
-
 
 }
 
@@ -111,8 +107,8 @@ function loadHardPlatforms() {
   //additional first floor platforms
   platforms.push({ x: 480 + xOffset, y: 466 + yOffset, width: 240, height: 26 });
   platforms.push({ x: 502 + xOffset, y: 448 + yOffset, width: 193, height: 18 });
-  platforms.push({ x: 1007  + xOffset, y: 440 + yOffset, width: 48, height: 19 });
-  platforms.push({ x: 1068 + xOffset, y: 418 + yOffset, width: 48, height:19 });
+  platforms.push({ x: 1007  + xOffset, y: 460 + yOffset, width: 48, height: 10 });
+  platforms.push({ x: 1068 + xOffset, y: 445 + yOffset, width: 48, height:10 });
   platforms.push({ x: 129 + xOffset, y: 440 + yOffset, width: 52, height: 52 });
   platforms.push({ x: 1278 + xOffset, y: 445 + yOffset, width: 49, height: 49 });
 
@@ -128,7 +124,7 @@ function loadHardPlatforms() {
   platforms.push({ x: 1159 + xOffset, y: 224 + yOffset, width: 46, height: 18 });
   platforms.push({ x: 1098 + xOffset, y: 200 + yOffset, width: 47, height: 18 });
   platforms.push({ x: 1039 + xOffset, y: 228 + yOffset, width: 47, height: 18 });
-  platforms.push({ x: 225 + xOffset, y: 197 + yOffset, width: 39, height: 19 });
+  platforms.push({ x: 225 + xOffset, y: 222 + yOffset, width: 39, height: 19 });
   platforms.push({ x: 480 + xOffset, y: 225 + yOffset, width: 39, height: 19 });
   platforms.push({ x: 335 + xOffset, y: 152 + yOffset, width: 37, height: 19 });
   platforms.push({ x: 613 + xOffset, y: 188 + yOffset, width: 122, height: 18 });
@@ -161,8 +157,8 @@ function reLoadHardPlatforms() {
   //additional first floor platforms
   platforms.push({ x: 480 + xOffset, y: 466 + yOffset, width: 240, height: 26 });
   platforms.push({ x: 502 + xOffset, y: 448 + yOffset, width: 193, height: 18 });
-  platforms.push({ x: 1007  + xOffset, y: 440 + yOffset, width: 48, height: 19 });
-  platforms.push({ x: 1068 + xOffset, y: 418 + yOffset, width: 48, height:19 });
+  platforms.push({ x: 1007  + xOffset, y: 460 + yOffset, width: 48, height: 19 });
+  platforms.push({ x: 1068 + xOffset, y: 445 + yOffset, width: 48, height:19 });
   platforms.push({ x: 129 + xOffset, y: 440 + yOffset, width: 52, height: 52 });
   platforms.push({ x: 1278 + xOffset, y: 445 + yOffset, width: 49, height: 49 });
 
@@ -349,19 +345,21 @@ function updateGame() {
     ) {
       if (dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 50){
         chemistryPuzzle.interactWithBook();
+       
+
       }
-      if (dist(chemistryPlayer.x, chemistryPlayer.y, 620 + xOffset, 382 + yOffset) < 50) {
+      if (dist(chemistryPlayer.x, chemistryPlayer.y, 167 + xOffset, 422 + yOffset) < 50) {
         chemistryPuzzle.interactWithVial();
         chemistryPuzzle.showTryAgain = false;
-        this.chemPuzzleSolved =true;
+        chemistryPuzzleSolved = true;
         console.log("Chemistry puzzle solved set true");
       }
     }
 
     // botany puzzle
     if (!botanyPuzzle.plantCollected) {
-      const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 138 + xOffset, 177 + yOffset) < 100;
-      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 370 + xOffset, 200 + yOffset) < 100;
+      const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 138 + xOffset, 177 + yOffset) < 50;
+      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 199 + yOffset) < 50;
 
       if (nearNote) {
         botanyPuzzle.interactWithNote();
@@ -373,68 +371,39 @@ function updateGame() {
 
     const hitWaterChem = dist(chemistryPlayer.x, chemistryPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
     const hitWaterBot = dist(botanyPlayer.x, botanyPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
-    const hitVapourChem = dist(chemistryPlayer.x, chemistryPlayer.y, 270+xOffset ,411+ yOffset) <70;
-    const hitVapourBot = dist(botanyPlayer.x, botanyPlayer.y, 270+xOffset , 411 + yOffset)<70;
-    const hitFlowerChem = dist(chemistryPlayer.x, chemistryPlayer.y, 515+xOffset ,  210 + yOffset) <30;
-    const hitFlowerBot = dist(botanyPlayer.x, botanyPlayer.y,  515+xOffset ,  210 + yOffset )<30;
-    const hitFlower2Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 180+xOffset ,  180 + yOffset) <10;
-    const hitFlower2Bot = dist(botanyPlayer.x, botanyPlayer.y,  180+xOffset ,  180 + yOffset )<10;
+    const hitFlowerChem = dist(chemistryPlayer.x, chemistryPlayer.y, 515+xOffset ,  220 + yOffset) <30;
+    const hitFlowerBot = dist(botanyPlayer.x, botanyPlayer.y,  515+xOffset ,  220 + yOffset )<30;
+    const hitFlower2Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 180+xOffset ,  185 + yOffset) <10;
+    const hitFlower2Bot = dist(botanyPlayer.x, botanyPlayer.y,  180+xOffset ,  185 + yOffset )<10;
     const hitBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 1082+xOffset , 455+ yOffset) <20;
     const hitBombBot = dist(botanyPlayer.x, botanyPlayer.y, 1082 +xOffset, 455 + yOffset)<20;
-    const hitDoublePlantBot =  dist(botanyPlayer.x, botanyPlayer.y, 992 +xOffset, 191 + yOffset)<50;
-    const hitDoublePlantChem = dist(chemistryPlayer.x, chemistryPlayer.y, 992+xOffset , 191+ yOffset) <50;
-    const hitVapourBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 307 +xOffset,441+ yOffset) <25;
-    const hitVapourBombBot = dist(botanyPlayer.x, botanyPlayer.y, 307+xOffset , 441 + yOffset)<25;
 
 
       // console.log("player x : ",chemistryPlayer.x);
       //  console.log("player y : ",chemistryPlayer.y)
       //  console.log("distance  : ",dist(chemistryPlayer.x, chemistryPlayer.y, 634 , 639) )
     if(hitWaterChem || hitWaterBot || hitBombChem || hitBombBot 
-      ||hitVapourBombChem || hitVapourBombBot || hitFlowerChem ||hitFlowerBot 
+       || hitFlowerChem ||hitFlowerBot 
       || hitFlower2Bot || hitFlower2Chem){
       gameController.triggerPlayerDied();
       chemistryPlayer.x = 750 + xOffset;
-      chemistryPlayer.y = 640 + yOffset
+      chemistryPlayer.y = 150 + yOffset
       this.keyCollected =false;
       botanyPlayer.x = 650 + xOffset;
       botanyPlayer.y = 640+yOffset;
+      this.viewRealoded = false;
+      this.removeLock = false;
       gameManager.updateGameStatus();
     }
-
-    if(!chemistryPuzzle.vialCollected && (hitVapourChem || hitVapourBot )){
-      gameController.triggerPlayerDied();
-      chemistryPlayer.x = 750 + xOffset;
-      chemistryPlayer.y = 640 + yOffset
-
-      botanyPlayer.x = 650 + xOffset;
-      botanyPlayer.y = 640+yOffset;
-      this.keyCollected =false;
-      gameManager.updateGameStatus();
-    
-    }
-
-    if(!botanyPuzzle.plantCollected && (hitDoublePlantBot || hitDoublePlantChem )){
-      gameController.triggerPlayerDied();
-      chemistryPlayer.x = 750 + xOffset;
-      chemistryPlayer.y = 640 + yOffset
-
-      botanyPlayer.x = 650 + xOffset;
-      botanyPlayer.y = 640+yOffset;
-      this.keyCollected =false;
-
-      gameManager.updateGameStatus();
-    
-    }
-    
     
     let nearKey = dist(chemistryPlayer.x, chemistryPlayer.y, 1240 + xOffset, 670 + yOffset) < 30;
     nearKey = nearKey ||  dist(botanyPlayer.x, botanyPlayer.y, 1240 + xOffset, 670 + yOffset) < 30;
-    let nearLock = dist(chemistryPlayer.x, chemistryPlayer.y, 380 + xOffset, 590 + yOffset) < 30;
-    nearLock = nearLock || dist(botanyPlayer.x, botanyPlayer.y, 380 + xOffset, 590 + yOffset) < 30;
+    let nearLock = dist(chemistryPlayer.x, chemistryPlayer.y, 380 + xOffset, 620 + yOffset) < 30;
+    nearLock = nearLock || dist(botanyPlayer.x, botanyPlayer.y, 380 + xOffset, 620 + yOffset) < 30;
 
     if(!this.keyCollected && nearKey){
       this.keyCollected = true;
+      gameController.collectKey();
     }
 
     if(!this.keyCollected){
@@ -454,15 +423,6 @@ function updateGame() {
       reLoadHardPlatforms();
     }
 
-    if(!chemistryPuzzle.vialCollected){
-         chemistryPuzzle.drawVapourImage();
-         console.log("Chemistry puzzle solved");
-    }
-
-    if(!botanyPuzzle.plantCollected){
-      chemistryPuzzle.drawDoubleFlowerImage();    
-
-    }
   }
 
   // Hard level puzzle logic using updated player 
@@ -777,10 +737,6 @@ function mousePressed() {
   const state = gameManager.getState(); // gets the current state of the game
 
   // HOME SCREEN
-  if(mouseX > (80 + xOffset) && mouseX < (180 +xOffset) && mouseY > (680+yOffset) && mouseY < (680+yOffset+30)){
-    this.chemPuzzleSolved = true;
-    console.log("Puzzle solved");
-}
 
 
   // Handle info/how to play popup

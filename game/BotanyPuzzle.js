@@ -32,7 +32,7 @@ class BotanyPuzzle {
       let  nearFlower = false;
       // using temp player - delete later
       const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 140 + xOffset, 169 + yOffset) < 60; 
-      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 370 + xOffset, 203 + yOffset) < 60;
+      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 200 + yOffset) < 40;
       if (gameManager.getDifficulty() === "easy") {
              nearFlower =  dist(botanyPlayer.x, botanyPlayer.y, 240 + xOffset, 463 + yOffset) < 30
       }
@@ -71,14 +71,26 @@ class BotanyPuzzle {
       }
 
   
+      if (gameManager.getDifficulty() === "easy") {
 
-      if(!this.flowerCollected && nearFlower){
-        this.flowerCollected = true;
+        if(!this.flowerCollected && nearFlower){
+          this.flowerCollected = true;
+        }
+
+        if(!this.flowerCollected ){
+          this.drawFlowerImage();
+        }
+
+
+      }else {
+        if(!this.flowerCollected && nearFlower && this.plantCollected){
+          this.flowerCollected = true;
+        }
+        if(!this.flowerCollected && !this.plantCollected){
+          this.drawFlowerImage();
+        }
+
       }
-     
-     if(!this.flowerCollected){
-       this.drawFlowerImage();
-     }
            
     }
 
@@ -153,8 +165,8 @@ class BotanyPuzzle {
           y = 445 + yOffset - imgHeight - 10;
         } else {
           // Hard mode plant position
-          x = 500 + xOffset - imgWidth / 2 - 100;
-          y = 250 + yOffset - imgHeight - 30;
+          x = 1192 + xOffset - imgWidth / 2 - 100;
+          y = 199 + yOffset - imgHeight - 30;
         }
         imageMode(CORNER);
         image(botanyCongratsImg, x, y, imgWidth, imgHeight);
@@ -164,8 +176,8 @@ class BotanyPuzzle {
       drawTryAgainPopup() {
         const imgWidth = 300;
         const imgHeight = 100;
-        const x = 500 + xOffset - imgWidth / 2 - 100; 
-        const y = 250 + yOffset - imgHeight - 30; 
+        const x = 1192 + xOffset - imgWidth / 2 - 100; 
+        const y = 199 + yOffset - imgHeight - 30; 
         imageMode(CORNER);
         image(botanyTryAgainImg, x, y, imgWidth, imgHeight);
       }

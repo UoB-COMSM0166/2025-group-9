@@ -45,8 +45,8 @@ class ChemistryPuzzle {
       // Hide popups if player walks away from book and vial
       // uses temp player - delete later
       let nearFlask = false;
-      const nearBook = dist(chemistryPlayer.x, chemistryPlayer.y, 620 + xOffset, 382 + yOffset) < 60;
-      const nearVial = dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 60;
+      const nearBook = dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 40;
+      const nearVial = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 30;
 
       
       if (gameManager.getDifficulty() === "easy") {
@@ -57,21 +57,36 @@ class ChemistryPuzzle {
       }
 
 
-      if(!this.flastCollected && nearFlask){
-        this.flastCollected = true;
+      if (gameManager.getDifficulty() === "easy") {
+        if(!this.flastCollected && nearFlask ){
+          this.flastCollected = true;
+        }
+
+         //this.drawFlowerObsDownImage();
+        if(!this.flastCollected ){
+            this.drawFlaskImage();
+        }
+
+      
+      }else{
+
+        if(!this.flastCollected && nearFlask && this.vialCollected){
+          this.flastCollected = true;
+        }
+
+         //this.drawFlowerObsDownImage();
+        if(!this.flastCollected || !this.vialCollected){
+            this.drawFlaskImage();
+        }
+
       }
+      
 
     
       if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
         this.showInfoPopup = false;
         this.showQuestion = false;
       }
-
-        
-            //this.drawFlowerObsDownImage();
-            if(!this.flastCollected){
-              this.drawFlaskImage();
-            }
 
     
     }
@@ -101,39 +116,6 @@ class ChemistryPuzzle {
       image(keyImg, x, y, imgWidth, imgHeight);
     }
 
-    drawVapourImage() {
-      const imgWidth = 40;
-      const imgHeight = 140;
-      const x = 475 + xOffset - imgWidth / 2 - 170;
-      const y = 310 + yOffset + 50;
-      image(vapoursImg, x, y, imgWidth, imgHeight);
-    }
-
-    drawFlowerObsUpImage() {
-      const imgWidth = 40;
-      const imgHeight = 20;
-      const x = 798 + xOffset - imgWidth / 2 - 170;
-      const y = 634 + yOffset + 50;
-      image(keyImg, x, y, imgWidth, imgHeight);
-    }
-
-
-    drawFlowerObsDownImage() {
-      const imgWidth = 30;
-      const imgHeight = 70;
-      const x = 640 + xOffset - imgWidth / 2 - 170;
-      const y = 155 + yOffset + 50;
-      image(flowerObstacleDown, x, y, imgWidth, imgHeight);
-    }
-    
-
-    drawDoubleFlowerImage() {
-      const imgWidth = 30;
-      const imgHeight = 200;
-      const x = 1170 + xOffset - imgWidth / 2 - 170;
-      const y = 30 + yOffset + 50;
-      image(doubleFlower, x, y, imgWidth, imgHeight);
-    }
 
     drawFlaskImage() {
       const imgWidth = 80;
@@ -195,8 +177,8 @@ class ChemistryPuzzle {
         y = 160 + yOffset - imgHeight - 10;
       } else {
         // Hard mode vial position
-        x = 620 + xOffset - imgWidth / 2 + 60;
-        y = 382 + yOffset - imgHeight - 10;
+        x = 167 + xOffset - imgWidth / 2 + 60;
+        y = 422 + yOffset - imgHeight - 10;
       }
 
       imageMode(CORNER);
@@ -207,8 +189,8 @@ class ChemistryPuzzle {
     drawTryAgainPopup() {
       const imgWidth = 300;
       const imgHeight = 100;
-      const x = 620 + xOffset - imgWidth / 2 + 60;
-      const y = 382 + yOffset - imgHeight - 10;
+      const x = 167 + xOffset - imgWidth / 2 + 60;
+      const y = 422 + yOffset - imgHeight - 10;
       imageMode(CORNER);
       image(vialTryAgainImg, x, y, imgWidth, imgHeight);
     }
