@@ -43,17 +43,16 @@ class ChemistryPuzzle {
       }
     
       // Hide popups if player walks away from book and vial
-      // uses temp player - delete later
       let nearFlask = false;
-      const nearBook = dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 40;
-      const nearVial = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 30;
+      const nearBook = dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 60;
+      const nearVial = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 60;
 
       
       if (gameManager.getDifficulty() === "easy") {
-        nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 240 + xOffset, 150 + yOffset) < 30;
+        nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 240 + xOffset, 150 + yOffset) < 60;
 
       } else {
-       nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 30;
+       nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 60;
       }
 
 
@@ -66,7 +65,6 @@ class ChemistryPuzzle {
         if(!this.flastCollected ){
             this.drawFlaskImage();
         }
-
       
       }else{
 
@@ -81,13 +79,10 @@ class ChemistryPuzzle {
 
       }
       
-
-    
       if (!nearBook && !nearVial && !this.showSuccess && !this.vialCollected) {
         this.showInfoPopup = false;
         this.showQuestion = false;
       }
-
     
     }
 

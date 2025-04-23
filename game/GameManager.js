@@ -12,31 +12,22 @@ class GameManager {
       this.selectedDifficulty = difficulty; 
       this.state = "playing";
       this.gameController.setDifficulty(difficulty); 
-      this.gameController.timeManager.resetTime();
-/*
-      // temp player
-      player = {
-        x: 750,
-        y: 550,
-        width: 20,
-        height: 50,
-        velocityX: 0,
-        velocityY: 0,
-        speed: 2,
-        jumpPower: -12,
-        onPlatform: false
-      };
-*/
+    
+      // Reset players to starting positions
+      chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
+      botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
+    
       if (difficulty === "hard") {
         loadHardPlatforms();
-        chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
-        botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
+        this.gameController.timeManager.resetTime(); // timer starts immediately in hard mode
       } else {
         loadEasyPlatforms();
-        chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
-        botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
+        showLiftPopup = true;// show the lift popup
+        liftPopupDismissed = false;  // timer should wait until popup is gone
+        startTimerAfterPopup = true;
       }
     }
+    
 
     getDifficulty() {
       return this.selectedDifficulty;
@@ -73,10 +64,32 @@ class GameManager {
 
     
     resetGame() {
-        console.log("Resetting game...");
-        this.state = "home";
-        this.gameController.resetGame(); // resetting all game components
+      console.log("Resetting game...");
+      this.state = "home";
+      this.selectedDifficulty = null;
+    
+      // Reset the game controller (ingredients, lab, timer, etc.)
+      this.gameController.resetGame();
+    
+      // Reset puzzle progress
+      chemistryPuzzle = new ChemistryPuzzle();
+      botanyPuzzle = new BotanyPuzzle();
+    
+      // Reset player positions
+      chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
+      botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
+    
+      // Reset lift popup logic for easy mode
+      showLiftPopup = false;
+      liftPopupDismissed = false;
+      startTimerAfterPopup = false;
+    
+      // Reset hard mode logic
+      keyCollected = false;
+      removeLock = false;
+      viewRealoded = false;
     }
+    
 
  
     isPlaying() {

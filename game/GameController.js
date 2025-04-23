@@ -120,9 +120,8 @@ class GameController {
       this.keyReminderTimer = 0;
       this.playerDie = false;
       this.timeManager.resetTime();
-      chemistryPuzzle = new ChemistryPuzzle();
-      botanyPuzzle = new BotanyPuzzle();
     }
+    
 
      triggerPlayerDied(){
       this.playerDie = true;

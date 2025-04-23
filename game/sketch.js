@@ -9,7 +9,6 @@ let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, maze,Floo
 let chemInfoPopupImg, vialQuestionImg, vialCongratsImg, vialTryAgainImg;
 let plantInfoImg, plantQuestionImg, plantCongratsImg, plantTryAgainImg;
 let lockTreeImg, flowerImg, keyImg, flaskImg;
-
 let keyReminderPopupImg;
 let selectedDifficulty;
 let hurryToLabImg;
@@ -35,6 +34,10 @@ let botanyPuzzleSolved = false;
 // temporary player and platforms for collision testing
 //let player;
 let platforms = [];
+let liftInstructionImg;
+let showLiftPopup = false;
+let liftPopupDismissed = false;
+let startTimerAfterPopup = false;
 
 function preload() {
   homeImage = loadImage("assets/homepage.png");
@@ -65,7 +68,7 @@ function preload() {
   flowerImg = loadImage("assets/flower.png");
   keyImg = loadImage("assets/key.png");
   flaskImg = loadImage("assets/flask.png");
-
+  liftInstructionImg = loadImage("assets/lift-popup.png");
 }
 
 const BASE_WIDTH = 1440;
@@ -84,7 +87,6 @@ function setup() {
   chemistryPlayer = new ChemistryTrial({ x: 650 + xOffset, y: 650 + yOffset, playerImgL : chemistryLeftImg, playerImgR: chemistryRightImg})
 }
  
-
 
 function loadHardPlatforms() {
   platforms = [];
@@ -302,6 +304,15 @@ function draw() {
       updateGame(); // main game loop
     }
 
+    if (gameManager.getDifficulty() === "easy" && showLiftPopup && !liftPopupDismissed) {
+      const popupW = 900;
+      const popupH = 600;
+      const popupX = (width - popupW) / 2;
+      const popupY = (height - popupH) / 2;
+      image(liftInstructionImg, popupX, popupY, popupW, popupH);
+    }
+    
+
     // Back Button UI
     fill(255);
     stroke(0);
@@ -425,55 +436,7 @@ function updateGame() {
 
   }
 
-  // Hard level puzzle logic using updated player 
-  /*
-  if (difficulty === "hard") {
-    // chemistry puzzle
-    const nearBook =
-      dist(chemistry.position.x, chemistry.position.y, 1316 + xOffset, 419 + yOffset) < 50 ||
-      dist(botany.position.x, botany.position.y, 1316 + xOffset, 419 + yOffset) < 50;
-  
-    const nearVial =
-      dist(chemistry.position.x, chemistry.position.y, 167 + xOffset, 422 + yOffset) < 50 ||
-      dist(botany.position.x, botany.position.y, 167 + xOffset, 422 + yOffset) < 50;
-  
-    if (
-      !chemistryPuzzle.vialCollected &&
-      !chemistryPuzzle.showQuestion &&
-      !chemistryPuzzle.showSuccess
-    ) {
-      if (nearBook) {
-        chemistryPuzzle.interactWithBook();
-      }
-  
-      if (nearVial) {
-        chemistryPuzzle.interactWithVial();
-        chemistryPuzzle.showTryAgain = false;
-      }
-    }
-  
-    // botany puzzle
-    const nearNote =
-      dist(botany.position.x, botany.position.y, 138 + xOffset, 177 + yOffset) < 100 ||
-      dist(chemistry.position.x, chemistry.position.y, 138 + xOffset, 177 + yOffset) < 100;
-  
-    const nearPlant =
-      dist(botany.position.x, botany.position.y, 1192 + xOffset, 199 + yOffset) < 100 ||
-      dist(chemistry.position.x, chemistry.position.y, 1192 + xOffset, 199 + yOffset) < 100;
-  
-    if (!botanyPuzzle.plantCollected) {
-      if (nearNote) {
-        botanyPuzzle.interactWithNote();
-      }
-      if (nearPlant) {
-        botanyPuzzle.interactWithFlower();
-      }
-    }
-  }
-  */
-  
-
-  // Easy Level puzzle Logic using temp player - delete later
+  // Easy Level puzzle Logic using temp player
   if (difficulty === "easy") {
     // collects vial
     if (
@@ -498,37 +461,7 @@ function updateGame() {
     }
   }
 
-
-  /* Easy level puzzle logic using updated player
-  if (difficulty === "easy") {
-    // collects vial
-    const nearEasyVial =
-      dist(chemistry.position.x, chemistry.position.y, 253 + xOffset, 174 + yOffset) < 30 ||
-      dist(botany.position.x, botany.position.y, 253 + xOffset, 174 + yOffset) < 30;
-  
-    if (!chemistryPuzzle.vialCollected && nearEasyVial) {
-      chemistryPuzzle.vialCollected = true;
-      gameController.collectIngredient();
-      chemistryPuzzle.showSuccess = true;
-      chemistryPuzzle.successTimer = millis();
-    }
-  
-    // collects plant 
-    const nearEasyPlant =
-      dist(chemistry.position.x, chemistry.position.y, 240 + xOffset, 463 + yOffset) < 30 ||
-      dist(botany.position.x, botany.position.y, 240 + xOffset, 463 + yOffset) < 30;
-  
-    if (!botanyPuzzle.plantCollected && nearEasyPlant) {
-      botanyPuzzle.plantCollected = true;
-      gameController.collectIngredient();
-      botanyPuzzle.showSuccess = true;
-      botanyPuzzle.successTimer = millis();
-    }
-  }
-  */
-  
-
-  // Player reaches lab based on difficulty - checks when player is at the lab - uses temp player - delete later
+  // Player reaches lab based on difficulty - checks when player is at the lab 
   if (difficulty === "easy") {
     const easyLabX = 1324;
     const easyLabY = 205;
@@ -549,36 +482,6 @@ function updateGame() {
       }
   }
 
-  /* Player reaches lab logic using updated player
-  if (difficulty === "easy") {
-    const easyLabX = 1324;
-    const easyLabY = 205;
-  
-    const nearEasyLab =
-      dist(botany.position.x, botany.position.y, easyLabX + xOffset, easyLabY + yOffset) < 60 ||
-      dist(chemistry.position.x, chemistry.position.y, easyLabX + xOffset, easyLabY + yOffset) < 60;
-  
-    if (!gameController.labReached && nearEasyLab) {
-      console.log("Reached EASY lab!");
-      gameController.reachLab();
-    }
-  
-  } else if (difficulty === "hard") {
-    const hardLabX = 230;
-    const hardLabY = 623;
-  
-    const nearHardLab =
-      dist(botany.position.x, botany.position.y, hardLabX + xOffset, hardLabY + yOffset) < 60 ||
-      dist(chemistry.position.x, chemistry.position.y, hardLabX + xOffset, hardLabY + yOffset) < 60;
-  
-    if (!gameController.labReached && nearHardLab) {
-      console.log("Reached HARD lab!");
-      gameController.reachLab();
-    }
-  }
-  */
-  
-
   // GAME LOGIC FOR BOTH EASY AND HARD LEVEL
 
     // countdown and ingredients
@@ -589,7 +492,10 @@ function updateGame() {
     text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, width - 120, yOffset + 25);
     
     // update game time and status
-    timeManager.updateTime();
+    if (!showLiftPopup) {
+      timeManager.updateTime();
+    }
+
     gameManager.updateGameStatus();
 
     botanyPlayer.update();
@@ -839,6 +745,16 @@ function mousePressed() {
       // puzzle interactions
       chemistryPuzzle.mousePressed(mouseX, mouseY);
       botanyPuzzle.mousePressed(mouseX, mouseY);
+    
+    // info pop up for easy level - how to use the lift
+    if (gameManager.getDifficulty() === "easy" && showLiftPopup && !liftPopupDismissed) {
+      if (
+        mouseX > 1095 + xOffset && mouseX < 1155 + xOffset &&
+        mouseY > 124 + yOffset && mouseY < 182 + yOffset
+      ) {
+        liftPopupDismissed = true;
+        showLiftPopup = false;
+      }      
     }
+  }
 }
-
