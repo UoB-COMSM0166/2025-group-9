@@ -273,6 +273,17 @@ function draw() {
     let x = (width - gameDifficultyImage.width) / 2;
     let y = (height - gameDifficultyImage.height) / 2;
     image(gameDifficultyImage, x, y);
+
+    // Back button
+    fill(255);
+    stroke(0);
+    rect(xOffset + 15, yOffset, 80, 40, 10);
+    fill(0);
+    noStroke();
+    textSize(14);
+    textAlign(CENTER, CENTER);
+    textFont('monospace');
+    text("Back", xOffset + 15 + 40, yOffset + 20);
   }
 
   // MAIN GAMEPLAY
@@ -706,6 +717,14 @@ function mousePressed() {
       mouseY > 240  + yOffset&& mouseY < 428 + yOffset
     ) {
       gameManager.startGame("easy");
+    }
+
+    // Back button on difficulty screen
+    if (
+      mouseX > xOffset + 15 && mouseX < xOffset + 95 && 
+      mouseY > yOffset && mouseY < yOffset + 40
+    ) {
+      gameManager.setState("home");
     }
 
   // GAME OVER SCREEN
