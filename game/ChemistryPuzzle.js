@@ -49,7 +49,7 @@ class ChemistryPuzzle {
 
       
       if (gameManager.getDifficulty() === "easy") {
-        nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 240 + xOffset, 150 + yOffset) < 60;
+        nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 210 + xOffset, 150 + yOffset) < 60;
 
       } else {
        nearFlask = dist(chemistryPlayer.x, chemistryPlayer.y, 145 + xOffset, 425 + yOffset) < 60;
