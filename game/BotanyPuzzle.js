@@ -65,6 +65,7 @@ class BotanyPuzzle {
 
         if(!this.flowerCollected && nearFlower){
           this.flowerCollected = true;
+          gameController.collectIngredient();
         }
 
         if(!this.flowerCollected ){

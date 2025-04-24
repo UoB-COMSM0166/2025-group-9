@@ -59,6 +59,7 @@ class ChemistryPuzzle {
       if (gameManager.getDifficulty() === "easy") {
         if(!this.flastCollected && nearFlask ){
           this.flastCollected = true;
+          gameController.collectIngredient();
         }
 
          //this.drawFlowerObsDownImage();
