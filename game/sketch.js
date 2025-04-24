@@ -452,7 +452,7 @@ function updateGame() {
     // collects vial
     if (
       !chemistryPuzzle.vialCollected &&
-      dist(chemistryPlayer.x, chemistryPlayer.y, 240 + xOffset, 150 + yOffset) < 30
+      dist(chemistryPlayer.x, chemistryPlayer.y, 210 + xOffset, 150 + yOffset) < 30
     ) {
       chemistryPuzzle.vialCollected = true;
       gameController.collectIngredient();
