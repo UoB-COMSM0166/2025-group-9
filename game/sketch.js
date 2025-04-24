@@ -351,13 +351,12 @@ function draw() {
   }
 }
 
-
 function updateGame() {
   if (!botanyPlayer || !chemistryPlayer) return; // if player hasn't loaded yet, return
   const difficulty = gameManager.getDifficulty();
 
 
-  // HARD LEVEL PUZZLE LOGIC - uses temp player - delete later
+  // HARD LEVEL PUZZLE LOGIC
   if (difficulty === "hard") {
     // chemistry puzzle
     if (
@@ -365,12 +364,14 @@ function updateGame() {
       !chemistryPuzzle.showQuestion &&
       !chemistryPuzzle.showSuccess
     ) {
-      if (dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 50){
+      // interact with book
+      if (dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 60 || 
+          dist(botanyPlayer.x, botanyPlayer.y, 1316 + xOffset, 419 + yOffset) < 60) {
         chemistryPuzzle.interactWithBook();
-       
-
-      }
-      if (dist(chemistryPlayer.x, chemistryPlayer.y, 167 + xOffset, 422 + yOffset) < 50) {
+        }
+      
+        // interact with vial
+      if (dist(chemistryPlayer.x, chemistryPlayer.y, 167 + xOffset, 422 + yOffset) < 60) {
         chemistryPuzzle.interactWithVial();
         chemistryPuzzle.showTryAgain = false;
         chemistryPuzzleSolved = true;
@@ -380,8 +381,9 @@ function updateGame() {
 
     // botany puzzle
     if (!botanyPuzzle.plantCollected) {
-      const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 138 + xOffset, 177 + yOffset) < 50;
-      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 199 + yOffset) < 50;
+      const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 138 + xOffset, 177 + yOffset) < 60 || 
+                       dist(chemistryPlayer.x, chemistryPlayer.y, 138 + xOffset, 177 + yOffset) < 60;
+      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 199 + yOffset) < 60;
 
       if (nearNote) {
         botanyPuzzle.interactWithNote();
@@ -391,6 +393,7 @@ function updateGame() {
       }
     }
 
+    // collision detection for hard mode obstacles
     const hitWaterChem = dist(chemistryPlayer.x, chemistryPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
     const hitWaterBot = dist(botanyPlayer.x, botanyPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
     const hitFlowerChem = dist(chemistryPlayer.x, chemistryPlayer.y, 515+xOffset ,  220 + yOffset) <30;
@@ -418,6 +421,7 @@ function updateGame() {
       gameManager.updateGameStatus();
     }
     
+    // Key and Lock Interaction for both players
     let nearKey = dist(chemistryPlayer.x, chemistryPlayer.y, 1240 + xOffset, 670 + yOffset) < 30;
     nearKey = nearKey ||  dist(botanyPlayer.x, botanyPlayer.y, 1240 + xOffset, 670 + yOffset) < 30;
     let nearLock = dist(chemistryPlayer.x, chemistryPlayer.y, 380 + xOffset, 620 + yOffset) < 30;
@@ -428,26 +432,36 @@ function updateGame() {
       gameController.collectKey();
     }
 
-    if(!this.keyCollected){
-      chemistryPuzzle.drawKeyImage();
+    if (!this.removeLock && this.keyCollected && nearLock) {
+      this.removeLock = true;
     }
 
-    if(!this.removeLock){
-      this.removeLock = nearLock && this.keyCollected
+    // draw key image if not collected
+    if (!this.keyCollected) {
+      const imgWidth = 70;
+      const imgHeight = 40;
+      const x = 1415 + xOffset - imgWidth / 2 - 170;
+      const y = 585 + yOffset + 50;
+      image(keyImg, x, y, imgWidth, imgHeight);
     }
+    
+    // draw lock image if not unlocked
+    if (!this.removeLock) {
+      const imgWidth = 20;
+      const imgHeight = 120;
+      const x = 540 + xOffset - imgWidth / 2 - 170;
+      const y = 495 + yOffset + 50;
+      image(lockTreeImg, x, y, imgWidth, imgHeight);
+    } 
 
-    if(!this.removeLock){
-      chemistryPuzzle.drawLockImage(); 
-    }
-
+    // reload platforms once lock is removed
     if(this.removeLock && !this.viewRealoded ){
       this.viewRealoded= true;
       reLoadHardPlatforms();
     }
-
   }
 
-  // Easy Level puzzle Logic using temp player
+  // EASY LEVEL LOGIC
   if (difficulty === "easy") {
     // collects vial
     if (
@@ -459,16 +473,52 @@ function updateGame() {
       chemistryPuzzle.showSuccess = true;
       chemistryPuzzle.successTimer = millis();
     }
+
+    // Draw the flask if not yet collected
+    if (!chemistryPuzzle.vialCollected) {
+      const imgWidth = 80;
+      const imgHeight = 80;
+      const x = 405 + xOffset - imgWidth / 2 - 170;
+      const y = 70 + yOffset + 50;
+      image(flaskImg, x, y, imgWidth, imgHeight);
+    }
+
+    // Draw success popup when collected
+    if (chemistryPuzzle.showSuccess && millis() - chemistryPuzzle.successTimer < 1500) {
+      const imgWidth = 300;
+      const imgHeight = 100;
+      const x = 280 + xOffset - imgWidth / 2 + 30;
+      const y = 160 + yOffset - imgHeight - 10;
+      image(vialCongratsImg, x, y, imgWidth, imgHeight);
+    }
   
     // collects plant 
-    if (
-      !botanyPuzzle.plantCollected &&
-      dist(botanyPlayer.x, botanyPlayer.y, 240 + xOffset, 463 + yOffset) < 30
-    ) {
+    const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 240 + xOffset, 463 + yOffset) < 60;
+    if (!botanyPuzzle.plantCollected && nearPlant) {
       botanyPuzzle.plantCollected = true;
       gameController.collectIngredient();
       botanyPuzzle.showSuccess = true;
       botanyPuzzle.successTimer = millis();
+    }
+
+    // draw plant image if not yet collected
+    if (!botanyPuzzle.plantCollected) {
+      if (!botanyPuzzle.plantCollected) {
+        const imgWidth = 30;
+        const imgHeight = 30;
+        const plantX = 240 + xOffset;
+        const plantY = 463 + yOffset;
+        image(flowerImg, plantX - imgWidth / 2, plantY - imgHeight / 2, imgWidth, imgHeight);
+      }      
+    }
+
+    // Show success popup after collecting the plant (for ~1.5 seconds)
+    if (botanyPuzzle.showSuccess && millis() - botanyPuzzle.successTimer < 1500) {
+      const imgWidth = 300;
+      const imgHeight = 100;
+      const x = 240 + xOffset - imgWidth / 2;
+      const y = 463 + yOffset - imgHeight - 20;
+      image(botanyCongratsImg, x, y, imgWidth, imgHeight);
     }
   }
 
@@ -494,7 +544,6 @@ function updateGame() {
   }
 
   // GAME LOGIC FOR BOTH EASY AND HARD LEVEL
-
     // countdown and ingredients
     fill(0);
     textSize(15); 
@@ -511,6 +560,7 @@ function updateGame() {
 
     botanyPlayer.update();
     chemistryPlayer.update();
+
     // update and display the lift if lift exists
     if (lift) {
       lift.update();
@@ -575,13 +625,13 @@ function updateGame() {
       }
     */
 
-      // update puzzles and pop ups for the puzzles
-      chemistryPuzzle.update();
+      // Only run botanyPuzzle class logic for hard mode
+    if (difficulty === "hard") {
       botanyPuzzle.update();
-      chemistryPuzzle.drawPopups();
       botanyPuzzle.drawPopups();
-
-    
+      chemistryPuzzle.update();
+      chemistryPuzzle.drawPopups();
+    }
 }
 
 function collision(playerObj, platform) {
