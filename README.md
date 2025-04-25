@@ -188,7 +188,7 @@ Together, these courses define the shape and mechanics of the game, offering a c
 ## Evaluation
 During the development process, it was important to ensure the usability and effectiveness of our game's design and core mechanics. To this end, we used a mixed-methods approach, **combining qualitative** and **quantitative evaluations**. The qualitative evaluation was interested in gathering rich user feedback for the sake of revealing usability issues early, while the quantitative evaluation was interested in measuring player performance and satisfaction through statistical analysis.
 
-# Qualitative Evaluation
+### Qualitative Evaluation
 In Week 7's lab, we used two qualitative data collection methods: **Heuristic Evaluation** and **Think Aloud**.
 Heuristic Evaluation was conducted by three peers from other teams, each independently assessing the game based on Nielsen’s usability principles. They identified a range of issues related to visual design, user control, and system feedback. These insights helped highlight critical usability problems at an early stage, allowing us to address them systematically. A full breakdown of the Heuristic Evaluation findings is provided in the attached HCV table.
 
@@ -204,7 +204,7 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 
 ---
 
-##Based on this feedback, we made the following significant changes:
+## Based on this feedback, we made the following significant changes:
 - Shortened and summarised instructional text
 
 
