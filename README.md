@@ -205,6 +205,13 @@ Throughout the sessions, a number of common themes appeared. Players often compl
 
 A mind map of Think Aloud findings and thematic categorisation is presented below to graphically show the results of the evaluation.
 
+![Think Aloud Mind Map](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif)
+
+<div align="center">
+  
+*Figure: Think Aloud evaluation feedback.*
+
+</div>
 
 #### **Based on this feedback, we made the following significant changes:**
 - Shortened and summarised instructional text.
