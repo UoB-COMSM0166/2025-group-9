@@ -202,19 +202,21 @@ Throughout the sessions, a number of common themes appeared. Players often compl
 
 A mind map of Think Aloud findings and thematic categorisation is presented below to graphically show the results of the evaluation.
 
----
 
-## Based on this feedback, we made the following significant changes:
-- Shortened and summarised instructional text
-
-
-- Increased font sizes for better readability
+#### Based on this feedback, we made the following significant changes:
+- Shortened and summarised instructional text.
 
 
-- Refined jumping mechanics for smoother and more consistent platforming
+- Increased font sizes for better readability.
 
 
-- Increased visual cues to differentiate between two characters and draw attention to collectible items
+- Refined jumping mechanics for smoother and more consistent platforming.
+
+
+- Increased visual cues to differentiate between two characters and draw attention to collectible items.
+
+
+
 
 - 15% ~750 words
 
