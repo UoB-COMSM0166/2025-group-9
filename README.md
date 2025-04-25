@@ -186,6 +186,35 @@ Together, these courses define the shape and mechanics of the game, offering a c
 - Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game. 
 
 ## Evaluation
+During the development process, it was important to ensure the usability and effectiveness of our game's design and core mechanics. To this end, we used a mixed-methods approach, **combining qualitative** and **quantitative evaluations**. The qualitative evaluation was interested in gathering rich user feedback for the sake of revealing usability issues early, while the quantitative evaluation was interested in measuring player performance and satisfaction through statistical analysis.
+
+# Qualitative Evaluation
+In Week 7's lab, we used two qualitative data collection methods: **Heuristic Evaluation** and **Think Aloud**.
+Heuristic Evaluation was conducted by three peers from other teams, each independently assessing the game based on Nielsen’s usability principles. They identified a range of issues related to visual design, user control, and system feedback. These insights helped highlight critical usability problems at an early stage, allowing us to address them systematically. A full breakdown of the Heuristic Evaluation findings is provided in the attached HCV table.
+
+![HCV Table](HCVtable.png)  
+*Figure: Heuristic Evaluation Table.*
+
+---
+**The Think Aloud test**, conducted on our digital prototype, provided us with additional feedback on the real user experience. Three users were recruited from outside our development group. Each user was instructed to make their way through the multi-floor maze, collect ingredients specific to their character, solve puzzles while against the clock, and reach the lab before the time expired. Throughout gameplay, players were prompted to think aloud, sharing their thoughts, feelings, and confusion, which enabled us to gather in-depth qualitative feedback.
+
+Throughout the sessions, a number of common themes appeared. Players often complained of being confused over movement controls and having trouble finding objectives, pointing to a lack of clear onboarding and tutorial instruction. Visual issues were common; testers often struggled to distinguish between characters and weren't sure what various in-game icons meant. Platforming mechanics also received uniform feedback, namely the speed and responsiveness of the jump action. Text presentation was also pointed out as needing improvement, with font sizes being too small and pop-up instructions containing too much text.
+
+A mind map of Think Aloud findings and thematic categorisation is presented below to graphically show the results of the evaluation.
+
+---
+
+##Based on this feedback, we made the following significant changes:
+- Shortened and summarised instructional text
+
+
+- Increased font sizes for better readability
+
+
+- Refined jumping mechanics for smoother and more consistent platforming
+
+
+- Increased visual cues to differentiate between two characters and draw attention to collectible items
 
 - 15% ~750 words
 
