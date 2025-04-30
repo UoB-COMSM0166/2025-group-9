@@ -398,8 +398,10 @@ function updateGame() {
     const hitWaterBot = dist(botanyPlayer.x, botanyPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
     const hitFlowerChem = dist(chemistryPlayer.x, chemistryPlayer.y, 515+xOffset ,  220 + yOffset) <30;
     const hitFlowerBot = dist(botanyPlayer.x, botanyPlayer.y,  515+xOffset ,  220 + yOffset )<30;
-    const hitFlower2Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 180+xOffset ,  185 + yOffset) <10;
-    const hitFlower2Bot = dist(botanyPlayer.x, botanyPlayer.y,  180+xOffset ,  185 + yOffset )<10;
+    const hitFlower2Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 184.5 +xOffset ,  185 + yOffset) <15 || 
+    dist(chemistryPlayer.x, chemistryPlayer.y, 180+xOffset, 215+yOffset) < 15;
+    const hitFlower2Bot = dist(botanyPlayer.x, botanyPlayer.y,  184.5 +xOffset ,  185 + yOffset )<15 || 
+    dist(botanyPlayer.x, botanyPlayer.y, 180+xOffset, 215+yOffset) < 15;
     const hitBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 1082+xOffset , 455+ yOffset) <20;
     const hitBombBot = dist(botanyPlayer.x, botanyPlayer.y, 1082 +xOffset, 455 + yOffset)<20;
 
