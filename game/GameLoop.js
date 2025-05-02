@@ -109,8 +109,7 @@ class GameLoop {
         if (nearVial) {
           this.chemistryPuzzle.interactWithVial();
           this.chemistryPuzzle.showTryAgain = false;
-          this.chemistryPuzzleSolved = true;
-          console.log("Chemistry puzzle solved set true");
+          this.chemistryPuzzleSolved = false;
         }
       }
        // botany puzzle
@@ -222,7 +221,7 @@ class GameLoop {
         this.chemistryPuzzle.successTimer = millis();
       }
   
-      if (!this.chemistryPuzzle.vialCollected) {
+      if (!this.chemistryPuzzle.vialCollected  && this.images.flaskImg) {
         const imgWidth = 80;
         const imgHeight = 80;
         const x = 405 + xOffset - imgWidth / 2 - 170;
@@ -232,7 +231,7 @@ class GameLoop {
   
       if (
         this.chemistryPuzzle.showSuccess &&
-        millis() - this.chemistryPuzzle.successTimer < 1500
+        millis() - this.chemistryPuzzle.successTimer < 1500 && this.images.vialCongratsImg
       ) {
         const imgWidth = 300;
         const imgHeight = 100;
@@ -251,7 +250,7 @@ class GameLoop {
         this.botanyPuzzle.successTimer = millis();
       }
   
-      if (!this.botanyPuzzle.plantCollected) {
+      if (!this.botanyPuzzle.plantCollected && this.images.flowerImg) {
         const imgWidth = 30;
         const imgHeight = 30;
         const plantX = 240 + xOffset;
@@ -261,8 +260,11 @@ class GameLoop {
   
       if (
         this.botanyPuzzle.showSuccess &&
-        millis() - this.botanyPuzzle.successTimer < 1500
+        millis() - this.botanyPuzzle.successTimer < 1500 &&
+        this.images.botanyCongratsImg
       ) {
+        console.log("Showing chemistry success popup");
+
         const imgWidth = 300;
         const imgHeight = 100;
         const x = 240 + xOffset - imgWidth / 2;

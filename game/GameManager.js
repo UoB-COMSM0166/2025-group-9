@@ -75,8 +75,13 @@ class GameManager {
       this.gameController.resetGame();
     
       // Reset puzzle progress
-      chemistryPuzzle = new ChemistryPuzzle();
-      botanyPuzzle = new BotanyPuzzle();
+      chemistryPuzzle = new ChemistryPuzzle(gameLoop.images);
+      botanyPuzzle = new BotanyPuzzle(gameLoop.images);
+      gameLoop.chemistryPuzzle = chemistryPuzzle;
+      gameLoop.botanyPuzzle = botanyPuzzle;
+      gameLoop.chemistryPlayer = chemistryPlayer;
+      gameLoop.botanyPlayer = botanyPlayer;
+      gameLoop.gameController = this.gameController;
     
       // Reset player positions
       chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
@@ -88,9 +93,9 @@ class GameManager {
       startTimerAfterPopup = false;
     
       // Reset hard mode logic
-      keyCollected = false;
-      removeLock = false;
-      viewRealoded = false;
+      gameLoop.keyCollected = false;
+      gameLoop.removeLock = false;
+      gameLoop.viewReloaded = false;
     }
     
 

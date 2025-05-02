@@ -109,7 +109,7 @@ class BotanyPuzzle {
         const x = 1150 + xOffset - imgWidth / 2 - 20;
         const y = 199 + yOffset - imgHeight - 10;
         imageMode(CORNER);
-        image(botanyCongratsImg, x, y, imgWidth, imgHeight);
+        image(this.images.botanyCongratsImg, x, y, imgWidth, imgHeight);
       }
   
       // draw try again pop up when player gets the question wrong
