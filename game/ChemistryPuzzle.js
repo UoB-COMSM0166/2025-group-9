@@ -1,5 +1,6 @@
 class ChemistryPuzzle {
-    constructor() {
+    constructor(images) {
+      this.images = images;
       this.showInfoPopup = false;
       this.showQuestion = false;
       this.showSuccess = false;

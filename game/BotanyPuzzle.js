@@ -1,5 +1,6 @@
 class BotanyPuzzle {
-    constructor() {
+    constructor(images) {
+      this.images = images;
       this.showNotePopup = false;
       this.showQuestion = false;
       this.showSuccess = false;

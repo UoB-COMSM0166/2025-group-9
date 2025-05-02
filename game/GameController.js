@@ -16,8 +16,6 @@ class GameController {
       this.difficulty = difficulty;
     }
 
-  
-
     // called every frame to show key popup if active
     update() {
       if (this.showKeyReminderPopup && this.showKeyReminderPopup) {

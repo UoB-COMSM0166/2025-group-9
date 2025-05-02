@@ -5,7 +5,7 @@ let lift;
 let botanyPuzzle;
 let chemistryPuzzle;
 let mazeImage;
-let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, maze,FloorEasyImage, missionCompleteImage;
+let homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, mazeFloorEasyImage, missionCompleteImage;
 let chemInfoPopupImg, vialQuestionImg, vialCongratsImg, vialTryAgainImg;
 let plantInfoImg, plantQuestionImg, plantCongratsImg, plantTryAgainImg;
 let lockTreeImg, flowerImg, keyImg, flaskImg;
@@ -22,9 +22,6 @@ let botanyRightImg;
 let chemistryPlayer;
 let chemistryLeftImg;
 let chemistryRightImg;
-this.keyCollected = false;
-this.removeLock = false;
-this.viewRealoded =false;
 let nearLiftLever1Bot;
 let nearLiftLever1Chem;
 let nearLiftLever2Bot;
@@ -38,6 +35,8 @@ let liftInstructionImg;
 let showLiftPopup = false;
 let liftPopupDismissed = false;
 let startTimerAfterPopup = false;
+let uiManager;
+let gameLoop;
 
 function preload() {
   homeImage = loadImage("assets/homepage.png");
@@ -78,15 +77,47 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   xOffset = (windowWidth - BASE_WIDTH)/2;
   yOffset = (windowHeight - BASE_HEIGHT)/2;
+
+  const images = {
+    chemInfoPopupImg,
+    vialQuestionImg,
+    vialCongratsImg,
+    vialTryAgainImg,
+    plantInfoImg: botanyNoteImg,
+    plantQuestionImg: botanyQuestionImg,
+    plantCongratsImg: botanyCongratsImg,
+    plantTryAgainImg: botanyTryAgainImg,
+    keyReminderPopupImg,
+    hurryToLabImg,
+    liftImg,
+    botanyLeftImg,
+    botanyRightImg,
+    chemistryLeftImg,
+    chemistryRightImg,
+    lockTreeImg,
+    flowerImg,
+    keyImg,
+    flaskImg
+  };
+
   timeManager = new TimeManager();
   gameController = new GameController(2, timeManager); // 2 ingredients needed
   gameManager = new GameManager(gameController);
-  chemistryPuzzle = new ChemistryPuzzle();
-  botanyPuzzle = new BotanyPuzzle();
+  chemistryPuzzle = new ChemistryPuzzle(images);
+  botanyPuzzle = new BotanyPuzzle(images);
   botanyPlayer = new BotanyTrial({ x: 750 + xOffset, y: 650 + yOffset, playerImgL : botanyLeftImg, playerImgR: botanyRightImg})
   chemistryPlayer = new ChemistryTrial({ x: 650 + xOffset, y: 650 + yOffset, playerImgL : chemistryLeftImg, playerImgR: chemistryRightImg})
+
+  uiManager = new UIManager({ homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, mazeFloorEasyImage, 
+                            missionCompleteImage, infoSlides, liftInstructionImg}, xOffset, yOffset);
+  
+  const players = { botany: botanyPlayer, chemistry: chemistryPlayer };
+  const platformFunctions = { reLoadHardPlatforms };
+
+  gameLoop = new GameLoop({gameManager, gameController, uiManager, timeManager, chemistryPuzzle, botanyPuzzle, players, liftRef: lift,
+                            images, platformFunctions});
+
 }
- 
 
 function loadHardPlatforms() {
   platforms = [];
@@ -139,6 +170,7 @@ function loadHardPlatforms() {
 
   lift = new Lift({x: 874 + xOffset, y: 723 + yOffset, width :111, height: 5,liftSpeed: 2, floorGround: 724 + yOffset, floorOne: 455 + yOffset, floorTwo: 260 + yOffset, mode: 1}); // hard level lift
 
+  gameLoop.setPlatforms(platforms);
 }
 
 function reLoadHardPlatforms() {
@@ -187,6 +219,7 @@ function reLoadHardPlatforms() {
   platforms.push({ x: 66 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
   platforms.push({ x: 1368 + xOffset, y: 0 + yOffset, width: 5, height: 820 });
 
+  gameLoop.setPlatforms(platforms);
 }
 
 function loadEasyPlatforms() {
@@ -243,6 +276,7 @@ function loadEasyPlatforms() {
 
   lift = new Lift({x: 874 + xOffset, y: 723 + yOffset, width: 111, height: 5, liftSpeed: 2, floorGround: 724 + yOffset, floorOne: 500 + yOffset , floorTwo: 195 + yOffset, mode: 2}); // easy level lift
 
+  gameLoop.setPlatforms(platforms);
 }
 
 function draw() {
@@ -250,43 +284,12 @@ function draw() {
   background(255, 255, 255);
   const state = gameManager.getState(); // get current state
 
-  // HOME SCREEN
   if (state === "home") {
-    // center and display the home screen image
-    let x = (width - homeImage.width) / 2;
-    let y = (height - homeImage.height) / 2;
-    image(homeImage, x, y);
-
-    // show how to play slides
-    if (showInfo) {
-      const popupW = 900;
-      const popupH = 600;
-      const popupX = (width - popupW) / 2;
-      const popupY = (height - popupH) / 2;
-      image(infoSlides[currentSlide], popupX, popupY, popupW, popupH);
-    }
+    uiManager.drawHomeScreen(width, height);
   }
-
-  // SELECT DIFFICULTY SCREEN
   else if (state === "difficulty") {
-    // center and display the screen image
-    let x = (width - gameDifficultyImage.width) / 2;
-    let y = (height - gameDifficultyImage.height) / 2;
-    image(gameDifficultyImage, x, y);
-
-    // Back button
-    fill(255);
-    stroke(0);
-    rect(xOffset + 15, yOffset, 80, 40, 10);
-    fill(0);
-    noStroke();
-    textSize(14);
-    textAlign(CENTER, CENTER);
-    textFont('monospace');
-    text("Back", xOffset + 15 + 40, yOffset + 20);
+    uiManager.drawDifficultyScreen(width, height);
   }
-
-  // MAIN GAMEPLAY
   else if (state === "playing") {
     if (!botanyPlayer || !chemistryPlayer ) return; // prevent drawing if player hasn't loaded/been initialised
 
@@ -303,337 +306,25 @@ function draw() {
     let y = (height - mazeImage.height) / 2;
     image(mazeImage, x, y);
   
-    // run puzzle logic for hard mode
-    if (gameManager.getDifficulty() === "hard") {
-      chemistryPuzzle.update();
-      botanyPuzzle.update();
-    }
-  
     // update the game controller
     if (state === "playing" && gameController) {
       gameController.update();
-      updateGame(); // main game loop
+      gameLoop.update(width, height, xOffset, yOffset, showLiftPopup);
     }
 
     if (gameManager.getDifficulty() === "easy" && showLiftPopup && !liftPopupDismissed) {
-      const popupW = 900;
-      const popupH = 600;
-      const popupX = (width - popupW) / 2;
-      const popupY = (height - popupH) / 2;
-      image(liftInstructionImg, popupX, popupY, popupW, popupH);
+      uiManager.drawLiftPopup(width, height);
     }
     
-
-    // Back Button UI
-    fill(255);
-    stroke(0);
-    rect(xOffset + 15, yOffset, 80, 40, 10);
-    fill(0);
-    noStroke();
-    textSize(14);
-    textAlign(CENTER, CENTER);
-    textFont('monospace');
-    text("Back", xOffset + 15 + 40, yOffset + 20);
+    uiManager.drawBackButton();
   }
-
-  // WIN SCREEN
   else if (state === "won") {
-    let x = (width - missionCompleteImage.width) / 2;
-    let y = (height - missionCompleteImage.height) / 2;
-    image(missionCompleteImage, x, y);
+    uiManager.drawWinScreen(width, height);
   }
-
-  // GAME OVER SCREEN
   else if (state === "gameOver") {
-    let x = (width - gameOverImage.width) / 2;
-    let y = (height - gameOverImage.height) / 2;
-    image(gameOverImage, x, y);
+    uiManager.drawGameOverScreen(width, height);
   }
-}
-
-function updateGame() {
-  if (!botanyPlayer || !chemistryPlayer) return; // if player hasn't loaded yet, return
-  const difficulty = gameManager.getDifficulty();
-
-
-  // HARD LEVEL PUZZLE LOGIC
-  if (difficulty === "hard") {
-    // chemistry puzzle
-    if (
-      !chemistryPuzzle.vialCollected &&
-      !chemistryPuzzle.showQuestion &&
-      !chemistryPuzzle.showSuccess
-    ) {
-      // interact with book
-      if (dist(chemistryPlayer.x, chemistryPlayer.y, 1316 + xOffset, 419 + yOffset) < 60 || 
-          dist(botanyPlayer.x, botanyPlayer.y, 1316 + xOffset, 419 + yOffset) < 60) {
-        chemistryPuzzle.interactWithBook();
-        }
-      
-        // interact with vial
-      if (dist(chemistryPlayer.x, chemistryPlayer.y, 167 + xOffset, 422 + yOffset) < 60) {
-        chemistryPuzzle.interactWithVial();
-        chemistryPuzzle.showTryAgain = false;
-        chemistryPuzzleSolved = true;
-        console.log("Chemistry puzzle solved set true");
-      }
-    }
-
-    // botany puzzle
-    if (!botanyPuzzle.plantCollected) {
-      const nearNote = dist(botanyPlayer.x, botanyPlayer.y, 138 + xOffset, 177 + yOffset) < 60 || 
-                       dist(chemistryPlayer.x, chemistryPlayer.y, 138 + xOffset, 177 + yOffset) < 60;
-      const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 199 + yOffset) < 60;
-
-      if (nearNote) {
-        botanyPuzzle.interactWithNote();
-      }
-      if (nearPlant) {
-        botanyPuzzle.interactWithFlower();
-      }
-    }
-
-    // collision detection for hard mode obstacles
-    const hitWaterChem = dist(chemistryPlayer.x, chemistryPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
-    const hitWaterBot = dist(botanyPlayer.x, botanyPlayer.y, 582+xOffset , 680+ yOffset) < 25 ;
-    const hitFlowerChem = dist(chemistryPlayer.x, chemistryPlayer.y, 515+xOffset ,  220 + yOffset) <30;
-    const hitFlowerBot = dist(botanyPlayer.x, botanyPlayer.y,  515+xOffset ,  220 + yOffset )<30;
-    const hitFlower2Chem = dist(chemistryPlayer.x, chemistryPlayer.y, 184.5 +xOffset ,  185 + yOffset) <15 || 
-    dist(chemistryPlayer.x, chemistryPlayer.y, 180+xOffset, 215+yOffset) < 15;
-    const hitFlower2Bot = dist(botanyPlayer.x, botanyPlayer.y,  184.5 +xOffset ,  185 + yOffset )<15 || 
-    dist(botanyPlayer.x, botanyPlayer.y, 180+xOffset, 215+yOffset) < 15;
-    const hitBombChem = dist(chemistryPlayer.x, chemistryPlayer.y, 1082+xOffset , 455+ yOffset) <20;
-    const hitBombBot = dist(botanyPlayer.x, botanyPlayer.y, 1082 +xOffset, 455 + yOffset)<20;
-
-
-      // console.log("player x : ",chemistryPlayer.x);
-      //  console.log("player y : ",chemistryPlayer.y)
-      //  console.log("distance  : ",dist(chemistryPlayer.x, chemistryPlayer.y, 634 , 639) )
-    if(hitWaterChem || hitWaterBot || hitBombChem || hitBombBot 
-       || hitFlowerChem ||hitFlowerBot 
-      || hitFlower2Bot || hitFlower2Chem){
-      gameController.triggerPlayerDied();
-      chemistryPlayer.x = 750 + xOffset;
-      chemistryPlayer.y = 150 + yOffset
-      this.keyCollected =false;
-      botanyPlayer.x = 650 + xOffset;
-      botanyPlayer.y = 640+yOffset;
-      this.viewRealoded = false;
-      this.removeLock = false;
-      gameManager.updateGameStatus();
-    }
-    
-    // Key and Lock Interaction for both players
-    let nearKey = dist(chemistryPlayer.x, chemistryPlayer.y, 1240 + xOffset, 670 + yOffset) < 30;
-    nearKey = nearKey ||  dist(botanyPlayer.x, botanyPlayer.y, 1240 + xOffset, 670 + yOffset) < 30;
-    let nearLock = dist(chemistryPlayer.x, chemistryPlayer.y, 380 + xOffset, 620 + yOffset) < 30;
-    nearLock = nearLock || dist(botanyPlayer.x, botanyPlayer.y, 380 + xOffset, 620 + yOffset) < 30;
-
-    if(!this.keyCollected && nearKey){
-      this.keyCollected = true;
-      gameController.collectKey();
-    }
-
-    if (!this.removeLock && this.keyCollected && nearLock) {
-      this.removeLock = true;
-    }
-
-    // draw key image if not collected
-    if (!this.keyCollected) {
-      const imgWidth = 70;
-      const imgHeight = 40;
-      const x = 1415 + xOffset - imgWidth / 2 - 170;
-      const y = 585 + yOffset + 50;
-      image(keyImg, x, y, imgWidth, imgHeight);
-    }
-    
-    // draw lock image if not unlocked
-    if (!this.removeLock) {
-      const imgWidth = 20;
-      const imgHeight = 120;
-      const x = 540 + xOffset - imgWidth / 2 - 170;
-      const y = 495 + yOffset + 50;
-      image(lockTreeImg, x, y, imgWidth, imgHeight);
-    } 
-
-    // reload platforms once lock is removed
-    if(this.removeLock && !this.viewRealoded ){
-      this.viewRealoded= true;
-      reLoadHardPlatforms();
-    }
-  }
-
-  // EASY LEVEL LOGIC
-  if (difficulty === "easy") {
-    // collects vial
-    if (
-      !chemistryPuzzle.vialCollected &&
-      dist(chemistryPlayer.x, chemistryPlayer.y, 210 + xOffset, 150 + yOffset) < 30
-    ) {
-      chemistryPuzzle.vialCollected = true;
-      gameController.collectIngredient();
-      chemistryPuzzle.showSuccess = true;
-      chemistryPuzzle.successTimer = millis();
-    }
-
-    // Draw the flask if not yet collected
-    if (!chemistryPuzzle.vialCollected) {
-      const imgWidth = 80;
-      const imgHeight = 80;
-      const x = 405 + xOffset - imgWidth / 2 - 170;
-      const y = 70 + yOffset + 50;
-      image(flaskImg, x, y, imgWidth, imgHeight);
-    }
-
-    // Draw success popup when collected
-    if (chemistryPuzzle.showSuccess && millis() - chemistryPuzzle.successTimer < 1500) {
-      const imgWidth = 300;
-      const imgHeight = 100;
-      const x = 280 + xOffset - imgWidth / 2 + 30;
-      const y = 160 + yOffset - imgHeight - 10;
-      image(vialCongratsImg, x, y, imgWidth, imgHeight);
-    }
   
-    // collects plant 
-    const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 240 + xOffset, 463 + yOffset) < 60;
-    if (!botanyPuzzle.plantCollected && nearPlant) {
-      botanyPuzzle.plantCollected = true;
-      gameController.collectIngredient();
-      botanyPuzzle.showSuccess = true;
-      botanyPuzzle.successTimer = millis();
-    }
-
-    // draw plant image if not yet collected
-    if (!botanyPuzzle.plantCollected) {
-      if (!botanyPuzzle.plantCollected) {
-        const imgWidth = 30;
-        const imgHeight = 30;
-        const plantX = 240 + xOffset;
-        const plantY = 463 + yOffset;
-        image(flowerImg, plantX - imgWidth / 2, plantY - imgHeight / 2, imgWidth, imgHeight);
-      }      
-    }
-
-    // Show success popup after collecting the plant (for ~1.5 seconds)
-    if (botanyPuzzle.showSuccess && millis() - botanyPuzzle.successTimer < 1500) {
-      const imgWidth = 300;
-      const imgHeight = 100;
-      const x = 240 + xOffset - imgWidth / 2;
-      const y = 463 + yOffset - imgHeight - 20;
-      image(botanyCongratsImg, x, y, imgWidth, imgHeight);
-    }
-  }
-
-  // Player reaches lab based on difficulty - checks when player is at the lab 
-  if (difficulty === "easy") {
-    const easyLabX = 1324;
-    const easyLabY = 205;
-    if (!gameController.labReached &&
-        dist(botanyPlayer.x, botanyPlayer.y, easyLabX + xOffset, easyLabY + yOffset) < 60 &&
-        dist(chemistryPlayer.x, chemistryPlayer.y, easyLabX + xOffset, easyLabY + yOffset) < 60)
-        {
-        gameController.reachLab();
-      }
-  } else if (difficulty === "hard") {
-    const hardLabX = 230;
-    const hardLabY = 623;
-    if (!gameController.labReached &&
-        dist(botanyPlayer.x, botanyPlayer.y, hardLabX + xOffset, hardLabY + yOffset) < 60 &&
-        dist(chemistryPlayer.x, chemistryPlayer.y, hardLabX + xOffset, hardLabY + yOffset) < 60) 
-        {
-        gameController.reachLab();
-      }
-  }
-
-  // GAME LOGIC FOR BOTH EASY AND HARD LEVEL
-    // countdown and ingredients
-    fill(0);
-    textSize(15); 
-    textFont('monospace'); 
-    text(`Time Left: ${timeManager.getFormattedTime()}`, width - 120, yOffset + 10);
-    text(`Ingredients: ${gameController.collectedIngredients} / ${gameController.requiredIngredients}`, width - 120, yOffset + 25);
-    
-    // update game time and status
-    if (!showLiftPopup) {
-      timeManager.updateTime();
-    }
-
-    gameManager.updateGameStatus();
-
-    botanyPlayer.update();
-    chemistryPlayer.update();
-
-    // update and display the lift if lift exists
-    if (lift) {
-      lift.update();
-      lift.create();
-    
-      if (lift.isPlayerOnLift(botanyPlayer)) {
-        botanyPlayer.y = lift.y - botanyPlayer.height;
-        botanyPlayer.velocityY = 0;
-        botanyPlayer.y += lift.displacement();
-        botanyPlayer.onPlatform = true;
-      }
-
-      if (lift.isPlayerOnLift(chemistryPlayer)) {
-        chemistryPlayer.y = lift.y - chemistryPlayer.height;
-        chemistryPlayer.velocityY = 0;
-        chemistryPlayer.y += lift.displacement();
-        chemistryPlayer.onPlatform = true;
-      }
-    }
-    
-/*
-    // directional movement
-    if (keyIsDown(LEFT_ARROW)) {
-      player.velocityX = -player.speed;
-    } else if (keyIsDown(RIGHT_ARROW)) {
-      player.velocityX = player.speed;
-    } else {
-      player.velocityX = 0;
-    }
-      
-    // apply gravity
-    let gravity = 0.5;
-    player.velocityY += gravity;
-      
-    // update player's position
-    player.x += player.velocityX;
-    player.y += player.velocityY;
-      
-    // reset onPlatform bool before checking collisions
-    player.onPlatform = false;
-  
-  */
-    // resolve collisions with all platforms.
-    for (let i = 0; i < platforms.length; i++) {
-      collision(botanyPlayer, platforms[i]);
-      collision(chemistryPlayer, platforms[i]);
-    }
-
-    botanyPlayer.create();
-    chemistryPlayer.create();
-
-    /*
-    // Draw the temporary player.
-    fill(255, 0, 0);
-    rect(player.x, player.y, player.width, player.height);
-    */
-    /*
-      // Draw the platforms.
-      fill(0, 255, 0);
-      for (let i = 0; i < platforms.length; i++) {
-        rect(platforms[i].x, platforms[i].y, platforms[i].width, platforms[i].height);
-      }
-    */
-
-      // Only run botanyPuzzle class logic for hard mode
-    if (difficulty === "hard") {
-      botanyPuzzle.update();
-      botanyPuzzle.drawPopups();
-      chemistryPuzzle.update();
-      chemistryPuzzle.drawPopups();
-    }
 }
 
 function collision(playerObj, platform) {
@@ -706,29 +397,26 @@ function mousePressed() {
   const state = gameManager.getState(); // gets the current state of the game
 
   // HOME SCREEN
-
-
   // Handle info/how to play popup
-  if (state === "home" && showInfo) {
-
-   
+  if (state === "home" && uiManager.shouldShowInfo()) {
+    const mx = mouseX;
+    const my = mouseY;
     // NEXT button
     if (
-      currentSlide < 2 &&
+      uiManager.getCurrentSlide() < 2 &&
       mouseX > 1051 + xOffset && mouseX < 1107  + xOffset&&
       mouseY > 597  + yOffset&& mouseY < 631 + yOffset
     ) {
-      currentSlide++;
+      uiManager.nextSlide();
       return;
     }
-
     // EXIT button
     if (
-      currentSlide === 2 &&
+      uiManager.getCurrentSlide() === 2 &&
       mouseX > 1095  + xOffset&& mouseX < 1155 + xOffset &&
       mouseY > 124 + yOffset&& mouseY < 182 + yOffset
     ) {
-      showInfo = false;
+      uiManager.exitSlides();
       return;
     }
   }
@@ -748,8 +436,8 @@ function mousePressed() {
       mouseX > 450 + xOffset&& mouseX < 666 + xOffset&&
       mouseY > 285  + yOffset&& mouseY < 373 + yOffset
     ) {
-      showInfo = true;
-      currentSlide = 0;
+      uiManager.setShowInfo(true);
+      uiManager.setCurrentSlide(0);
     }
   }
 

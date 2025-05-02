@@ -9,25 +9,28 @@ class GameManager {
 
     startGame(difficulty) {
       console.log("Game Started!", difficulty);
-      this.selectedDifficulty = difficulty; 
+      this.selectedDifficulty = difficulty;
       this.state = "playing";
-      this.gameController.setDifficulty(difficulty); 
+      this.gameController.setDifficulty(difficulty);
     
-      // Reset players to starting positions
+      // Reset player positions
       chemistryPlayer.resetPlayerPosition(650 + xOffset, 650 + yOffset);
       botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
     
       if (difficulty === "hard") {
         loadHardPlatforms();
-        this.gameController.timeManager.resetTime(); // timer starts immediately in hard mode
+        gameLoop.setPlatforms(platforms);
+        gameLoop.lift = lift;
+        this.gameController.timeManager.resetTime();
       } else {
         loadEasyPlatforms();
-        showLiftPopup = true;// show the lift popup
-        liftPopupDismissed = false;  // timer should wait until popup is gone
+        gameLoop.setPlatforms(platforms);
+        gameLoop.lift = lift;
+        showLiftPopup = true;
+        liftPopupDismissed = false;
         startTimerAfterPopup = true;
       }
     }
-    
 
     getDifficulty() {
       return this.selectedDifficulty;
