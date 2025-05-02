@@ -1,9 +1,7 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 
 const botany = new Botany({
   imageSrc: 'botanyLeft80.png'
@@ -11,9 +9,6 @@ const botany = new Botany({
 const chemistry = new Chemistry({
   imageSrc: 'chemistryLeft80.png'
 })
-
-
-
 const keys = {
   a: {
     pressed: false
@@ -53,13 +48,10 @@ function animate(){
     chemistry.velocity.x = -5;
   }else chemistry.velocity.x = 0;
 
-
   botany.update();
   botany.draw();
   chemistry.update();
   chemistry.draw();
-
-
 
  window.addEventListener('keydown', (event) => {
   const key = event.key.toLowerCase(); // Convert key to lowercase
