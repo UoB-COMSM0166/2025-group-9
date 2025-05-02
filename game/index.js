@@ -28,7 +28,6 @@ const keys = {
   arrowUp: {
     pressed: false
   }
-
 }
 
 function animate(){
@@ -58,35 +57,27 @@ function animate(){
   switch(key) {
     case 'a':
         // move left
-        console.log('pressed a - left');
         keys.a.pressed = true;
         //console.log('Left arrow key pressed');
       botany.image.src = 'botanyLeft80.png'
       break;
     case 'd':
       // move right
-        //botany.velocity.x = 5;
-        console.log('pressed d - right');
          keys.d.pressed = true;
         botany.image.src = 'botanyRight80.png'
       break;
     case 'w':
       // jump
       if (botany.velocity.y === 0) botany.velocity.y = -15;
-      console.log('pressed w - up');
       botany.velocity.y = -10;
       break;
     case 'arrowleft':
       // move left
-      //chemistry.velocity.x = -5;
-      console.log('pressed arrow left - left');
       keys.arrowLeft.pressed = true;
       chemistry.image.src = 'chemistryLeft80.png'
       break;
     case 'arrowright':
       // move right
-      //chemistry.velocity.x = 5;
-      console.log('pressed arrow right - right');
       keys.arrowRight.pressed = true;
       chemistry.image.src = 'chemistryRight80.png'
       break;
@@ -100,32 +91,24 @@ function animate(){
       break;
   }
  })
- // for sprtie to stop moving after the player stops pressing the key
+ // for sprite to stop moving after the player stops pressing the key
  window.addEventListener('keyup', (event) => {
   const key = event.key.toLowerCase(); // Convert key to lowercase
   switch(key) {
     case 'a':
       // stop moving left
-      //botany.velocity.x = -5;
-      console.log('pressed a - left');
       keys.a.pressed = false;
       break;
     case 'd':
       // stop moving right
-      //botany.velocity.x = 5;
-      console.log('pressed d - right');
       keys.d.pressed = false;
       break;
       case 'arrowleft':
       // stop moving left
-      //chemistry.velocity.x = -5;
-      console.log('pressed arrow left - left');
       keys.arrowLeft.pressed = false;
       break;
     case 'arrowright':
       // stop moving right
-      //chemistry.velocity.x = 5;
-      console.log('pressed arrow right - right');
       keys.arrowRight.pressed = false;
       break;
     default:
