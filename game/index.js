@@ -36,15 +36,15 @@ function animate(){
   requestAnimationFrame(animate);
 
   if (keys.d.pressed){
-    botany.velocity.x = 5;
+    botany.velocity.x = 7;
   }else if (keys.a.pressed){
-    botany.velocity.x = -5;
+    botany.velocity.x = -7;
   }else botany.velocity.x = 0;
 
   if (keys.arrowRight.pressed){
-    chemistry.velocity.x = 5;
+    chemistry.velocity.x = 7;
   }else if (keys.arrowLeft.pressed){
-    chemistry.velocity.x = -5;
+    chemistry.velocity.x = -7;
   }else chemistry.velocity.x = 0;
 
   botany.update();
@@ -58,7 +58,6 @@ function animate(){
     case 'a':
         // move left
         keys.a.pressed = true;
-        //console.log('Left arrow key pressed');
       botany.image.src = 'botanyLeft80.png'
       break;
     case 'd':
@@ -84,7 +83,6 @@ function animate(){
     case 'arrowup':
       // jump
       if (chemistry.velocity.y === 0) chemistry.velocity.y = -15;
-      console.log('pressed arrow up - up');
       chemistry.velocity.y = -10;
       break;
     default:
