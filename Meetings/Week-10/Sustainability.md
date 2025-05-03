@@ -2,7 +2,8 @@
 
 ### 1. Sustainability Dimentions
 In Week 10, our group analyzed Race for the Cure through five sustainability dimensions—individual, social, technical, economic, and environmental to ensure the game is engaging, accessible, and responsibly designed.
-![Sustainability Dimensions Diagram]([../Images/SustainabilityDimention.png](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SustainabilityDimention.png))
+![Sustainability Dimensions Diagram](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SustainabilityDimention.png)
+
 
 ### Chains of Effects – Sustainability Dimensions
 
