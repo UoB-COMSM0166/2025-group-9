@@ -161,22 +161,22 @@ As an assessor, I want the game to feature a unique twist on a classic concept o
 
 ## Design
 
-Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. It was a point of reference that allowed us to visualize how elements in the game were interconnected, identify their properties and actions, and have an orderly development process.
-<div align="center">
-
-**Figure 2**  
-*Class diagram illustrating the game structure.*  
+Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. It was a point of reference that allowed us to visualize how elements in the game were interconnected, identify their properties and actions, and have an orderly development process. 
 
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Class Diagram" width="600"/>
+
+<div align="center">
+  
+*Figure: Class Diagram.*
 </div>
 
 The GameManager class is the game's main controller, monitoring overall progress, managing state transitions among the game states, and making sure players reach win or fail conditions. It controls the GameController directly, which manages individual game logic like monitoring the cure components that have been collected, monitoring the players' status, and managing the countdown timer.
 
-The Player class, that extends from GameElement, is utilized to define the two game characters: the Chemist and the Biologist. The players possess certain skills and interact with various game elements such as Floor, Lift, Puzzles, Obstacles, and CureComponents. The Floor class, extending GameElement, is utilized to define the multi-level game structure in which puzzles, obstacles, and significant items are placed. It contains methods for creating the layout and placing interactive objects such as walls, lifts, and pathways.
+The Player class, that extends from GameElement, is utilized to define the two game characters: the Chemist and the Biologist. The players possess certain skills and interact with various game elements such as Floor, Lift, Puzzles, Obstacles, and CureComponents. The Floor class, extending GameElement, is utilized to define the multi level game structure in which puzzles, obstacles, and significant items are placed. It contains methods for creating the layout and placing interactive objects such as walls, lifts, and pathways.
 
 The Lift class offers a way for players to move between floors, responding dynamically to player input. Players also face Puzzles, which need to be solved in order to enter specific areas or unlock cure parts. Every puzzle has a type, a timer, and rewards when solved successfully. The Obstacles class adds obstacles that block player movement or need careful actions to disable. Barriers can be immobile (e.g., walls) or mobile (e.g., moving obstacles), and they damage player health or progress.
 
-The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge—to beat the clock in reaching the lab before the virus can fully mature.
+The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge to beat the clock in reaching the lab before the virus can fully mature.
 
 Together, these courses define the shape and mechanics of the game, offering a cooperative puzzle-solving experience with challenges, environmental risks, and strategic team-based elements.
 
@@ -302,6 +302,8 @@ To ensure **Race for the Cure** meets sustainability goals, we turned our main d
 
 ![Sustainability Requirements](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SusRequirements.png)
 
+<div align="center">
+  
 *Figure: Sustainability Requirements as User Stories.*
 </div>
 
