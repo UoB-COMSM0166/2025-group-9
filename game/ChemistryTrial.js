@@ -1,7 +1,8 @@
-class ChemistryTrial extends Player{// add extends Player
+class ChemistryTrial extends Player {// add extends Player
   constructor({x, y, playerImgL, playerImgR}){
     super({ x, y, playerImgL, playerImgR});
   }
+  
   update(){
     if (keyIsDown(LEFT_ARROW)) {
       this.currentPlayerImg = this.playerImgL;
