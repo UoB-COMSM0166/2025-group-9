@@ -243,11 +243,54 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 
 ### 1. Sustainability Dimentions
 
-In Week 10, our group analyzed Race for the Cure through five sustainability dimensions individual, social, technical, economic, and environmental to ensure the game is engaging, accessible, and responsibly designed.
+In Week 10, our group analyzed **Race for the Cure** through five sustainability dimensions individual, social, technical, economic, and environmental to ensure the game is engaging, accessible, and responsibly designed.
 
 ![Sustainability Dimensions Diagram](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SustainabilityDimention.png)
 
 --- 
+
+### 2. Chains of Effects → Sustainability Dimensions
+
+We also explored how **Race for the Cure** supports sustainability through its design. We analyzed each dimension and mapped out the chain of effects to show how our choices impact player well-being, environmental efficiency, technical performance, social value, and economic accessibility.
+
+![Effect Chains GIF](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/sustainability_effect_chains.gif)
+
+---
+
+## 3. Ethics
+
+From an ethical perspective, our game avoids violence, discrimination, and exploitative mechanics.
+The narrative centers on a single player controlling two university students who work together to fix a problem they unintentionally caused promoting **accountability, empathy, and learning**.
+
+- The game **does not collect or store personal data**, aligning with **privacy first principles**.
+- Character roles (botany and chemistry) are not restricted by gender or cultural stereotypes, supporting inclusive representation for all players.
+
+---
+
+## 4. Accessibility
+
+We designed to be accessible to a broad range of players, including those with diverse abilities:
+
+- **Color Accessibility**: Important visual information is conveyed through icons and shapes, not color alone.
+- **Clear UI and Fonts**: The interface is clean, using **readable fonts** and minimizing distractions.
+- **Input Simplicity**: The game can be played fully with a keyboard, without requiring special equipment or high end devices.
+- **Cognitive Accessibility**: Puzzles are structured to be challenging yet fair. The time limit introduces light tension without overwhelming the player, encouraging thoughtful coordination between the two characters.
+  
+---
+
+## 5. Green Software Foundation Patterns → Game Integration
+
+| **Plan to Add to Game**                 | **Relevant Pattern**                         | **Link**                                                                                                 | **Task Description**                                                                                                         |
+|----------------------------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Optimize sprites and assets            | Minify Web Assets                            | [Minify Web Assets](https://patterns.greensoftware.foundation/catalog/web/minify-web-assets/)            | Compress character sprites, background elements, and UI components to reduce file size and lower energy usage.                          |
+| Replace GIFs with CSS/SVG animations   | Deprecate GIFs for Animated Content          | [Deprecate GIFs](https://patterns.greensoftware.foundation/catalog/web/deprecate-gifs/)                  | Replace GIF based animations (e.g. for loading screens or switches) with efficient alternatives.              |
+
+---
+
+## 6. Sustainability Requirements → User Stories
+To ensure **Race for the Cure** meets sustainability goals, we turned our main design priorities into user stories. These stories are supported by acceptance criteria to help guide development and measure success.
+
+![Sustainability Requirements](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SusRequirements.png)
 
 
 ### Collaboration
@@ -256,7 +299,7 @@ Throughout the development of our game, our team maintained consistent and effec
 
 From the beginning, we assigned tasks based on individual strengths. For instance, design-related tasks were mainly handled by Maram and Hadeel, while coding responsibilities were led by Vera, Satvika, and Hakeem. This division ensured that each team member could focus on what they felt most confident in, while also learning from others in collaborative settings.
 
-Our meetings typically followed a structure where we’d begin by updating each other on what we had completed that week, and then decide on what we wanted to achieve in the week ahead. We would then split tasks into smaller groups or pairs. We found this structure to be far more efficient, especially after initially trying to do tasks with all five members at once - which often slowed things down and led to duplication of effort.
+Our meetings typically followed a structure where we’d begin by updating each other on what we had completed that week, and then decide on what we wanted to achieve in the week ahead. We would then split tasks into smaller groups or pairs. We found this structure to be far more efficient, especially after initially trying to do tasks with all five members at once which often slowed things down and led to duplication of effort.
 In the early stages, we used the WhatsApp poll feature to shortlist and vote on our top two game ideas. We then held an in-person meeting to discuss the pros and cons of each, eventually deciding on a concept we all felt enthusiastic about. This helped everyone have a say, and we were able to quickly agree on a game idea that we all liked.
 
 To document our progress, we kept detailed meeting notes on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
