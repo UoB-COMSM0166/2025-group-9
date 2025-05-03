@@ -245,8 +245,10 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 
 In Week 10, our group analyzed **Race for the Cure** through five sustainability dimensions individual, social, technical, economic, and environmental to ensure the game is engaging, accessible, and responsibly designed.
 
-**Figure **  
-*Sustainability dimensions.* 
+<div align="center">
+  
+*Figure: Sustainability dimensions.*
+</div>
 
 ![Sustainability Dimensions Diagram](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SustainabilityDimention.png)
 
@@ -256,8 +258,10 @@ In Week 10, our group analyzed **Race for the Cure** through five sustainability
 
 We also explored how **Race for the Cure** supports sustainability through its design. We analyzed each dimension and mapped out the chain of effects to show how our choices impact player well-being, environmental efficiency, technical performance, social value, and economic accessibility.
 
-**Figure **  
-*Chains of effects across sustainability dimensions.* 
+<div align="center">
+  
+*Figure: Chains of effects across sustainability dimensions.*
+</div>
 
 ![Effect Chains GIF](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/sustainability_effect_chains.gif)
 
@@ -293,11 +297,11 @@ We designed to be accessible to a broad range of players, including those with d
 
 ---
 
-**Figure **  
-*Sustainability Requirements as User Stories.* 
-
 ## 6. Sustainability Requirements → User Stories
 To ensure **Race for the Cure** meets sustainability goals, we turned our main design priorities into user stories. These stories are supported by acceptance criteria to help guide development and measure success.
+
+*Figure: Sustainability Requirements as User Stories.*
+</div>
 
 ![Sustainability Requirements](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SusRequirements.png)
 
