@@ -1,4 +1,4 @@
-class Chemistry{// add extends Sprite
+class Chemistry{
   constructor({imageSrc}){
     this.position = {
       x: 150, 
