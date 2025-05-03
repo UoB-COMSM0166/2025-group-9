@@ -1,56 +1,52 @@
-## Sustainability, Ethics, and Accessibility
-
 ### 1. Sustainability Dimentions
-In Week 10, our group analyzed Race for the Cure through five sustainability dimensions—individual, social, technical, economic, and environmental to ensure the game is engaging, accessible, and responsibly designed.
+
+In Week 10, our group analyzed Race for the Cure through five sustainability dimensions individual, social, technical, economic, and environmental to ensure the game is engaging, accessible, and responsibly designed.
+
 ![Sustainability Dimensions Diagram](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SustainabilityDimention.png)
 
+--- 
 
-### Chains of Effects – Sustainability Dimensions
+### 2. Chains of Effects Sustainability Dimensions
 
-| **Dimension / Topic**         | **Chain of Effects**                                                                                  |
-|-------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Individual: Health**        | Two-player cooperation → Builds trust and communication → Reduces social isolation → Increases confidence and interpersonal skills |
-| **Environmental: Materials**  | Fully digital game → No board game production → Reduced use of paper, plastic, and packaging           |
-| **Environmental: Energy**     | Game requires digital devices and servers → Energy use increases slightly but optimized with efficient code |
-| **Technical: Maintainability**| Modular design and clean code → Easy to scale, adapt, and reuse in educational or training contexts    |
-| **Social: Sense of Community**| Co-op structure → Requires collaboration → Fosters connection and sense of shared purpose               |
-| **Social: Communication**     | Unique roles per character → Players must guide each other → Boosts expressive, active listening, and clear coordination skills |
-| **Economic: Customer Relationship** | Unique concept → Encourages repeat play and word-of-mouth sharing → Potential for educational licensing or content expansions in the future |
----
+We also explored how "Race for the Cure" supports sustainability through its design. We analyzed each dimension and mapped out the chain of effects to show how our choices impact player well-being, environmental efficiency, technical performance, social value, and economic accessibility.
 
-## 2. Ethics
-
-From an ethical standpoint, our game avoids violence, discrimination, or exploitative mechanics.  
-The story revolves around two university students solving a problem they unintentionally created, promoting **accountability, cooperation, and learning**.
-
-- The game **does not collect or store personal data**, aligning with **privacy-first principles**.
-- Character roles (botany and chemistry) are **not gender-locked or culturally biased**, ensuring **inclusive representation** for all players.
+![Effect Chains GIF](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/sustainability_effect_chains.gif)
 
 ---
 
-## 3. Accessibility
+## 3. Ethics
 
-We designed the game to be accessible to a wide audience, including players with diverse abilities:
+From an ethical perspective, our game avoids violence, discrimination, and exploitative mechanics.
+The narrative centers on a single player controlling two university students who work together to fix a problem they unintentionally caused promoting **accountability, empathy, and learning**.
 
-- **Color Accessibility**: Visual cues **do not rely on color alone** — icons and shapes help communicate important elements.
+- The game **does not collect or store personal data**, aligning with **privacy first principles**.
+- Character roles (botany and chemistry) are not restricted by gender or cultural stereotypes, supporting inclusive representation for all players.
+
+---
+
+## 4. Accessibility
+
+We designed to be accessible to a broad range of players, including those with diverse abilities:
+
+- **Color Accessibility**: Important visual information is conveyed through icons and shapes, not color alone.
 - **Clear UI and Fonts**: The interface is clean, using **readable fonts** and minimizing distractions.
-- **Input Simplicity**: Playable using only a **keyboard** — no special equipment needed.
-- **Cognitive Accessibility**: The game includes a **time limit**. Puzzles are designed to be manageable and focused, encouraging collaboration rather than overwhelming the player. The time constraints are intended to create a sense of tension and engagement.
-
+- **Input Simplicity**: The game can be played fully with a keyboard, without requiring special equipment or high end devices.
+- **Cognitive Accessibility**: Puzzles are structured to be challenging yet fair. The time limit introduces light tension without overwhelming the player, encouraging thoughtful coordination between the two characters.
+  
 ---
-### Green Software Foundation Patterns – Game Integration
+
+## 5. Green Software Foundation Patterns – Game Integration
 
 | **Plan to Add to Game**                 | **Relevant Pattern**                         | **Link**                                                                                                 | **Task Description**                                                                                                         |
 |----------------------------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Optimize sprites and assets            | Minify Web Assets                            | [Minify Web Assets](https://patterns.greensoftware.foundation/catalog/web/minify-web-assets/)            | Compress character sprites, backgrounds, and UI elements to reduce game size and energy consumption                          |
-| Replace GIFs with CSS/SVG animations   | Deprecate GIFs for Animated Content          | [Deprecate GIFs](https://patterns.greensoftware.foundation/catalog/web/deprecate-gifs/)                  | Replace GIF-based UI animations (e.g. loading or power switches) with lightweight **CSS** or **SVG** animations              |
+| Optimize sprites and assets            | Minify Web Assets                            | [Minify Web Assets](https://patterns.greensoftware.foundation/catalog/web/minify-web-assets/)            | Compress character sprites, background elements, and UI components to reduce file size and lower energy usage.                          |
+| Replace GIFs with CSS/SVG animations   | Deprecate GIFs for Animated Content          | [Deprecate GIFs](https://patterns.greensoftware.foundation/catalog/web/deprecate-gifs/)                  | Replace GIF based animations (e.g. for loading screens or switches) with efficient alternatives.              |
 
 ---
-### Sustainability Requirements → User Stories
 
-| **Epic**                   | **User Story**                                                                                                                                     | **Acceptance Criteria**                                                                                                                                              |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Energy Efficiency**      | As a player, I want the game to run smoothly on low-spec devices, so I can enjoy it without needing powerful hardware.                            | Given the player is using a basic laptop or older machine, when they launch the game, then the game performs reliably without excessive lag.                         |
-| **Collaborative Gameplay** | As a player, I want puzzles that require communication and character-specific actions, so that teamwork is essential to progress.                 | Given two players are in a level, when one character activates a switch or retrieves a unique ingredient, then the other must respond or support.                    |
-| **Sustainable Asset Design** | As a developer, I want to optimize images and animations, so that the game loads faster and consumes less energy.                                 | Given the game includes multiple visual assets, when the game is built, then all assets are compressed and GIFs are replaced with CSS/SVG.                          |
-| **Healthy Play Pacing** | As a player, I want the time limits to be fair and motivating, so I feel challenged without feeling overwhelmed.                          | Given that each level includes a reasonable time limit, when players solve puzzles through communication and cooperation, then they are able to complete the level on time without feeling rushed or overwhelmed.                   
+## 6. Sustainability Requirements → User Stories
+To ensure "Race for the Cure" meets sustainability goals, we turned our main design priorities into user stories. These stories are supported by acceptance criteria to help guide development and measure success.
+
+![Sustainability Requirements](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SusRequirements.png)
+
+Throughout the development of our game, we focused on integrating sustainability, ethics, and accessibility into every aspect of the game’s design. The result is an engaging and inclusive experience that balances entertainment with environmental, social, and technical responsibility.
