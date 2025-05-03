@@ -2,8 +2,8 @@ class Player {
     constructor({x, y, playerImgL, playerImgR}){
         this.x = x;
         this.y = y;
-        this.velocityX = 5;
-        this.velocityY = 5;
+        this.velocityX = 7;
+        this.velocityY = 7;
         this.gravity = 0.5;
         this.jumpPower = -12;
         this.speed = 2;
