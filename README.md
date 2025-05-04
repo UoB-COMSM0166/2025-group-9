@@ -256,7 +256,7 @@ In Week 10, our group analyzed **Race for the Cure** through five sustainability
 
 ### 2. Chains of Effects → Sustainability Dimensions
 
-We also explored how **Race for the Cure** supports sustainability through its design. We analyzed each dimension and mapped out the chain of effects to show how our choices impact player well-being, environmental efficiency, technical performance, social value, and economic accessibility.
+We also explored how it supports sustainability through its design. We analyzed each dimension and mapped out the chain of effects to show how our choices impact player well-being, environmental efficiency, technical performance, social value, and economic accessibility.
 
 ![Effect Chains GIF](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/sustainability_effect_chains.gif)
 
