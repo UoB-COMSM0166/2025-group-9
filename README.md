@@ -237,8 +237,6 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 
 - Description of how code was tested. 
 
-## Process 
-
 ## Sustainability
 
 ### 1. Sustainability Dimentions
@@ -252,7 +250,6 @@ In Week 10, our group analyzed **Race for the Cure** through five sustainability
 *Figure: Sustainability dimensions.*
 </div>
 
---- 
 
 ### 2. Chains of Effects → Sustainability Dimensions
 
@@ -265,9 +262,7 @@ We also explored how it supports sustainability through its design. We analyzed 
 *Figure: Chains of effects across sustainability dimensions.*
 </div>
 
----
-
-## 3. Ethics
+### 3. Ethics
 
 From an ethical perspective, our game avoids violence, discrimination, and exploitative mechanics.
 The narrative centers on a single player controlling two university students who work together to fix a problem they unintentionally caused promoting **accountability, empathy, and learning**.
@@ -275,9 +270,8 @@ The narrative centers on a single player controlling two university students who
 - The game **does not collect or store personal data**, aligning with **privacy first principles**.
 - Character roles (botany and chemistry) are not restricted by gender or cultural stereotypes, supporting inclusive representation for all players.
 
----
 
-## 4. Accessibility
+### 4. Accessibility
 
 We designed to be accessible to a broad range of players, including those with diverse abilities:
 
@@ -286,18 +280,15 @@ We designed to be accessible to a broad range of players, including those with d
 - **Input Simplicity**: The game can be played fully with a keyboard, without requiring special equipment or high end devices.
 - **Cognitive Accessibility**: Puzzles are structured to be challenging yet fair. The time limit introduces light tension without overwhelming the player, encouraging thoughtful coordination between the two characters.
   
----
 
-## 5. Green Software Foundation Patterns → Game Integration
+### 5. Green Software Foundation Patterns → Game Integration
 
 | **Plan to Add to Game**                 | **Relevant Pattern**                         | **Link**                                                                                                 | **Task Description**                                                                                                         |
 |----------------------------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | Optimize sprites and assets            | Minify Web Assets                            | [Minify Web Assets](https://patterns.greensoftware.foundation/catalog/web/minify-web-assets/)            | Compress character sprites, background elements, and UI components to reduce file size and lower energy usage.                          |
 | Replace GIFs with CSS/SVG animations   | Deprecate GIFs for Animated Content          | [Deprecate GIFs](https://patterns.greensoftware.foundation/catalog/web/deprecate-gifs/)                  | Replace GIF based animations (e.g. for loading screens or switches) with efficient alternatives.              |
 
----
-
-## 6. Sustainability Requirements → User Stories
+### 6. Sustainability Requirements → User Stories
 To ensure **Race for the Cure** meets sustainability goals, we turned our main design priorities into user stories. These stories are supported by acceptance criteria to help guide development and measure success.
 
 ![Sustainability Requirements](https://github.com/UoB-COMSM0166/2025-group-9/raw/main/Meetings/Images/SusRequirements.png)
@@ -306,6 +297,8 @@ To ensure **Race for the Cure** meets sustainability goals, we turned our main d
   
 *Figure: Sustainability Requirements as User Stories.*
 </div>
+
+## Process 
 
 ### Collaboration
 
@@ -343,7 +336,6 @@ We maintained a Kanban board that helped us visualise our workflow. Tasks were c
   <br>
   <em>Figure 4: Our Kanban board used to track coding, report writing, and task progress across the team</em>
 </p>
-
 
 
 **Google Docs:**
