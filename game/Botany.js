@@ -1,4 +1,4 @@
-class BotanyTrial extends Player {
+class Botany extends Player {
   constructor({x, y, playerImgL, playerImgR}){
     super({ x, y, playerImgL, playerImgR});
   }

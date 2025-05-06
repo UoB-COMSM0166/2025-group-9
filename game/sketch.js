@@ -105,8 +105,8 @@ function setup() {
   gameManager = new GameManager(gameController);
   chemistryPuzzle = new ChemistryPuzzle(images);
   botanyPuzzle = new BotanyPuzzle(images);
-  botanyPlayer = new BotanyTrial({ x: 750 + xOffset, y: 650 + yOffset, playerImgL : botanyLeftImg, playerImgR: botanyRightImg})
-  chemistryPlayer = new ChemistryTrial({ x: 650 + xOffset, y: 650 + yOffset, playerImgL : chemistryLeftImg, playerImgR: chemistryRightImg})
+  botanyPlayer = new Botany({ x: 750 + xOffset, y: 650 + yOffset, playerImgL : botanyLeftImg, playerImgR: botanyRightImg})
+  chemistryPlayer = new Chemistry({ x: 650 + xOffset, y: 650 + yOffset, playerImgL : chemistryLeftImg, playerImgR: chemistryRightImg})
 
   uiManager = new UIManager({ homeImage, gameDifficultyImage, gameOverImage, mazeFloorHardImage, mazeFloorEasyImage, 
                             missionCompleteImage, infoSlides, liftInstructionImg}, xOffset, yOffset);
