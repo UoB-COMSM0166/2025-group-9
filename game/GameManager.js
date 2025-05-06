@@ -75,6 +75,8 @@ class GameManager {
     resetGame() {
       console.log("Resetting game...");
       this.state = "home";
+      this.gameOverSound.stop();
+      this.gameWinSound.stop();
       this.backgroundMusic.play('loop');
       this.selectedDifficulty = null;
     
