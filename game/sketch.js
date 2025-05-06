@@ -28,8 +28,6 @@ let nearLiftLever2Bot;
 let nearLiftLever2Chem;
 let chemistryPuzzleSolved = false;
 let botanyPuzzleSolved = false;
-// temporary player and platforms for collision testing
-//let player;
 let platforms = [];
 let liftInstructionImg;
 let showLiftPopup = false;
@@ -39,6 +37,7 @@ let uiManager;
 let gameLoop;
 let liftLeverSwitchSound;
 let gameMenuSelectionSound;
+let backgroundMusic;
 
 function preload() {
   homeImage = loadImage("assets/homepage.png");
@@ -72,6 +71,7 @@ function preload() {
   liftInstructionImg = loadImage("assets/lift-popup.png");
   liftLeverSwitchSound = new soundManager("assets/leverswitch.wav");
   gameMenuSelectionSound = new soundManager("assets/gamemenuselection.wav");
+  backgroundMusic = new soundManager("assets/menubackground.wav");
 }
 
 const BASE_WIDTH = 1440;
@@ -79,6 +79,7 @@ const BASE_HEIGHT = 813;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  backgroundMusic.play('loop');
   xOffset = (windowWidth - BASE_WIDTH)/2;
   yOffset = (windowHeight - BASE_HEIGHT)/2;
 
@@ -155,6 +156,7 @@ function draw() {
     uiManager.drawDifficultyScreen(width, height);
   }
   else if (state === "playing") {
+    backgroundMusic.stop();
     if (!botanyPlayer || !chemistryPlayer ) return; // prevent drawing if player hasn't loaded/been initialised        
 
     // choose correct maze based on difficulty
