@@ -6,7 +6,7 @@
 
 This dual-approach strategy enabled the team to evaluate and compare the strengths of each visual style in terms of 
 aesthetics, coherence,and compatibility with gameplay mechanics.
-1.The pixel art designs emphasized a retro, nostalgic appearance that evokes familiarity and simplicity.
+1. The pixel art designs emphasized a retro, nostalgic appearance that evokes familiarity and simplicity.
 2. The non-pixelated (flat-design) alternatives leaned toward a cleaner, more modern, and educational interface, which could be more suitable for informational or simulation-based experiences.
 
 Each design direction was developed by different team members to ensure diversity and creativity. This parallel exploration phase allowed for dynamic comparisonand constructive feedback across visual formats.
