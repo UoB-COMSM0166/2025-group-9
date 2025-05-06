@@ -37,6 +37,8 @@ let liftPopupDismissed = false;
 let startTimerAfterPopup = false;
 let uiManager;
 let gameLoop;
+let liftLeverSwitchSound;
+let gameMenuSelectionSound;
 
 function preload() {
   homeImage = loadImage("assets/homepage.png");
@@ -68,6 +70,8 @@ function preload() {
   keyImg = loadImage("assets/key.png");
   flaskImg = loadImage("assets/flask.png");
   liftInstructionImg = loadImage("assets/lift-popup.png");
+  liftLeverSwitchSound = new soundManager("assets/leverswitch.wav");
+  gameMenuSelectionSound = new soundManager("assets/gamemenuselection.wav");
 }
 
 const BASE_WIDTH = 1440;
@@ -204,6 +208,7 @@ function keyPressed() {
       botanyPlayer.jump();
     }
     if ((keyCode === 83 || key === 's') && (nearLiftLever1Bot || nearLiftLever1Chem || nearLiftLever2Bot || nearLiftLever2Chem)) {
+      liftLeverSwitchSound.play('once');
       lift.levels();
     }
   }
@@ -224,6 +229,7 @@ function mousePressed() {
       mouseX > 1051 + xOffset && mouseX < 1107  + xOffset&&
       mouseY > 597  + yOffset&& mouseY < 631 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       uiManager.nextSlide();
       return;
     }
@@ -233,6 +239,7 @@ function mousePressed() {
       mouseX > 1095  + xOffset&& mouseX < 1155 + xOffset &&
       mouseY > 124 + yOffset&& mouseY < 182 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       uiManager.exitSlides();
       return;
     }
@@ -245,6 +252,7 @@ function mousePressed() {
       mouseX > 798 + xOffset&& mouseX < 1003  + xOffset&&
       mouseY > 283  + yOffset && mouseY < 379 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       gameManager.goToDifficultyScreen();
     }
   
@@ -253,6 +261,7 @@ function mousePressed() {
       mouseX > 450 + xOffset&& mouseX < 666 + xOffset&&
       mouseY > 285  + yOffset&& mouseY < 373 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       uiManager.setShowInfo(true);
       uiManager.setCurrentSlide(0);
     }
@@ -265,6 +274,7 @@ function mousePressed() {
       mouseX > 776 + xOffset&& mouseX < 927 + xOffset&&
       mouseY > 249  + yOffset&& mouseY < 442 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       gameManager.startGame("hard");
     }
   
@@ -273,6 +283,7 @@ function mousePressed() {
       mouseX > 530 + xOffset&& mouseX < 681 + xOffset&&
       mouseY > 240  + yOffset&& mouseY < 428 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       gameManager.startGame("easy");
     }
 
@@ -281,16 +292,19 @@ function mousePressed() {
       mouseX > xOffset + 15 && mouseX < xOffset + 95 && 
       mouseY > yOffset && mouseY < yOffset + 40
     ) {
+      gameMenuSelectionSound.play('once');
       gameManager.setState("home");
     }
 
   // GAME OVER SCREEN
   }  else if (state === "gameOver") {
+    gameMenuSelectionSound.play('once');
     // "Play Again" button - resets the game and goes back to difficulty select screen
     if (
       mouseX > 567 + xOffset&& mouseX < 823 + xOffset&&
       mouseY > 557  + yOffset&& mouseY < 660 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       gameManager.resetGame();
       gameManager.goToDifficultyScreen();
     }
@@ -303,6 +317,7 @@ function mousePressed() {
       mouseX > 560 + xOffset && mouseX < 800 + xOffset &&
       mouseY > 510 + yOffset && mouseY < 600 + yOffset
     ) {
+      gameMenuSelectionSound.play('once');
       gameManager.resetGame();
       gameManager.setState("home");
     }
@@ -315,6 +330,7 @@ function mousePressed() {
       mouseX > xOffset + 15 && mouseX < xOffset + 95 && 
       mouseY > yOffset && mouseY < yOffset + 40 
     ) {
+      gameMenuSelectionSound.play('once');
       gameManager.resetGame();
       gameManager.setState("home");
     }
@@ -328,6 +344,7 @@ function mousePressed() {
         mouseX > 1095 + xOffset && mouseX < 1155 + xOffset &&
         mouseY > 124 + yOffset && mouseY < 182 + yOffset
       ) {
+        gameMenuSelectionSound.play('once');
         liftPopupDismissed = true;
         showLiftPopup = false;
       }      
