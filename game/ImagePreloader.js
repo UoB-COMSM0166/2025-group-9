@@ -53,22 +53,12 @@ class ImagePreloader{
         }
     }
 
-
-
     loadSet(filter){
         const setImgs = this.images[filter] || this.images.default;
         for (const key in this.imageSet){
             window[key] = setImgs[key];
         }
         window.infoSlides = setImgs.infoSlides;
-    }
-
-    get(keyOrIndex){
-        const setImgs = this.images[this.currentFilter] || this.images.default;
-        if(typeof keyOrIndex === 'number') {
-            return setImgs.infoSlides[keyOrIndex];
-        }
-        return setImgs[keyOrIndex];
     }
 
 }
