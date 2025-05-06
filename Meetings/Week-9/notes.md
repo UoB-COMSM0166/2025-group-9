@@ -18,6 +18,9 @@ with the rest of the game:
 2. A non-pixelated version (flat/modern design) featuring smoother, vector-like elements and icons, with a cleaner interface suited for educational content.
    These homepage concepts were included in the comparison process alongside the level and environment designs.
    The team evaluated both versions and ultimately chose the pixelated homepage to maintain visual consistency throughout the game.
+
+   ![Initial Homepage Designs](https://raw.githubusercontent.com/UoB-COMSM0166/2025-group-9/main/Meetings/Images/initial_design_homepage.png)
+
 ---
 The design development process was a critical early step in shaping the overall identity and user experience of the game. By exploring multiple visual styles and encouraging contributions from all team members, we were able to assess the impact of each approach
 in the context of gameplay. Ultimately, the decision to adopt the pixelated design was grounded in both aesthetic preference and
