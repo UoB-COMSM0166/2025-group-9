@@ -126,7 +126,7 @@ class Lift {
   
     
   isPlayerOnLift(player) {
-    const tolerance = 5;
+    const tolerance = 10;
     let overlapX = (player.x < this.x + this.width) && (player.x + player.width > this.x);
     let contactX = abs((player.y + player.height) - this.y) < tolerance;
     return overlapX && contactX;
