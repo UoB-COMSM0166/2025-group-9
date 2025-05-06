@@ -1,6 +1,15 @@
 class soundManager{
     constructor(soundFile){
         this.soundFile = loadSound(soundFile);
+        this.defaultVolume = 0.5;
+        this.applyDefaultVolume();
+    }
+
+
+    applyDefaultVolume(){
+        if(this.soundFile){
+            this.soundFile.setVolume(this.defaultVolume);
+        }
     }
 
     play(mode){
@@ -27,6 +36,7 @@ class soundManager{
     setVolume(volume){
         if(this.soundFile){
             this.soundFile.setVolume(volume);
+            this.defaultVolume = volume;
         }
     }
 
