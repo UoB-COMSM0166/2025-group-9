@@ -1,16 +1,19 @@
 // Manages the overall game state resets the game when needed
 class GameManager {
     constructor(gameController, uiManager, labX, labY) {
-        this.state = "home"; 
+        this.state = "home";
         this.gameController = gameController;
         this.difficulty = "hard"; // deafault 
-    
+        this.gameWinSound = new soundManager("assets/gamewin.wav");
+        this.gameOverSound = new soundManager("assets/gameover.wav");
+        this.backgroundMusic = new soundManager("assets/menubackground.wav");
     }
 
     startGame(difficulty) {
       console.log("Game Started!", difficulty);
       this.selectedDifficulty = difficulty;
       this.state = "playing";
+      this.backgroundMusic.stop();
       this.gameController.setDifficulty(difficulty);
     
       // Reset player positions
@@ -58,17 +61,21 @@ class GameManager {
     triggerGameOver() {
         console.log("Game Over!");
         this.state = "gameOver";
+        this.gameOverSound.play('once');
+
     }
 
     triggerWin() {
         console.log("All components collected & players reached the lab! YOU WIN!");
         this.state = "won";
+        this.gameWinSound.play('once');
     }
 
     
     resetGame() {
       console.log("Resetting game...");
       this.state = "home";
+      this.backgroundMusic.play('loop');
       this.selectedDifficulty = null;
     
       // Reset the game controller (ingredients, lab, timer, etc.)

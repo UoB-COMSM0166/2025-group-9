@@ -27,6 +27,7 @@ class GameLoop {
       this.keyCollected = false;
       this.removeLock = false;
       this.viewReloaded = false;
+      this.collectedItemSound = new soundManager("assets/collecteditem.wav");
     }
   
     update(width, height, xOffset, yOffset, showLiftPopup) {
@@ -174,6 +175,7 @@ class GameLoop {
   
       if (!this.keyCollected && nearKey) {
         this.keyCollected = true;
+        this.collectedItemSound.play('once');
         this.gameController.collectKey();
       }
   
@@ -216,6 +218,7 @@ class GameLoop {
         dist(this.chemistryPlayer.x, this.chemistryPlayer.y, 210 + xOffset, 150 + yOffset) < 30
       ) {
         this.chemistryPuzzle.vialCollected = true;
+        this.collectedItemSound.play('once');
         this.gameController.collectIngredient();
         this.chemistryPuzzle.showSuccess = true;
         this.chemistryPuzzle.successTimer = millis();
@@ -245,6 +248,7 @@ class GameLoop {
   
       if (!this.botanyPuzzle.plantCollected && nearPlant) {
         this.botanyPuzzle.plantCollected = true;
+        this.collectedItemSound.play('once');
         this.gameController.collectIngredient();
         this.botanyPuzzle.showSuccess = true;
         this.botanyPuzzle.successTimer = millis();
