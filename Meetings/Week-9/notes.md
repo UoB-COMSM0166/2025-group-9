@@ -4,16 +4,15 @@ The early design phase was divided between two primary art styles:-
 1. Pixelated Design
 2. Non-Pixelated (Flat/Modern) Design
 
-### This dual-approach strategy enabled the team to evaluate and compare the strengths of each visual style in terms of 
+This dual-approach strategy enabled the team to evaluate and compare the strengths of each visual style in terms of 
 aesthetics, coherence,and compatibility with gameplay mechanics.
 1.The pixel art designs emphasized a retro, nostalgic appearance that evokes familiarity and simplicity.
 2. The non-pixelated (flat-design) alternatives leaned toward a cleaner, more modern, and educational interface, which could be more suitable
 for informational or simulation-based experiences.
 
-Each design direction was developed by different team members to ensure diversity and creativity. This parallel exploration phase allowed 
-for dynamic comparisonand constructive feedback across visual formats.
+Each design direction was developed by different team members to ensure diversity and creativity. This parallel exploration phase allowed for dynamic comparisonand constructive feedback across visual formats.
 ---
-### Homepage Design Exploration
+ Homepage Design Exploration
 As part of the early design process, we also developed two versions of the homepage (title screen) to test which style aligned better 
 with the rest of the game:
 1. A pixelated version using blocky characters and pixel-based assets that matched the retro aesthetic of the in-game visuals.
