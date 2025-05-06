@@ -11,6 +11,8 @@ class ChemistryPuzzle {
       this.removeLock = false;
       this.viewRealoded =false;
       this.viewVapour = true;
+      this.correctSelectionSound = new soundManager("assets/correctselection.wav");
+      this.wrongSelectionSound = new soundManager("assets/wrongselection.wav");
       
       // timers to control how long success/try again popups remain on screen
       this.tryAgainTimer = 0;
@@ -165,6 +167,7 @@ class ChemistryPuzzle {
         ) {
           if (btn.color === "green") {
             this.showSuccess = true;
+            this.correctSelectionSound.play('once');
             this.showTryAgain = false;
             this.showQuestion = false;
             this.vialCollected = true;
@@ -172,6 +175,7 @@ class ChemistryPuzzle {
             gameController.collectIngredient(); // notify game controller
           } else {
             this.showSuccess = false;
+            this.wrongSelectionSound.play('once');
             this.showTryAgain = true;
             this.showQuestion = true;
             this.tryAgainTimer = millis();

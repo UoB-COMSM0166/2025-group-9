@@ -9,6 +9,8 @@ class BotanyPuzzle {
       this.viewRealoded =false;
       this.tryAgainTimer = 0;
       this.successTimer = 0; 
+      this.correctSelectionSound = new soundManager("assets/correctselection.wav");
+      this.wrongSelectionSound = new soundManager("assets/wrongselection.wav");
 
     }
   
@@ -140,6 +142,7 @@ class BotanyPuzzle {
         ) {
           if (btn.name === "CHERRY BLOSSOM") { // correct answer
             this.showSuccess = true;
+            this.correctSelectionSound.play('once');
             this.successTimer = millis();
             this.showTryAgain = false;
             this.showQuestion = false;
@@ -147,6 +150,7 @@ class BotanyPuzzle {
             gameController.collectIngredient();
           } else {
             this.showTryAgain = true;
+            this.wrongSelectionSound.play('once');
             this.showSuccess = false;
             this.tryAgainTimer = millis();
             }
