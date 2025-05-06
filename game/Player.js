@@ -13,6 +13,7 @@ class Player {
         this.currentPlayerImg = this.playerImgL;
         this.width = this.currentPlayerImg.width || 20;
         this.height = this.currentPlayerImg.height || 20;
+        this.jumpSound = new soundManager('assets/jump.wav');
     }
     
      update() {
@@ -44,6 +45,7 @@ class Player {
      jump() {
         if (this.onPlatform) {
           this.velocityY = this.jumpPower;
+          this.jumpSound.play('once');
         }
       }
 }
