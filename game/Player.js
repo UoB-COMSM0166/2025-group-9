@@ -13,7 +13,8 @@ class Player {
         this.currentPlayerImg = this.playerImgL;
         this.width = this.currentPlayerImg.width || 20;
         this.height = this.currentPlayerImg.height || 20;
-        this.jumpSound = new soundManager('assets/jump.wav');
+        this.jumpSound = new SoundManager('assets/jump.wav');
+        this.footStepSound = new SoundManager('assets/footstep.wav');
     }
     
      update() {
@@ -48,4 +49,11 @@ class Player {
           this.jumpSound.play('once');
         }
       }
+
+    footsteps(){
+      if(this.velocityX != 0 && this.velocityY === 0){
+        this.footStepSound.play('once');
+        this.footStepSound.setVolume(0.05);
+      }
+    }
 }

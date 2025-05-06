@@ -7,9 +7,11 @@ class Botany extends Player {
     if (keyIsDown(65)) {
       this.currentPlayerImg = this.playerImgL;
       this.velocityX = -this.speed;
+      this.footsteps();
     } else if (keyIsDown(68)) {
       this.currentPlayerImg = this.playerImgR;
       this.velocityX = this.speed;
+      this.footsteps();
     } else {
       this.velocityX = 0;
     }

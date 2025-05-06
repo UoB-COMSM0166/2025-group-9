@@ -7,9 +7,11 @@ class Chemistry extends Player {
     if (keyIsDown(LEFT_ARROW)) {
       this.currentPlayerImg = this.playerImgL;
       this.velocityX = -this.speed;
+      this.footsteps();
     } else if (keyIsDown(RIGHT_ARROW)) {
       this.currentPlayerImg = this.playerImgR;
       this.velocityX = this.speed;
+      this.footsteps();
     } else {
       this.velocityX = 0;
     }
