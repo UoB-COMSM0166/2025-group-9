@@ -72,6 +72,7 @@ function preload() {
   liftLeverSwitchSound = new soundManager("assets/leverswitch.wav");
   gameMenuSelectionSound = new soundManager("assets/gamemenuselection.wav");
   backgroundMusic = new soundManager("assets/menubackground.wav");
+  gameplayBackground = new soundManager("assets/gameplaybackground.wav");
 }
 
 const BASE_WIDTH = 1440;
@@ -157,6 +158,8 @@ function draw() {
   }
   else if (state === "playing") {
     backgroundMusic.stop();
+    gameplayBackground.play('loop');
+
     if (!botanyPlayer || !chemistryPlayer ) return; // prevent drawing if player hasn't loaded/been initialised        
 
     // choose correct maze based on difficulty
@@ -186,9 +189,11 @@ function draw() {
   }
   else if (state === "won") {
     uiManager.drawWinScreen(width, height);
+    gameplayBackground.stop();
   }
   else if (state === "gameOver") {
     uiManager.drawGameOverScreen(width, height);
+    gameplayBackground.stop();
   }
   
 }
@@ -333,6 +338,7 @@ function mousePressed() {
       mouseY > yOffset && mouseY < yOffset + 40 
     ) {
       gameMenuSelectionSound.play('once');
+      gameplayBackground.stop();
       gameManager.resetGame();
       gameManager.setState("home");
     }
