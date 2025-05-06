@@ -160,7 +160,6 @@ function draw() {
     backgroundMusic.stop();
     gameplayBackground.setVolume(1.0);
     gameplayBackground.play('loop');
-    gameplayBackground.setVolume(1.0);
     
 
     if (!botanyPlayer || !chemistryPlayer ) return; // prevent drawing if player hasn't loaded/been initialised        
