@@ -1,4 +1,4 @@
-class soundManager{
+class SoundManager{
     constructor(soundFile){
         this.soundFile = loadSound(soundFile);
         this.defaultVolume = 0.2;
@@ -22,8 +22,15 @@ class soundManager{
                 this.soundFile.loop();
             }
         }
-        else if(mode === 'once' || !playing){
-            this.soundFile.play();
+        else if(mode === 'once'){
+            if(!playing){
+                this.soundFile.play();
+            }          
+        }
+        else{
+            if(!playing){
+                this.soundFile.play();
+            }
         }
     }
     

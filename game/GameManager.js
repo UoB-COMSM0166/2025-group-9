@@ -4,9 +4,9 @@ class GameManager {
         this.state = "home";
         this.gameController = gameController;
         this.difficulty = "hard"; // deafault 
-        this.gameWinSound = new soundManager("assets/gamewin.wav");
-        this.gameOverSound = new soundManager("assets/gameover.wav");
-        this.backgroundMusic = new soundManager("assets/menubackground.wav");
+        this.gameWinSound = new SoundManager("assets/gamewin.wav");
+        this.gameOverSound = new SoundManager("assets/gameover.wav");
+        this.backgroundMusic = new SoundManager("assets/menubackground.wav");
     }
 
     startGame(difficulty) {

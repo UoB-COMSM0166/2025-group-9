@@ -11,8 +11,8 @@ class ChemistryPuzzle {
       this.removeLock = false;
       this.viewRealoded =false;
       this.viewVapour = true;
-      this.correctSelectionSound = new soundManager("assets/correctselection.wav");
-      this.wrongSelectionSound = new soundManager("assets/wrongselection.wav");
+      this.correctSelectionSound = new SoundManager("assets/correctselection.wav");
+      this.wrongSelectionSound = new SoundManager("assets/wrongselection.wav");
       
       // timers to control how long success/try again popups remain on screen
       this.tryAgainTimer = 0;

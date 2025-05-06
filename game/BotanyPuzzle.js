@@ -9,8 +9,8 @@ class BotanyPuzzle {
       this.viewRealoded =false;
       this.tryAgainTimer = 0;
       this.successTimer = 0; 
-      this.correctSelectionSound = new soundManager("assets/correctselection.wav");
-      this.wrongSelectionSound = new soundManager("assets/wrongselection.wav");
+      this.correctSelectionSound = new SoundManager("assets/correctselection.wav");
+      this.wrongSelectionSound = new SoundManager("assets/wrongselection.wav");
 
     }
   

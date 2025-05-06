@@ -27,7 +27,7 @@ class GameLoop {
       this.keyCollected = false;
       this.removeLock = false;
       this.viewReloaded = false;
-      this.collectedItemSound = new soundManager("assets/collecteditem.wav");
+      this.collectedItemSound = new SoundManager("assets/collecteditem.wav");
     }
   
     update(width, height, xOffset, yOffset, showLiftPopup) {
