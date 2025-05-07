@@ -21,7 +21,7 @@
 
 ## The Group
 
-![Group-Photo](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Group-Photo.png) 
+![Group-Photo](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/group-photo.png) 
 
 <div align="center">
 
