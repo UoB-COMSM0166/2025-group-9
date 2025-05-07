@@ -206,8 +206,8 @@ function mousePressed() {
     // NEXT button
     if (
       uiManager.getCurrentSlide() < 2 &&
-      mouseX > 1051 + xOffset && mouseX < 1107  + xOffset&&
-      mouseY > 597  + yOffset&& mouseY < 631 + yOffset
+      mouseX > 1010 + xOffset && mouseX < 1108 + xOffset &&
+      mouseY > 561 + yOffset && mouseY < 637 + yOffset
     ) {
       gameMenuSelectionSound.play('once');
       uiManager.nextSlide();
@@ -216,8 +216,8 @@ function mousePressed() {
     // EXIT button
     if (
       uiManager.getCurrentSlide() === 2 &&
-      mouseX > 1095  + xOffset&& mouseX < 1155 + xOffset &&
-      mouseY > 124 + yOffset&& mouseY < 182 + yOffset
+      mouseX > 1057 + xOffset && mouseX < 1155 + xOffset &&
+      mouseY > 124 + yOffset && mouseY < 182 + yOffset
     ) {
       gameMenuSelectionSound.play('once');
       uiManager.exitSlides();
@@ -229,8 +229,8 @@ function mousePressed() {
   if (state === "home") {
     // Start button - goes to select difficulty page
     if (
-      mouseX > 798 + xOffset&& mouseX < 1003  + xOffset&&
-      mouseY > 283  + yOffset && mouseY < 379 + yOffset
+      mouseX > 760 + xOffset && mouseX < 1003 + xOffset &&
+      mouseY > 245 + yOffset && mouseY < 379 + yOffset
     ) {
       gameMenuSelectionSound.play('once');
       gameManager.goToDifficultyScreen();
@@ -238,8 +238,8 @@ function mousePressed() {
   
     // How to play button  - goes to info pop ups
     if (
-      mouseX > 450 + xOffset&& mouseX < 666 + xOffset&&
-      mouseY > 285  + yOffset&& mouseY < 373 + yOffset
+      mouseX > 379 + xOffset && mouseX < 645 + xOffset &&
+      mouseY > 240 + yOffset && mouseY < 377 + yOffset
     ) {
       gameMenuSelectionSound.play('once');
       uiManager.setShowInfo(true);
@@ -251,8 +251,8 @@ function mousePressed() {
   else if (state === "difficulty") {
     // Hard button
     if (
-      mouseX > 776 + xOffset&& mouseX < 927 + xOffset&&
-      mouseY > 249  + yOffset&& mouseY < 442 + yOffset
+      mouseX > 738 + xOffset && mouseX < 927 + xOffset &&
+      mouseY > 211 + yOffset && mouseY < 442 + yOffset
     ) {
       gameMenuSelectionSound.play('once');
       gameManager.startGame("hard");
@@ -260,8 +260,8 @@ function mousePressed() {
   
     // Easy button
     if (
-      mouseX > 530 + xOffset&& mouseX < 681 + xOffset&&
-      mouseY > 240  + yOffset&& mouseY < 428 + yOffset
+      mouseX > 492 + xOffset && mouseX < 681 + xOffset &&
+      mouseY > 221 + yOffset && mouseY < 447 + yOffset
     ) {
       gameMenuSelectionSound.play('once');
       gameManager.startGame("easy");
@@ -281,8 +281,8 @@ function mousePressed() {
     gameMenuSelectionSound.play('once');
     // "Play Again" button - resets the game and goes back to difficulty select screen
     if (
-      mouseX > 567 + xOffset&& mouseX < 823 + xOffset&&
-      mouseY > 557  + yOffset&& mouseY < 660 + yOffset
+      mouseX > 502 + xOffset && mouseX < 888 + xOffset &&
+      mouseY > 530 + yOffset && mouseY < 687 + yOffset
     ) {
       gameMenuSelectionSound.play('once');
       gameManager.resetGame();
@@ -322,7 +322,7 @@ function mousePressed() {
     // info pop up for easy level - how to use the lift
     if (gameManager.getDifficulty() === "easy" && showLiftPopup && !liftPopupDismissed) {
       if (
-        mouseX > 1095 + xOffset && mouseX < 1155 + xOffset &&
+        mouseX > 1057 + xOffset && mouseX < 1155 + xOffset &&
         mouseY > 124 + yOffset && mouseY < 182 + yOffset
       ) {
         gameMenuSelectionSound.play('once');
