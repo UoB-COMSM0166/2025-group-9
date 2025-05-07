@@ -120,7 +120,7 @@ class GameController {
       this.timeManager.resetTime();
     }
     
-
+    // mark player as dead 
      triggerPlayerDied(){
       this.playerDie = true;
       console.log("Player died triggered");

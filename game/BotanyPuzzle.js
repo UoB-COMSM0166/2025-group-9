@@ -11,7 +11,6 @@ class BotanyPuzzle {
       this.successTimer = 0; 
       this.correctSelectionSound = new SoundManager("assets/correctselection.wav");
       this.wrongSelectionSound = new SoundManager("assets/wrongselection.wav");
-
     }
   
     // note will pop up if the player interacts with it
@@ -34,10 +33,6 @@ class BotanyPuzzle {
                        dist(botanyPlayer.x, botanyPlayer.y, 140 + xOffset, 169 + yOffset) < 60;
       const nearPlant = dist(botanyPlayer.x, botanyPlayer.y, 1150 + xOffset, 200 + yOffset) < 60;
 
-      // console.log("player x : ",botanyPlayer.x);
-      // console.log("player y : ",botanyPlayer.y)
-      // console.log("distance  : ", dist(botanyPlayer.x, botanyPlayer.y, 1180 + xOffset, 215 + yOffset) )
-    
       if (!nearNote && !this.showSuccess && !this.plantCollected) {
         this.showNotePopup = false;
       }
@@ -96,6 +91,7 @@ class BotanyPuzzle {
         image(botanyQuestionImg, x, y, imgWidth, imgHeight);
       }
 
+      // draw plant image for hard level
       drawPlantImage() {
         const imgWidth = 30;
         const imgHeight = 30;

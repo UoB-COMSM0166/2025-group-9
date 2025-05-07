@@ -13,8 +13,6 @@ class ChemistryPuzzle {
       this.viewVapour = true;
       this.correctSelectionSound = new SoundManager("assets/correctselection.wav");
       this.wrongSelectionSound = new SoundManager("assets/wrongselection.wav");
-      
-      // timers to control how long success/try again popups remain on screen
       this.tryAgainTimer = 0;
       this.successTimer = 0;
     }
@@ -36,7 +34,7 @@ class ChemistryPuzzle {
   
     // called every frame to draw current state and handle timeouts
     update() {
-      // Timers for hiding success / try again
+      // timers for hiding success / try again
       if (this.showSuccess && millis() - this.successTimer > 1500) {
         this.showSuccess = false;
       }

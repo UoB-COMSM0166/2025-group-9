@@ -209,10 +209,12 @@ class GameLoop {
     }
   
     handleEasyMode(xOffset, yOffset) {
+      // Exit early if the current game mode is not "easy"
       if (this.gameManager.getDifficulty() !== "easy") {
         return;
       }
-  
+
+      // collect vial and mark it as collected
       if (
         !this.chemistryPuzzle.vialCollected &&
         dist(this.chemistryPlayer.x, this.chemistryPlayer.y, 210 + xOffset, 150 + yOffset) < 30
@@ -224,6 +226,7 @@ class GameLoop {
         this.chemistryPuzzle.successTimer = millis();
       }
   
+      // draw image of the vial
       if (!this.chemistryPuzzle.vialCollected  && this.images.flaskImg) {
         const imgWidth = 80;
         const imgHeight = 80;
@@ -232,6 +235,7 @@ class GameLoop {
         image(this.images.flaskImg, x, y, imgWidth, imgHeight);
       }
   
+      // success pop up when vial is collected
       if (
         this.chemistryPuzzle.showSuccess &&
         millis() - this.chemistryPuzzle.successTimer < 1500 && this.images.vialCongratsImg
@@ -243,9 +247,11 @@ class GameLoop {
         image(this.images.vialCongratsImg, x, y, imgWidth, imgHeight);
       }
   
+      // check if player is near the plant
       const nearPlant =
         dist(this.botanyPlayer.x, this.botanyPlayer.y, 240 + xOffset, 463 + yOffset) < 60;
   
+      // if player is close to the plant, mark plant as collected
       if (!this.botanyPuzzle.plantCollected && nearPlant) {
         this.botanyPuzzle.plantCollected = true;
         this.collectedItemSound.play('once');
@@ -254,6 +260,7 @@ class GameLoop {
         this.botanyPuzzle.successTimer = millis();
       }
   
+      // draw flower/plant image
       if (!this.botanyPuzzle.plantCollected && this.images.flowerImg) {
         const imgWidth = 30;
         const imgHeight = 30;
@@ -262,13 +269,12 @@ class GameLoop {
         image(this.images.flowerImg, plantX - imgWidth / 2, plantY - imgHeight / 2, imgWidth, imgHeight);
       }
   
+      // show success pop up when plant is collected
       if (
         this.botanyPuzzle.showSuccess &&
         millis() - this.botanyPuzzle.successTimer < 1500 &&
         this.images.botanyCongratsImg
       ) {
-        console.log("Showing chemistry success popup");
-
         const imgWidth = 300;
         const imgHeight = 100;
         const x = 240 + xOffset - imgWidth / 2;
@@ -277,6 +283,7 @@ class GameLoop {
       }
     }
   
+    // check if the player is in the lab
     checkLabArrival(difficulty, xOffset, yOffset) {
       if (difficulty === "easy") {
         const easyLabX = 1324;
@@ -303,10 +310,12 @@ class GameLoop {
       }
     }
   
+    // update lift position
     updateLift() {
       this.lift.update();
       this.lift.create();
   
+      // handle botany player on the lift
       if (this.lift.isPlayerOnLift(this.botanyPlayer)) {
         this.botanyPlayer.y = this.lift.y - this.botanyPlayer.height;
         this.botanyPlayer.velocityY = 0;
@@ -314,6 +323,7 @@ class GameLoop {
         this.botanyPlayer.onPlatform = true;
       }
   
+      // handle chemistry player on the lift
       if (this.lift.isPlayerOnLift(this.chemistryPlayer)) {
         this.chemistryPlayer.y = this.lift.y - this.chemistryPlayer.height;
         this.chemistryPlayer.velocityY = 0;
@@ -322,9 +332,9 @@ class GameLoop {
       }
     }
   
+    // Sets the current list of platforms used in the level
     setPlatforms(platforms) {
       this.platforms = platforms;
     }
   }
-  
   

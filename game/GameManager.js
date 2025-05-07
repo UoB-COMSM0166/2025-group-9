@@ -1,14 +1,15 @@
 // Manages the overall game state resets the game when needed
 class GameManager {
     constructor(gameController, uiManager, labX, labY) {
-        this.state = "home";
+        this.state = "home"; // initial state
         this.gameController = gameController;
-        this.difficulty = "hard"; // deafault 
+        this.difficulty = "hard"; // deafault difficulty
         this.gameWinSound = new SoundManager("assets/gamewin.wav");
         this.gameOverSound = new SoundManager("assets/gameover.wav");
         this.backgroundMusic = new SoundManager("assets/menubackground.wav");
     }
 
+    // Starts the game with the selected difficulty
     startGame(difficulty) {
       console.log("Game Started!", difficulty);
       this.selectedDifficulty = difficulty;
@@ -21,11 +22,13 @@ class GameManager {
       botanyPlayer.resetPlayerPosition(750 + xOffset, 650 + yOffset);
     
       if (difficulty === "hard") {
+        // Load hard mode settings
         loadHardPlatforms();
         gameLoop.setPlatforms(platforms);
         gameLoop.lift = lift;
         this.gameController.timeManager.resetTime();
       } else {
+        // Load easy mode settings
         loadEasyPlatforms();
         gameLoop.setPlatforms(platforms);
         gameLoop.lift = lift;
@@ -35,10 +38,12 @@ class GameManager {
       }
     }
 
+    // Returns the currently selected difficulty
     getDifficulty() {
       return this.selectedDifficulty;
     }
 
+    // Checks and updates the game status based on controller state
     updateGameStatus() {
         if (this.state === "playing") {
             if (this.gameController.isGameOver()) {
@@ -49,15 +54,13 @@ class GameManager {
         }
     }
 
+    // Goes to the difficulty selection screen
     goToDifficultyScreen() {
         console.log("Pick difficulty");
         this.state = "difficulty";
       }
 
-      getDifficulty() {
-        return this.selectedDifficulty;
-      }
-
+    // Triggers the game over state 
     triggerGameOver() {
         console.log("Game Over!");
         this.state = "gameOver";
@@ -65,13 +68,14 @@ class GameManager {
 
     }
 
+    // Triggers the win state
     triggerWin() {
         console.log("All components collected & players reached the lab! YOU WIN!");
         this.state = "won";
         this.gameWinSound.play('once');
     }
 
-    
+    // Fully resets the game to the home screen and initial values
     resetGame() {
       console.log("Resetting game...");
       this.state = "home";
@@ -107,17 +111,15 @@ class GameManager {
       gameLoop.viewReloaded = false;
     }
     
-
- 
     isPlaying() {
         return this.state === "playing";
       }
     
-      getState() {
-        return this.state;
-      }
+    getState() {
+      return this.state;
+    }
     
-      setState(newState) {
-        this.state = newState;
-      }
+    setState(newState) {
+      this.state = newState;
+    }
 }
