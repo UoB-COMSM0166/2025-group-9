@@ -168,7 +168,9 @@ Before undertaking the coding stage, our team first drafted a class diagram to a
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Class Diagram" width="600"/>
   <br/>
+  
   <em>Figure: Class Diagram</em>
+  
 </div>
 
 
@@ -192,7 +194,9 @@ Race for the Cure had several iterations. The finalised layout and colour scheme
 <div align="center">
   <img src="https://github.com/user-attachments/assets/d0e01b8a-4385-4f94-ba3b-b89c9ae8512f" alt="OldInstructionCard" width="500"/>
   <br/>
+  
   <em>Early version of the Instruction Page</em>
+  
 </div>
 
 Our solution - present bitsize information that is pertinent to gameplay throughout three cards. 
@@ -202,7 +206,9 @@ Our solution - present bitsize information that is pertinent to gameplay through
   <img src="https://github.com/user-attachments/assets/ecf31fa8-d9a2-4f7f-ab3d-6afa13406507" alt="infopage2" width="500"/>
   <img src="https://github.com/user-attachments/assets/3f5a3d60-d997-441f-b8f5-60aa8a03347b" alt="infopage3" width="500"/>
   <br/>
+  
   <em>How to Play pages</em>
+  
 </div>
 
 
@@ -220,17 +226,26 @@ For example, all of the pages are various shades of blue, and one of the puzzles
   <img src="https://github.com/user-attachments/assets/475901e6-6fda-445c-b7ed-53bf80041dbe" alt="chem-question" width="500"/>
   <img src="https://github.com/user-attachments/assets/1339b60e-0bd1-42ab-b385-59376106d6ec" alt="mazeflooreasy" width="500"/>
   <br/>
+  
   <em>Original</em>
+  
 </div>
 
 
 To ensure that colour blind players are offered the same experience while playing as those who aren’t colour blind, all of the images are out through a colour filter and called upon in the `ImagePreloader.js` class. Depending on the accommodation a player chooses, images with the suffix `RBP` will be called for Protanopia and `GBD` for Deuteranopia. When `preloadImages` is called, it takes the root image name and combines it with the respective suffix. Then all relevant images are loaded into `setImgs`. 
 
 <div align="center">
+  <img src="https://github.com/user-attachments/assets/6e8b1313-2979-41c5-9aba-fb90a54fcc4a" alt="chem-questionRBP" width="500"/>
   <img src="https://github.com/user-attachments/assets/6b55b0ae-321c-43e1-bb3c-9956ca3e0bac" alt="mazeflooreasyRBP" width="500"/>
+  
+  <em>Accomodated version of the Chemistry question and Easy level map for Protanopia</em>
+  
+  <img src="https://github.com/user-attachments/assets/964f8231-0246-40a3-b700-0e170ed60b82" alt="chem-questionGBD" width="500"/>
   <img src="https://github.com/user-attachments/assets/b96c605e-c6dc-4d31-9558-e440c25fb87f" alt="mazeflooreasyGBD" width="500"/>
   <br/>
-  <em>Maps accomodated for Protanopia and Deuteranopia</em>
+  
+  <em>Accomodated version of the Chemistry question and Easy level map for Deuteranopia</em>
+  
 </div>
 
 
