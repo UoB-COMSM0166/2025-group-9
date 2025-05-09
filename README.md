@@ -189,7 +189,7 @@ Together, these courses define the shape and mechanics of the game, offering a c
 ### Designing User Interface
 Since most of our team are not gamers, we wanted to make sure our game appealed to both gamers and non-gamers. Our objective was to create a game that was simple yet engaging. One of the first steps we took to achieve this was to create a user-friendly interface. 
 
-Race for the Cure had several iterations. The finalised layout and colour scheme were driven by the feedback received during the Think Aloud and Heuristic evaluations. Initially, we had one instruction page detailing a backstory, how to play, the controls, and what to collect. Our team also wanted to lean further into the pixelated aesthetic. However, we felt that it was too much information to present to the player at one time. Coupled with the aesthetic, the instructions were difficult to read.
+Race For The Cure had several iterations. The finalised layout and colour scheme were driven by the feedback received during the Think Aloud and Heuristic evaluations. Initially, we had one instruction page detailing a backstory, how to play, the controls, and what to collect. Our team also wanted to lean further into the pixelated aesthetic. However, we felt that it was too much information to present to the player at one time. Coupled with the aesthetic, the instructions were difficult to read.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/d0e01b8a-4385-4f94-ba3b-b89c9ae8512f" alt="OldInstructionCard" width="500"/>
@@ -445,6 +445,8 @@ Overall, once we got into a good routine, things went a lot more smoothly. We st
 
 ## Contribution Statement
 
+<em>A table to show team member contributions for Race For The Cure</em>
+
 | Name | Contribution |
 | ------------- | ------------- |
 |  Vera Babasa   | 20 |
@@ -452,6 +454,9 @@ Overall, once we got into a good routine, things went a lot more smoothly. We st
 | Abdul-Hakeem Lamptey     | 20  |
 | Maram Abdulaziz Alhussain   | 20 |
 | Hadeel Ibrahim   | 20  |
+ <br>
+  
+
 
 ## Additional Marks
 
