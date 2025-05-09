@@ -218,15 +218,23 @@ For example, all of the pages are various shades of blue, and one of the puzzles
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/475901e6-6fda-445c-b7ed-53bf80041dbe" alt="chem-question" width="500"/>
-
+  <img src="https://github.com/user-attachments/assets/1339b60e-0bd1-42ab-b385-59376106d6ec" alt="mazeflooreasy" width="500"/>
   <br/>
-  <em>Standard </em>
+  <em>Original</em>
 </div>
+
 
 To ensure that colour blind players are offered the same experience while playing as those who aren’t colour blind, all of the images are out through a colour filter and called upon in the `ImagePreloader.js` class. Depending on the accommodation a player chooses, images with the suffix `RBP` will be called for Protanopia and `GBD` for Deuteranopia. When `preloadImages` is called, it takes the root image name and combines it with the respective suffix. Then all relevant images are loaded into `setImgs`. 
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/6b55b0ae-321c-43e1-bb3c-9956ca3e0bac" alt="mazeflooreasyRBP" width="500"/>
+  <img src="https://github.com/user-attachments/assets/b96c605e-c6dc-4d31-9558-e440c25fb87f" alt="mazeflooreasyGBD" width="500"/>
+  <br/>
+  <em>Maps accomodated for Protanopia and Deuteranopia</em>
+</div>
 
-Window is used to maintain consistency with variables in `sketch.js`. This allows for the images to be preloaded, therefore, at runtime the change from the standard images to the accommodate images will be seamless.
+
+Window is used to maintain consistency with variables in `sketch.js`. This allows for the images to be preloaded, therefore, at runtime the change from the original images to the accommodated images will be seamless.
 
 
 ## Evaluation
