@@ -28,7 +28,7 @@
 | Name                        | Email                  |        Username |
 |-----------------------------|------------------------|-----------------|
 | Vera Babasa                 | ho24168@bristol.ac.uk  | VeraB08         |
-| Satvika Mallela             | jg24071@bristol.ac.uk  | satvikamal      |
+| Satvika Mallela             | ig24071@bristol.ac.uk  | satvikamal      |
 | Abdul-Hakeem Lamptey        | qw19275@bristol.ac.uk  | ahl-hx          |
 | Maram Abdulaziz Alhussain   | ho24644@bristol.ac.uk  | MaramAbdulaziz1 |
 | Hadeel Ibrahim              | po24432@bristol.ac.uk  | hadeelibrahimn  |
@@ -445,7 +445,13 @@ Overall, once we got into a good routine, things went a lot more smoothly. We st
 
 ## Contribution Statement
 
-- Provide a table of everyone's contribution, which may be used to weight individual grades. We expect that the contribution will be split evenly across team-members in most cases. Let us know as soon as possible if there are any issues with teamwork as soon as they are apparent. 
+| Name | Contribution |
+| ------------- | ------------- |
+|  Vera Babasa   | 20 |
+|  Satvika Mallela     |20  |
+| Abdul-Hakeem Lamptey     | 20  |
+| Maram Abdulaziz Alhussain   | 20 |
+| Hadeel Ibrahim   | 20  |
 
 ## Additional Marks
 
