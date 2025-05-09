@@ -69,11 +69,13 @@ Our team pitched two games each to serve as inspiration for our final idea in ou
 Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships while adapting to weather conditions, returning fire, changes in altitude, and birds. To make the game more challenging, we introduced a time limit and bullet restrictions. When presented to players, our team applied the twists to the existing games. The feedback from test sessions informed us that the game was easy to understand and play. However, Dr Bennett suggested that it was too similar to Space Invaders, so we changed course. 
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/07dcfd8e-d6cf-4d12-b346-493b361063ff" alt="Game Pitches" width="200"/>
+<img src="https://github.com/user-attachments/assets/07dcfd8e-d6cf-4d12-b346-493b361063ff" alt="Game Pitches" width="300"/>
   
-<img src="https://github.com/user-attachments/assets/3cfed99c-59c8-4427-ae1d-45ef542402d2" alt="Pros and Cons" width="210"/>
+<img src="https://github.com/user-attachments/assets/3cfed99c-59c8-4427-ae1d-45ef542402d2" alt="Pros and Cons" width="310"/>
 
 <img src="https://github.com/user-attachments/assets/05e4f805-5336-4fe8-8e33-406774037d08" alt="Vote" height="125" width="125"/>
+
+<em>Potential game ideas and voting</em>
 
 </div>
 
@@ -166,7 +168,7 @@ Before undertaking the coding stage, our team first drafted a class diagram to a
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Class Diagram" width="600"/>
   <br/>
-  <em>Figure: Class Diagram.</em>
+  <em>Figure: Class Diagram</em>
 </div>
 
 
@@ -182,9 +184,50 @@ Together, these courses define the shape and mechanics of the game, offering a c
 
 ## Implementation
 
-- 15% ~750 words
+### Designing User Interface
+Since most of our team are not gamers, we wanted to make sure our game appealed to both gamers and non-gamers. Our objective was to create a game that was simple yet engaging. One of the first steps we took to achieve this was to create a user-friendly interface. 
 
-- Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game. 
+Race for the Cure had several iterations. The finalised layout and colour scheme were driven by the feedback received during the Think Aloud and Heuristic evaluations. Initially, we had one instruction page detailing a backstory, how to play, the controls, and what to collect. Our team also wanted to lean further into the pixelated aesthetic. However, we felt that it was too much information to present to the player at one time. Coupled with the aesthetic, the instructions were difficult to read.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d0e01b8a-4385-4f94-ba3b-b89c9ae8512f" alt="OldInstructionCard" width="500"/>
+  <br/>
+  <em>Early version of the Instruction Page</em>
+</div>
+
+Our solution - present bitsize information that is pertinent to gameplay throughout three cards. 
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a0ce9519-18fb-44b0-ad23-19adf5f59547" alt="infopage1" width="500"/>
+  <img src="https://github.com/user-attachments/assets/ecf31fa8-d9a2-4f7f-ab3d-6afa13406507" alt="infopage2" width="500"/>
+  <img src="https://github.com/user-attachments/assets/3f5a3d60-d997-441f-b8f5-60aa8a03347b" alt="infopage3" width="500"/>
+  <br/>
+  <em>How to Play pages</em>
+</div>
+
+
+The feedback from the qualitative evaluations suggested that some more clarification at certain points in the game would benefit the user experience. So to further improve user interface, we created popups to indicate when an ingredient has been collected or to provide in the moment instructions and error messages. 
+
+The evaluations pose another question: What if the player solves the puzzles and obtains both the vial and the flower using a single character? To promote the use of both characters, we designed them to be able to acquire ingredients that are exclusive to their speciality, such as the Botany student can only retrieve the flower. The chemistry student can only retrieve the vial. In the hard level, only students of the science can solve the puzzle to collect the vial or the flower. 
+
+
+### Image Preloader for Colour Blind players
+Protanopia and Deuteranopia are the most common forms of colour blindness. Those with Protanopia are likely to perceive some shades of blue with red, purple or dark pink and green with orange. Those with Deuteranopes are likely to perceive red with green or brown, bright green with yellow, and light blue with lilac. The colours listed here are the ones that would directly affect colour blind users when playing our game. 
+
+For example, all of the pages are various shades of blue, and one of the puzzles implemented in the hard level requires the identification of the colours red, green, yellow and purple.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/475901e6-6fda-445c-b7ed-53bf80041dbe" alt="chem-question" width="500"/>
+
+  <br/>
+  <em>Standard </em>
+</div>
+
+To ensure that colour blind players are offered the same experience while playing as those who aren’t colour blind, all of the images are out through a colour filter and called upon in the `ImagePreloader.js` class. Depending on the accommodation a player chooses, images with the suffix `RBP` will be called for Protanopia and `GBD` for Deuteranopia. When `preloadImages` is called, it takes the root image name and combines it with the respective suffix. Then all relevant images are loaded into `setImgs`. 
+
+
+Window is used to maintain consistency with variables in `sketch.js`. This allows for the images to be preloaded, therefore, at runtime the change from the standard images to the accommodate images will be seamless.
+
 
 ## Evaluation
 During the development process, it was important to ensure the usability and effectiveness of our game's design and core mechanics. To this end, we used a mixed-methods approach, **combining qualitative** and **quantitative evaluations**. The qualitative evaluation was interested in gathering rich user feedback for the sake of revealing usability issues early, while the quantitative evaluation was interested in measuring player performance and satisfaction through statistical analysis.
