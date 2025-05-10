@@ -297,6 +297,27 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 ### Quantitative Evaluation
 In order to evaluate different aspects of user experience in our game, we conducted two quantitative tests: **the System Usability Scale (SUS)**, which focuses on system usability, and **the NASA Task Load Index (NASA-TLX)**, which measures perceived workload. For this part, we're looking at the SUS method, as it provided more observations about users working with our interface. The full results of both tests are shown below in the tables.
 
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUStable.png" width="450"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/NASA-TLXtable.png" width="450"/>
+</p>
+<p align="center"><em>*Figure: SUS scores for both difficulty levels           Figure: NASA-TLX scores for both difficulty levels*
+</em></p>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUStable.png" width="400"/><br>
+      <em>Figure: SUS scores for both difficulty levels</em>
+    </td>
+    <td align="center">
+      <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/NASA-TLXtable.png" width="400"/><br>
+      <em>Figure: NASA-TLX scores for both difficulty levels</em>
+    </td>
+  </tr>
+</table>
+
+
 The SUS questionnaire was presented to ten subjects after they had played both levels of difficulty for our game. We purposely randomized the order of play to reduce the learning effect, some subjects began with the easy level, and others began with the hard level. This gave us more balanced feedback and avoided biased results due to familiarity.
 
 Each SUS score was calculated as per the standard method: adjusting responses by question type, summing, and multiplying by 2.5 to get a score out of 100. A score above 68 is generally "above average" usability. Our results, however, were that both levels were below this.
@@ -304,7 +325,7 @@ Each SUS score was calculated as per the standard method: adjusting responses by
 The ratings were almost identical in both modes, with only two users rating differently. This was confirmed by a **Wilcoxon Signed-Rank Test**, where the test statistic W = 0 with only 2 non-tied pairs — a statistically significant difference, but one based on very little variation.
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUSbarChart.png" width="700"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUSbarChart.png" width="900"/>
   <br/>
   <em>Figure: SUS score comparison between easy and hard modes.</em>
 </p>
