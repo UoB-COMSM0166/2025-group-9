@@ -272,22 +272,9 @@ Throughout the sessions, a number of common themes appeared. Players often compl
 
 A mind map of Think Aloud findings and thematic categorisation is presented below to graphically show the results of the evaluation.
 
-![Think Aloud Mind Map](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif)
 
 <div align="center">
-  
-*Figure: Think Aloud evaluation feedback.*
-
-</div>
-
-<div align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif" width="150%"/>
-  <br>
-  <em>Figure: Think Aloud evaluation feedback.</em>
-</div>
-
-<div align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif" width="850"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif" width="980"/>
   <br>
   <em>Figure: Think Aloud evaluation feedback.</em>
 </div>
@@ -336,7 +323,7 @@ Each SUS score was calculated as per the standard method: adjusting responses by
 The ratings were almost identical in both modes, with only two users rating differently. This was confirmed by a **Wilcoxon Signed-Rank Test**, where the test statistic W = 0 with only 2 non-tied pairs — a statistically significant difference, but one based on very little variation.
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUSbarChart.png" width="900"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUSbarChart.png" width="600"/>
   <br/>
   <em>Figure: SUS score comparison between easy and hard modes.</em>
 </p>
