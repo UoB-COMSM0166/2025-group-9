@@ -260,16 +260,10 @@ In Week 7's lab, we used two qualitative data collection methods: **Heuristic Ev
 Heuristic Evaluation was conducted by three peers from other teams, each independently assessing the game based on Nielsen’s usability principles. They identified a range of issues related to visual design, user control, and system feedback. These insights helped highlight critical usability problems at an early stage, allowing us to address them systematically. A full breakdown of the Heuristic Evaluation findings is provided in the attached HCV table.
 
 <div align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/HCVtable.png" width="1200"/>
-  <br>
-  <em>Figure: Heuristic Evaluation Table.</em>
-</div>
-<div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/HCVtable2.png" width="1200"/>
   <br>
   <em>Figure: Heuristic Evaluation Table.</em>
 </div>
-
 
 ---
 **The Think Aloud test**, conducted on our digital prototype, provided us with additional feedback on the real user experience. Three users were recruited from outside our development group. Each user was instructed to make their way through the multi-floor maze, collect ingredients specific to their character, solve puzzles while against the clock, and reach the lab before the time expired. Throughout gameplay, players were prompted to think aloud, sharing their thoughts, feelings, and confusion, which enabled us to gather in-depth qualitative feedback.
@@ -278,13 +272,11 @@ Throughout the sessions, a number of common themes appeared. Players often compl
 
 A mind map of Think Aloud findings and thematic categorisation is presented below to graphically show the results of the evaluation.
 
-
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif" width="980"/>
   <br>
   <em>Figure: Think Aloud evaluation feedback.</em>
 </div>
-
 
 #### **Based on this feedback, we made the following significant changes:**
 - Shortened and summarised instructional text.
@@ -303,8 +295,6 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 ### Quantitative Evaluation
 In order to evaluate different aspects of user experience in our game, we conducted two quantitative tests: **the System Usability Scale (SUS)**, which focuses on system usability, and **the NASA Task Load Index (NASA-TLX)**, which measures perceived workload. For this part, we're looking at the SUS method, as it provided more observations about users working with our interface. The full results of both tests are shown below in the tables.
 
-
-
 <div align="center">
   <table>
     <tr>
@@ -320,8 +310,6 @@ In order to evaluate different aspects of user experience in our game, we conduc
   </table>
 </div>
 
-
-
 The SUS questionnaire was presented to ten subjects after they had played both levels of difficulty for our game. We purposely randomized the order of play to reduce the learning effect, some subjects began with the easy level, and others began with the hard level. This gave us more balanced feedback and avoided biased results due to familiarity.
 
 Each SUS score was calculated as per the standard method: adjusting responses by question type, summing, and multiplying by 2.5 to get a score out of 100. A score above 68 is generally "above average" usability. Our results, however, were that both levels were below this.
@@ -336,8 +324,7 @@ The ratings were almost identical in both modes, with only two users rating diff
 
 Both levels' SUS score average was still under the 68 threshold. This reflected the need to improve some aspects of the system's usability, which we successfully addressed in the final version. We incorporated numerous interface enhancements, including more descriptive instructions, stronger visual cues, simplified and easier navigation and controls, and less overall complexity to improve the intuitiveness and user-friendliness of the gameplay.
 
-
-
+### How was our code tested?
 
 
 - 15% ~750 words
