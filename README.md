@@ -292,6 +292,20 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 
 - Increased visual cues to differentiate between two characters and draw attention to collectible items.
 
+  ---
+
+### Quantitative Evaluation
+In order to evaluate different aspects of user experience in our game, we conducted two quantitative tests: **the System Usability Scale (SUS)**, which focuses on system usability, and **the NASA Task Load Index (NASA-TLX)**, which measures perceived workload. For this part, we're looking at the SUS method, as it provided more observations about users working with our interface. The full results of both tests are shown below in the tables.
+
+The SUS questionnaire was presented to ten subjects after they had played both levels of difficulty for our game. We purposely randomized the order of play to reduce the learning effect, some subjects began with the easy level, and others began with the hard level. This gave us more balanced feedback and avoided biased results due to familiarity.
+
+Each SUS score was calculated as per the standard method: adjusting responses by question type, summing, and multiplying by 2.5 to get a score out of 100. A score above 68 is generally "above average" usability. Our results, however, were that both levels were below this.
+
+The ratings were almost identical in both modes, with only two users rating differently. This was confirmed by a **Wilcoxon Signed-Rank Test**, where the test statistic W = 0 with only 2 non-tied pairs — a statistically significant difference, but one based on very little variation.
+
+Both levels' SUS score average was still under the 68 threshold. This reflected the need to improve some aspects of the system's usability, which we successfully addressed in the final version. We incorporated numerous interface enhancements, including more descriptive instructions, stronger visual cues, simplified and easier navigation and controls, and less overall complexity to improve the intuitiveness and user-friendliness of the gameplay.
+
+
 
 
 
