@@ -438,6 +438,7 @@ A major strength of our collaboration was our use of pair programming. Working i
 We incorporated various tools and techniques throughout the development process, many of which were inspired by lectures and labs on Agile software development (Week 2) and Project Management (Week 5).
 
 **Meeting Notes:**
+
 To document our progress, we kept detailed [meeting notes](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/Meetings) on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
 
 <p align="center">
@@ -476,7 +477,8 @@ Our shared [Google Docs](https://docs.google.com/document/d/1KssIKXsxvCF5YswZeRS
 When estimating the effort required for larger tasks (like implementing animations or writing evaluation sections), we used planning poker during team discussions. This helped us set realistic expectations and distribute the workload fairly. These estimates also helped us plan our sprints, break the work into smaller, manageable chunks, and keep things moving smoothly throughout the project.
 
 **Sprints:**
-To structure our process and maintain steady progress, we adopted sprints as part of our workflow. Each sprint represented a focused period, typically one to two weeks, during which we planned, assigned, and worked on specific tasks. At the start of each sprint, we held short meetings to discuss priorities, estimate effort using techniques like Planning Poker, and allocate tasks based on availability and skillsets. We also made use of our GoogleDocs Notes and a Kanban board to plan and manage each sprint.
+
+We structured our workflow around sprints to help maintain steady progress. Each sprint represented a focused period, typically one to two weeks, during which we planned, assigned, and worked on specific tasks. At the start of each sprint, we held short meetings to discuss priorities, estimate effort using techniques like Planning Poker, and allocate tasks based on availability and skillsets. We also made use of our GoogleDocs Notes and a Kanban board to plan and manage each sprint.
 
 At the end of each sprint, we reviewed our progress, discussed any challenges faced, and planned adjustments for the next sprint. This iterative cycle kept the team aligned, ensured continuous progress, and allowed us to adapt quickly to any changes or new ideas that emerged during development.
 
