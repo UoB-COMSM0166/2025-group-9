@@ -264,6 +264,11 @@ Heuristic Evaluation was conducted by three peers from other teams, each indepen
   <br>
   <em>Figure: Heuristic Evaluation Table.</em>
 </div>
+<div align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/HCVtable2.png" width="1200"/>
+  <br>
+  <em>Figure: Heuristic Evaluation Table.</em>
+</div>
 
 
 ---
