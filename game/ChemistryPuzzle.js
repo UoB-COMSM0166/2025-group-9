@@ -87,10 +87,10 @@ class ChemistryPuzzle {
 
 
     drawVialImage() {
-      const imgWidth = 80;
-      const imgHeight = 80;
+      const imgWidth = 40;
+      const imgHeight = 40;
       const x = 325 + xOffset - imgWidth / 2 - 170;
-      const y = 315 + yOffset + 50;
+      const y = 400 + yOffset;
       image(flaskImg, x, y, imgWidth, imgHeight);
     }
 
