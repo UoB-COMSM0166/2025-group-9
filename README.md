@@ -303,6 +303,12 @@ Each SUS score was calculated as per the standard method: adjusting responses by
 
 The ratings were almost identical in both modes, with only two users rating differently. This was confirmed by a **Wilcoxon Signed-Rank Test**, where the test statistic W = 0 with only 2 non-tied pairs — a statistically significant difference, but one based on very little variation.
 
+![SUS Bar Chart](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUSbarChart.png)
+<div align="center">
+  
+*Figure: SUS score comparison between easy and hard modes.*
+</div>
+
 Both levels' SUS score average was still under the 68 threshold. This reflected the need to improve some aspects of the system's usability, which we successfully addressed in the final version. We incorporated numerous interface enhancements, including more descriptive instructions, stronger visual cues, simplified and easier navigation and controls, and less overall complexity to improve the intuitiveness and user-friendliness of the gameplay.
 
 
