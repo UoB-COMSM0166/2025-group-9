@@ -280,6 +280,13 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 
 </div>
 
+<div align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif" width="400"/>
+  <br>
+  <em>Figure: Think Aloud evaluation feedback.</em>
+</div>
+
+
 #### **Based on this feedback, we made the following significant changes:**
 - Shortened and summarised instructional text.
 
