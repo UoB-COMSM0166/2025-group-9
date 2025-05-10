@@ -260,7 +260,7 @@ In Week 7's lab, we used two qualitative data collection methods: **Heuristic Ev
 Heuristic Evaluation was conducted by three peers from other teams, each independently assessing the game based on Nielsen’s usability principles. They identified a range of issues related to visual design, user control, and system feedback. These insights helped highlight critical usability problems at an early stage, allowing us to address them systematically. A full breakdown of the Heuristic Evaluation findings is provided in the attached HCV table.
 
 <div align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/HCVtable.png" width="1100"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/HCVtable.png" width="1200"/>
   <br>
   <em>Figure: Heuristic Evaluation Table.</em>
 </div>
