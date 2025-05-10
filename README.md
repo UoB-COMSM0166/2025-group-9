@@ -298,18 +298,22 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 In order to evaluate different aspects of user experience in our game, we conducted two quantitative tests: **the System Usability Scale (SUS)**, which focuses on system usability, and **the NASA Task Load Index (NASA-TLX)**, which measures perceived workload. For this part, we're looking at the SUS method, as it provided more observations about users working with our interface. The full results of both tests are shown below in the tables.
 
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUStable.png" width="200"/><br>
-      <em>Figure: SUS scores for both difficulty levels</em>
-    </td>
-    <td align="center">
-      <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/NASA-TLXtable.png" width="200"/><br>
-      <em>Figure: NASA-TLX scores for both difficulty levels</em>
-    </td>
-  </tr>
-</table>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUStable.png" width="250"/><br>
+        <em>Figure: SUS scores for both difficulty levels</em>
+      </td>
+      <td align="center">
+        <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/NASA-TLXtable.png" width="250"/><br>
+        <em>Figure: NASA-TLX scores for both difficulty levels</em>
+      </td>
+    </tr>
+  </table>
+</div>
+
 
 
 The SUS questionnaire was presented to ten subjects after they had played both levels of difficulty for our game. We purposely randomized the order of play to reduce the learning effect, some subjects began with the easy level, and others began with the hard level. This gave us more balanced feedback and avoided biased results due to familiarity.
