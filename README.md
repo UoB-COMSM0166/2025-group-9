@@ -427,15 +427,7 @@ Our meetings typically followed a structure where we’d begin by updating each 
 
 In the early stages, we used the WhatsApp poll feature to shortlist and vote on our top two game ideas. We then held an in-person meeting to discuss the pros and cons of each, eventually deciding on a concept we all felt enthusiastic about. This helped everyone have a say, and we were able to quickly agree on a game idea that we all liked.
 
-To document our progress, we kept detailed [meeting notes](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/Meetings) on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
-
-<p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes.png?raw=true" width="55%" />
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes2.png?raw=true" width="35%" />
-  <br>
-  <em>Left - folders for each week used to store files and notes; Right - Week 4 meeting notes example with goals, stakeholders, and user stories</em>
-</p>
-<br>
+When making other decisions about the game, such as design choices and feature implementations, we often used the poll feature or held quick votes during meetings. This ensured that everyone’s opinions were considered throughout the development process and that decisions reflected the whole team’s input.
 
 A major strength of our collaboration was our use of pair programming. Working in pairs allowed us to support one another in real time, troubleshoot more effectively, and share different perspectives, which ultimately improved the quality and readability of our code. An example of when we used pair programming was during the development stage, when we were working on the player class. One person would focus on writing the code while the other helped with debugging or suggesting improvements. This made the process faster and helped us catch issues early on.
 
@@ -444,6 +436,17 @@ A major strength of our collaboration was our use of pair programming. Working i
 ### Tools and Techniques
 
 We incorporated various tools and techniques throughout the development process, many of which were inspired by lectures and labs on Agile software development (Week 2) and Project Management (Week 5).
+
+**Meeting Notes:**
+To document our progress, we kept detailed [meeting notes](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/Meetings) on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
+
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes.png?raw=true" width="55%" />
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes2.png?raw=true" width="35%" />
+  <br>
+  <em>Left - folders for each week used to store files and notes; Right - Week 4 meeting notes example with goals, stakeholders, and user stories</em>
+</p>
+<br><br>
 
 **Kanban Board (GitHub Projects):**
 
@@ -466,11 +469,16 @@ Our shared [Google Docs](https://docs.google.com/document/d/1KssIKXsxvCF5YswZeRS
   <br>
   <em>Sections of our shared Google Doc - Left: built-in to-do list for tracking progress; Right: main report document used for collaborative writing</em>
 </p>
-<br><br>
+<br><br
 
 **Planning Poker:**
 
 When estimating the effort required for larger tasks (like implementing animations or writing evaluation sections), we used planning poker during team discussions. This helped us set realistic expectations and distribute the workload fairly. These estimates also helped us plan our sprints, break the work into smaller, manageable chunks, and keep things moving smoothly throughout the project.
+
+**Sprints:**
+To structure our process and maintain steady progress, we adopted sprints as part of our workflow. Each sprint represented a focused period, typically one to two weeks, during which we planned, assigned, and worked on specific tasks. At the start of each sprint, we held short meetings to discuss priorities, estimate effort using techniques like Planning Poker, and allocate tasks based on availability and skillsets. We also made use of our GoogleDocs Notes and a Kanban board to plan and manage each sprint.
+
+At the end of each sprint, we reviewed our progress, discussed any challenges faced, and planned adjustments for the next sprint. This iterative cycle kept the team aligned, ensured continuous progress, and allowed us to adapt quickly to any changes or new ideas that emerged during development.
 
 **Communication Platforms:**
 
