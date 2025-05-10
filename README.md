@@ -265,6 +265,13 @@ Heuristic Evaluation was conducted by three peers from other teams, each indepen
 *Figure: Heuristic Evaluation Table.*
 </div>
 
+<div align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/HCVtable.png" width="700"/>
+  <br>
+  <em>Figure: Heuristic Evaluation Table.</em>
+</div>
+
+
 ---
 **The Think Aloud test**, conducted on our digital prototype, provided us with additional feedback on the real user experience. Three users were recruited from outside our development group. Each user was instructed to make their way through the multi-floor maze, collect ingredients specific to their character, solve puzzles while against the clock, and reach the lab before the time expired. Throughout gameplay, players were prompted to think aloud, sharing their thoughts, feelings, and confusion, which enabled us to gather in-depth qualitative feedback.
 
