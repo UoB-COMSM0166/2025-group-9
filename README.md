@@ -15,13 +15,16 @@
 - [Implementation](#implementation)
 - [Evaluation](#evaluation)
 - [Process](#process)
-- [Sustainability](#Sustainability)
+- [Sustainability](#sustainability)
 - [Conclusion](#conclusion)
 - [Contribution Statement](#contribution-statement)
+<br><br><br>
 
 ## The Group
 
-![Group-Photo](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/group-photo.png) 
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/group-photo.png" alt="Group-Photo">
+</p>
 
 <div align="center">
 
@@ -34,7 +37,7 @@
 | Hadeel Ibrahim              | po24432@bristol.ac.uk  | hadeelibrahimn  |
 
 </div>
-
+<br><br><br>
 
 ## Introduction
 
@@ -54,12 +57,14 @@ There are two difficulty levels: easy and hard. Both feature different maze stru
 | <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/chemistry-student.png?raw=true" width="100"/><br>**Chemistry Student** | A student specialising in chemistry, responsible for collecting chemical compounds. | <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/chem-vial.png?raw=true" width="100"/><br>**Chemical Compound** | Identify the correct order of vials needed to complete the experiment. |
 | <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/botany-student.png?raw=true" width="100"/><br>**Botany Student**       | A student specialising in Botany, responsible for collecting rare plants.            | <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/flower.png?raw=true" width="100"/><br>**Rare Plant**          | Guess the name of the flower.                                          |
 
+<br><br>
 
 ## Requirements 
 
 ### Requirements Engineering
 
 Requirements Engineering is a thorough process to create and develop the requirements of a software system while managing the needs and expectations of the stakeholders. The requirements fall into two categories - functional and non-functional. Requirements engineering is vital as it tells every team member what to do. This leads to an optimised development process. (Irum Inayat et al., 2014)
+<br>
 
 ### Ideation Process
 
@@ -67,6 +72,8 @@ Our team pitched two games each to serve as inspiration for our final idea in ou
 
 
 Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships while adapting to weather conditions, returning fire, changes in altitude, and birds. To make the game more challenging, we introduced a time limit and bullet restrictions. When presented to players, our team applied the twists to the existing games. The feedback from test sessions informed us that the game was easy to understand and play. However, Dr Bennett suggested that it was too similar to Space Invaders, so we changed course. 
+<br><br>
+
 <div align="center">
 
 <img src="https://github.com/user-attachments/assets/07dcfd8e-d6cf-4d12-b346-493b361063ff" alt="Game Pitches" width="300"/>
@@ -78,7 +85,7 @@ Our initial idea involved fighter jets shooting out ‘enemy/alien’ ships whil
 <em>Potential game ideas and voting</em>
 
 </div>
-
+<br><br>
 During the same testing sessions, our team presented a game based on Fireboy and Watergirl. Players were more enthusiastic and willing to play the game multiple times. Hadeel, a team member, created a digital prototype to help us visualise the new idea. 
 
 
@@ -90,9 +97,11 @@ Building on this foundational idea, we developed several concepts to make the ga
 
 **Inspiration Prototype Video:** https://youtube.com/shorts/O2Wved8YsHU?si=evTJdVszApQ8bumC
 
-The team developed a final interactive prototype to showcase the core concept of the game. The prototype reflects the finalized vision: a CooPuzzleGame that emphasizes cooperation, exploration, and problem-solving between two distinct characters. This video demonstration serves as a visual summary of the gameplay mechanics, level design, and user interface elements we have worked collaboratively to build.
+The team developed a final interactive prototype to showcase the core concept of the game. The prototype reflects the finalized vision: a CoopPuzzleGame that emphasizes cooperation, exploration, and problem-solving between two distinct characters. This video demonstration serves as a visual summary of the gameplay mechanics, level design, and user interface elements we have worked collaboratively to build.
 
 **Final Prototype Video:** https://youtube.com/shorts/r6emoXvEDbI
+
+<br>
 
 ### Stakeholders
 
@@ -113,6 +122,8 @@ Group 9 – Developing Team. Normal and Maintenance Operators
 
 **4. The Wider Environment:**
 University of Bristol
+
+<br>
 
 ### Epics and User Stories
 
@@ -156,23 +167,25 @@ As an assessor, I want the game to feature a unique twist on a classic concept o
 
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prelim_use_case_diagram(2).jpg?raw=true" alt="Preliminary Use Case Diagram" width="600"/>
 
-**Figure 1**  
 *Preliminary use case diagram showing system interactions.*  
 </div>
 
+<br><br>
 
 ## Design
 
 Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. It was a point of reference that allowed us to visualize how elements in the game were interconnected, identify their properties and actions, and have an orderly development process. 
 
+A class diagram is a core component of Object-Oriented Design (OOD). It visually represents the classes in a system, their attributes, methods, and the relationships between them (e.g., inheritance, associations, and dependencies). It was important for us to create a class diagram early on, because it would help us understand the system’s structure at a high level before diving into implementation. It also ensured that key design principles such as encapsulation, modularity, and reusability were considered. Therefore, allowing us to plan how objects would interact, identify potential design flaws, and improve collaboration within the team by providing a shared understanding of the system architecture.
+
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Class Diagram" width="600"/>
   <br/>
   
-  <em>Figure: Class Diagram</em>
+  <em>Class Diagram</em>
   
 </div>
-
+<br><br>
 
 The GameManager class is the game's main controller, monitoring overall progress, managing state transitions among the game states, and making sure players reach win or fail conditions. It controls the GameController directly, which manages individual game logic like monitoring the cure components that have been collected, monitoring the players' status, and managing the countdown timer.
 
@@ -183,6 +196,8 @@ The Lift class offers a way for players to move between floors, responding dynam
 The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge to beat the clock in reaching the lab before the virus can fully mature.
 
 Together, these courses define the shape and mechanics of the game, offering a cooperative puzzle-solving experience with challenges, environmental risks, and strategic team-based elements.
+
+<br><br>
 
 ## Implementation
 
@@ -198,9 +213,10 @@ Race For The Cure had several iterations. The finalised layout and colour scheme
   <em>Early version of the Instruction Page</em>
   
 </div>
+<br><br>
 
 Our solution - present bitsize information that is pertinent to gameplay throughout three cards. 
-
+<br>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/a0ce9519-18fb-44b0-ad23-19adf5f59547" alt="infopage1" width="500"/>
   <img src="https://github.com/user-attachments/assets/ecf31fa8-d9a2-4f7f-ab3d-6afa13406507" alt="infopage2" width="500"/>
@@ -210,12 +226,12 @@ Our solution - present bitsize information that is pertinent to gameplay through
   <em>How to Play pages</em>
   
 </div>
-
+<br><br>
 
 The feedback from the qualitative evaluations suggested that some more clarification at certain points in the game would benefit the user experience. So to further improve user interface, we created popups to indicate when an ingredient has been collected or to provide in the moment instructions and error messages. 
 
 The evaluations pose another question: What if the player solves the puzzles and obtains both the vial and the flower using a single character? To promote the use of both characters, we designed them to be able to acquire ingredients that are exclusive to their speciality, such as the Botany student can only retrieve the flower. The chemistry student can only retrieve the vial. In the hard level, only students of the science can solve the puzzle to collect the vial or the flower. 
-
+<br>
 
 ### Image Preloader for Colour Blind players
 Protanopia and Deuteranopia are the most common forms of colour blindness. Those with Protanopia are likely to perceive some shades of blue with red, purple or dark pink and green with orange. Those with Deuteranopes are likely to perceive red with green or brown, bright green with yellow, and light blue with lilac. The colours listed here are the ones that would directly affect colour blind users when playing our game. 
@@ -230,7 +246,7 @@ For example, all of the pages are various shades of blue, and one of the puzzles
   <em>Original</em>
   
 </div>
-
+<br><br>
 
 To ensure that colour blind players are offered the same experience while playing as those who aren’t colour blind, all of the images are out through a colour filter and called upon in the `ImagePreloader.js` class. Depending on the accommodation a player chooses, images with the suffix `RBP` will be called for Protanopia and `GBD` for Deuteranopia. When `preloadImages` is called, it takes the root image name and combines it with the respective suffix. Then all relevant images are loaded into `setImgs`. 
 
@@ -247,13 +263,16 @@ To ensure that colour blind players are offered the same experience while playin
   <em>Accomodated version of the Chemistry question and Easy level map for Deuteranopia</em>
   
 </div>
-
+<br><br>
 
 Window is used to maintain consistency with variables in `sketch.js`. This allows for the images to be preloaded, therefore, at runtime the change from the original images to the accommodated images will be seamless.
 
+<br><br>
 
 ## Evaluation
 During the development process, it was important to ensure the usability and effectiveness of our game's design and core mechanics. To this end, we used a mixed-methods approach, **combining qualitative** and **quantitative evaluations**. The qualitative evaluation was interested in gathering rich user feedback for the sake of revealing usability issues early, while the quantitative evaluation was interested in measuring player performance and satisfaction through statistical analysis.
+
+<br>
 
 ### Qualitative Evaluation
 In Week 7's lab, we used two qualitative data collection methods: **Heuristic Evaluation** and **Think Aloud**.
@@ -262,10 +281,10 @@ Heuristic Evaluation was conducted by three peers from other teams, each indepen
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/HCVtable2.png" width="1200"/>
   <br>
-  <em>Figure: Heuristic Evaluation Table.</em>
+  <em>Heuristic Evaluation Table.</em>
 </div>
+<br><br>
 
----
 **The Think Aloud test**, conducted on our digital prototype, provided us with additional feedback on the real user experience. Three users were recruited from outside our development group. Each user was instructed to make their way through the multi-floor maze, collect ingredients specific to their character, solve puzzles while against the clock, and reach the lab before the time expired. Throughout gameplay, players were prompted to think aloud, sharing their thoughts, feelings, and confusion, which enabled us to gather in-depth qualitative feedback.
 
 Throughout the sessions, a number of common themes appeared. Players often complained of being confused over movement controls and having trouble finding objectives, pointing to a lack of clear onboarding and tutorial instruction. Visual issues were common; testers often struggled to distinguish between characters and weren't sure what various in-game icons meant. Platforming mechanics also received uniform feedback, namely the speed and responsiveness of the jump action. Text presentation was also pointed out as needing improvement, with font sizes being too small and pop-up instructions containing too much text.
@@ -275,8 +294,9 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/ThinkAloudMindMap.gif" width="980"/>
   <br>
-  <em>Figure: Think Aloud evaluation feedback.</em>
+  <em>Think Aloud evaluation feedback.</em>
 </div>
+<br><br>
 
 #### **Based on this feedback, we made the following significant changes:**
 - Shortened and summarised instructional text.
@@ -290,7 +310,7 @@ A mind map of Think Aloud findings and thematic categorisation is presented belo
 
 - Increased visual cues to differentiate between two characters and draw attention to collectible items.
 
-  ---
+<br>
 
 ### Quantitative Evaluation
 In order to evaluate different aspects of user experience in our game, we conducted two quantitative tests: **the System Usability Scale (SUS)**, which focuses on system usability, and **the NASA Task Load Index (NASA-TLX)**, which measures perceived workload. For this part, we're looking at the SUS method, as it provided more observations about users working with our interface. The full results of both tests are shown below in the tables.
@@ -300,15 +320,16 @@ In order to evaluate different aspects of user experience in our game, we conduc
     <tr>
       <td align="center">
         <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUStable.png" width="250"/><br>
-        <em>Figure: SUS scores for both difficulty levels</em>
+        <em>SUS scores for both difficulty levels</em>
       </td>
       <td align="center">
         <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/NASA-TLXtable.png" width="250"/><br>
-        <em>Figure: NASA-TLX scores for both difficulty levels</em>
+        <em>NASA-TLX scores for both difficulty levels</em>
       </td>
     </tr>
   </table>
 </div>
+<br><br>
 
 The SUS questionnaire was presented to ten subjects after they had played both levels of difficulty for our game. We purposely randomized the order of play to reduce the learning effect, some subjects began with the easy level, and others began with the hard level. This gave us more balanced feedback and avoided biased results due to familiarity.
 
@@ -319,22 +340,16 @@ The ratings were almost identical in both modes, with only two users rating diff
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/SUSbarChart.png" width="600"/>
   <br/>
-  <em>Figure: SUS score comparison between easy and hard modes.</em>
+  <em>SUS score comparison between easy and hard modes.</em>
 </p>
+<br><br>
 
 Both levels' SUS score average was still under the 68 threshold. This reflected the need to improve some aspects of the system's usability, which we successfully addressed in the final version. We incorporated numerous interface enhancements, including more descriptive instructions, stronger visual cues, simplified and easier navigation and controls, and less overall complexity to improve the intuitiveness and user-friendliness of the gameplay.
+<br>
 
 ### How was our code tested?
 
-
-- 15% ~750 words
-
-- One qualitative evaluation (your choice) 
-
-- One quantitative evaluation (of your choice) 
-
-- Description of how code was tested. 
-
+<br><br>
 ## Sustainability
 
 ### 1. Sustainability Dimentions
@@ -345,9 +360,9 @@ In Week 10, our group analyzed **Race for the Cure** through five sustainability
 
 <div align="center">
   
-*Figure: Sustainability dimensions.*
+*Sustainability dimensions.*
 </div>
-
+<br><br>
 
 ### 2. Chains of Effects → Sustainability Dimensions
 
@@ -357,8 +372,9 @@ We also explored how it supports sustainability through its design. We analyzed 
 
 <div align="center">
   
-*Figure: Chains of effects across sustainability dimensions.*
+*Chains of effects across sustainability dimensions.*
 </div>
+<br><br>
 
 ### 3. Ethics
 
@@ -368,6 +384,7 @@ The narrative centers on a single player controlling two university students who
 - The game **does not collect or store personal data**, aligning with **privacy first principles**.
 - Character roles (botany and chemistry) are not restricted by gender or cultural stereotypes, supporting inclusive representation for all players.
 
+<br>
 
 ### 4. Accessibility
 
@@ -378,6 +395,7 @@ We designed to be accessible to a broad range of players, including those with d
 - **Input Simplicity**: The game can be played fully with a keyboard, without requiring special equipment or high end devices.
 - **Cognitive Accessibility**: Puzzles are structured to be challenging yet fair. The time limit introduces light tension without overwhelming the player, encouraging thoughtful coordination between the two characters.
   
+<br>
 
 ### 5. Green Software Foundation Patterns → Game Integration
 
@@ -386,6 +404,7 @@ We designed to be accessible to a broad range of players, including those with d
 | Convert PNGs to WebP and use sprite sheets to reduce file size and energy use.           | Minify Web Assets                            | [Minify Web Assets](https://patterns.greensoftware.foundation/catalog/web/minify-web-assets/)            | Removed backgrounds from image assets and used PNG format for sprites and UI elements to reduce file size. This partially follows the Minify Web Assets pattern.                          |
 | Replace GIFs with CSS/SVG animations   | Deprecate GIFs for Animated Content          | [Deprecate GIFs](https://patterns.greensoftware.foundation/catalog/web/deprecate-gifs/)                  | Replace GIF based animations (e.g. lift and collectable items) with efficient alternatives.              |
 
+<br><br>
 ### 6. Sustainability Requirements → User Stories
 To ensure **Race for the Cure** meets sustainability goals, we turned our main design priorities into user stories. These stories are supported by acceptance criteria to help guide development and measure success.
 
@@ -393,33 +412,34 @@ To ensure **Race for the Cure** meets sustainability goals, we turned our main d
 
 <div align="center">
   
-*Figure: Sustainability Requirements as User Stories.*
+*Sustainability Requirements as User Stories.*
 </div>
+<br><br>
 
 ## Process 
-
 ### Collaboration
 
-Throughout the development of our game, our team maintained consistent and effective collaboration. We met regularly during weekly lab sessions and often stayed behind or arranged extra meetings afterward. As the project progressed, we began scheduling frequent check-ins over WhatsApp and Microsoft Teams, particularly during key stages such as the design and final implementation phases.
+We worked closely and communicated effectively throughout the entire development process. We met regularly during weekly lab sessions and often stayed behind or arranged extra meetings afterward. As the project progressed, we began scheduling frequent check-ins over WhatsApp and Microsoft Teams, particularly during key stages such as the design and final implementation phases.
 
 From the beginning, we assigned tasks based on individual strengths. For instance, design-related tasks were mainly handled by Maram and Hadeel, while coding responsibilities were led by Vera, Satvika, and Hakeem. This division ensured that each team member could focus on what they felt most confident in, while also learning from others in collaborative settings.
 
 Our meetings typically followed a structure where we’d begin by updating each other on what we had completed that week, and then decide on what we wanted to achieve in the week ahead. We would then split tasks into smaller groups or pairs. We found this structure to be far more efficient, especially after initially trying to do tasks with all five members at once which often slowed things down and led to duplication of effort.
+
 In the early stages, we used the WhatsApp poll feature to shortlist and vote on our top two game ideas. We then held an in-person meeting to discuss the pros and cons of each, eventually deciding on a concept we all felt enthusiastic about. This helped everyone have a say, and we were able to quickly agree on a game idea that we all liked.
 
-To document our progress, we kept detailed meeting notes on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
+To document our progress, we kept detailed [meeting notes](https://github.com/UoB-COMSM0166/2025-group-9/tree/main/Meetings) on the repository, outlining what was discussed, what was completed, and the upcoming tasks for the next week. These notes helped ensure that no one lost track of our goals, even if they missed a session.
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes.png?raw=true" width="55%" />
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/meetingnotes2.png?raw=true" width="35%" />
   <br>
-  <em>Figure 1: Left - folders for each week used to store files and notes; Right - Week 4 meeting notes example with goals, stakeholders, and user stories</em>
+  <em>Left - folders for each week used to store files and notes; Right - Week 4 meeting notes example with goals, stakeholders, and user stories</em>
 </p>
-
-
+<br>
 
 A major strength of our collaboration was our use of pair programming. Working in pairs allowed us to support one another in real time, troubleshoot more effectively, and share different perspectives, which ultimately improved the quality and readability of our code. An example of when we used pair programming was during the development stage, when we were working on the player class. One person would focus on writing the code while the other helped with debugging or suggesting improvements. This made the process faster and helped us catch issues early on.
 
+<br>
 
 ### Tools and Techniques
 
@@ -427,35 +447,36 @@ We incorporated various tools and techniques throughout the development process,
 
 **Kanban Board (GitHub Projects):**
 
-We maintained a Kanban board that helped us visualise our workflow. Tasks were categorised into "To Do," "In Progress," and "Done." We would often move cards during meetings and use labels to indicate coding, design, or report-writing tasks. This was particularly useful during busy periods and ensured that everyone could see the project’s overall progress at a glance.
+We used a Kanban board to effectively visualize and manage our workflow. Tasks were categorised into "To Do," "In Progress," and "Done." We would often move cards during meetings and use labels to indicate coding, design, or report-writing tasks. This was particularly useful during busy periods and ensured that everyone could see the project’s overall progress at a glance.
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/kanbanboard.png?raw=true" width="60%" />
   <br>
-  <em>Figure 4: Our Kanban board used to track coding, report writing, and task progress across the team</em>
+  <em>Our Kanban board used to track coding, report writing, and task progress across the team</em>
 </p>
-
+<br><br>
 
 **Google Docs:**
 
-Our shared Google Doc was used for collaboratively writing the final report. We also created mini to-do lists for each section within the doc so that everyone was reminded of the specific requirements. This made it easier to divide writing tasks and collaborate on edits in real time.
+Our shared [Google Docs](https://docs.google.com/document/d/1KssIKXsxvCF5YswZeRSX5y29ho-IXLtQ1YlvUcqwN8o/edit?tab=t.0) was used for collaboratively writing the final report. We also created a mini to-do lists for each section within the doc so that everyone was reminded of the specific requirements. This made it easier to divide writing tasks and collaborate on edits in real time.
 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/todolist.png?raw=true" width="35%" />
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/googledoc.png?raw=true" width="55%" />
   <br>
-  <em>Figure 5: Sections of our shared Google Doc - Left: built-in to-do list for tracking progress; Right: main report document used for collaborative writing</em>
+  <em>Sections of our shared Google Doc - Left: built-in to-do list for tracking progress; Right: main report document used for collaborative writing</em>
 </p>
-
+<br><br>
 
 **Planning Poker:**
 
-When estimating the effort required for larger tasks (like implementing animations or writing evaluation sections), we used planning poker during team discussions. This helped us set realistic expectations and distribute the workload fairly.
+When estimating the effort required for larger tasks (like implementing animations or writing evaluation sections), we used planning poker during team discussions. This helped us set realistic expectations and distribute the workload fairly. These estimates also helped us plan our sprints, break the work into smaller, manageable chunks, and keep things moving smoothly throughout the project.
 
 **Communication Platforms:**
 
 We mainly used our WhatsApp group chat to stay in touch and ask quick questions throughout the week. For longer discussions or updates, we had regular meetings on Microsoft Teams, especially when we needed to talk through bigger decisions or check in on overall progress
 
+<br>
 
 ### Reflection
 
@@ -468,13 +489,14 @@ Another learning curve came with our meetings. Initially, we didn’t set clear 
 
 Overall, once we got into a good routine, things went a lot more smoothly. We stayed in touch, used the right tools, and worked well together.
 
-
+<br><br>
 ## Conclusion
 
 - 10% ~500 words
 
 - Reflect on project as a whole. Lessons learned. Reflect on challenges. Future work. 
 
+<br><br>
 ## Contribution Statement
 
 <em>A table to show team member contributions for Race For The Cure</em>
@@ -487,17 +509,3 @@ Overall, once we got into a good routine, things went a lot more smoothly. We st
 | Maram Abdulaziz Alhussain   | 20 |
 | Hadeel Ibrahim   | 20  |
  <br>
-  
-
-
-## Additional Marks
-
-You can delete this section in your own repo, it's just here for information. in addition to the marks above, we will be marking you on the following two points:
-
-- **Quality** of report writing, presentation, use of figures and visual material (5%) 
-  - Please write in a clear concise manner suitable for an interested layperson. Write as if this repo was publicly available.
-
-- **Documentation** of code (5%)
-
-  - Is your repo clearly organised? 
-  - Is code well commented throughout?
