@@ -189,7 +189,7 @@ A class diagram is a core component of Object-Oriented Design (OOD). It visually
 
 The GameManager class is the game's main controller, monitoring overall progress, managing state transitions among the game states, and making sure players reach win or fail conditions. It controls the GameController directly, which manages individual game logic like monitoring the cure components that have been collected, monitoring the players' status, and managing the countdown timer.
 
-The Player class, that extends from GameElement, is utilized to define the two game characters: the Chemist and the Biologist. The players possess certain skills and interact with various game elements such as Floor, Lift, Puzzles, Obstacles, and CureComponents. The Floor class, extending GameElement, is utilized to define the multi level game structure in which puzzles, obstacles, and significant items are placed. It contains methods for creating the layout and placing interactive objects such as walls, lifts, and pathways.
+The Player class, that extends from GameElement, is utilized to define the two game characters: the Chemistry student and the Botany student. The characters possess certain skills and interact with various game elements such as Floor, Lift, Puzzles, Obstacles, and CureComponents. The Floor class, extending GameElement, is utilized to define the multi level game structure in which puzzles, obstacles, and significant items are placed. It contains methods for creating the layout and placing interactive objects such as walls, lifts, and pathways.
 
 The Lift class offers a way for players to move between floors, responding dynamically to player input. Players also face Puzzles, which need to be solved in order to enter specific areas or unlock cure parts. Every puzzle has a type, a timer, and rewards when solved successfully. The Obstacles class adds obstacles that block player movement or need careful actions to disable. Barriers can be immobile (e.g., walls) or mobile (e.g., moving obstacles), and they damage player health or progress.
 
@@ -248,7 +248,7 @@ For example, all of the pages are various shades of blue, and one of the puzzles
 </div>
 <br><br>
 
-To ensure that colour blind players are offered the same experience while playing as those who aren’t colour blind, all of the images are out through a colour filter and called upon in the `ImagePreloader.js` class. Depending on the accommodation a player chooses, images with the suffix `RBP` will be called for Protanopia and `GBD` for Deuteranopia. When `preloadImages` is called, it takes the root image name and combines it with the respective suffix. Then all relevant images are loaded into `setImgs`. 
+To ensure that colour blind players are offered the same experience while playing as those who aren’t colour blind, all of the images are processed through a colour filter and called upon in the `ImagePreloader.js` class. Depending on the accommodation a player chooses, images with the suffix `RBP` will be called for Protanopia and `GBD` for Deuteranopia. When `preloadImages` is called, it takes the root image name and combines it with the respective suffix. Then all relevant images are loaded into `setImgs`. 
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/6e8b1313-2979-41c5-9aba-fb90a54fcc4a" alt="chem-questionRBP" width="500"/>
