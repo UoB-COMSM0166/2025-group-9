@@ -228,7 +228,7 @@ Our solution - present bitsize information that is pertinent to gameplay through
 </div>
 <br><br>
 
-The feedback from the qualitative evaluations suggested that some more clarification at certain points in the game would benefit the user experience. So to further improve user interface, we created popups to indicate when an ingredient has been collected or to provide in the moment instructions and error messages. 
+The feedback from the qualitative evaluations suggested that some more clarification at certain points in the game would benefit the user experience. So to further improve user interface, we created popups to indicate when an ingredient has been collected or to provide in-the-moment instructions and error messages. 
 
 The evaluations pose another question: What if the player solves the puzzles and obtains both the vial and the flower using a single character? To promote the use of both characters, we designed them to be able to acquire ingredients that are exclusive to their speciality, such as the Botany student can only retrieve the flower. The chemistry student can only retrieve the vial. In the hard level, only students of the science can solve the puzzle to collect the vial or the flower. 
 <br>
@@ -265,7 +265,7 @@ To ensure that colour blind players are offered the same experience while playin
 </div>
 <br><br>
 
-Window is used to maintain consistency with variables in `sketch.js`. This allows for the images to be preloaded, therefore, at runtime the change from the original images to the accommodated images will be seamless.
+`Window` is used to maintain consistency with variables in `sketch.js`. This allows for the images to be preloaded, therefore, at runtime the change from the original images to the accommodated images will be seamless.
 
 <br><br>
 
