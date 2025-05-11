@@ -17,5 +17,15 @@ class Chemistry extends Player {
     }
     super.update();
   }
+
+  updateImages(images) {
+    this.playerImgL = images.chemistryLeftImg;
+    this.playerImgR = images.chemistryRightImg;
+    this.currentPlayerImg =
+    this.currentPlayerImg === this.playerImgL
+      ? images.chemistryRighttImg
+      : images.chemistryLeftImg;
+  }
+  
 }
 

@@ -18,4 +18,13 @@ class Botany extends Player {
     super.update();
   }
 
+  updateImages(images) {
+    this.playerImgL = images.botanyLeftImg;
+    this.playerImgR = images.botanyRightImg;
+    this.currentPlayerImg =
+    this.currentPlayerImg === this.playerImgL
+      ? images.botanyRightImg
+      : images.botanyLeftImg;
+  }
+  
 }
