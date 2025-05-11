@@ -224,8 +224,16 @@ function mousePressed() {
             mouseY > modeY - 12 && mouseY < modeY + 18
         ) {
             gameMenuSelectionSound.play('once');
-            preloader.loadSet(modes[i]);
+            const newImgs = preloader.loadSet(modes[i]);
             uiManager.currentFilter = modes[i];
+            uiManager.images         = newImgs;
+            chemistryPuzzle.images  = newImgs;
+            botanyPuzzle.images     = newImgs;
+            if(gameLoop.updateImages)
+              gameLoop.updateImages(newImgs);
+              chemistryPlayer.updateImages(newImgs);
+              botanyPlayer.updateImages(newImgs);
+              
             return;
         }
     }
