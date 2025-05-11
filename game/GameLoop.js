@@ -34,7 +34,7 @@ class GameLoop {
       if (!this.botanyPlayer || !this.chemistryPlayer) {
         return;
       }
-  
+      
       const difficulty = this.gameManager.getDifficulty();
   
       // Run appropriate logic based on difficulty
@@ -335,6 +335,10 @@ class GameLoop {
     // Sets the current list of platforms used in the level
     setPlatforms(platforms) {
       this.platforms = platforms;
+    }
+
+    updateImages(images) {
+      this.images = images;
     }
   }
   
