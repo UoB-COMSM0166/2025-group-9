@@ -38,7 +38,6 @@ class ImagePreloader{
 
         this.images = {};
         this.slideNames = ['infopage1', 'infopage2', 'infopage3'];
-        this.currentFilter = 'default';
     }
 
     preloadImages(){
@@ -60,6 +59,7 @@ class ImagePreloader{
             window[key] = setImgs[key];
         }
         window.infoSlides = setImgs.infoSlides;
+        return setImgs;
     }
 
 }
