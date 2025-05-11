@@ -1,5 +1,7 @@
+//manages the loading up and the colour filters of the images used within the game
 class ImagePreloader{
     constructor(){
+        //basenames shared by all sets of images used within the game
         this.imageSet = {
             homeImage : 'homepage',
             gameDifficultyImage : 'gamedifficulty',
@@ -29,7 +31,8 @@ class ImagePreloader{
             liftInstructionImg: 'lift-popup',
             settingsGearImg: 'settings-gear'
         };
-
+        
+        //filename suffixes for the respective colour filters
         this.suffixes = {
             default: '',
             protanopia: 'RBP',
@@ -40,19 +43,21 @@ class ImagePreloader{
         this.slideNames = ['infopage1', 'infopage2', 'infopage3'];
     }
 
+    //preloads every image for every colour filter set
     preloadImages(){
         for(const filter in this.suffixes){
             const suffix = this.suffixes[filter];
             const setImgs = {};
             for(const key in this.imageSet){
                 const base = this.imageSet[key];
-                setImgs[key] = loadImage(`assets/${base}${suffix}.png`);
+                setImgs[key] = loadImage(`assets/${base}${suffix}.png`); //concatenates basename suffix and loadimage command to load each image in a set
             }
             setImgs.infoSlides = this.slideNames.map(base => loadImage(`assets/${base}${suffix}.png`));
             this.images[filter] = setImgs;
         }
     }
 
+    //selects the colour filter set to be used in the game and copies the images to the global window
     loadSet(filter){
         const setImgs = this.images[filter] || this.images.default;
         for (const key in this.imageSet){
