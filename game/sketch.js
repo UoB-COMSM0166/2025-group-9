@@ -266,13 +266,11 @@ function mousePressed() {
     }
 
     // Back button on difficulty screen
-    if (
-      mouseX > xOffset + 15 && mouseX < xOffset + 95 && 
-      mouseY > yOffset && mouseY < yOffset + 40
-    ) {
+    if (dist(mouseX, mouseY, 34, 27) < 20) {
       gameMenuSelectionSound.play('once');
       gameManager.setState("home");
     }
+
 
   // GAME OVER SCREEN
   }  else if (state === "gameOver") {
@@ -304,10 +302,8 @@ function mousePressed() {
   // IN-GAME STATE
   if (state === "playing") {
     // Back Button - resets the game and goes to home screen
-    if (
-      mouseX > xOffset + 15 && mouseX < xOffset + 95 && 
-      mouseY > yOffset && mouseY < yOffset + 40 
-    ) {
+if (dist(mouseX, mouseY, 34, 27) < 20)
+{
       gameMenuSelectionSound.play('once');
       gameplayBackground.stop();
       gameManager.resetGame();
@@ -330,3 +326,4 @@ function mousePressed() {
     }
   }
 }
+

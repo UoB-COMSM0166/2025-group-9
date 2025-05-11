@@ -6,6 +6,8 @@ class UIManager {
       this.yOffset = yOffset;
       this.currentSlide = 0;
       this.showInfo = false;
+      this.showSettings = false;
+      this.currentFilter = 'default';
     }
   
     // Draws the home screen and info popup if enabled
@@ -61,21 +63,43 @@ class UIManager {
       fill(0);
       textSize(15);
       textFont('monospace');
-      text(`Time Left: ${formattedTime}`, width - 120, this.yOffset + 10);
-      text(`Ingredients: ${collected} / ${required}`, width - 120, this.yOffset + 25);
+      textAlign(CENTER, TOP); 
+    
+      const centerX = width / 2;
+      const verticalY = this.yOffset + 10 - 11; // Maintain previous vertical adjustment
+    
+      text(`Time Left: ${formattedTime}`, centerX, verticalY);
+      text(`Ingredients: ${collected} / ${required}`, centerX, verticalY + 20); // 20px below the first line
     }
+    
+    
 
     // Draws a "Back" button in the UI
     drawBackButton() {
+      const centerX = 34;
+      const centerY = 27;
+      const radius = 20;
+    
+      // Draw circle
       fill(255);
       stroke(0);
-      rect(this.xOffset + 15, this.yOffset, 80, 40, 10);
-      fill(0);
+      strokeWeight(2);
+      ellipse(centerX, centerY, radius * 2, radius * 2);
+    
+      // Draw back arrow
+      stroke(0);
+      strokeWeight(3);
+      noFill();
+      beginShape();
+      vertex(centerX + 5, centerY - 10);
+      vertex(centerX - 5, centerY);
+      vertex(centerX + 5, centerY + 10);
+      endShape();
+
+      // Reset stroke and fill for other drawings
       noStroke();
-      textSize(14);
-      textAlign(CENTER, CENTER);
-      textFont("monospace");
-      text("Back", this.xOffset + 55, this.yOffset + 20);
+      fill(0);
+      textAlign(LEFT, TOP);
     }
   
     setShowInfo(val) {
