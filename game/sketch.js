@@ -213,8 +213,25 @@ function mousePressed() {
 
   // Settings pop up
   if (uiManager.showSettings) {
+    const popupW = 300;
+    const popupH = 300;
     const popupX = (width - 300) / 2;
     const popupY = (height - 300) / 2;
+    const exitButtonX = popupX + popupW - 30;
+    const exitButtonY = popupY + 15;
+    const exitButtonSize = 30;
+
+    // Exit Button
+    if (
+        mouseX > exitButtonX - exitButtonSize / 2 && mouseX < exitButtonX + exitButtonSize / 2 &&
+        mouseY > exitButtonY - exitButtonSize / 2 && mouseY < exitButtonY + exitButtonSize / 2
+    ) {
+        gameMenuSelectionSound.play('once');
+        uiManager.showSettings = false;
+        return;
+    }
+
+    // Handle Colour Vision Mode Buttons
     const modes = ['default', 'protanopia', 'deuteranopia'];
 
     for (let i = 0; i < modes.length; i++) {
@@ -240,6 +257,7 @@ function mousePressed() {
     }
     return;
   }
+
 
   // HOME SCREEN
   // Handle info/how to play popup
