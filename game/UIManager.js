@@ -185,11 +185,10 @@ class UIManager {
       strokeWeight(1);
       ellipse(exitButtonX, exitButtonY, exitButtonSize);
 
-      // Draw 'X' Symbol
-    stroke(0);
-    strokeWeight(1);
-    line(exitButtonX - 5, exitButtonY - 5, exitButtonX + 5, exitButtonY + 5);
-    line(exitButtonX - 5, exitButtonY + 5, exitButtonX + 5, exitButtonY - 5);
+      stroke(0);
+      strokeWeight(1);
+      line(exitButtonX - 5, exitButtonY - 5, exitButtonX + 5, exitButtonY + 5);
+      line(exitButtonX - 5, exitButtonY + 5, exitButtonX + 5, exitButtonY - 5);
 
       // Reset Drawing Styles
       noStroke();
