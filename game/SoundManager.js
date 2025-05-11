@@ -5,13 +5,14 @@ class SoundManager{
         this.applyDefaultVolume();
     }
 
-
+    //set volume of the soundfile to default value
     applyDefaultVolume(){
         if(this.soundFile){
             this.soundFile.setVolume(this.defaultVolume);
         }
     }
 
+    // if sound file already playing don't play. If loop mode indicated play soundfile in loop, otherwise play once.
     play(mode){
         if(!this.soundFile){
             return;
@@ -34,12 +35,14 @@ class SoundManager{
         }
     }
     
+    //if sound is currently playing, stop it
     stop(){
         if(this.soundFile && this.soundFile.isPlaying()){
             this.soundFile.stop();
         }
     }
 
+    //change soundfile volume from default
     setVolume(volume){
         if(this.soundFile){
             this.soundFile.setVolume(volume);
