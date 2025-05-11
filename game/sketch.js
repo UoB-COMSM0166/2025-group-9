@@ -32,6 +32,7 @@ let gameMenuSelectionSound;
 let backgroundMusic;
 let gameplayBackground;
 let preloader;
+var settingsGearImg;
 
 
 function preload() {
@@ -144,9 +145,10 @@ function draw() {
     }
   
     // center and draw the maze image
-    let x = (width - mazeImage.width) / 2;
-    let y = (height - mazeImage.height) / 2;
-    image(mazeImage, x, y);
+    imageMode(CENTER);
+    image(mazeImage, width / 2, height / 2);
+    imageMode(CORNER);
+
   
     // update the game controller and game logic
     if (state === "playing" && gameController) {
@@ -160,6 +162,12 @@ function draw() {
     }
     
     uiManager.drawBackButton();
+    uiManager.drawSettingsButton();
+
+    if (uiManager.showSettings) {
+      uiManager.drawSettingsPopup();
+    }
+
   }
   else if (state === "won") {
     uiManager.drawWinScreen(width, height);
@@ -195,6 +203,34 @@ function keyPressed() {
 function mousePressed() {
   console.log("Mouse clicked at:", mouseX, mouseY); // used to find the coordinates of the buttons - for debugging purposes only
   const state = gameManager.getState(); // gets the current state of the game
+
+  // Setting button
+  if (dist(mouseX, mouseY, width - 34, 27) < 20) {
+    gameMenuSelectionSound.play('once');
+    uiManager.showSettings = !uiManager.showSettings;
+    return;
+  }
+
+  // Settings pop up
+  if (uiManager.showSettings) {
+    const popupX = (width - 300) / 2;
+    const popupY = (height - 300) / 2;
+    const modes = ['default', 'protanopia', 'deuteranopia'];
+
+    for (let i = 0; i < modes.length; i++) {
+        const modeY = popupY + 125 + i * 50;
+        if (
+            mouseX > popupX + 50 && mouseX < popupX + 250 &&
+            mouseY > modeY - 12 && mouseY < modeY + 18
+        ) {
+            gameMenuSelectionSound.play('once');
+            preloader.loadSet(modes[i]);
+            uiManager.currentFilter = modes[i];
+            return;
+        }
+    }
+    return;
+  }
 
   // HOME SCREEN
   // Handle info/how to play popup

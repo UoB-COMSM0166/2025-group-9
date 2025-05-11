@@ -26,7 +26,8 @@ class ImagePreloader{
             flowerImg: 'flower',
             keyImg: 'key',
             flaskImg: 'flask',
-            liftInstructionImg: 'lift-popup'
+            liftInstructionImg: 'lift-popup',
+            settingsGearImg: 'settings-gear'
         };
 
         this.suffixes = {
