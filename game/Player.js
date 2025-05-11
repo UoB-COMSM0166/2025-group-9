@@ -15,6 +15,7 @@ class Player {
         this.height = this.currentPlayerImg.height || 20;
         this.jumpSound = new SoundManager('assets/jump.wav');
         this.footStepSound = new SoundManager('assets/footstep.wav');
+        this.direction = 'left';
     }
     
      update() {

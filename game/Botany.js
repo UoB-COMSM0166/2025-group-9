@@ -7,10 +7,12 @@ class Botany extends Player {
     if (keyIsDown(65)) {
       this.currentPlayerImg = this.playerImgL;
       this.velocityX = -this.speed;
+      this.direction = 'left';
       this.footsteps();
     } else if (keyIsDown(68)) {
       this.currentPlayerImg = this.playerImgR;
       this.velocityX = this.speed;
+      this.direction = 'right';
       this.footsteps();
     } else {
       this.velocityX = 0;
@@ -22,9 +24,9 @@ class Botany extends Player {
     this.playerImgL = images.botanyLeftImg;
     this.playerImgR = images.botanyRightImg;
     this.currentPlayerImg =
-    this.currentPlayerImg === this.playerImgL
-      ? images.botanyRightImg
-      : images.botanyLeftImg;
+    this.direction === 'left'
+      ? images.botanyLeftImg
+      : images.botanyRightImg;
   }
   
 }
