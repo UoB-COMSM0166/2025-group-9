@@ -228,10 +228,10 @@ class GameLoop {
   
       // draw image of the vial
       if (!this.chemistryPuzzle.vialCollected  && this.images.flaskImg) {
-        const imgWidth = 80;
-        const imgHeight = 80;
+        const imgWidth = 40;
+        const imgHeight = 40;
         const x = 405 + xOffset - imgWidth / 2 - 170;
-        const y = 70 + yOffset + 50;
+        const y = 160 + yOffset;
         image(this.images.flaskImg, x, y, imgWidth, imgHeight);
       }
   
