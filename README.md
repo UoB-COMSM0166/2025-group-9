@@ -429,7 +429,7 @@ In the early stages, we used the WhatsApp poll feature to shortlist and vote on 
 
 When making other decisions about the game, such as design choices and feature implementations, we often used the poll feature or held quick votes during meetings. This ensured that everyone’s opinions were considered throughout the development process and that decisions reflected the whole team’s input.
 
-A major strength of our collaboration was our use of pair programming. Working in pairs allowed us to support one another in real time, troubleshoot more effectively, and share different perspectives, which ultimately improved the quality and readability of our code. An example of when we used pair programming was during the development stage, when we were working on the player class. One person would focus on writing the code while the other helped with debugging or suggesting improvements. This made the process faster and helped us catch issues early on.
+A major strength of our collaboration was our use of pair programming, a technique supported by Cockburn and Williams (2001), who highlight its effectiveness in improving code quality and reducing defects through continuous code review. Working in pairs allowed us to support one another in real time, troubleshoot more effectively, and share different perspectives, which ultimately improved the quality and readability of our code. An example of when we used pair programming was during the development stage, when we were working on the player class. One person would focus on writing the code while the other helped with debugging or suggesting improvements. This made the process faster and helped us catch issues early on.
 
 <br>
 
