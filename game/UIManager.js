@@ -174,6 +174,23 @@ class UIManager {
           text(labels[i], popupX + popupW / 2, modeY + 3);
       }
   
+      // Exit Button
+      const exitButtonX = popupX + popupW - 30; 
+      const exitButtonY = popupY + 15;
+      const exitButtonSize = 30;
+
+      // Draw Circle for Exit Button
+      fill(255);
+      stroke(0);
+      strokeWeight(1);
+      ellipse(exitButtonX, exitButtonY, exitButtonSize);
+
+      // Draw 'X' Symbol
+    stroke(0);
+    strokeWeight(1);
+    line(exitButtonX - 5, exitButtonY - 5, exitButtonX + 5, exitButtonY + 5);
+    line(exitButtonX - 5, exitButtonY + 5, exitButtonX + 5, exitButtonY - 5);
+
       // Reset Drawing Styles
       noStroke();
       fill(0);
