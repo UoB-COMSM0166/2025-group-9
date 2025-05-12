@@ -229,9 +229,25 @@ Each change followed an implement‑test‑refine cycle; the diagram was updated
   <br/>
   
   <em>Final Class Diagram</em>
-  
 </div>
 <br><br>
+
+| Class | Responsibility |
+|-------|----------------|
+| **GameManager** | Central state machine; moves the application between home, difficulty‑selection, gameplay, win, and game‑over states, and triggers the corresponding music and sound effects. |
+| **GameController** | Maintains ingredient counters and puzzle completion flags, monitors both players, and signals `GameManager` when win or loss conditions are met. |
+| **GameLoop** | Executes once per frame; processes input, updates physics, puzzles, lift, timer, and UI, and performs collision checks. |
+| **UIManager** | Renders menus, pop‑ups, HUD, and settings; routes mouse and keyboard events to the correct UI element. |
+| **TimeManager** | Maintains the global countdown timer; supports reset and pause; provides a formatted “MM:SS” string to the HUD. |
+| **ImagePreloader** | Loads three colour‑vision asset sets (default, protanopia, deuteranopia) at start‑up and swaps active textures at runtime. |
+| **SoundManager** | Lightweight wrapper around *p5.Sound*; standardises play/loop/stop and independent volume control for each effect. |
+| **Player** *(base)* | Implements shared physics, movement, and sprite handling; stores a role flag consumed by puzzles. |
+| **Chemistry** *(subclass)* | Uses arrow‑key input; overrides `update()` for its control scheme; role flag set to “chemistry”. |
+| **Botany** *(subclass)* | Uses WASD input; overrides `update()` for its control scheme; role flag set to “botany”. |
+| **Lift** | Controls elevator motion between floors and synchronises any player standing on the platform. |
+| **ChemistryPuzzle** | Manages the book‑and‑vial question sequence and awards the vial ingredient when answered correctly. |
+| **BotanyPuzzle** | Manages the note‑and‑flower identification sequence and awards the flower ingredient on success. |
+
 
 <br><br>
 
