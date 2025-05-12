@@ -3,9 +3,12 @@
 
 ## Race For The Cure
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/banner.png?raw=true" alt="Banner" width="100%"/>
+<p align="center">
+  <a href="https://uob-comsm0166.github.io/2025-group-9/game">
+    <strong>Click me! You Can Play The Game Here! 🎮🧪🌸</strong>
+  </a>
+</p>
 
-
-[Click me! You Can Play The Game Here! 🎮🧪🌸](https://uob-comsm0166.github.io/2025-group-9/game)
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
