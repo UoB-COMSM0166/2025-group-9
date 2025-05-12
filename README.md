@@ -217,6 +217,8 @@ The Lift class offers a way for players to move between floors, responding dynam
 
 The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge to beat the clock in reaching the lab before the virus can fully mature.
 
+<br>
+
 ### Evolution of Architecture
 
 Trying our best to stick to Agile Development principles, we endeavored to be flexible with our initial designs. After each play‑test we compared the behaviour we observed on screen with the structure we had drawn, refined the code to address any discrepancies, and only then revised the diagram. This cycle—code, test, adjust, document—kept the model lightweight, ensured performance remained acceptable, and allowed new requirements to slot in without large‑scale rewrites.
@@ -228,6 +230,8 @@ The player hierarchy was simplified for similar reasons. Both student characters
 Additional functional requirements surfaced as the prototype matured, prompting two focused utility classes. The ImagePreloader builds three complete image sets—default, protanopia, and deuteranopia—during application start‑up, and its loadSet(filter) method swaps every texture at runtime, enabling colour‑vision accessibility without code duplication. For audio, each effect is wrapped in its own SoundManager, a thin layer on top of p5.Sound that standardises play/loop behaviour and maintains independent volume levels, preventing overlap artefacts and centralising sound configuration.
 
 Each change followed an implement‑test‑refine cycle; the diagram was updated after stabilisation so that documentation remained aligned with the code. We eventually ended up with the following final Class Diagram.
+
+<br>
 
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Final_Class_Diagram_I.png" alt="Final Class Diagram" width="600"/>
@@ -255,6 +259,7 @@ Each change followed an implement‑test‑refine cycle; the diagram was updated
 | **ChemistryPuzzle** | Manages the book‑and‑vial question sequence and awards the vial ingredient when answered correctly. |
 | **BotanyPuzzle** | Manages the note‑and‑flower identification sequence and awards the flower ingredient on success. |
 
+<br>
 
 ### Behavioural Diagrams
 
@@ -268,7 +273,6 @@ A sequence diagram complements the class diagram by showing the order in which o
 </div>
 <br><br>
 
-<br><br>
 
 ## Implementation
 
