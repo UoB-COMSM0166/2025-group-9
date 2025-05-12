@@ -9,7 +9,7 @@
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
-    <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/DemoPoster.png" width="500"/>
+    <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/DemoPoster.png" width="700"/>
   </a>
   <br>
   <em>Click the image above to watch our gameplay video on YouTube.</em>
