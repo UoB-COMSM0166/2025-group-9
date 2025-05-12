@@ -184,6 +184,11 @@ Ensuring efficient, scalable, and maintainable development
 - As a platform hosting the game, I want the game’s file size to be optimized, so it does not consume excessive server space.
 - As an assessor, I want the game to feature a unique twist on a classic concept or an advanced implementation challenge, so the game demonstrates originality and technical depth.
 
+<br>
+
+### Use Case Diagrams
+
+
 
 <div align="center">
 
@@ -264,6 +269,8 @@ Each change followed an implement‑test‑refine cycle; the diagram was updated
 ### Behavioural Diagrams
 
 A sequence diagram complements the class diagram by showing the order in which objects exchange messages. We used it to confirm that, in every frame, physics, puzzle logic, timer updates, and win/loss checks occur in the intended order. The following diagram illustrates the core flows of our game—from the launch sequence through the gameplay loop that repeats throughout play.
+
+<br>
 
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Core_Sequence_Diagram.png" alt="Core Sequence Diagram" width="600"/>
