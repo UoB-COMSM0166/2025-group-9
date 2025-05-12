@@ -406,7 +406,7 @@ The evaluations pose another question: What if the player solves the puzzles and
   <img src="https://github.com/user-attachments/assets/2783f808-f94d-44b6-8674-0e6e51bd43a2" alt="CharacterSpecificActivity" width="500"/>
   <br/>
   
-  <em>Character Specific Collection</em>
+  <em>Character Specific Interaction</em>
   
 </div>
 <br><br>
