@@ -121,7 +121,7 @@ The team developed a final interactive prototype to showcase the core concept of
 <br>
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prototypeVideo.gif" alt="Banner" width="100%"/><br>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prototypeVideo.gif" alt="Banner" width="20%"/><br>
    <br/>
   
   <em>Digitial prototype</em>
