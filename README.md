@@ -196,7 +196,7 @@ Before undertaking the coding stage, our team first drafted a class diagram to a
 A class diagram is a core component of Object-Oriented Design (OOD). It visually represents the classes in a system, their attributes, methods, and the relationships between them (e.g., inheritance, associations, and dependencies). It was important for us to create a class diagram early on, because it would help us understand the system’s structure at a high level before diving into implementation. It also ensured that key design principles such as encapsulation, modularity, and reusability were considered. Therefore, allowing us to plan how objects would interact, identify potential design flaws, and improve collaboration within the team by providing a shared understanding of the system architecture.
 
 <div align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Class Diagram" width="600"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Initial Class Diagram" width="600"/>
   <br/>
   
   <em>Class Diagram</em>
@@ -212,7 +212,26 @@ The Lift class offers a way for players to move between floors, responding dynam
 
 The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge to beat the clock in reaching the lab before the virus can fully mature.
 
-Together, these courses define the shape and mechanics of the game, offering a cooperative puzzle-solving experience with challenges, environmental risks, and strategic team-based elements.
+### Evolution of Architecture
+
+Trying our best to stick to Agile Development principles, we endeavored to be flexible with our initial designs. After each play‑test we compared the behaviour we observed on screen with the structure we had drawn, refined the code to address any discrepancies, and only then revised the diagram. This cycle—code, test, adjust, document—kept the model lightweight, ensured performance remained acceptable, and allowed new requirements to slot in without large‑scale rewrites.
+
+Early play‑testing highlighted several performance and maintenance issues in the original design. The first concerned the Floor class: modelling every platform as an object created a large number of allocations and slowed collision detection. We replaced the class with a single platforms[] array of axis‑aligned rectangles and used a dedicated utility function to perform the collision calculations.
+
+The player hierarchy was simplified for similar reasons. Both student characters share identical movement and physics behaviour, so maintaining two full subclasses duplicated logic. We retained a common Player base, while each role‑specific subclass (Chemistry, Botany) overrides an update() method tuned to its own key bindings (arrow keys for Chemistry, WASD for Botany) and implements an updateImages() helper that refreshes its left‑ and right‑facing sprites whenever the active colour‑vision set changes; the puzzle classes read a simple role flag to adjust interactions.
+
+Additional functional requirements surfaced as the prototype matured, prompting two focused utility classes. The ImagePreloader builds three complete image sets—default, protanopia, and deuteranopia—during application start‑up, and its loadSet(filter) method swaps every texture at runtime, enabling colour‑vision accessibility without code duplication. For audio, each effect is wrapped in its own SoundManager, a thin layer on top of p5.Sound that standardises play/loop behaviour and maintains independent volume levels, preventing overlap artefacts and centralising sound configuration.
+
+Each change followed an implement‑test‑refine cycle; the diagram was updated after stabilisation so that documentation remained aligned with the code. We eventually ended up with the following final Class Diagram.
+
+<div align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Final Class Diagram I.png" alt="Final Class Diagram" width="600"/>
+  <br/>
+  
+  <em>Final Class Diagram</em>
+  
+</div>
+<br><br>
 
 <br><br>
 
