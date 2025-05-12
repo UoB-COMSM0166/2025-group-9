@@ -201,7 +201,10 @@ Ensuring efficient, scalable, and maintainable development
 
 <br>
 
-### Use Case Diagrams
+### Use Cases
+
+Before settling on classes we first mapped the high level behaviour of the game with use case diagrams. A use case diagram captures the game from an actor's point of view. Visualising the system from the actor's perspective, in this case the player, helped us identify key interactions early, and helped define clear boundaries between gameplay and menu logic. Aspects of this high level view remained stable even when lower level class and sequence diagrams changed, giving us a constant reference during sprint planning and reviews.
+
 <br>
 <div align="center">
 
@@ -212,7 +215,7 @@ Ensuring efficient, scalable, and maintainable development
 
 <br>
 
-### Use Case: Play Game
+### Use Case Specification: Play Game
 
 **Brief Description**  
 The Player navigates either the Botany Student or the Chemistry Student through a level, solves puzzles, collects objects, and reaches the exit portal to complete the level.
