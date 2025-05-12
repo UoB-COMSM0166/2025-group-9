@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
+   <a href="https://youtu.be/APKjQvI84UQ" target="_blank">
     <img src="https://raw.githubusercontent.com/UoB-COMSM0166/2025-group-9/main/Meetings/Images/DemoPoster2.gif" width="460" height="120"/>
   </a>
   <br>
@@ -384,6 +384,13 @@ Both levels' SUS score average was still under the 68 threshold. This reflected 
 <br>
 
 ### How was our code tested?
+Throughout our game development process, we maintained user interface testing as a priority to ensure a consistent and accessible player experience. We wanted to maintain usability levels that were consistent with our design specifications, particularly after receiving feedback from qualitative and quantitative evaluations.
+
+We performed UI testing at different stages, from the readibilty of layout to feedback pop-ups in gameplay, and implemented improvements in font sizes, instruction clarity, and interaction visibility.
+
+On the functionality side, we conducted continual testing for fundamental mechanics like puzzle triggers, ingredient collection, and the lift system. Special attention was given to how the lift reacts in different levels, and how collision detection keeps interactions between characters, items, and obstacles smooth.
+
+We carried out comprehensive testing on the win and lose states, such as making sure the win state occurs after both ingredients and key are collected, and both characters make it to the main lab on time. We also ensured the game resets correctly when a player dies or the time reaches zero. Having these ongoing tests allowed us to catch bugs early and deliver a stable, polished experience.
 
 <br><br>
 ## Sustainability

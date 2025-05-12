@@ -11,6 +11,8 @@ aesthetics, coherence,and compatibility with gameplay mechanics.
 
 Each design direction was developed by different team members to ensure diversity and creativity. This parallel exploration phase allowed for dynamic comparisonand constructive feedback across visual formats.
 
+ ![Initial Flat design](https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/FlatDesign.png)
+
  ## Homepage Design Exploration
 As part of the early design process, we also developed two versions of the homepage (title screen) to test which style aligned better 
 with the rest of the game:
