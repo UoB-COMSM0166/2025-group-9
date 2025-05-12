@@ -129,11 +129,18 @@ The team developed a final interactive prototype to showcase the core concept of
 
 ### Stakeholders
 
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/onion_model.png" alt="Stakeholder Onion model" width="600px"/><br>
+</p>
+
+<p align="center"><em>Stakeholder Onion Model</em></p>
+
 **1. Product:**
 Race to the Cure
 
 **2. The System:**
-Group 9 – Developing Team. Normal and Maintenance Operators
+Development Team, Normal and Maintenance Operators
+- Group 9
 
 **3. The Containing System:**
 - Casual Gamers
