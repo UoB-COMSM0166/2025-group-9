@@ -130,7 +130,7 @@ The team developed a final interactive prototype to showcase the core concept of
 ### Stakeholders
 
 <p align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/onion_model.png" alt="Stakeholder Onion model" width="600px"/><br>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/onion_model.png" alt="Stakeholder Onion model" width="900px"/><br>
 </p>
 
 <p align="center"><em>Stakeholder Onion Model</em></p>
