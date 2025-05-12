@@ -7,6 +7,12 @@
 
 [Click me! You Can Play The Game Here! 🎮🧪🌸](https://uob-comsm0166.github.io/2025-group-9/game)
 
+
+<a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/DemoPoster.png" width="500"/>
+</a>
+
+
 ## Table of Contents
 - [The Group](#the-group)
 - [Introduction](#introduction)
