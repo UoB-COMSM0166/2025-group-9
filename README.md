@@ -225,7 +225,7 @@ Additional functional requirements surfaced as the prototype matured, prompting 
 Each change followed an implement‑test‑refine cycle; the diagram was updated after stabilisation so that documentation remained aligned with the code. We eventually ended up with the following final Class Diagram.
 
 <div align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Final Class Diagram I.png" alt="Final Class Diagram" width="600"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Final_Class_Diagram_I.png" alt="Final Class Diagram" width="600"/>
   <br/>
   
   <em>Final Class Diagram</em>
