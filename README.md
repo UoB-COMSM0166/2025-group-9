@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
-    <img src="https://raw.githubusercontent.com/UoB-COMSM0166/2025-group-9/main/Meetings/Images/DemoPoster.png" width="550" height="120"/>
+    <img src="https://raw.githubusercontent.com/UoB-COMSM0166/2025-group-9/main/Meetings/Images/DemoPoster2.gif" width="550" height="120"/>
   </a>
   <br>
   <em>Click the image above to watch our gameplay video on YouTube.</em>
