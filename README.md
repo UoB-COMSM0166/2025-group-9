@@ -203,6 +203,10 @@ Ensuring efficient, scalable, and maintainable development
 
 <br>
 
+### Use Case
+
+Before settling on classes we first mapped the high level behaviour of the game with use case diagrams. A use case diagram captures the game from an actor's point of view. Visualising the system from the actor's perspective, in this case the player, helped us identify key interactions early, and helped define clear boundaries between gameplay and menu logic. Aspects of this high level view remained stable even when lower level class and sequence diagrams changed, giving us a constant reference during sprint planning and reviews.
+<br>
 
 <div align="center">
 
