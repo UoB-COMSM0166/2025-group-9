@@ -360,13 +360,15 @@ A sequence diagram complements the class diagram by showing the order in which o
 The lift’s movement changes based on the level of the game. In the easy level, the lift operates in two modes: ground floor to first and first floor to second. The change in movement is triggered by a character standing by the lever and pressing the letter “S”. In the hard level, it travels from the ground floor to the second floor in one motion. The challenge with this is altering the minimum and maximum positions of the lift. 
 
 <div align="center">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/EasylevelLiftgif.mp4" alt="EasylevelLiftGIF" width="500"/>
+  <img src="https://github.com/user-attachments/assets/5a1169c9-e848-405c-ae4a-2dead6505654" alt="EasyLevelLift" width="600"/>
   <br/>
   
-  <em>Easy Level Lift</em>
-  
+  <em>Easy Level Liftem>
 </div>
 <br><br>
+
+
+
 
 `floorOne` and `floorTwo` are already defined in `sketch.js`. Therefore, the most efficient way to precisely implement the two modes is to assign the values in these attributes to `nextMinFloor` and `nextMaxFloor` within the `Lift` class. To ensure that the transition between floors is seamless, Boolean logic is used with the attribute `inTransition`. This is set to true when the lift has not yet reached the value in `targetFloor`; it contains the same value as `nextMaxFloor`. 
 <br>
@@ -403,13 +405,15 @@ The feedback from the qualitative evaluations suggested that some more clarifica
 The evaluations pose another question: What if the player solves the puzzles and obtains both the vial and the flower using a single character? To promote the use of both characters, we designed them to be able to acquire ingredients that are exclusive to their speciality, such as the Botany student can only retrieve the flower. The chemistry student can only retrieve the vial. In the hard level, only students of the science can solve the puzzle to collect the vial or the flower. 
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/2783f808-f94d-44b6-8674-0e6e51bd43a2" alt="CharacterSpecificActivity" width="500"/>
+  <img src="https://github.com/user-attachments/assets/41c8f868-b89d-4183-aed8-39c3f554e606" alt="CharacterSpecificActivity" width="500"/>
   <br/>
   
   <em>Character Specific Interaction</em>
   
 </div>
 <br><br>
+
+
 
 
 ### Image Preloader for Colour Blind players
