@@ -17,9 +17,9 @@
     <img src="https://raw.githubusercontent.com/UoB-COMSM0166/2025-group-9/main/Meetings/Images/DemoPoster2.gif" width="460" height="120"/>
   </a>
   <br>
-  <em>Click the image above to watch our gameplay video on YouTube.</em>
+  <em>Click the image above to watch our gameplay video on YouTube!</em>
 </p>
-
+<br><br>
 
 
 
@@ -35,6 +35,7 @@
 - [Sustainability](#sustainability)
 - [Conclusion](#conclusion)
 - [Contribution Statement](#contribution-statement)
+- [References](#references)
 <br><br><br>
 
 ## The Group
@@ -125,6 +126,7 @@ The team developed a final interactive prototype to showcase the core concept of
 </p>
 
 <p align="center"><em>Digital prototype</em></p>
+<br>
 
 
 ### Stakeholders
@@ -203,8 +205,6 @@ Ensuring efficient, scalable, and maintainable development
 
 ### Use Case Diagrams
 
-
-
 <div align="center">
 
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prelim_use_case_diagram(2).jpg?raw=true" alt="Preliminary Use Case Diagram" width="600"/>
@@ -216,9 +216,7 @@ Ensuring efficient, scalable, and maintainable development
 
 ## Design
 
-Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. It was a point of reference that allowed us to visualize how elements in the game were interconnected, identify their properties and actions, and have an orderly development process. 
-
-A class diagram is a core component of Object-Oriented Design (OOD). It visually represents the classes in a system, their attributes, methods, and the relationships between them (e.g., inheritance, associations, and dependencies). It was important for us to create a class diagram early on, because it would help us understand the system’s structure at a high level before diving into implementation. It also ensured that key design principles such as encapsulation, modularity, and reusability were considered. Therefore, allowing us to plan how objects would interact, identify potential design flaws, and improve collaboration within the team by providing a shared understanding of the system architecture.
+Before undertaking the coding stage, our team first drafted a class diagram to act as a structured framework for our game. A class diagram is a core component of Object-Oriented Design (OOD). It visually represents the classes in a system, their attributes, methods, and the relationships between them (e.g., inheritance, associations, and dependencies). It was important for us to create a class diagram early on, because it would help us understand the system’s structure at a high level before diving into implementation. It also ensured that key design principles such as encapsulation, modularity, and reusability were considered. Therefore, allowing us to plan how objects would interact, identify potential design flaws, and improve collaboration within the team by providing a shared understanding of the system architecture.
 
 <div align="center">
   <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/class_diagram.jpg" alt="Initial Class Diagram" width="600"/>
@@ -235,7 +233,7 @@ The Player class, that extends from GameElement, is utilized to define the two g
 
 The Lift class offers a way for players to move between floors, responding dynamically to player input. Players also face Puzzles, which need to be solved in order to enter specific areas or unlock cure parts. Every puzzle has a type, a timer, and rewards when solved successfully. The Obstacles class adds obstacles that block player movement or need careful actions to disable. Barriers can be immobile (e.g., walls) or mobile (e.g., moving obstacles), and they damage player health or progress.
 
-The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Biology), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge to beat the clock in reaching the lab before the virus can fully mature.
+The CureComponents class is the main ingredients that must be collected in order to create the cure. The component is assigned to a specific player depending on their specialty (Chemistry or Botany), and coordination is required to complete the task. The GameController checks if all the cure components have been obtained, and upon completion, it signals the GameManager to begin the final challenge to beat the clock in reaching the lab before the virus can fully mature.
 
 <br>
 
@@ -311,7 +309,7 @@ The lift’s movement changes based on the level of the game. In the easy level,
 <br><br>
 
 `floorOne` and `floorTwo` are already defined in `sketch.js`. Therefore, the most efficient way to precisely implement the two modes is to assign the values in these attributes to `nextMinFloor` and `nextMaxFloor` within the `Lift` class. To ensure that the transition between floors is seamless, Boolean logic is used with the attribute `inTransition`. This is set to true when the lift has not yet reached the value in `targetFloor`; it contains the same value as `nextMaxFloor`. 
-
+<br>
 ### Designing User Interface
 Since most of our team are not gamers, we wanted to make sure our game appealed to both gamers and non-gamers. Our objective was to create a game that was simple yet engaging. One of the first steps we took to achieve this was to create a user-friendly interface. 
 
@@ -459,13 +457,41 @@ Both levels' SUS score average was still under the 68 threshold. This reflected 
 <br>
 
 ### How was our code tested?
-Throughout our game development process, we maintained user interface testing as a priority to ensure a consistent and accessible player experience. We wanted to maintain usability levels that were consistent with our design specifications, particularly after receiving feedback from qualitative and quantitative evaluations.
 
-We performed UI testing at different stages, from the readibilty of layout to feedback pop-ups in gameplay, and implemented improvements in font sizes, instruction clarity, and interaction visibility.
+Throughout our game development process, we maintained user interface (UI) and and functionality testing as a priority to ensure a consistent, and engaging player experience. We wanted to maintain usability levels that were consistent with our design specifications, particularly after receiving feedback from qualitative and quantitative evaluations.
 
-On the functionality side, we conducted continual testing for fundamental mechanics like puzzle triggers, ingredient collection, and the lift system. Special attention was given to how the lift reacts in different levels, and how collision detection keeps interactions between characters, items, and obstacles smooth.
+**User Interface Testing**
 
-We carried out comprehensive testing on the win and lose states, such as making sure the win state occurs after both ingredients and key are collected, and both characters make it to the main lab on time. We also ensured the game resets correctly when a player dies or the time reaches zero. Having these ongoing tests allowed us to catch bugs early and deliver a stable, polished experience.
+We performed UI testing at different stages, from the readibilty of layout to feedback pop-ups during gameplay. Specific improvements included adjusting font sizes for better readability, refining instruction clarity to minimise player confusion and enhancing the visibility and responsiveness of interactive elements such as buttons and puzzle pop-ups. We also ensured that visual cues for important events (e.g., collecting an ingredient, triggering a puzzle, or collecting the key) were clear.
+
+In addition, we conducted accessibility checks to verify that color schemes provided sufficient contrast for visually impaired users and that key game information was communicated through both text and visual indicators. This made the game experience more inclusive and intuitive for all players.
+
+
+**Functionality and Mechanics Testing**
+
+On the functionality side, we carried out continuous testing of core game mechanics, including:
+
+1. Puzzle Triggers and Logic Flows: Verified that puzzles activated correctly and provided appropriate feedback on both success and failure. This included ensuring that puzzles couldn’t be accidentally retriggered or bypassed.
+
+2. Ingredient and Key Collection: Tested collection logic extensively to confirm that ingredients and keys were properly registered in the game state and that collection animations and sounds played reliably.
+
+3. Lift System: Special attention was given to the lift mechanics, ensuring it responded accurately to player interaction, moved smoothly between floors, and behaved correctly across both difficulty levels. We also checked for edge cases such as players trying to access the lift before completing prerequisite tasks.
+
+4. Collision Detection: Tested character, item, and obstacle interactions to ensure that collision detection was precise and prevented unintended overlaps or clipping through objects.
+
+
+**Win and Lose State Testing**
+
+We performed comprehensive scenario testing for both win and lose conditions. This included verifying that:
+- The win state only triggers when all required ingredients and the key are collected, and both characters successfully reach the lab before the timer expires.
+- The game correctly resets after player death or when the timer runs out, including proper state resets for ingredients, keys, puzzles, and timers.
+
+
+**Additional Testing Areas**
+
+Boundary and Edge Case Testing: Explored extreme or unlikely scenarios to ensure the game handled them gracefully. Examples include attempting to collect ingredients before completing necessary puzzles, trying to access restricted areas, or performing multiple rapid interactions that could potentially break the game logic.
+
+Audio Feedback Testing: Ensured that background music, sound effects, and event-based audio cues (such as puzzle completions or item collections) played correctly and didn’t overlap or cut off unexpectedly.
 
 <br><br>
 ## Sustainability
@@ -588,7 +614,7 @@ Our shared [Google Docs](https://docs.google.com/document/d/1KssIKXsxvCF5YswZeRS
   <br>
   <em>Sections of our shared Google Doc - Left: built-in to-do list for tracking progress; Right: main report document used for collaborative writing</em>
 </p>
-<br><br
+<br><br>
 
 **Planning Poker:**
 
@@ -620,7 +646,7 @@ Overall, once we got into a good routine, things went a lot more smoothly. We st
 <br><br>
 ## Conclusion
 
-Race For The Cure is a cooperative game set in an abandoned science building. The students dodge obstacles and solve puzzles. The player must dash around three floors to obtain the required ingredients to survive. Developing this game has been a rewarding way to experience the software engineering process. It allowed every team member to explore their creativity and skills as a software developer while giving us room to learn new skills.  
+Race For The Cure is a cooperative game set in an abandoned science building at the Universoty of Bristol. The students dodge obstacles and solve puzzles. The player must dash around three floors to obtain the required ingredients to survive. Developing this game has been a rewarding way to experience the software engineering process. It allowed each team member to apply their creativity and technical skills while also providing opportunities to learn and develop new competencies.  
 
 During the early stages of development, our team struggled with miscommunication. Using the agile methodology to its full extent has subsided most of it. Having a clear goal and description of each task, staying in regular communication, whether it be through the use of WhatsApp, Microsoft Teams, or talking to each other in person, had an exponential impact on efficiency.  The use of Pair Programming sessions proved vital for code integration. Managing game mechanics, level layouts, and making adjustments where possible to increase convenience for the player became an integral part of our meeting. 
 
@@ -630,7 +656,7 @@ Early testing showed maintenance and performance issues with the original system
 
 In the future, we aim to make it more accessible for players with disabilities. Focusing on motion tracking for players with physical disabilities and implementing a mute button for those with Hyperacusis, noise sensitivity. Another feature we would implement is adapting the code to fit touch screen devices. This would allow users to play on the go using smartphones, tablets, etc., while also providing another accommodation for those with reduced mobility. We plan to introduce new levels and themes, such as jungle and space, adjusting components of the game to better suit the new location. Another of our goals is to lean further into our aesthetic and create more animated sprites to enhance gameplay for an arcade feel.  
 
-In summation, Race For The Cure has been an invaluable experience for our entire team. As a team, we had a chance to experience every aspect of building a software product and put our knowledge into practice. Since this is the first team project completed in this discipline, it has become a solid foundation for us to continue improving our skills in future projects.
+To summarise, Race For The Cure has been an invaluable experience for our entire team. As a team, we had a chance to experience every aspect of building a software product and put our knowledge into practice. Since this is the first team project completed in this discipline, it has become a solid foundation for us to continue improving our skills in future projects.
  
 
 <br><br>
@@ -651,7 +677,12 @@ In summation, Race For The Cure has been an invaluable experience for our entire
 
 Irum Inayat, Salim, S.S., Marczak, S., Daneva, M. and Shahaboddin Shamshirband (2014). A systematic literature review on agile requirements engineering practices and challenges. Computers in Human Behavior, [online] 51, pp.915–929. doi:https://doi.org/10.1016/j.chb.2014.10.046.
 
-‌
 Laplante, P.A. and Kassab, M.H. (2022). Requirements Engineering for Software and Systems. [online] doi:https://doi.org/10.1201/9781003129509.
 
-‌
+Nielsen, J. (1995). Ten Usability Heuristics for User Interface Design. Nielsen Norman Group. Available at: https://www.nngroup.com/articles/ten-usability-heuristics/.
+
+Nielsen, J. (1994). How to Conduct a Heuristic Evaluation. Nielsen Norman Group. Available at: https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/.
+
+Sustainability Design. (n.d.). Sustainability Design and Software: The Karlskrona Manifesto. Available at: https://sustainabilitydesign.org/.
+
+Cockburn, A., & Williams, L. (2001). The Costs and Benefits of Pair Programming. In: G. Succi and M. Marchesi (eds.), Extreme Programming Examined. Boston: Addison-Wesley, pp. 223–243.
