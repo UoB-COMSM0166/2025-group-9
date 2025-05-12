@@ -12,7 +12,7 @@
 </p>
 
 
-<br><br>
+<br><br><br>
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
@@ -21,6 +21,7 @@
   <br>
   <em>Click the image above to watch our gameplay video on YouTube.</em>
 </p>
+
 
 
 
