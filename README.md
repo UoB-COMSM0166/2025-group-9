@@ -232,6 +232,8 @@ Each change followed an implement‑test‑refine cycle; the diagram was updated
 </div>
 <br><br>
 
+**Final Class Inventory**
+
 | Class | Responsibility |
 |-------|----------------|
 | **GameManager** | Central state machine; moves the application between home, difficulty‑selection, gameplay, win, and game‑over states, and triggers the corresponding music and sound effects. |
@@ -248,6 +250,18 @@ Each change followed an implement‑test‑refine cycle; the diagram was updated
 | **ChemistryPuzzle** | Manages the book‑and‑vial question sequence and awards the vial ingredient when answered correctly. |
 | **BotanyPuzzle** | Manages the note‑and‑flower identification sequence and awards the flower ingredient on success. |
 
+
+### Behavioural Diagrams
+
+A sequence diagram complements the class diagram by showing the order in which objects exchange messages. We used it to confirm that, in every frame, physics, puzzle logic, timer updates, and win/loss checks occur in the intended order. The following diagram illustrates the core flows of our game—from the launch sequence through the gameplay loop that repeats throughout play.
+
+<div align="center">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/Core_Sequence_Diagram.png" alt="Core Sequence Diagram" width="600"/>
+  <br/>
+  
+  <em>Simplified Core Sequence Diagram</em>
+</div>
+<br><br>
 
 <br><br>
 
