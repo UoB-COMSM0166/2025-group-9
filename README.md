@@ -233,7 +233,7 @@ The Player navigates either the Botany Student or the Chemistry Student through 
 - **Success:** Level is marked complete; next level loads or Win Game screen appears.  
 - **Failure:** Lose Game subflow (Game Over) is invoked.
 
----
+<br>
 
 ### Flow of Events
 
@@ -262,7 +262,7 @@ The Player navigates either the Botany Student or the Chemistry Student through 
 - **3a. Puzzle Failure**  
   Player fails the puzzle → System respawns them at the portal entry to retry the **Play Puzzle Game** subflow.
 
----
+<br>
 
 **Subflows & Includes**  
 - Play Puzzle Game  
