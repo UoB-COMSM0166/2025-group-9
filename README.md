@@ -298,6 +298,20 @@ A sequence diagram complements the class diagram by showing the order in which o
 
 ## Implementation
 
+### Lift 
+The lift’s movement changes based on the level of the game. In the easy level, the lift operates in two modes: ground floor to first and first floor to second. The change in movement is triggered by a character standing by the lever and pressing the letter “S”. In the hard level, it travels from the ground floor to the second floor in one motion. The challenge with this is altering the minimum and maximum positions of the lift. 
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5886ce52-fec3-424e-9dcd-014af1b88cef" alt="EasylevelLiftGIF" width="500"/>
+  <br/>
+  
+  <em>Easy Level Lift</em>
+  
+</div>
+<br><br>
+
+`floorOne` and `floorTwo` are already defined in `sketch.js`. Therefore, the most efficient way to precisely implement the two modes is to assign the values in these attributes to `nextMinFloor` and `nextMaxFloor` within the `Lift` class. To ensure that the transition between floors is seamless, Boolean logic is used with the attribute `inTransition`. This is set to true when the lift has not yet reached the value in `targetFloor`; it contains the same value as `nextMaxFloor`. 
+
 ### Designing User Interface
 Since most of our team are not gamers, we wanted to make sure our game appealed to both gamers and non-gamers. Our objective was to create a game that was simple yet engaging. One of the first steps we took to achieve this was to create a user-friendly interface. 
 
@@ -494,7 +508,7 @@ The narrative centers on a single player controlling two university students who
 
 We designed to be accessible to a broad range of players, including those with diverse abilities:
 
-- **Color Accessibility**: Important visual information is conveyed through icons and shapes, not color alone.
+- **Colour Accessibility**: Important visual information is conveyed through icons and shapes, not color alone.
 - **Clear UI and Fonts**: The interface is clean, using **readable fonts** and minimizing distractions.
 - **Input Simplicity**: The game can be played fully with a keyboard, without requiring special equipment or high end devices.
 - **Cognitive Accessibility**: Puzzles are structured to be challenging yet fair. The time limit introduces light tension without overwhelming the player, encouraging thoughtful coordination between the two characters.
@@ -606,9 +620,18 @@ Overall, once we got into a good routine, things went a lot more smoothly. We st
 <br><br>
 ## Conclusion
 
-- 10% ~500 words
+Race For The Cure is a cooperative game set in an abandoned science building. The students dodge obstacles and solve puzzles. The player must dash around three floors to obtain the required ingredients to survive. Developing this game has been a rewarding way to experience the software engineering process. It allowed every team member to explore their creativity and skills as a software developer while giving us room to learn new skills.  
 
-- Reflect on project as a whole. Lessons learned. Reflect on challenges. Future work. 
+During the early stages of development, our team struggled with miscommunication. Using the agile methodology to its full extent has subsided most of it. Having a clear goal and description of each task, staying in regular communication, whether it be through the use of WhatsApp, Microsoft Teams, or talking to each other in person, had an exponential impact on efficiency.  The use of Pair Programming sessions proved vital for code integration. Managing game mechanics, level layouts, and making adjustments where possible to increase convenience for the player became an integral part of our meeting. 
+
+At the forefront of our development was user feedback. The Think Aloud evaluations conducted on the digital prototype highlighted the issues we had with our user interface the most. Players wanted a simpler design as they found it difficult to keep track of all of the information presented to them. Subsequently, our team redesigned the layout of both levels and created succinct instructions, including popups throughout the game, to promote user experience. Due to the feedback being largely about the user interface, we prioritised UI testing throughout the later stages of development. This yielded a final game which resembles our final game concept and fulfilled our requirements analysis. 
+
+Early testing showed maintenance and performance issues with the original system architecture. As development progressed, it became more important that the revised architecture could keep up efficiently. To cater to players with Protanopia and Deuteranopia, the most common forms of colour blindness, two dedicated utility classes had to be created.  
+
+In the future, we aim to make it more accessible for players with disabilities. Focusing on motion tracking for players with physical disabilities and implementing a mute button for those with Hyperacusis, noise sensitivity. Another feature we would implement is adapting the code to fit touch screen devices. This would allow users to play on the go using smartphones, tablets, etc., while also providing another accommodation for those with reduced mobility. We plan to introduce new levels and themes, such as jungle and space, adjusting components of the game to better suit the new location. Another of our goals is to lean further into our aesthetic and create more animated sprites to enhance gameplay for an arcade feel.  
+
+In summation, Race For The Cure has been an invaluable experience for our entire team. As a team, we had a chance to experience every aspect of building a software product and put our knowledge into practice. Since this is the first team project completed in this discipline, it has become a solid foundation for us to continue improving our skills in future projects.
+ 
 
 <br><br>
 ## Contribution Statement
@@ -623,3 +646,12 @@ Overall, once we got into a good routine, things went a lot more smoothly. We st
 | Maram Abdulaziz Alhussain   | 20 |
 | Hadeel Ibrahim   | 20  |
  <br>
+
+## References
+
+Irum Inayat, Salim, S.S., Marczak, S., Daneva, M. and Shahaboddin Shamshirband (2014). A systematic literature review on agile requirements engineering practices and challenges. Computers in Human Behavior, [online] 51, pp.915–929. doi:https://doi.org/10.1016/j.chb.2014.10.046.
+
+‌
+Laplante, P.A. and Kassab, M.H. (2022). Requirements Engineering for Software and Systems. [online] doi:https://doi.org/10.1201/9781003129509.
+
+‌
