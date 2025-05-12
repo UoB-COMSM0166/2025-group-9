@@ -8,15 +8,11 @@
 [Click me! You Can Play The Game Here! 🎮🧪🌸](https://uob-comsm0166.github.io/2025-group-9/game)
 
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
-    <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/VideoThumbnail.png" width="500"/>
-  </a>
-</p>
+<a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/VideoThumbnail.png" width="500"/>
+</a>
 
-<p align="center">
-  <em>Click the image above to watch our gameplay video on YouTube.</em>
-</p>
+<p><em><strong>Click the image above to watch our gameplay video on YouTube.</strong></em></p>
 
 
 
