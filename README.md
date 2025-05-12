@@ -202,15 +202,70 @@ Ensuring efficient, scalable, and maintainable development
 <br>
 
 ### Use Case Diagrams
-
-
-
+<br>
 <div align="center">
 
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/prelim_use_case_diagram(2).jpg?raw=true" alt="Preliminary Use Case Diagram" width="600"/>
 
 *Preliminary use case diagram showing system interactions.*  
 </div>
+
+<br>
+
+### Use Case: Play Game
+
+**Brief Description**  
+The Player navigates either the Botany Student or the Chemistry Student through a level, solves puzzles, collects objects, and reaches the exit portal to complete the level.
+
+**Primary Actor**  
+- Player
+
+**Preconditions**  
+- A game session is active and a level is loaded.  
+- Accessibility settings (colour filter, font size) are configured.
+
+**Postconditions**  
+- **Success:** Level is marked complete; next level loads or Win Game screen appears.  
+- **Failure:** Lose Game subflow (Game Over) is invoked.
+
+---
+
+### Flow of Events
+
+#### Main Success Scenario (Basic Flow)
+1. **System** displays controls and HUD:  
+   - **Botany Student:** W/A/S/D to move & jump  
+   - **Chemistry Student:** directional keys to move & Space to jump  
+2. **Player** moves and jumps around the environment, avoiding obstacles.  
+3. Upon reaching a puzzle portal, **System** launches the **Play Puzzle Game** subflow.  
+4. **Player** solves the puzzle.  
+5. **System** returns to the main level map.  
+6. **Player** collects any available object via the **Collect Object** subflow.  
+7. **Player** proceeds to the exit portal.  
+8. **System** marks the level complete and either loads the next level or displays the **Win Game** screen.
+
+#### Alternative Flows
+- **1a. Pause & In-Game Menu**  
+  At any time, Player presses Esc → System pauses and displays the **In-Game Menu** subflow (Replay Tutorial, Quit Game, Restart Level). Resume returns to step 1.
+
+- **2a. Time Out**  
+  If Player runs out of time during movement/jumping → System invokes the **Lose Game** subflow.
+
+- **2b. Stepped on Obstacle**  
+  If Player steps on a lethal obstacle → System invokes the **Lose Game** subflow.
+
+- **3a. Puzzle Failure**  
+  Player fails the puzzle → System respawns them at the portal entry to retry the **Play Puzzle Game** subflow.
+
+---
+
+**Subflows & Includes**  
+- Play Puzzle Game  
+- Collect Object  
+- In-Game Menu  
+- Lose Game  
+- Win Game  
+
 
 <br><br>
 
