@@ -360,7 +360,7 @@ A sequence diagram complements the class diagram by showing the order in which o
 The lift’s movement changes based on the level of the game. In the easy level, the lift operates in two modes: ground floor to first and first floor to second. The change in movement is triggered by a character standing by the lever and pressing the letter “S”. In the hard level, it travels from the ground floor to the second floor in one motion. The challenge with this is altering the minimum and maximum positions of the lift. 
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/5886ce52-fec3-424e-9dcd-014af1b88cef" alt="EasylevelLiftGIF" width="500"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/EasylevelLiftgif.mp4" alt="EasylevelLiftGIF" width="500"/>
   <br/>
   
   <em>Easy Level Lift</em>
