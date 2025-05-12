@@ -64,7 +64,7 @@ function loadPlatforms(difficulty, xOffset, yOffset, mode) {
             platforms.push({ x: 473 + xOffset, y: 640 + yOffset, width: 67, height: 18 });
             platforms.push({ x: 277 + xOffset, y: 639 + yOffset, width: 66, height: 16 });
             platforms.push({ x: 204 + xOffset, y: 680 + yOffset, width: 66, height: 16 });
-            platforms.push({ x: 370 + xOffset, y: 678 + yOffset, width: 75, height: 43 });
+            platforms.push({ x: 370 + xOffset, y: 678 + yOffset, width: 73, height: 43 });
 
 
             //first floor
