@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <a href="[https://youtu.be/APKjQvI84UQ" target="_blank">
+   <a href="https://youtu.be/APKjQvI84UQ" target="_blank">
     <img src="https://raw.githubusercontent.com/UoB-COMSM0166/2025-group-9/main/Meetings/Images/DemoPoster2.gif" width="460" height="120"/>
   </a>
   <br>
