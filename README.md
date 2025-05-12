@@ -370,6 +370,7 @@ The lift’s movement changes based on the level of the game. In the easy level,
 
 `floorOne` and `floorTwo` are already defined in `sketch.js`. Therefore, the most efficient way to precisely implement the two modes is to assign the values in these attributes to `nextMinFloor` and `nextMaxFloor` within the `Lift` class. To ensure that the transition between floors is seamless, Boolean logic is used with the attribute `inTransition`. This is set to true when the lift has not yet reached the value in `targetFloor`; it contains the same value as `nextMaxFloor`. 
 <br>
+
 ### Designing User Interface
 Since most of our team are not gamers, we wanted to make sure our game appealed to both gamers and non-gamers. Our objective was to create a game that was simple yet engaging. One of the first steps we took to achieve this was to create a user-friendly interface. 
 
@@ -523,6 +524,7 @@ The ratings were almost identical in both modes, with only two users rating diff
 <br><br>
 
 Both levels' SUS score average was still under the 68 threshold. This reflected the need to improve some aspects of the system's usability, which we successfully addressed in the final version. We incorporated numerous interface enhancements, including more descriptive instructions, stronger visual cues, simplified and easier navigation and controls, and less overall complexity to improve the intuitiveness and user-friendliness of the gameplay.
+
 <br>
 
 ### How was our code tested?
@@ -740,7 +742,8 @@ To summarise, Race For The Cure has been an invaluable experience for our entire
 | Abdul-Hakeem Lamptey     | 20  |
 | Maram Abdulaziz Alhussain   | 20 |
 | Hadeel Ibrahim   | 20  |
- <br>
+ 
+ <br><br>
 
 ## References
 
