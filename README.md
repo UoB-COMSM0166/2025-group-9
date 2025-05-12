@@ -342,7 +342,16 @@ Our solution - present bitsize information that is pertinent to gameplay through
 The feedback from the qualitative evaluations suggested that some more clarification at certain points in the game would benefit the user experience. So to further improve user interface, we created popups to indicate when an ingredient has been collected or to provide in-the-moment instructions and error messages. 
 
 The evaluations pose another question: What if the player solves the puzzles and obtains both the vial and the flower using a single character? To promote the use of both characters, we designed them to be able to acquire ingredients that are exclusive to their speciality, such as the Botany student can only retrieve the flower. The chemistry student can only retrieve the vial. In the hard level, only students of the science can solve the puzzle to collect the vial or the flower. 
-<br>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2783f808-f94d-44b6-8674-0e6e51bd43a2" alt="CharacterSpecificActivity" width="500"/>
+  <br/>
+  
+  <em>Character Specific Collection</em>
+  
+</div>
+<br><br>
+
 
 ### Image Preloader for Colour Blind players
 Protanopia and Deuteranopia are the most common forms of colour blindness. Those with Protanopia are likely to perceive some shades of blue with red, purple or dark pink and green with orange. Those with Deuteranopes are likely to perceive red with green or brown, bright green with yellow, and light blue with lilac. The colours listed here are the ones that would directly affect colour blind users when playing our game. 
