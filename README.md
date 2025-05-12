@@ -2,7 +2,9 @@
 2025 COMSM0166 group 9
 
 ## Race For The Cure
+
 <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/banner.png?raw=true" alt="Banner" width="100%"/>
+
 <p align="center">
   <a href="https://uob-comsm0166.github.io/2025-group-9/game">
     <strong>Click me! You Can Play The Game Here! 🎮🧪🌸</strong>
@@ -10,14 +12,16 @@
 </p>
 
 
+<br><br>
 
-<div align="center">
+<p align="center">
   <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
-    <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/DemoPoster.png" width="550" height="120"/>
+    <img src="https://raw.githubusercontent.com/UoB-COMSM0166/2025-group-9/main/Meetings/Images/DemoPoster.png" width="550" height="120"/>
   </a>
   <br>
   <em>Click the image above to watch our gameplay video on YouTube.</em>
-</div>
+</p>
+
 
 
 
