@@ -147,38 +147,43 @@ University of Bristol
 **1. Gameplay & Mechanics**
 
 Ensuring smooth, enjoyable, and challenging gameplay
-As a new player, I want a tutorial mode that explains the game mechanics and rules, so I can learn how to play efficiently.
-As a casual player, I want the game to be intuitive and easy to learn, so I can start playing with minimal effort.
-As a competitive player, I want a challenging difficulty level and a ranking system, so I can compare my performance with others.
-As a player, I want smooth and responsive gameplay, so I can play for extended periods without fatigue.
-As a player, I want minimal lag between audio and visuals, so the game feels synchronized and immersive.
-As a player, I want sound effects when characters move or interact with the environment, so the game feels more engaging and responsive.
-As a competitive player, I want level completion times to be recorded and displayed, so I can compete against others based on speed.
-As a competitive player who frequently replays the game, I want an option to skip non-gameplay animations and introductions, so I can focus on gameplay.
+
+- As a new player, I want a tutorial mode that explains the game mechanics and rules, so I can learn how to play efficiently.
+- As a casual player, I want the game to be intuitive and easy to learn, so I can start playing with minimal effort.
+- As a competitive player, I want a challenging difficulty level and a ranking system, so I can compare my performance with others.
+- As a player, I want smooth and responsive gameplay, so I can play for extended periods without fatigue.
+- As a player, I want minimal lag between audio and visuals, so the game feels synchronized and immersive.
+- As a player, I want sound effects when characters move or interact with the environment, so the game feels more engaging and responsive.
+- As a competitive player, I want level completion times to be recorded and displayed, so I can compete against others based on speed.
+- As a competitive player who frequently replays the game, I want an option to skip non-gameplay animations and introductions, so I can focus on gameplay.
 
 
 **2. Accessibility & Inclusivity**
 
 Ensuring the game is playable for all users, including those with disabilities or specific needs
-As an elderly player with limited vision, I want an option to adjust text size, so I can read in-game text comfortably.
-As a color-blind player, I want customizable color schemes, so I can distinguish game elements easily.
-As an impressionable young player, I want the game to avoid excessive violence, so the content remains appropriate for my age group.
-As the University of Bristol, I want the game to avoid insensitive or discriminatory depictions, so it remains inclusive and respectful to all players.
+
+- As an elderly player with limited vision, I want an option to adjust text size, so I can read in-game text comfortably.
+- As a color-blind player, I want customizable color schemes, so I can distinguish game elements easily.
+- As an impressionable young player, I want the game to avoid excessive violence, so the content remains appropriate for my age group.
+- As the University of Bristol, I want the game to avoid insensitive or discriminatory depictions, so it remains inclusive and respectful to all players.
 
 
 **3. Narrative & Aesthetics**
 
 Ensuring the game has an engaging story and a visually cohesive design
-As a player, I want an engaging introductory sequence that explains the game's lore, so I can be immersed in the story.
-As a player, I want a consistent art style, so the game remains visually appealing and cohesive.
+
+- As a player, I want an engaging introductory sequence that explains the game's lore, so I can be immersed in the story.
+- As a player, I want a consistent art style, so the game remains visually appealing and cohesive.
 
 
 **4. Technical & Development Considerations**
 
 Ensuring efficient, scalable, and maintainable development
-As a developer, I want the game to follow a modular design, so features can be added or removed easily.
-As a platform hosting the game, I want the game’s file size to be optimized, so it does not consume excessive server space.
-As an assessor, I want the game to feature a unique twist on a classic concept or an advanced implementation challenge, so the game demonstrates originality and technical depth.
+
+- As a developer, I want the game to follow a modular design, so features can be added or removed easily.
+- As a platform hosting the game, I want the game’s file size to be optimized, so it does not consume excessive server space.
+- As an assessor, I want the game to feature a unique twist on a classic concept or an advanced implementation challenge, so the game demonstrates originality and technical depth.
+
 
 <div align="center">
 
