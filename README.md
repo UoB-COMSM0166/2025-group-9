@@ -203,7 +203,6 @@ Ensuring efficient, scalable, and maintainable development
 
 <br>
 
-### Use Case Diagrams
 
 <div align="center">
 
@@ -211,6 +210,63 @@ Ensuring efficient, scalable, and maintainable development
 
 *Preliminary use case diagram showing system interactions.*  
 </div>
+
+<br>
+
+### Use Case Specification: Play Game
+
+**Brief Description**  
+The Player navigates either the Botany Student or the Chemistry Student through a level, solves puzzles, collects objects, and reaches the exit portal to complete the level.
+
+**Primary Actor**  
+- Player
+
+**Preconditions**  
+- A game session is active and a level is loaded.  
+- Accessibility settings (colour filter, font size) are configured.
+
+**Postconditions**  
+- **Success:** Level is marked complete; next level loads or Win Game screen appears.  
+- **Failure:** Lose Game subflow (Game Over) is invoked.
+
+---
+
+### Flow of Events
+
+#### Main Success Scenario (Basic Flow)
+1. **System** displays controls and HUD:  
+   - **Botany Student:** W/A/S/D to move & jump  
+   - **Chemistry Student:** directional keys to move & Space to jump  
+2. **Player** moves and jumps around the environment, avoiding obstacles.  
+3. Upon reaching a puzzle portal, **System** launches the **Play Puzzle Game** subflow.  
+4. **Player** solves the puzzle.  
+5. **System** returns to the main level map.  
+6. **Player** collects any available object via the **Collect Object** subflow.  
+7. **Player** proceeds to the exit portal.  
+8. **System** marks the level complete and either loads the next level or displays the **Win Game** screen.
+
+#### Alternative Flows
+- **1a. Pause & In-Game Menu**  
+  At any time, Player presses Esc → System pauses and displays the **In-Game Menu** subflow (Replay Tutorial, Quit Game, Restart Level). Resume returns to step 1.
+
+- **2a. Time Out**  
+  If Player runs out of time during movement/jumping → System invokes the **Lose Game** subflow.
+
+- **2b. Stepped on Obstacle**  
+  If Player steps on a lethal obstacle → System invokes the **Lose Game** subflow.
+
+- **3a. Puzzle Failure**  
+  Player fails the puzzle → System respawns them at the portal entry to retry the **Play Puzzle Game** subflow.
+
+---
+
+**Subflows & Includes**  
+- Play Puzzle Game  
+- Collect Object  
+- In-Game Menu  
+- Lose Game  
+- Win Game  
+
 
 <br><br>
 
@@ -340,7 +396,16 @@ Our solution - present bitsize information that is pertinent to gameplay through
 The feedback from the qualitative evaluations suggested that some more clarification at certain points in the game would benefit the user experience. So to further improve user interface, we created popups to indicate when an ingredient has been collected or to provide in-the-moment instructions and error messages. 
 
 The evaluations pose another question: What if the player solves the puzzles and obtains both the vial and the flower using a single character? To promote the use of both characters, we designed them to be able to acquire ingredients that are exclusive to their speciality, such as the Botany student can only retrieve the flower. The chemistry student can only retrieve the vial. In the hard level, only students of the science can solve the puzzle to collect the vial or the flower. 
-<br>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2783f808-f94d-44b6-8674-0e6e51bd43a2" alt="CharacterSpecificActivity" width="500"/>
+  <br/>
+  
+  <em>Character Specific Collection</em>
+  
+</div>
+<br><br>
+
 
 ### Image Preloader for Colour Blind players
 Protanopia and Deuteranopia are the most common forms of colour blindness. Those with Protanopia are likely to perceive some shades of blue with red, purple or dark pink and green with orange. Those with Deuteranopes are likely to perceive red with green or brown, bright green with yellow, and light blue with lilac. The colours listed here are the ones that would directly affect colour blind users when playing our game. 
