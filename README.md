@@ -9,10 +9,10 @@
 
 
 <a href="https://www.youtube.com/watch?v=rswHupL4rKg" target="_blank">
-  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/VideoThumbnail.png" width="500"/>
+  <img src="https://github.com/UoB-COMSM0166/2025-group-9/blob/main/Meetings/Images/YourImage.png" width="500"/>
 </a>
 
-<p><em><strong>Click the image above to watch our gameplay video on YouTube.</strong></em></p>
+<p><sub><em>Click the image above to watch the gameplay video on YouTube.</em></sub></p>
 
 
 
