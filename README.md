@@ -138,7 +138,7 @@ The team developed a final interactive prototype to showcase the core concept of
 <p align="center"><em>Stakeholder Onion Model</em></p>
 
 **1. Product:**
-Race to the Cure
+Race for the Cure
 
 **2. The System:**
 Development Team, Normal and Maintenance Operators
